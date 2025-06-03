@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cuadros</title>
+    <link type="text/css" rel="stylesheet" href="../css/hoja-estilo.css" />
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../imagenes/FFFF.png" alt="Logo" />
+        </div>
+        <ul class="nav-links">
+            <li><a href="../pages/inicioArt.html">Inicio</a></li>
+            <li><a href="../pages/perfilFF.html">Perfil</a></li>
+            <li><a href="../pages/proyectosFF.html">Proyectos</a></li>
+            <li><a href="musicaArt.html">Musica</a></li>
+            <li><a href="artistasArt.html">Artistas</a></li>
+        </ul>
+        <div class="nav-actions">
+            <input type="text" placeholder="Buscar" class="search-bar">
+            <button class="dark-mode-toggle">🌙</button>
+            <select class="lang-select">
+                <option>ES</option>
+                <option>EN</option>
+            </select>
+        </div>
+    </nav>
+    <hr style="border: none; border-top: 1.5px solid #222; margin: 0;">
+
+    <!-- HERO SECTION -->
+    <section class="hero" style="align-items: flex-start;">
+        <h1>- Cuadros Publicados</h1>
+        <div class="cards-container" style="justify-content: flex-start; flex-wrap: wrap;">
+            <!-- Tarjeta 1 -->
+            <div class="card card-purple">
+                <img src="imagenes/noche.jpg" alt="Noche" style="width:100%; border-radius:12px; margin-bottom:12px;">
+                <h3>Wroks</h3>
+                <p>Autor: Vincent Van Gogh</p>
+            </div>
+            <!-- Tarjeta 2 -->
+            <div class="card card-blue">
+                <img src="imagenes/monalisa.jpg" alt="Mona Lisa" style="width:100%; border-radius:12px; margin-bottom:12px;">
+                <h3>Mona Lisa</h3>
+                <p>Autor: Leonardo Da Vinci</p>
+            </div>
+            <!-- Puedes agregar más tarjetas aquí -->
+        </div>
+        <!-- Tarjeta de comentarios -->
+        <div class="cards-container" style="justify-content: flex-start;">
+            <div class="card card-green" style="min-width:320px; max-width:400px;">
+                <h3>Comentarios recientes</h3>
+                <p class="grande">Fernando: Excelente pintura</p>
+                <p class="grande">Karla: Muy buena composición</p>
+                <p class="grande">Marco: Le falta técnica</p>
+                <p class="grande">Dereck: Muy detallado</p>
+                <p class="grande">Stacey: Poca creatividad</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tarjeta lateral de info -->
+    <aside style="position:fixed; top:120px; right:40px; max-width:300px;">
+        <div class="card card-pink">
+            <h3>Listado de Cuadros</h3>
+            <ul style="color:#fff; padding-left:18px;">
+                <li>La Noche Estrellada</li>
+                <li>Mona Lisa</li>
+                <li>Guernica</li>
+                <li>El sueño</li>
+            </ul>
+            <h3>GitHub de Desarrolladores</h3>
+            <a href="https://github.com/FFianquetto" target="_blank" style="color:#ff4ecd;">¡Visita nuestro perfil de GitHub!</a>
+            <h3>Correo de Ayuda</h3>
+            <p><a href="mailto:fernandocancino2004@gmail.com" style="color:#ff4ecd;">fernandocancino2004@gmail.com</a></p>
+            <h3>Galería desarrollada para</h3>
+            <p>ProWeb-I</p>
+        </div>
+    </aside>
+
+    <footer>
+        <p class="copyright">All information copyright © FerCancino -- Stacey</p>
+    </footer>
+</body>
+
+</html>

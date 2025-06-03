@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="../css/hoja-estilo.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../JScripts/Inicio.js"></script>
+    <script src="../JScripts/Lenguaje.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="content">
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <div class="logo">
+                    <img src="../imagenes/FFFF.png" alt="Logo" />
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="nav-links navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="../pages/inicioFF.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#paginas-web">Proyectos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#certificaciones">Certificaciones</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#acerca-de-mi">Acerca de mí...</a></li>
+                    
+                    </ul>
+                    <div class="nav-actions d-flex align-items-center">
+                        <input type="text" placeholder="Buscar" class="search-bar me-2">
+                        <button class="dark-mode-toggle me-2">🌙</button>
+                        <select class="lang-select">
+                            <option>ES</option>
+                            <option>EN</option>
+                            <option>FR</option>
+                            <option>DE</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Línea divisoria bajo navbar -->
+        <hr style="border: none; border-top: 1.5px solid #222; margin: 0;">
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="container">
+                <h1 lang="es">¡Bienvenido a FFianquetto Projects!</h1>
+                <p class="hero-subtitle">
+                    Aquí podrás explorar distintos proyectos de mi autoría y algunos en colaboración con otros artistas y desarrolladores.
+                </p>
+                <div class="container-fluid px-0">
+                    <div class="row g-0">
+                        <div class="col-12 mb-5">
+                            <div class="card card-purple w-100 h-100" id="paginas-web">
+                                <div class="container-fluid">
+                                    <div class="row g-0">
+                                        <div class="col-12 col-sm-2 text-center py-3">
+                                            <span class="card-icon">🌐</span>
+                                        </div>
+                                        <div class="col-12 col-sm-6 py-3">
+                                            <h3>Páginas Web</h3>
+                                            <p>Descubre algunas páginas web que he creado.</p>
+                                            <ul class="project-list">
+                                                <li>ZomboyShop-ReDesign</li>
+                                                <li>ArtVlog</li>
+                                                <li>Coming soon</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-12 col-sm-4 py-3">
+                                            <div class="card-image h-100">
+                                                <img src="../imagenesP/ZomboyWeb.png" alt="ZomboyShop Web Design" class="img-zomboy">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-5">
+                            <div class="card card-blue w-100 h-100">
+                                <div class="container-fluid">
+                                    <div class="row g-0">
+                                        <div class="col-12 col-sm-2 text-center py-3">
+                                            <span class="card-icon">🗄️</span>
+                                        </div>
+                                        <div class="col-12 col-sm-6 py-3">
+                                            <h3>Bases de datos</h3> 
+                                            <p>Revisa algunas bases de datos que he trabajado.</p>
+                                            <ul class="project-list">
+                                                <li>Rex</li>
+                                                <li>Danny</li>
+                                                <li>Reep</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-12 col-sm-4 py-3">
+                                            <div class="card-image h-100">
+                                                <img src="../imagenesP/HotelBd.png" alt="ZomboyShop Web Design" class="img-zomboy">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-5">
+                            <div class="card card-pink w-100 h-100">
+                                <div class="container-fluid">
+                                    <div class="row g-0">
+                                        <div class="col-12 col-sm-2 text-center py-3">
+                                            <span class="card-icon">🎮</span>
+                                        </div>
+                                        <div class="col-12 col-sm-6 py-3">
+                                            <h3>Videojuegos</h3>
+                                            <p>Sumérgete en los videojuegos que he desarrollado.</p>
+                                            <ul class="project-list">
+                                                <li>Porter</li>
+                                                <li>Rob</li>
+                                                <li>So</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-12 col-sm-4 py-3">
+                                            <div class="card-image h-100">
+                                                <img src="../imagenesP/EscapeGame.jpg" alt="ZomboyShop Web Design" class="img-zomboy">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-5">
+                            <div class="card card-green w-100 h-100" id="certificaciones">
+                                <div class="container-fluid">
+                                    <div class="row g-0">
+                                        <div class="col-12 col-sm-2 text-center py-3">
+                                            <span class="card-icon">🏆</span>
+                                        </div>
+                                        <div class="col-12 col-sm-6 py-3">
+                                            <h3>Certificados</h3>
+                                            <p>Observa algunos certificados que he obtenido.</p>
+                                            <ul class="project-list">
+                                                <li>Yes</li>
+                                                <li>RNoob</li>
+                                                <li>So</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-12 col-sm-4 py-3">
+                                            <div class="card-image h-100">
+                                                <img src="../imagenesP/Certificate.png" alt="ZomboyShop Web Design" class="img-zomboy">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-5">
+                            <div class="card card-green w-100 h-100" id="habilidades">
+                                <div class="container-fluid">
+                                    <div class="row g-0">
+                                        <div class="col-12 col-sm-2 text-center py-3">
+                                            <span class="card-icon">🏆</span>
+                                        </div>
+                                        <div class="col-12 col-sm-6 py-3">
+                                            <h3>Habilidades</h3>
+                                            <p>Observa algunos certificados que he obtenido.</p>
+                                            <ul class="project-list">
+                                                <li>Yes</li>
+                                                <li>RNoob</li>
+                                                <li>So</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-12 col-sm-4 py-3">
+                                            <div class="card-image h-100">
+                                                <img src="../imagenesP/Certificate.png" alt="ZomboyShop Web Design" class="img-zomboy">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-5">
+                            <div class="card card-green w-100 h-100" id="acerca-de-mi">
+                                <div class="container-fluid">
+                                    <div class="row g-0">
+                                        <div class="col-12 col-sm-2 text-center py-3">
+                                            <span class="card-icon">🏆</span>
+                                        </div>
+                                        <div class="col-12 col-sm-6 py-3">
+                                            <h3>Acerca mí...</h3>
+                                            <p>Observa algunos certificados que he obtenido.</p>
+                                            <ul class="project-list">
+                                                <li>Yes</li>
+                                                <li>RNoob</li>
+                                                <li>So</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-12 col-sm-4 py-3">
+                                            <div class="card-image h-100">
+                                                <img src="../imagenesP/Certificate.png" alt="ZomboyShop Web Design" class="img-zomboy">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="mt-4">
+        <p class="copyright">All information copyright © Fernando A. Cancino</p>
+    </footer>
+</body>
+</html>

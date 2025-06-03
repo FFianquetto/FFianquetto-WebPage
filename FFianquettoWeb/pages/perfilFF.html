@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exposiciones</title>
+    <link type="text/css" rel="stylesheet" href="../css/hoja-estilo.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../imagenes/FFFF.jpg" alt="Logo" />
+        </div>
+        <ul class="nav-links">
+            <li><a href="../pages/inicioFF.html">Inicio</a></li>
+            <li><a href="../pages/perfilFF.html">Perfil</a></li>
+            <li><a href="../pages/proyectosFF.html">Proyectos</a></li>
+            <li><a href="musicaArt.html">Musica</a></li>
+            <li><a href="artistasArt.html">Artistas</a></li>
+        </ul>
+        <div class="nav-actions">
+            <input type="text" placeholder="Buscar" class="search-bar">
+            <button class="dark-mode-toggle">🌙</button>
+            <select class="lang-select">
+                <option>ES</option>
+                <option>EN</option>
+            </select>
+        </div>
+    </nav>
+    <!-- Línea divisoria bajo navbar -->
+    <hr style="border: none; border-top: 1.5px solid #222; margin: 0;">
+
+    <h1>¡Demuestra al mundo lo que sientes hoy!</h1>
+
+    <aside class="container">
+        <div class="perfilFF-card">
+            <img class="perfilFF-img" src="imagenes/FFF.png" width="120" height="120" alt="P1" />
+            <h2>Ferxxo</h2>
+            <h3>Fernando Cancino</h3>
+            <p><strong>Correo:</strong> fernando@gmail.com</p>
+            <p><strong>Fecha de nacimiento:</strong> 20-Junio</p>
+            <p><strong>Edad:</strong> Calculable</p>
+            <p><strong>Hobbys:</strong> Tenis, Piano y Programar</p>
+            <p><strong>Artistas seguidos:</strong> Deadmau5, Porter y Drake</p>
+            <p><strong>Artistas que te siguen:</strong> Marco, Karla y Stacey</p>
+            <button class="perfilFF-btn">Editar perfil</button>
+        </div>
+        <div class="perfilFF-card">
+            <img class="perfilFF-img" src="imagenes/ferxxo.jpg" width="120" height="120" alt="P1" />
+            <h2>Ferxxo</h2>
+            <h3>Fernando Cancino</h3>
+            <p><strong>Correo:</strong> fernando@gmail.com</p>
+            <p><strong>Fecha de nacimiento:</strong> 20-Junio</p>
+            <p><strong>Edad:</strong> Calculable</p>
+            <p><strong>Hobbys:</strong> Tenis, Piano y Programar</p>
+            <p><strong>Artistas seguidos:</strong> Deadmau5, Porter y Drake</p>
+            <p><strong>Artistas que te siguen:</strong> Marco, Karla y Stacey</p>
+            <button class="perfilFF-btn">Editar perfil</button>
+        </div>
+    </aside>
+
+    <aside class="centrito">
+        <section>
+            <h3>Últimas publicaciones: </h3>
+            <img class="big" src="imagenes/piano.jpg" width="250" height="200" alt="Centro" />
+            <p>- Tocando el piano 🎶</p>
+            <br>
+            <img class="big" src="imagenes/playa.jpg" width="200" height="220" alt="Centro" />
+            <p>- Pintando en la playa 😎</p>
+            <br>
+
+            <div id="publicaciones"></div>
+
+
+        </section>
+    </aside>
+
+    <aside class="right">
+        <section>
+            <h3>Crear Publicación: </h3>
+            <div class="form-inputs">
+                <div class="form-group">
+                    <label class="little" for="Nombre">Título: </label>
+                    <input type="text" id="Nombre" placeholder="Nombre">
+                </div>
+                <div class="form-group">
+                    <label class="little" for="Usuario">Foto: </label>
+                    <input type="file" id="Usuario" accept="image/*">
+                    <img id="preview" src="" alt="Vista previa" style="display:none; width: 100px; height: auto; margin-top: 10px;">
+                </div>
+                <div class="form-group">
+                    <label class="little" for="Contra">Descripción: </label>
+                    <input type="text" id="Contra" placeholder="Descripción">
+                </div>
+                <button id="Enviar">Publicar</button>
+            </div>
+
+            <h3>GitHub de Desarrolladores!!!</h3>
+            <style>
+                a {
+                    color: blue;
+                    text-decoration: none;
+                }
+
+                a:hover {
+                    text-decoration: underline;
+                    color: blue;
+                }
+            </style>
+            <a href="https://github.com/FFianquetto" target="_blank">¡Visita nuestro perfil de GitHub!</a>
+            <h3>Correo de Ayuda</h3>
+            <p><a href="mailto:fernandocancino2004@gmail.com">fernandocancino2004@gmail.com</a></p>
+            <h3>Galería desarrollada para</h3>
+            <p>ProWeb-I</p>
+        </section>
+    </aside>
+
+    <section class="hero">
+        <h1>¿Quién es FerCancino?</h1>
+        <p class="hero-subtitle">
+            Soy un apasionado de la tecnología, la música y el arte digital. Aquí puedes conocer más sobre mí, mis intereses y mis proyectos destacados.
+        </p>
+        <div class="cards-container">
+            <div class="card card-purple">
+                <span class="card-icon">🎹</span>
+                <h3>Música y Piano</h3>
+                <p>Disfruto componer y tocar el piano, fusionando tecnología y arte en cada nota.</p>
+            </div>
+            <div class="card card-blue">
+                <span class="card-icon">💻</span>
+                <h3>Programación</h3>
+                <p>Desarrollo proyectos web y aplicaciones, siempre buscando aprender algo nuevo.</p>
+            </div>
+            <div class="card card-pink">
+                <span class="card-icon">🎨</span>
+                <h3>Arte Digital</h3>
+                <p>Me encanta crear y compartir obras digitales, explorando nuevos estilos y técnicas.</p>
+            </div>
+            <div class="card card-green">
+                <span class="card-icon">🌎</span>
+                <h3>Colaboraciones</h3>
+                <p>Trabajo con otros artistas y desarrolladores para crear proyectos únicos.</p>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- <footer> 
+        <p>Contraseña: ""</p>
+    </footer> -->
+    <footer>
+        <p class="copyright">All information copyright © FerCancino -- Stacey</p>
+    </footer>
+</body>
+
+</html>

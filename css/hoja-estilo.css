@@ -1753,3 +1753,367 @@ html {
                 
                 
 }
+
+/* Breakpoints modernos optimizados */
+
+/* Extra pequeño (xs) - Móviles pequeños */
+@media (max-width: 575.98px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+        max-width: 100%;
+        padding: 0 15px;
+    }
+    
+    .card {
+        max-width: 95%;
+        margin: 0 auto;
+        min-height: auto;
+    }
+    
+    .card-image {
+        margin: 0;
+        min-width: 100%;
+    }
+    
+    .nav-links li a {
+        font-size: 16px;
+    }
+    
+    .nav-links {
+        gap: 10px;
+    }
+
+    .navbar {
+        padding: 0 10px;
+    }
+
+    .logo img {
+        height: 42px;
+        width: 48px;
+        margin-left: -10px;
+        margin-right: 15px;
+    }
+
+    .nav-actions {
+        gap: 5px;
+    }
+
+    .search-bar {
+        width: 120px;
+        font-size: 14px;
+    }
+
+    .dark-mode-toggle {
+        font-size: 24px;
+    }
+
+    .lang-select {
+        min-width: 80px;
+        font-size: 14px;
+        height: 32px;
+    }
+}
+
+/* Pequeño (sm) - Móviles grandes */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        max-width: 90%;
+    }
+    
+    .card {
+        max-width: 92%;
+        margin: 0 auto;
+    }
+    
+    .card-image {
+        margin: 0;
+        min-width: 100%;
+    }
+    
+    .nav-links li a {
+        font-size: 18px;
+    }
+    
+    .nav-links {
+        gap: 15px;
+    }
+
+    .navbar {
+        padding: 0 15px;
+    }
+
+    .logo img {
+        height: 46px;
+        width: 52px;
+        margin-left: -12px;
+        margin-right: 20px;
+    }
+
+    .nav-actions {
+        gap: 6px;
+    }
+
+    .search-bar {
+        width: 140px;
+        font-size: 15px;
+    }
+
+    .dark-mode-toggle {
+        font-size: 26px;
+    }
+
+    .lang-select {
+        min-width: 90px;
+        font-size: 15px;
+        height: 35px;
+    }
+}
+
+/* Mediano (md) - Tablets */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+        max-width: 80%;
+    }
+    
+    .card {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    
+    .card-image {
+        margin: 0;
+        min-width: 100%;
+    }
+    
+    .nav-links li a {
+        font-size: 20px;
+    }
+    
+    .nav-links {
+        gap: 20px;
+    }
+
+    .navbar {
+        padding: 0 18px;
+    }
+
+    .logo img {
+        height: 48px;
+        width: 54px;
+        margin-left: -14px;
+        margin-right: 22px;
+    }
+
+    .nav-actions {
+        gap: 7px;
+    }
+
+    .search-bar {
+        width: 160px;
+        font-size: 15px;
+    }
+
+    .dark-mode-toggle {
+        font-size: 27px;
+    }
+
+    .lang-select {
+        min-width: 95px;
+        font-size: 15px;
+        height: 36px;
+    }
+}
+
+/* Grande (lg) - Laptops pequeñas */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+        max-width: 70%;
+    }
+    
+    .card {
+        max-width: 85%;
+        margin-left: -40px;
+    }
+    
+    .card-image {
+        margin-left: -100px;
+        min-width: 320px;
+    }
+    
+    .nav-links li a {
+        font-size: 21px;
+    }
+    
+    .nav-links {
+        gap: 25px;
+    }
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .logo img {
+        height: 50px;
+        width: 56px;
+        margin-left: -15px;
+        margin-right: 25px;
+    }
+
+    .nav-actions {
+        gap: 8px;
+    }
+
+    .search-bar {
+        width: 180px;
+        font-size: 16px;
+    }
+
+    .dark-mode-toggle {
+        font-size: 28px;
+    }
+
+    .lang-select {
+        min-width: 100px;
+        font-size: 16px;
+        height: 38px;
+    }
+}
+
+/* Extra grande (xl) - Laptops grandes y desktops */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.3rem;
+        max-width: 75%;
+    }
+    
+    .card {
+        max-width: 80%;
+        margin-left: -60px;
+    }
+    
+    .card-image {
+        margin-left: -140px;
+        min-width: 380px;
+    }
+    
+    .nav-links li a {
+        font-size: 22px;
+    }
+    
+    .nav-links {
+        gap: 28px;
+    }
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .logo img {
+        height: 52px;
+        width: 58px;
+        margin-left: -15px;
+        margin-right: 25px;
+    }
+
+    .nav-actions {
+        gap: 8px;
+    }
+
+    .search-bar {
+        width: 200px;
+        font-size: 16px;
+    }
+
+    .dark-mode-toggle {
+        font-size: 28px;
+    }
+
+    .lang-select {
+        min-width: 100px;
+        font-size: 16px;
+        height: 38px;
+    }
+}
+
+/* Extra extra grande (xxl) - Pantallas grandes */
+@media (min-width: 1400px) {
+    .hero h1 {
+        font-size: 3.3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.4rem;
+        max-width: 800px;
+    }
+    
+    .card {
+        max-width: 86%;
+        margin-left: -80px;
+    }
+    
+    .card-image {
+        margin-left: -180px;
+        min-width: 440px;
+    }
+    
+    .nav-links li a {
+        font-size: 23.5px;
+    }
+    
+    .nav-links {
+        gap: 30px;
+    }
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .logo img {
+        height: 52px;
+        width: 58px;
+        margin-left: -15px;
+        margin-right: 25px;
+    }
+
+    .nav-actions {
+        gap: 8px;
+    }
+
+    .search-bar {
+        width: 220px;
+        font-size: 16px;
+    }
+
+    .dark-mode-toggle {
+        font-size: 28px;
+    }
+
+    .lang-select {
+        min-width: 100px;
+        font-size: 16px;
+        height: 38px;
+    }
+}

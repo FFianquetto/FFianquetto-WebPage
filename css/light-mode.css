@@ -1,0 +1,484 @@
+/* Light Mode Styles */
+:root {
+  --primary-bg: #f0f2f5;
+  --secondary-bg: #e4e6eb;
+  --text-color: #2c3e50;
+  --text-secondary: #34495e;
+  --border-color: #dddfe2;
+  --hover-color: #e4e6eb;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --card-bg: #ffffff;
+  --navbar-bg: #1a1a1a;
+  --footer-bg: #e4e6eb;
+  --footer-text: #2c3e50;
+}
+
+/* Estilos base que se aplican cuando el modo claro está activo */
+body.light-mode {
+  background-color: var(--primary-bg);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-mode .navbar {
+  background-color: var(--navbar-bg);
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+body.light-mode .nav-links .nav-link {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+body.light-mode .nav-links .nav-link:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+body.light-mode .card {
+  background-color: var(--card-bg);
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+body.light-mode .card-project {
+  background-color: var(--card-bg);
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+body.light-mode .contact-list li {
+  color: var(--text-color);
+}
+
+body.light-mode .project-list li {
+  color: var(--text-color);
+}
+
+body.light-mode .project-list li:hover {
+  background-color: var(--hover-color);
+}
+
+body.light-mode footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+}
+
+/* Estilos de las cards principales */
+.card-purple {
+  border: 2px solid #6c3483;
+  box-shadow: 0 0 10px rgba(108, 52, 131, 0.2);
+  position: relative;
+  border-radius: 15px;
+  background: #ffffff;
+}
+
+.card-purple::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #6c3483, #8e44ad);
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0.17;
+}
+
+.card-purple h3 {
+  color: #9b59b6;
+}
+
+.card-blue {
+  border: 2px solid #2980b9;
+  box-shadow: 0 0 10px rgba(41, 128, 185, 0.2);
+  position: relative;
+  border-radius: 15px;
+  background: #ffffff;
+}
+
+.card-blue::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #2980b9, #3498db);
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0.17;
+}
+
+.card-blue h3 {
+  color: #3498db;
+}
+
+.card-green {
+  border: 2px solid #27ae60;
+  box-shadow: 0 0 10px rgba(39, 174, 96, 0.2);
+  position: relative;
+  border-radius: 15px;
+  background: #ffffff;
+}
+
+.card-green::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #27ae60, #2ecc71);
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0.17;
+}
+
+.card-green h3 {
+  color: #2ecc71;
+}
+
+.card-pink {
+  border: 2px solid #c0392b;
+  box-shadow: 0 0 10px rgba(192, 57, 43, 0.2);
+  position: relative;
+  border-radius: 15px;
+  background: #ffffff;
+}
+
+.card-pink::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #c0392b, #e74c3c);
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0.17;
+}
+
+.card-pink h3 {
+  color: #e84393;
+}
+
+/* Ajustes para el texto en las cards */
+.card-purple p,
+.card-blue p,
+.card-green p,
+.card-pink p {
+  color: #2c3e50;
+}
+
+.card-purple .project-list li,
+.card-blue .project-list li,
+.card-green .project-list li,
+.card-pink .project-list li {
+  color: #2c3e50;
+}
+
+.card-purple .project-list li:hover,
+.card-blue .project-list li:hover,
+.card-green .project-list li:hover,
+.card-pink .project-list li:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-1px);
+}
+
+/* Ajustes para elementos específicos */
+body.light-mode .card-icon {
+  color: #2c3e50;
+}
+
+body.light-mode .project-description {
+  color: #34495e;
+}
+
+body.light-mode .project-features li {
+  color: #2c3e50;
+}
+
+/* Ajustes para el selector de idioma y botón de modo oscuro */
+body.light-mode .lang-select {
+  background-color: var(--secondary-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+body.light-mode .lang-select option {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 8px;
+}
+
+body.light-mode .dark-mode-toggle {
+  color: var(--text-color);
+}
+
+/* Ajustes para el dropdown del selector de idioma */
+body.light-mode select.lang-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 16px;
+  padding-right: 30px;
+}
+
+body.light-mode select.lang-select:focus {
+  outline: none;
+  border-color: #9b59b6;
+  box-shadow: 0 0 0 2px rgba(155, 89, 182, 0.2);
+}
+
+/* Ajustes para el overlay */
+body.light-mode .card-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Ajustes para los botones de cierre */
+body.light-mode .card-close {
+  color: var(--text-color);
+}
+
+/* Ajustes para los enlaces */
+body.light-mode .contact-link {
+  color: #2c3e50;
+  transition: all 0.3s ease;
+}
+
+body.light-mode .contact-link:hover {
+  color: #9b59b6;
+  text-shadow: 0 0 8px rgba(155, 89, 182, 0.5);
+  transform: translateY(-1px);
+}
+
+/* Ajustes para los iconos de redes sociales */
+body.light-mode .contact-list li i {
+    color: #9b59b6;
+    transition: all 0.3s ease;
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+}
+
+body.light-mode .contact-list li {
+    color: #2c3e50;
+}
+
+body.light-mode .contact-list li:hover i {
+    color: #9b59b6;
+    text-shadow: 0 0 8px rgba(155, 89, 182, 0.5);
+    transform: scale(1.1);
+}
+
+/* Transiciones suaves */
+.card, .card-project, .navbar, .nav-link, .contact-list li, .project-list li {
+  transition: all 0.3s ease;
+}
+
+/* Ajustes para el hero en modo claro */
+body.light-mode .hero h1 {
+    color: #2c3e50;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+    opacity: 1;
+}
+
+body.light-mode .hero h1[lang="en"] {
+    color: #d63384;
+    text-shadow: 0 2px 8px rgba(214, 51, 132, 0.4);
+    transform: scale(1.02);
+}
+
+body.light-mode .hero h1[lang="es"] {
+    color: #2c3e50;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+}
+
+body.light-mode .hero h1[lang="fr"] {
+    color: #0d6efd;
+    text-shadow: 0 2px 8px rgba(13, 110, 253, 0.4);
+    transform: scale(1.02);
+}
+
+body.light-mode .hero h1[lang="de"] {
+    color: #1f764d;
+    text-shadow: 0 2px 8px rgba(7, 180, 33, 0.4);
+    transform: scale(1.02);
+}
+
+body.light-mode .hero-subtitle {
+    color: #34495e;
+    font-size: 1.4rem;
+    text-align: center;
+    margin: 20px auto 50px auto;
+    max-width: 800px;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-weight: 500;
+}
+
+body.light-mode .hero-img {
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Efectos hover para las cards principales */
+.card-purple:hover,
+.card-blue:hover,
+.card-green:hover,
+.card-pink:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.card-purple:hover::before,
+.card-blue:hover::before,
+.card-green:hover::before,
+.card-pink:hover::before {
+    opacity: 0.3;
+}
+
+.card-acerca {
+  border: 2px solid #ff4ecd;
+  background: linear-gradient(145deg, #ffffff, #fff5f9);
+  box-shadow: 0 4px 15px rgba(255, 78, 205, 0.2);
+}
+
+.card-habilidades {
+  border: 2px solid #3772ff;
+  background: linear-gradient(145deg, #ffffff, #f5f8ff);
+  box-shadow: 0 4px 15px rgba(55, 114, 255, 0.2);
+}
+
+.card-contact {
+  border: 2px solid #a259ff;
+  background: linear-gradient(145deg, #ffffff, #f9f5ff);
+  box-shadow: 0 4px 15px rgba(162, 89, 255, 0.2);
+}
+
+/* Efectos hover para modo claro */
+.card-acerca:hover {
+  border: 2.2px solid #ff4ecd;
+  box-shadow: 0 0 25px rgba(255, 78, 205, 0.4);
+  transform: translateY(-2px);
+}
+
+.card-habilidades:hover {
+  border: 2.2px solid #3772ff;
+  box-shadow: 0 0 25px rgba(55, 114, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.card-contact:hover {
+  border: 2.2px solid #a259ff;
+  box-shadow: 0 0 25px rgba(162, 89, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.card-cell-c {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1050;
+  width: 95%;
+  max-width: 380px;
+  max-height: 80vh;
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  padding: 25px;
+  border: 2px solid #a259ff;
+  overflow-y: auto;
+}
+
+.card-cell-h {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1050;
+  width: 95%;
+  max-width: 380px;
+  max-height: 80vh;
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  padding: 25px;
+  border: 2px solid #3772ff;
+  overflow-y: auto;
+}
+
+.card-cell-a {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1050;
+  width: 95%;
+  max-width: 380px;
+  max-height: 80vh;
+  background-color: #1a1a1a;
+  border-radius: 15px;
+
+  padding: 25px;
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  border: 2px solid #ff4ecd;
+  overflow-y: auto;
+}
+
+/* Ajustes para las tarjetas móviles en modo claro */
+body.light-mode .card-cell-c,
+body.light-mode .card-cell-h,
+body.light-mode .card-cell-a {
+    background-color: #ffffff;
+    color: #222222;
+}
+
+body.light-mode .card-cell-c h4,
+body.light-mode .card-cell-h h4,
+body.light-mode .card-cell-a h4 {
+    color: #222222;
+}
+
+body.light-mode .card-cell-c p,
+body.light-mode .card-cell-h p,
+body.light-mode .card-cell-a p {
+    color: #222222;
+}
+
+body.light-mode .card-cell-c .contact-list li,
+body.light-mode .card-cell-h .contact-list li,
+body.light-mode .card-cell-a .contact-list li {
+    color: #222222;
+}
+
+body.light-mode .card-cell-c .contact-list li i,
+body.light-mode .card-cell-h .contact-list li i,
+body.light-mode .card-cell-a .contact-list li i {
+    color: #9b59b6;
+}
+
+body.light-mode .card-cell-c .card-close:hover {
+  color: #a259ff;
+}
+
+body.light-mode .card-cell-a .card-close:hover {
+  color: #ff4ecd;
+}
+body.light-mode .card-cell-h .card-close:hover {
+  color:#3772ff;
+}

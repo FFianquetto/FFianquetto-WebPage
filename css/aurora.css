@@ -1,0 +1,85 @@
+.aurora-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.aurora {
+  position: absolute;
+  width: 300%;
+  height: 250%;
+  top: -75%;
+  left: -100%;
+  background: linear-gradient(45deg,
+      rgba(40, 30, 50, 0.72),
+      rgba(25, 35, 55, 0.72),
+      rgba(24, 40, 32, 0.72),
+      rgba(45, 25, 35, 0.72));
+  animation: aurora 30s ease-in-out infinite;
+  filter: blur(80px);
+  transform-origin: 50% 100%;
+}
+
+.aurora:nth-child(2) {
+  background: linear-gradient(-45deg,
+      rgba(45, 25, 35, 0.72),
+      rgba(40, 30, 50, 0.72),
+      rgba(25, 35, 55, 0.72),
+      rgba(24, 40, 32, 0.72));
+  animation-delay: -10s;
+  transform-origin: 25% 100%;
+}
+
+.aurora:nth-child(3) {
+  background: linear-gradient(90deg,
+      rgba(24, 40, 32, 0.72),
+      rgba(45, 25, 35, 0.72),
+      rgba(40, 30, 50, 0.72),
+      rgba(25, 35, 55, 0.72));
+  animation-delay: -20s;
+  transform-origin: 75% 100%;
+}
+
+@keyframes aurora {
+  0% {
+    transform: rotate(0deg) scale(1.3);
+  }
+
+  50% {
+    transform: rotate(180deg) scale(1.6);
+  }
+
+  100% {
+    transform: rotate(360deg) scale(1.3);
+  }
+}
+
+/* Ajustes para modo claro */
+body.light-mode .aurora {
+  background: linear-gradient(45deg,
+      rgba(180, 150, 200, 0.4),
+      rgba(150, 180, 220, 0.4),
+      rgba(150, 220, 180, 0.4),
+      rgba(220, 150, 180, 0.4));
+}
+
+body.light-mode .aurora:nth-child(2) {
+  background: linear-gradient(-45deg,
+      rgba(220, 150, 180, 0.4),
+      rgba(180, 150, 200, 0.4),
+      rgba(150, 180, 220, 0.4),
+      rgba(150, 220, 180, 0.4));
+}
+
+body.light-mode .aurora:nth-child(3) {
+  background: linear-gradient(90deg,
+      rgba(150, 220, 180, 0.4),
+      rgba(220, 150, 180, 0.4),
+      rgba(180, 150, 200, 0.4),
+      rgba(150, 180, 220, 0.4));
+}

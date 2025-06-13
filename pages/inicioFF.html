@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inicio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link type="text/css" rel="stylesheet" href="../css/hoja-estilo.css" />
+  <link type="text/css" rel="stylesheet" href="../css/light-mode.css" id="light-mode-css" disabled />
+  <link type="text/css" rel="stylesheet" href="../css/aurora.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../JScripts/Lenguaje.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Contenedor Aurora -->
+  <div class="aurora-container">
+    <div class="aurora"></div>
+    <div class="aurora"></div>
+    <div class="aurora"></div>
+  </div>
+  <div class="content">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <div class="logo">
+          <img src="../imagenes/export.png" alt="Logo" onclick="this.classList.toggle('pirouette')" />
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Iconos móviles -->
+        <div class="mobile-icons d-flex d-lg-none">
+          <button type="button" class="btn btn-link" onclick="toggleCard('contactoModal')">
+            <i class="fas fa-phone"></i>
+          </button>
+          <button type="button" class="btn btn-link" onclick="toggleCard('softskillsModal')">
+            <i class="fas fa-bullseye"></i>
+          </button>
+          <button type="button" class="btn btn-link" onclick="toggleCard('acercaModal')">
+            <i class="fas fa-user"></i>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="nav-links navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="../pages/inicioFF.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#paginas-web">Proyectos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#certificaciones">Certificaciones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="toggleCard('softskillsModal')" href="javascript:void(0)" data-lang="softskills">Soft Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="toggleCard('acercaModal')" href="javascript:void(0)" data-lang="acerca">Acerca de mí...</a>
+            </li>
+          </ul>
+          <div class="nav-actions d-flex align-items-center">
+
+            <div class="d-flex align-items-center">
+              <button class="dark-mode-toggle me-2" onclick="toggleDarkMode()">☀️</button>
+              <select class="lang-select">
+                <option>ES</option>
+                <option>EN</option>
+                <option>FR</option>
+                <option>DE</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Línea divisoria bajo navbar -->
+    <hr style="border: none; border-top: 1.5px solid #222; margin: 0" />
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="container">
+        <h1 lang="es">¡Bienvenido a FFianquetto Projects!</h1>
+        <p class="hero-subtitle">
+          Aquí podrás explorar distintos proyectos de mi autoría y algunos en
+          colaboración con otros artistas y desarrolladores.
+        </p>
+        <div class="container-fluid px-0">
+          <div class="row g-0">
+            <div class="col-12 mb-5">
+              <div class="row">
+                <div class="col-12">
+                  <div class="card card-purple w-100 h-100" id="paginas-web">
+                    <div class="container-fluid">
+                      <div class="row g-0">
+                        <div class="col-12 col-sm-2 text-center py-3">
+                          <span class="card-icon">🌐</span>
+                        </div>
+                        <div class="col-12 col-sm-6 py-3">
+                          <h3 data-lang="web_title">Páginas Web</h3>
+                          <p data-lang="web_desc">Descubre algunas páginas web que he creado.</p>
+                          <ul class="project-list">
+                            <li onclick="toggleProjectCard('zomboyCard')" data-lang="zomboy_list">ZomboyShop-ReDesign
+                            </li>
+                            <li onclick="toggleProjectCard('artvlogCard')" data-lang="artvlog_list">ArtVlog</li>
+                            <li onclick="toggleProjectCard('ec2Card')" data-lang="ec2_list">Contenedor en EC2 - AWS</li>
+                          </ul>
+                        </div>
+                        <div class="col-12 col-sm-4 py-3">
+                          <div class="card-image h-100">
+                            <img src="../imagenesP/ZomboyWeb.png" alt="ZomboyShop Web Design" class="img-zomboy" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <div class="card-cell-c" id="contactoModal">
+                    <button class="card-close" onclick="closeProjectCard('contactoModal')">×</button>
+                    <div class="container-fluid">
+                      <div class="row g-0">
+                        <div class="col-12 text-center py-2">
+                          <span class="card-icon">📱</span>
+                          <h4 data-lang="contacto_title">Contacto</h4>
+                        </div>
+                        <div class="col-12 py-3">
+                          <ul class="contact-list">
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:fernandocancino2004@gmail.com"
+                                class="contact-link">fernandocancino2004@gmail.com</a></li>
+                            <li><i class="fas fa-phone"></i> <span>+52 81 1234 5678</span></li>
+                            <li>
+                              <i class="fab fa-linkedin"></i>
+                              <a href="https://www.linkedin.com/in/fernando-a-cancino-cuenca-19bb9a313/" class="contact-link"
+                                target="_blank">LinkedIn</a>
+                            </li>
+
+                            <li><i class="fab fa-github"></i> <a href="https://github.com/FFianquetto"
+                                class="contact-link" target="_blank">GitHub</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <div class="card card-cell-h w-100 h-100" id="softskillsModal">
+                    <button class="card-close" onclick="closeProjectCard('softskillsModal')">×</button>
+                    <div class="container-fluid">
+                      <div class="row g-0">
+                        <div class="col-12 text-center py-3">
+                          <span class="card-icon">🎯</span>
+                          <h4 data-lang="soft_skills">Habilidades</h4>
+                        </div>
+                        <div class="col-12 py-3">
+                          <ul class="contact-list">
+                            <li><i class="fas fa-language"></i> <span data-lang="idiomas">Español, Inglés, Alemán</span>
+                            </li>
+                            <li><i class="fas fa-code"></i> <span data-lang="organización">Buenas prácticas de
+                                desarrollo</span></li>
+                            <li><i class="fas fa-music"></i> <span data-lang="musica">Conocimientos musicales</span>
+                            </li>
+                            <li><i class="fas fa-camera"></i> <span data-lang="fotografia">Conocimientos en
+                                fotografía</span></li>
+                            <li><i class="fas fa-comments"></i> <span data-lang="orador">Buen orador</span></li>
+
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 mb-5">
+              <div class="card card-blue w-100 h-100">
+                <div class="container-fluid">
+                  <div class="row g-0">
+                    <div class="col-12 col-sm-2 text-center py-3">
+                      <span class="card-icon">🗄️</span>
+                    </div>
+                    <div class="col-12 col-sm-6 py-3">
+                      <h3 data-lang="db_title">Bases de datos</h3>
+                      <p data-lang="db_desc">Revisa algunas bases de datos que he trabajado.</p>
+                      <ul class="project-list">
+                        <li onclick="toggleProjectCard('hotelCard')" data-lang="hotel_list">Gestión de Hoteles con SQL
+                        </li>
+                        <li onclick="toggleProjectCard('nominasCard')" data-lang="nominas_list">Manejo de Nóminas con
+                          BigData - CassandraDb</li>
+                        <li onclick="toggleProjectCard('cadoCard')" data-lang="cado_list">CADO Mobile App Backend -
+                          MongoDB</li>
+                      </ul>
+                    </div>
+                    <div class="col-12 col-sm-4 py-3">
+                      <div class="card-image h-100">
+                        <img src="../imagenesP/HotelBd.png" alt="ZomboyShop Web Design" class="img-zomboy" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 mb-5">
+              <div class="row">
+                <div class="col-12">
+                  <div class="card card-pink w-100 h-100">
+                    <div class="container-fluid">
+                      <div class="row g-0">
+                        <div class="col-12 col-sm-2 text-center py-3">
+                          <span class="card-icon">🎮</span>
+                        </div>
+                        <div class="col-12 col-sm-6 py-3">
+                          <h3 data-lang="games_title">Videojuegos</h3>
+                          <p data-lang="games_desc">Sumérgete en los videojuegos que he desarrollado.</p>
+                          <ul class="project-list">
+                            <li onclick="toggleProjectCard('bolosCard')" data-lang="bolos_list">Bolos en Unity con
+                              Háptico incluido</li>
+                            <li onclick="toggleProjectCard('escapeCard')" data-lang="escape_list">Escape Salvaje en
+                              Unity</li>
+                            <li onclick="toggleProjectCard('candyCard')" data-lang="candy_list">Candy Collector con OGL
+                              Engine y C++</li>
+                            <li onclick="toggleProjectCard('snakeCard')" data-lang="snake_list">Snake Slaughter con OGL
+                              Engine y Lenguaje Ensamblador</li>
+                          </ul>
+                        </div>
+                        <div class="col-12 col-sm-4 py-3">
+                          <div class="card-image h-100">
+                            <img src="../imagenesP/EscapeGame.jpg" alt="ZomboyShop Web Design" class="img-zomboy" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <div class="card-cell-a w-100 h-100" id="acercaModal">
+                    <button class="card-close" onclick="closeProjectCard('acercaModal')">×</button>
+                    <div class="container-fluid">
+                      <div class="row g-0">
+                        <div class="col-12 text-center py-4">
+                          <span class="card-icon">👨‍💻</span>
+                          <h4 data-lang="acerca_de">Acerca de mí</h4>
+                        </div>
+                        <div class="col-12 text-center py-2">
+                          <img src="../imagenes/prop.jpg" alt="Foto de perfil" class="img-fluid rounded-circle"
+                            style="width: 200px; height: 200px; object-fit: cover;">
+                        </div>
+                        <div class="col-12 py-3">
+                          <ul class="contact-list">
+                            <li><i class="fas fa-graduation-cap"></i> <span data-lang="estudiante">Estudiante de 7mo
+                                semestre en Multimedia y Animación Digital</span></li>
+                            <li><i class="fas fa-university"></i> <span data-lang="universidad">Universidad Autónoma de
+                                Nuevo León</span></li>
+                            <li><i class="fas fa-map-marker-alt"></i> <span data-lang="ubicacion">Monterrey, Nuevo
+                                León</span></li>
+                            <li><i class="fas fa-heart"></i> <span data-lang="tecnologia">Apasionado por la tecnología y
+                                el desarrollo</span></li>
+                            <li><i class="fas fa-chess-knight"></i> <span data-lang="ajedrez">Ajedrecista para Tigres
+                                UANL</span></li>
+                            <li><i class="fab fa-bitcoin"></i> <span data-lang="crypto">Crypto Enthusiastic</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 mb-5">
+              <div class="card card-green w-100 h-100" id="certificaciones">
+                <div class="container-fluid">
+                  <div class="row g-0">
+                    <div class="col-12 col-sm-2 text-center py-3">
+                      <span class="card-icon">🏆</span>
+                    </div>
+                    <div class="col-12 col-sm-6 py-3">
+                      <h3 data-lang="cert_title">Certificados</h3>
+                      <p data-lang="cert_desc">Observa algunos certificados que he obtenido.</p>
+                      <ul class="project-list">
+                        <li onclick="toggleProjectCard('sydneyCard')" data-lang="sydney_list">Innovation Through Design
+                        </li>
+                        <li onclick="toggleProjectCard('googleCard')" data-lang="google_list">GoogleCloud Fundamentals
+                        </li>
+                        <li onclick="toggleProjectCard('georgiaCard')" data-lang="georgia_list">Introduction to User
+                          Experience Design</li>
+                        <li onclick="toggleProjectCard('tecCard')" data-lang="tec_list">Desarrollo rápido de productos
+                          innovadores para mercados emergentes</li>
+                        <li onclick="toggleProjectCard('unamCard')" data-lang="unam_list">Introducción a Data Science
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-12 col-sm-4 py-3">
+                      <div class="card-image h-100">
+                        <img src="../imagenesP/Certificate.png" alt="ZomboyShop Web Design" class="img-zomboy" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="mt-4">
+    <p class="copyright">All information copyright © Fernando A. Cancino</p>
+  </footer>
+
+  <!-- Card del Proyecto ZomboyShop -->
+  <div class="card-project" id="zomboyCard">
+    <button class="card-close" onclick="closeProjectCard('zomboyCard')">×</button>
+    <div class="container-fluid">
+      <div class="row g-0">
+        <div class="col-12 text-center py-2">
+          <span class="card-icon">🌐</span>
+          <h4 data-lang="zomboy_title">ZomboyShop-ReDesign</h4>
+        </div>
+        <div class="col-12 text-center py-2">
+          <img src="../imagenesP/ZomboyWeb.png" alt="ZomboyShop Web Design" class="img-fluid project-img">
+        </div>
+        <div class="col-12 py-3">
+          <p class="project-description" data-lang="zomboy_description">
+            Rediseño completo de la página web de ZomboyShop, implementando un diseño moderno y responsivo.
+            Características principales:
+          </p>
+          <ul class="project-features">
+            <li data-lang="zomboy_feature1">Diseño moderno y minimalista</li>
+            <li data-lang="zomboy_feature2">Interfaz responsiva para todos los dispositivos</li>
+            <li data-lang="zomboy_feature3">Optimización de rendimiento</li>
+            <li data-lang="zomboy_feature4">Integración de pasarela de pagos</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card del Proyecto ArtVlog -->
+  <div class="card-project" id="artvlogCard">
+    <button class="card-close" onclick="closeProjectCard('artvlogCard')">×</button>
+    <div class="container-fluid">
+      <div class="row g-0">
+        <div class="col-12 text-center py-2">
+          <span class="card-icon">🎨</span>
+          <h4 data-lang="artvlog_title">ArtVlog</h4>
+        </div>
+        <div class="col-12 text-center py-2">
+          <img src="../imagenesP/ArtWeb.png" alt="ArtVlog Platform" class="img-fluid project-img">
+        </div>
+        <div class="col-12 py-3">
+          <p class="project-description" data-lang="artvlog_description">
+            Plataforma de blog artístico que permite a los usuarios compartir y descubrir contenido creativo.
+            Características principales:
+          </p>
+          <ul class="project-features">
+            <li data-lang="artvlog_feature1">Sistema de gestión de contenido artístico</li>
+            <li data-lang="artvlog_feature2">Galería de imágenes interactiva</li>
+            <li data-lang="artvlog_feature3">Sistema de comentarios</li>
+            <li data-lang="artvlog_feature4">Perfiles de artistas personalizables</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card del Proyecto EC2 Container -->
+  <div class="card-project" id="ec2Card">
+    <button class="card-close" onclick="closeProjectCard('ec2Card')">×</button>
+    <div class="container-fluid">
+      <div class="row g-0">
+        <div class="col-12 text-center py-2">
+          <span class="card-icon">☁️</span>
+          <h4 data-lang="ec2_title">EC2 Container - AWS</h4>
+        </div>
+        <div class="col-12 text-center py-2">
+          <img src="../imagenesP/Amazon.png" alt="EC2 Container" class="img-fluid project-img">
+        </div>
+        <div class="col-12 py-3">
+          <p class="project-description" data-lang="ec2_description">
+            Implementación y gestión de contenedores en Amazon EC2 para aplicaciones web.
+            Características principales:
+          </p>
+          <ul class="project-features">
+            <li data-lang="ec2_feature1">Configuración de instancias EC2</li>
+            <li data-lang="ec2_feature2">Gestión de contenedores Docker</li>
+            <li data-lang="ec2_feature3">Automatización de despliegues</li>
+            <li data-lang="ec2_feature4">Monitoreo y escalabilidad</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card del Proyecto Gestión de Hotel SQL -->
+  <div class="card-project" id="hotelCard">
+    <button class="card-close" onclick="closeProjectCard('hotelCard')">×</button>
+    <div class="container-fluid">
+      <div class="row g-0">
+        <div class="col-12 text-center py-2">
+          <span class="card-icon">🏨</span>
+          <h4 data-lang="hotel_title">Gestión de Hoteles con SQL</h4>
+        </div>
+        <div class="col-12 text-center py-2">
+          <img src="../imagenesP/HotelBd.png" alt="Sistema de Gestión Hotelera" class="img-fluid project-img">
+        </div>
+        <div class="col-12 py-3">
+          <p class="project-description" data-lang="hotel_description">
+            Sistema de gestión hotelera implementado con SQL para el control eficiente de operaciones.
+            Características principales:
+          </p>
+          <ul class="project-features">
+            <li data-lang="hotel_feature1">Gestión de reservaciones y habitaciones</li>
+            <li data-lang="hotel_feature2">Control de clientes y personal</li>
+            <li data-lang="hotel_feature3">Reportes y estadísticas en tiempo real</li>
+            <li data-lang="hotel_feature4">Sistema de facturación integrado</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card del Proyecto Nóminas BigData -->
+  <div class="card-project" id="nominasCard">
+    <button class="card-close" onclick="closeProjectCard('nominasCard')">×</button>
+    <div class="container-fluid">
+      <div class="row g-0">
+        <div class="col-12 text-center py-2">
+          <span class="card-icon">💰</span>
+          <h4 data-lang="nominas_title">Manejo de Nóminas con BigData - CassandraDb</h4>
+        </div>
+        <div class="col-12 text-center py-2">
+          <img src="../imagenesP/Cassandra.png" alt="Sistema de Nóminas BigData" class="img-fluid project-img">
+        </div>
+        <div class="col-12 py-3">
+          <p class="project-description" data-lang="nominas_description">
+            Sistema de gestión de nóminas implementado con CassandraDB para el manejo eficiente de grandes volúmenes de
+            datos.
+            Características principales:
+          </p>
+          <ul class="project-features">
+            <li data-lang="nominas_feature1">Procesamiento de grandes volúmenes de datos</li>
+            <li data-lang="nominas_feature2">Alta disponibilidad y escalabilidad</li>
+            <li data-lang="nominas_feature3">Análisis predictivo de nóminas</li>
+            <li data-lang="nominas_feature4">Reportes en tiempo real</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card del Proyecto CADO Mobile -->
+  <div class="card-project" id="cadoCard">
+    <button class="card-close" onclick="closeProjectCard('cadoCard')">×</button>
+    <div class="container-fluid">
+      <div class="row g-0">
+        <div class="col-12 text-center py-2">
+          <span class="card-icon">📱</span>
+          <h4 data-lang="cado_title">CADO Mobile App Backend - MongoDB</h4>
+        </div>
+        <div class="col-12 text-center py-2">
+          <img src="../imagenesP/Mongo.png" alt="CADO Mobile Backend" class="img-fluid project-img">
+        </div>
+        <div class="col-12 py-3">
+          <p class="project-description" data-lang="cado_description">
+            Backend robusto para aplicación móvil CADO implementado con MongoDB para máxima flexibilidad y rendimiento.
+            Características principales:
+          </p>
+          <ul class="project-features">
+            <li data-lang="cado_feature1">Arquitectura NoSQL escalable</li>
+            <li data-lang="cado_feature2">API RESTful optimizada</li>
+            <li data-lang="cado_feature3">Sistema de autenticación seguro</li>
+            <li data-lang="cado_feature4">Sincronización en tiempo real</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card del Proyecto Bolos Unity -->
+  <div class="card-project" id="bolosCard">
+    <button class="card-close" onclick="closeProjectCard('bolosCard')">×</button>
+    <div class="container-fluid">
+      <div class="row g-0">
+        <div class="col-12 text-center py-2">
+          <span class="card-icon">🎳</span>
+          <h4 data-lang="bolos_title">Bolos en Unity con Háptico incluido</h4>
+        </div>
+        <div class="col-12 text-center py-2">
+          <img src="../imagenesP/Pinball.png" alt="Juego de Bolos" class="img-fluid project-img">
+        </div>
+        <div class="col-12 py-3">
+          <p class="project-description" data-lang="bolos_description">
+            Simulador de bolos desarrollado en Unity con retroalimentación háptica para una experiencia inmersiva.
+            Características principales:
+          </p>
+          <ul class="project-features">
+            <li data-lang="bolos_feature1">Física realista de bolos</li>
+            <li data-lang="bolos_feature2">Retroalimentación háptica avanzada</li>
+            <li data-lang="bolos_feature3">Múltiples modos de juego</li>
+            <li data-lang="bolos_feature4">Sistema de puntuación detallado</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card del Proyecto Escape Salvaje -->
+  <div class="card-project" id="escapeCard">
+    <button class="card-close" onclick="closeProjectCard('escapeCard')">×</button>
+    <div class="container-fluid">
+      <div class="row g-0">
+        <div class="col-12 text-center py-2">
+          <span class="card-icon">🏃</span>
+          <h4 data-lang="escape_title">Escape Salvaje en Unity</h4>
+        </div>
+        <div class="col-12 text-center py-2">
+          <img src="../imagenesP/EscapeGame.jpg" alt="Escape Salvaje" class="img-fluid project-img">
+        </div>
+        <div class="col-12 py-3">
+          <p class="project-description" data-lang="escape_description">
+            Juego de aventura y supervivencia desarrollado en Unity con mecánicas de escape y puzzle.
+            Características principales:
+          </p>
+          <ul class="project-features">
+            <li data-lang="escape_feature1">Mundo abierto explorable</li>
+            <li data-lang="escape_feature2">Sistema de puzzles complejos</li>
+            <li data-lang="escape_feature3">IA avanzada para enemigos</li>
+            <li data-lang="escape_feature4">Mecánicas de supervivencia</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card del Proyecto Candy Collector -->
+  <div class="card-project" id="candyCard">
+    <button class="card-close" onclick="closeProjectCard('candyCard')">×</button>
+    <div class="container-fluid">
+      <div class="row g-0">
+        <div class="col-12 text-center py-2">
+          <span class="card-icon">🍬</span>
+          <h4 data-lang="candy_title">Candy Collector con OGL Engine y C++</h4>
+        </div>
+        <div class="col-12 text-center py-2">
+          <img src="../imagenesP/CC.png" alt="Candy Collector" class="img-fluid project-img">
+        </div>
+        <div class="col-12 py-3">
+          <p class="project-description" data-lang="candy_description">
+            Juego de recolección desarrollado con OpenGL y C++ para demostrar habilidades de programación de bajo nivel.
+            Características principales:
+          </p>
+          <ul class="project-features">
+            <li data-lang="candy_feature1">Motor gráfico personalizado con OpenGL</li>
+            <li data-lang="candy_feature2">Optimización de rendimiento en C++</li>
+            <li data-lang="candy_feature3">Sistema de partículas personalizado</li>
+            <li data-lang="candy_feature4">Física de juego optimizada</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card del Proyecto Snake Slaughter -->
+  <div class="card-project" id="snakeCard">
+    <button class="card-close" onclick="closeProjectCard('snakeCard')">×</button>
+    <div class="container-fluid">
+      <div class="row g-0">
+        <div class="col-12 text-center py-2">
+          <span class="card-icon">🐍</span>
+          <h4 data-lang="snake_title">Snake Slaughter con OGL Engine y Lenguaje Ensamblador</h4>
+        </div>
+        <div class="col-12 text-center py-2">
+          <img src="../imagenesP/Snake.png" alt="Snake Slaughter" class="img-fluid project-img">
+        </div>
+        <div class="col-12 py-3">
+          <p class="project-description" data-lang="snake_description">
+            Reimaginación del clásico juego Snake implementada con OpenGL y optimizaciones en lenguaje ensamblador.
+            Características principales:
+          </p>
+          <ul class="project-features">
+            <li data-lang="snake_feature1">Optimizaciones en ensamblador</li>
+            <li data-lang="snake_feature2">Renderizado eficiente con OpenGL</li>
+            <li data-lang="snake_feature3">Mecánicas de juego mejoradas</li>
+            <li data-lang="snake_feature4">Sistema de puntuación avanzado</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card del Certificado Sydney -->
+  <div class="card-project" id="sydneyCard">
+    <button class="card-close" onclick="closeProjectCard('sydneyCard')">×</button>
+    <div class="container-fluid">
+      <div class="row g-0">
+        <div class="col-12 text-center py-2">
+          <span class="card-icon">🎓</span>
+          <h4 data-lang="sydney_title">Innovation Through Design - Sydney University</h4>
+        </div>
+        <div class="col-12 text-center py-2">
+          <img src="../imagenesP/CSydney.png" alt="Certificado Sydney" class="img-fluid project-img">
+        </div>
+        <div class="col-12 py-3">
+          <p class="project-description" data-lang="sydney_description">
+            Certificación en innovación y diseño de la Universidad de Sydney, enfocada en metodologías de diseño
+            centrado en el usuario.
+            Características principales:
+          </p>
+          <ul class="project-features">
+            <li data-lang="sydney_feature1">Metodologías de diseño innovador</li>
+            <li data-lang="sydney_feature2">Pensamiento crítico y creativo</li>
+            <li data-lang="sydney_feature3">Resolución de problemas complejos</li>
+            <li data-lang="sydney_feature4">Desarrollo de prototipos</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card del Certificado Google -->
+  <div class="card-project" id="googleCard">
+    <button class="card-close" onclick="closeProjectCard('googleCard')">×</button>
+    <div class="container-fluid">
+      <div class="row g-0">
+        <div class="col-12 text-center py-2">
+          <span class="card-icon">☁️</span>
+          <h4 data-lang="google_title">GoogleCloud Fundamentals - Google</h4>
+        </div>
+        <div class="col-12 text-center py-2">
+          <img src="../imagenesP/CGoogle.png" alt="Certificado Google" class="img-fluid project-img">
+        </div>
+        <div class="col-12 py-3">
+          <p class="project-description" data-lang="google_description">
+            Certificación en fundamentos de Google Cloud Platform, cubriendo los conceptos básicos de la nube y sus
+            servicios.
+            Características principales:
+          </p>
+          <ul class="project-features">
+            <li data-lang="google_feature1">Fundamentos de computación en la nube</li>
+            <li data-lang="google_feature2">Servicios de Google Cloud Platform</li>
+            <li data-lang="google_feature3">Seguridad y cumplimiento</li>
+            <li data-lang="google_feature4">Arquitectura de soluciones cloud</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card del Certificado Georgia Tech -->
+  <div class="card-project" id="georgiaCard">
+    <button class="card-close" onclick="closeProjectCard('georgiaCard')">×</button>
+    <div class="container-fluid">
+      <div class="row g-0">
+        <div class="col-12 text-center py-2">
+          <span class="card-icon">👥</span>
+          <h4 data-lang="georgia_title">Introduction to User Experience Design - Georgia Institute of Technology</h4>
+        </div>
+        <div class="col-12 text-center py-2">
+          <img src="../imagenesP/Certificate.png" alt="Certificado Georgia Tech" class="img-fluid project-img">
+        </div>
+        <div class="col-12 py-3">
+          <p class="project-description" data-lang="georgia_description">
+            Certificación en diseño de experiencia de usuario, enfocada en metodologías y prácticas de UX/UI.
+            Características principales:
+          </p>
+          <ul class="project-features">
+            <li data-lang="georgia_feature1">Principios de diseño UX/UI</li>
+            <li data-lang="georgia_feature2">Investigación de usuarios</li>
+            <li data-lang="georgia_feature3">Prototipado y wireframing</li>
+            <li data-lang="georgia_feature4">Evaluación de usabilidad</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card del Certificado Tec -->
+  <div class="card-project" id="tecCard">
+    <button class="card-close" onclick="closeProjectCard('tecCard')">×</button>
+    <div class="container-fluid">
+      <div class="row g-0">
+        <div class="col-12 text-center py-2">
+          <span class="card-icon">💡</span>
+          <h4 data-lang="tec_title">Desarrollo rápido de productos innovadores para mercados emergentes - Tec de Mty
+          </h4>
+        </div>
+        <div class="col-12 text-center py-2">
+          <img src="../imagenesP/CTec.png" alt="Certificado Tec" class="img-fluid project-img">
+        </div>
+        <div class="col-12 py-3">
+          <p class="project-description" data-lang="tec_description">
+            Certificación en desarrollo ágil de productos innovadores, enfocada en metodologías de innovación y
+            emprendimiento.
+            Características principales:
+          </p>
+          <ul class="project-features">
+            <li data-lang="tec_feature1">Metodologías ágiles de desarrollo</li>
+            <li data-lang="tec_feature2">Innovación y emprendimiento</li>
+            <li data-lang="tec_feature3">Análisis de mercados emergentes</li>
+            <li data-lang="tec_feature4">Gestión de proyectos innovadores</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card del Certificado UNAM -->
+  <div class="card-project" id="unamCard">
+    <button class="card-close" onclick="closeProjectCard('unamCard')">×</button>
+    <div class="container-fluid">
+      <div class="row g-0">
+        <div class="col-12 text-center py-2">
+          <span class="card-icon">📊</span>
+          <h4 data-lang="unam_title">Introducción a Data Science: Programación Estadística con R - UNAM</h4>
+        </div>
+        <div class="col-12 text-center py-2">
+          <img src="../imagenesP/CUnam.png" alt="Certificado UNAM" class="img-fluid project-img">
+        </div>
+        <div class="col-12 py-3">
+          <p class="project-description" data-lang="unam_description">
+            Certificación en ciencia de datos y programación estadística con R, enfocada en análisis de datos y
+            visualización.
+            Características principales:
+          </p>
+          <ul class="project-features">
+            <li data-lang="unam_feature1">Programación estadística con R</li>
+            <li data-lang="unam_feature2">Análisis exploratorio de datos</li>
+            <li data-lang="unam_feature3">Visualización de datos</li>
+            <li data-lang="unam_feature4">Modelos estadísticos básicos</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Overlay para el fondo oscuro -->
+  <div class="card-overlay" onclick="closeAllCards()"></div>
+
+  <script src="../JScripts/chatbot.js"></script>
+  <script>
+    // Función para alternar entre modo oscuro y claro
+    function toggleDarkMode() {
+      const lightModeCSS = document.getElementById('light-mode-css');
+      const darkModeToggle = document.querySelector('.dark-mode-toggle');
+      const body = document.body;
+
+      if (lightModeCSS.disabled) {
+        lightModeCSS.disabled = false;
+        darkModeToggle.textContent = '🌙';
+        body.classList.add('light-mode');
+        localStorage.setItem('darkMode', 'light');
+      } else {
+        lightModeCSS.disabled = true;
+        darkModeToggle.textContent = '☀️';
+        body.classList.remove('light-mode');
+        localStorage.setItem('darkMode', 'dark');
+      }
+
+      // Asegurar que las cards estén ocultas en móvil después de cambiar el modo
+      if (window.innerWidth <= 991.98) {
+        document.querySelectorAll('.card-project, .card-contact, .card-habilidades, .card-acerca').forEach(card => {
+          card.style.display = 'none';
+        });
+        document.querySelector('.card-overlay').style.display = 'none';
+      }
+    }
+
+    // Función para actualizar la clase de la tarjeta de contacto
+    function updateContactCardClass() {
+      const contactCard = document.getElementById('contactoModal');
+      if (window.innerWidth <= 991.98) {
+        contactCard.className = 'card-cell-c';
+        contactCard.style.display = 'none';
+      } else {
+        contactCard.className = 'card-contact';
+      }
+    }
+
+    // Función para actualizar la clase de la tarjeta de habilidades
+    function updateHabilidadesCardClass() {
+      const habilidadesCard = document.getElementById('softskillsModal');
+      if (window.innerWidth <= 991.98) {
+        habilidadesCard.className = 'card-cell-h';
+        habilidadesCard.style.display = 'none';
+      } else {
+        habilidadesCard.className = 'card-habilidades';
+      }
+    }
+
+    // Función para actualizar la clase de la tarjeta de acerca de mí
+    function updateAcercaCardClass() {
+      const acercaCard = document.getElementById('acercaModal');
+      if (window.innerWidth <= 991.98) {
+        acercaCard.className = 'card-cell-a';
+        acercaCard.style.display = 'none';
+      } else {
+        acercaCard.className = 'card-acerca';
+      }
+    }
+
+    // Llamar a las funciones al cargar la página
+    document.addEventListener('DOMContentLoaded', function () {
+      // Ocultar todas las tarjetas al cargar en móvil
+      if (window.innerWidth <= 991.98) {
+        document.querySelectorAll('.card-cell-c, .card-cell-h, .card-cell-a').forEach(card => {
+          card.style.display = 'none';
+        });
+      }
+      updateContactCardClass();
+      updateHabilidadesCardClass();
+      updateAcercaCardClass();
+    });
+
+    // Llamar a las funciones cuando cambie el tamaño de la ventana
+    window.addEventListener('resize', function () {
+      // Ocultar todas las tarjetas al cambiar a móvil
+      if (window.innerWidth <= 991.98) {
+        document.querySelectorAll('.card-cell-c, .card-cell-h, .card-cell-a').forEach(card => {
+          card.style.display = 'none';
+        });
+      }
+      updateContactCardClass();
+      updateHabilidadesCardClass();
+      updateAcercaCardClass();
+    });
+
+    // Función para cerrar todas las cards
+    function closeAllCards() {
+      const cards = document.querySelectorAll('.card-project');
+      const overlay = document.querySelector('.card-overlay');
+
+      cards.forEach(card => {
+        if (card.style.display === 'block') {
+          card.classList.add('closing');
+          setTimeout(() => {
+            card.style.display = 'none';
+            card.classList.remove('closing');
+          }, 300);
+        }
+      });
+
+      if (overlay) {
+        overlay.style.display = 'none';
+      }
+    }
+
+    // Función para mostrar/ocultar cards en móvil
+    function toggleCard(cardId) {
+      if (window.innerWidth <= 991.98) {
+        // En móvil: mostrar la tarjeta modal
+        document.getElementById(cardId).style.display = 'block';
+        document.querySelector('.card-overlay').style.display = 'block';
+      } else {
+        // En PC: ir a la sección
+        window.location.href = '#' + cardId;
+      }
+    }
+
+    // Función para mostrar la card del proyecto
+    function toggleProjectCard(cardId) {
+      const card = document.getElementById(cardId);
+      const overlay = document.querySelector('.card-overlay');
+
+      if (window.innerWidth <= 991.98) {
+        // En móvil, cerrar todas las cards antes de abrir una nueva
+        if (card.style.display === 'none' || card.style.display === '') {
+          closeAllCards();
+          if (overlay) {
+            overlay.style.display = 'block';
+          }
+          setTimeout(() => {
+            card.style.display = 'block';
+          }, 50);
+        } else {
+          closeProjectCard(cardId);
+        }
+      } else {
+        // En PC, solo manejar la card específica
+        if (card.style.display === 'none' || card.style.display === '') {
+          if (overlay) {
+            overlay.style.display = 'block';
+          }
+          card.style.display = 'block';
+        } else {
+          closeProjectCard(cardId);
+        }
+      }
+    }
+
+    // Función para cerrar la card del proyecto
+    function closeProjectCard(cardId) {
+      const card = document.getElementById(cardId);
+      const overlay = document.querySelector('.card-overlay');
+
+      if (card) {
+        card.classList.add('closing');
+        setTimeout(() => {
+          card.style.display = 'none';
+          card.classList.remove('closing');
+
+          // Solo ocultar el overlay si no hay más cards de proyecto visibles
+          if (overlay && window.innerWidth > 991.98) {
+            const visibleCards = document.querySelectorAll('.card-project[style*="display: block"]');
+            if (visibleCards.length === 0) {
+              overlay.style.display = 'none';
+            }
+          } else if (overlay) {
+            overlay.style.display = 'none';
+          }
+        }, 300);
+      }
+    }
+
+    // Agregar evento de clic al overlay para cerrar las tarjetas
+    document.querySelector('.card-overlay').addEventListener('click', function (event) {
+      if (window.innerWidth <= 991.98) {
+        // Cerrar la tarjeta que esté visible
+        if (document.getElementById('contactoModal').style.display === 'block') {
+          closeProjectCard('contactoModal');
+        } else if (document.getElementById('softskillsModal').style.display === 'block') {
+          closeProjectCard('softskillsModal');
+        } else if (document.getElementById('acercaModal').style.display === 'block') {
+          closeProjectCard('acercaModal');
+        }
+      }
+    });
+
+    // Cerrar cards al presionar ESC
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && window.innerWidth > 991.98) {
+        const visibleCards = Array.from(document.querySelectorAll('.card-project[style*="display: block"]'));
+        if (visibleCards.length > 0) {
+          const lastCard = visibleCards[visibleCards.length - 1];
+          closeProjectCard(lastCard.id);
+        }
+      }
+    });
+
+    // Verificar preferencia guardada al cargar la página
+    document.addEventListener('DOMContentLoaded', function () {
+      const lightModeCSS = document.getElementById('light-mode-css');
+      const darkModeToggle = document.querySelector('.dark-mode-toggle');
+      const body = document.body;
+
+      // Verificar si hay una preferencia guardada
+      const savedTheme = localStorage.getItem('darkMode');
+      if (savedTheme) {
+        if (savedTheme === 'light') {
+          lightModeCSS.disabled = false;
+          darkModeToggle.textContent = '🌙';
+          body.classList.add('light-mode');
+        } else {
+          lightModeCSS.disabled = true;
+          darkModeToggle.textContent = '☀️';
+          body.classList.remove('light-mode');
+        }
+      } else {
+        // Si no hay preferencia guardada, iniciar en modo oscuro
+        lightModeCSS.disabled = true;
+        darkModeToggle.textContent = '☀️';
+        body.classList.remove('light-mode');
+        localStorage.setItem('darkMode', 'dark');
+      }
+    });
+
+    // Cerrar el menú hamburguesa al hacer clic en cualquier enlace o elemento
+    document.querySelectorAll('.nav-link, .dark-mode-toggle, .search-bar').forEach(element => {
+      element.addEventListener('click', function () {
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        if (navbarCollapse.classList.contains('show')) {
+          navbarCollapse.classList.remove('show');
+        }
+      });
+    });
+
+    // Para el selector de idioma, cerrar solo cuando se selecciona una opción
+    document.querySelector('.lang-select').addEventListener('change', function () {
+      const navbarCollapse = document.querySelector('.navbar-collapse');
+      if (navbarCollapse.classList.contains('show')) {
+        navbarCollapse.classList.remove('show');
+      }
+    });
+
+    // Ocultar las cards en móvil al cargar la página
+    document.addEventListener('DOMContentLoaded', function () {
+      if (window.innerWidth <= 991.98) {
+        document.querySelectorAll('.card-project').forEach(card => {
+          card.style.display = 'none';
+        });
+      }
+    });
+
+    // Manejar cambios de tamaño de ventana
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 991.98) {
+        // En PC, siempre mostrar las cards de información
+        document.querySelectorAll('.card-contact, .card-habilidades, .card-acerca').forEach(card => {
+          card.style.display = 'block';
+        });
+        document.querySelector('.card-overlay').style.display = 'none';
+      }
+      else {
+        // En móvil
+        document.querySelectorAll('.card-project, .card-contact, .card-habilidades, .card-acerca').forEach(card => {
+          card.style.display = 'none';
+        });
+        document.querySelector('.card-overlay').style.display = 'none';
+      }
+    });
+  </script>
+</body>
+
+</html>

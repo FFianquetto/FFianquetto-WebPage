@@ -13,6 +13,10 @@ const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY
 });
 
+if (!process.env.OPENAI_API_KEY) {
+    console.error('Error: OPENAI_API_KEY no está definida en el archivo .env');
+}
+
 // Cargar respuestas predefinidas
 const responsesPath = path.join(__dirname, 'responses.json');
 let responses = {};
@@ -46,7 +50,10 @@ app.post('/api/chat', async (req, res) => {
 
         res.json({ response: completion.choices[0].message.content });
     } catch (error) {
-        console.error('Error:', error);
+        console.error('Error al procesar la solicitud:', error.message);
+        if (error.stack) {
+            console.error(error.stack);
+        }
         res.status(500).json({ error: 'Error al procesar la solicitud' });
     }
 });

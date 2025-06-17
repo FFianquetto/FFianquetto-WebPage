@@ -2214,28 +2214,3 @@ html {
         width: 240px;
     }
 }
-
-/* 8K (7680x4320) */
-@media (min-width: 7680px) {
-    .card {
-        max-width: 76%;
-        margin-left: -90px;
-    }
-
-    .card-image {
-        margin-left: -200px;
-        min-width: 480px;
-    }
-
-    .nav-links li a {
-        font-size: 25px;
-    }
-
-    .nav-links {
-        gap: 36px;
-    }
-
-    .search-bar {
-        width: 250px;
-    }
-}

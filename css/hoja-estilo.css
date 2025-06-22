@@ -572,6 +572,7 @@ html {
         margin-right: 0;
         margin-left: 0;
         padding: 0 20px;
+        text-align: center;
     }
 
     .card p {
@@ -580,6 +581,7 @@ html {
         margin-right: 0;
         margin-left: 0;
         padding: 0 20px;
+        text-align: center;
     }
 
     .project-list {
@@ -587,6 +589,7 @@ html {
         padding-right: 0;
         margin-left: 0;
         padding: 0 20px;
+        text-align: center;
     }
 
     .card-image {

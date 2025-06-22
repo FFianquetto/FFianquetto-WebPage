@@ -572,7 +572,6 @@ html {
         margin-right: 0;
         margin-left: 0;
         padding: 0 20px;
-        text-align: center;
     }
 
     .card p {
@@ -581,7 +580,6 @@ html {
         margin-right: 0;
         margin-left: 0;
         padding: 0 20px;
-        text-align: center;
     }
 
     .project-list {
@@ -589,7 +587,6 @@ html {
         padding-right: 0;
         margin-left: 0;
         padding: 0 20px;
-        text-align: center;
     }
 
     .card-image {
@@ -1852,6 +1849,11 @@ html {
 /* Mediano (md) - Tablets */
 @media (min-width: 768px) and (max-width: 991.98px) {
 
+    .card h3,
+    .card p,
+    .project-list {
+        text-align: center;
+    }
 
     .card {
         max-width: 90%;

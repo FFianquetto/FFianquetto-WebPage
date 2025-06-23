@@ -512,6 +512,11 @@ html {
         justify-content: space-between;
         padding: 0 10px;
     }
+    
+    .card h3,
+    .card p {
+        text-align: center;
+    }
 
     .logo {
         order: 3;
@@ -577,8 +582,8 @@ html {
     .card p {
         margin-bottom: 3px;
         font-size: 1.5rem;
-        margin-right: 0;
-        margin-left: 0;
+        margin-right: auto;
+        margin-left: auto;
         padding: 0 20px;
     }
 
@@ -587,6 +592,9 @@ html {
         padding-right: 0;
         margin-left: 0;
         padding: 0 20px;
+        width: -moz-fit-content;
+        width: fit-content;
+        margin: 3px auto 0 auto;
     }
 
     .card-image {
@@ -1849,11 +1857,6 @@ html {
 /* Mediano (md) - Tablets */
 @media (min-width: 768px) and (max-width: 991.98px) {
 
-    .card h3,
-    .card p,
-    .project-list {
-        text-align: center;
-    }
 
     .card {
         max-width: 90%;

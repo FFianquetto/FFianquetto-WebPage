@@ -9,8 +9,8 @@
   --shadow-color: rgba(0, 0, 0, 0.1);
   --card-bg: #ffffff;
   --navbar-bg: #1a1a1a;
-  --footer-bg: #e4e6eb;
-  --footer-text: #2c3e50;
+  --footer-bg: #000000;
+  --footer-text: #8be8fdd4;
 }
 
 /* Estilos base que se aplican cuando el modo claro está activo */

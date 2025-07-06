@@ -1467,7 +1467,19 @@ body.light-mode {
   .card-contact,
   .card-habilidades,
   .card-acerca {
-    display: none !important;
+    display: none;
+  }
+  .card-contact.show,
+  .card-habilidades.show,
+  .card-acerca.show {
+    display: block !important;
+    overflow: auto;
+    scrollbar-width: none; /* Firefox */
+  }
+  .card-contact.show::-webkit-scrollbar,
+  .card-habilidades.show::-webkit-scrollbar,
+  .card-acerca.show::-webkit-scrollbar {
+    display: none; /* Chrome, Safari y Opera */
   }
   .card-contact-mobile,
   .card-habilidades-mobile,

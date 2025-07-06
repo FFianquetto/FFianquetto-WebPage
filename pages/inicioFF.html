@@ -117,7 +117,7 @@
             </div>
             <div class="card-image-section">
               <div class="card-image">
-                <img src="../imagenesP/ZomboyWeb.png" alt="ZomboyShop Web Design" />
+                <img src="../imagenesP/ZomboyWeb.png" alt="ZomboyShop Web Design" onclick="openImageModal(this.src, this.alt)">
               </div>
             </div>
           </div>
@@ -140,7 +140,7 @@
             </div>
             <div class="card-image-section">
               <div class="card-image">
-                <img src="../imagenesP/HotelBd.png" alt="Sistema de Gestión Hotelera" />
+                <img src="../imagenesP/HotelBd.png" alt="Sistema de Gestión Hotelera" onclick="openImageModal(this.src, this.alt)">
               </div>
             </div>
           </div>
@@ -164,7 +164,7 @@
             </div>
             <div class="card-image-section">
               <div class="card-image">
-                <img src="../imagenesP/EscapeGame.jpg" alt="Escape Salvaje" />
+                <img src="../imagenesP/EscapeGame.jpg" alt="Escape Salvaje" onclick="openImageModal(this.src, this.alt)">
               </div>
             </div>
           </div>
@@ -189,7 +189,7 @@
             </div>
             <div class="card-image-section">
               <div class="card-image">
-                <img src="../imagenesP/Certificate.png" alt="Certificados" />
+                <img src="../imagenesP/Certificate.png" alt="Certificados" onclick="openImageModal(this.src, this.alt)">
               </div>
             </div>
           </div>
@@ -200,7 +200,6 @@
       <div class="side-cards">
         <!-- Card Contacto -->
         <div class="card-contact" id="contactoModal" style="display:none;">
-          <button class="card-close" onclick="closeProjectCard('contactoModal')">×</button>
           <span class="card-icon">📱</span>
           <h4 data-lang="contacto_title">Contacto</h4>
           <ul class="contact-list">
@@ -213,7 +212,6 @@
 
         <!-- Card Habilidades -->
         <div class="card-habilidades" id="softskillsModal">
-          <button class="card-close" onclick="closeProjectCard('softskillsModal')">×</button>
           <span class="card-icon">🎯</span>
           <h4 data-lang="soft_skills">Habilidades</h4>
           <ul class="contact-list">
@@ -227,7 +225,6 @@
 
         <!-- Card Acerca de mí -->
         <div class="card-acerca" id="acercaModal">
-          <button class="card-close" onclick="closeProjectCard('acercaModal')">×</button>
           <span class="card-icon">👨‍💻</span>
           <h4 data-lang="acerca_de">Acerca de mí</h4>
           <div style="text-align: center; margin: 20px 0;">
@@ -257,7 +254,7 @@
     <button class="card-close" onclick="closeProjectCard('zomboyCard')">×</button>
     <span class="card-icon">🌐</span>
     <h4 data-lang="zomboy_title">ZomboyShop-ReDesign</h4>
-    <img src="../imagenesP/ZomboyWeb.png" alt="ZomboyShop Web Design" class="project-img">
+    <img src="../imagenesP/ZomboyWeb.png" alt="ZomboyShop Web Design" class="project-img" onclick="openImageModal(this.src, this.alt)">
     <p class="project-description" data-lang="zomboy_description">
       Rediseño completo de la página web de ZomboyShop, implementando un diseño moderno y responsivo.
       Características principales:
@@ -275,7 +272,7 @@
     <button class="card-close" onclick="closeProjectCard('artvlogCard')">×</button>
     <span class="card-icon">🎨</span>
     <h4 data-lang="artvlog_title">ArtVlog</h4>
-    <img src="../imagenesP/ArtWeb.png" alt="ArtVlog Platform" class="project-img">
+    <img src="../imagenesP/ArtWeb.png" alt="ArtVlog Platform" class="project-img" onclick="openImageModal(this.src, this.alt)">
     <p class="project-description" data-lang="artvlog_description">
       Plataforma de blog artístico que permite a los usuarios compartir y descubrir contenido creativo.
       Características principales:
@@ -293,7 +290,7 @@
     <button class="card-close" onclick="closeProjectCard('ec2Card')">×</button>
     <span class="card-icon">☁️</span>
     <h4 data-lang="ec2_title">EC2 Container - AWS</h4>
-    <img src="../imagenesP/Amazon.png" alt="EC2 Container" class="project-img">
+    <img src="../imagenesP/Amazon.png" alt="EC2 Container" class="project-img" onclick="openImageModal(this.src, this.alt)">
     <p class="project-description" data-lang="ec2_description">
       Implementación y gestión de contenedores en Amazon EC2 para aplicaciones web.
       Características principales:
@@ -311,7 +308,7 @@
     <button class="card-close" onclick="closeProjectCard('hotelCard')">×</button>
     <span class="card-icon">🏨</span>
     <h4 data-lang="hotel_title">Gestión de Hoteles con SQL</h4>
-    <img src="../imagenesP/HotelBd.png" alt="Sistema de Gestión Hotelera" class="project-img">
+    <img src="../imagenesP/HotelBd.png" alt="Sistema de Gestión Hotelera" class="project-img" onclick="openImageModal(this.src, this.alt)">
     <p class="project-description" data-lang="hotel_description">
       Sistema de gestión hotelera implementado con SQL para el control eficiente de operaciones.
       Características principales:
@@ -329,7 +326,7 @@
     <button class="card-close" onclick="closeProjectCard('nominasCard')">×</button>
     <span class="card-icon">💰</span>
     <h4 data-lang="nominas_title">Manejo de Nóminas con BigData - CassandraDb</h4>
-    <img src="../imagenesP/Cassandra.png" alt="Sistema de Nóminas BigData" class="project-img">
+    <img src="../imagenesP/Cassandra.png" alt="Sistema de Nóminas BigData" class="project-img" onclick="openImageModal(this.src, this.alt)">
     <p class="project-description" data-lang="nominas_description">
       Sistema de gestión de nóminas implementado con CassandraDB para el manejo eficiente de grandes volúmenes de datos.
       Características principales:
@@ -347,7 +344,7 @@
     <button class="card-close" onclick="closeProjectCard('cadoCard')">×</button>
     <span class="card-icon">📱</span>
     <h4 data-lang="cado_title">CADO Mobile App Backend - MongoDB</h4>
-    <img src="../imagenesP/Mongo.png" alt="CADO Mobile Backend" class="project-img">
+    <img src="../imagenesP/Mongo.png" alt="CADO Mobile Backend" class="project-img" onclick="openImageModal(this.src, this.alt)">
     <p class="project-description" data-lang="cado_description">
       Backend robusto para aplicación móvil CADO implementado con MongoDB para máxima flexibilidad y rendimiento.
       Características principales:
@@ -365,7 +362,7 @@
     <button class="card-close" onclick="closeProjectCard('bolosCard')">×</button>
     <span class="card-icon">🎳</span>
     <h4 data-lang="bolos_title">Bolos en Unity con Háptico incluido</h4>
-    <img src="../imagenesP/Pinball.png" alt="Juego de Bolos" class="project-img">
+    <img src="../imagenesP/Pinball.png" alt="Juego de Bolos" class="project-img" onclick="openImageModal(this.src, this.alt)">
     <p class="project-description" data-lang="bolos_description">
       Simulador de bolos desarrollado en Unity con retroalimentación háptica para una experiencia inmersiva.
       Características principales:
@@ -383,7 +380,7 @@
     <button class="card-close" onclick="closeProjectCard('escapeCard')">×</button>
     <span class="card-icon">🏃</span>
     <h4 data-lang="escape_title">Escape Salvaje en Unity</h4>
-    <img src="../imagenesP/EscapeGame.jpg" alt="Escape Salvaje" class="project-img">
+    <img src="../imagenesP/EscapeGame.jpg" alt="Escape Salvaje" class="project-img" onclick="openImageModal(this.src, this.alt)">
     <p class="project-description" data-lang="escape_description">
       Juego de aventura y supervivencia desarrollado en Unity con mecánicas de escape y puzzle.
       Características principales:
@@ -401,7 +398,7 @@
     <button class="card-close" onclick="closeProjectCard('candyCard')">×</button>
     <span class="card-icon">🍬</span>
     <h4 data-lang="candy_title">Candy Collector con OGL Engine y C++</h4>
-    <img src="../imagenesP/CC.png" alt="Candy Collector" class="project-img">
+    <img src="../imagenesP/CC.png" alt="Candy Collector" class="project-img" onclick="openImageModal(this.src, this.alt)">
     <p class="project-description" data-lang="candy_description">
       Juego de recolección desarrollado con OpenGL y C++ para demostrar habilidades de programación de bajo nivel.
       Características principales:
@@ -419,7 +416,7 @@
     <button class="card-close" onclick="closeProjectCard('snakeCard')">×</button>
     <span class="card-icon">🐍</span>
     <h4 data-lang="snake_title">Snake Slaughter con OGL Engine y Lenguaje Ensamblador</h4>
-    <img src="../imagenesP/Snake.png" alt="Snake Slaughter" class="project-img">
+    <img src="../imagenesP/Snake.png" alt="Snake Slaughter" class="project-img" onclick="openImageModal(this.src, this.alt)">
     <p class="project-description" data-lang="snake_description">
       Reimaginación del clásico juego Snake implementada con OpenGL y optimizaciones en lenguaje ensamblador.
       Características principales:
@@ -437,7 +434,7 @@
     <button class="card-close" onclick="closeProjectCard('sydneyCard')">×</button>
     <span class="card-icon">🎓</span>
     <h4 data-lang="sydney_title">Innovation Through Design - Sydney University</h4>
-    <img src="../imagenesP/CSydney.png" alt="Certificado Sydney" class="project-img">
+    <img src="../imagenesP/CSydney.png" alt="Certificado Sydney" class="project-img" onclick="openImageModal(this.src, this.alt)">
     <p class="project-description" data-lang="sydney_description">
       Certificación en innovación y diseño de la Universidad de Sydney, enfocada en metodologías de diseño centrado en el usuario.
       Características principales:
@@ -455,7 +452,7 @@
     <button class="card-close" onclick="closeProjectCard('googleCard')">×</button>
     <span class="card-icon">☁️</span>
     <h4 data-lang="google_title">GoogleCloud Fundamentals - Google</h4>
-    <img src="../imagenesP/CGoogle.png" alt="Certificado Google" class="project-img">
+    <img src="../imagenesP/CGoogle.png" alt="Certificado Google" class="project-img" onclick="openImageModal(this.src, this.alt)">
     <p class="project-description" data-lang="google_description">
       Certificación en fundamentos de Google Cloud Platform, cubriendo los conceptos básicos de la nube y sus servicios.
       Características principales:
@@ -473,7 +470,7 @@
     <button class="card-close" onclick="closeProjectCard('georgiaCard')">×</button>
     <span class="card-icon">👥</span>
     <h4 data-lang="georgia_title">Introduction to User Experience Design - Georgia Institute of Technology</h4>
-    <img src="../imagenesP/Certificate.png" alt="Certificado Georgia Tech" class="project-img">
+    <img src="../imagenesP/Certificate.png" alt="Certificado Georgia Tech" class="project-img" onclick="openImageModal(this.src, this.alt)">
     <p class="project-description" data-lang="georgia_description">
       Certificación en diseño de experiencia de usuario, enfocada en metodologías y prácticas de UX/UI.
       Características principales:
@@ -491,7 +488,7 @@
     <button class="card-close" onclick="closeProjectCard('tecCard')">×</button>
     <span class="card-icon">💡</span>
     <h4 data-lang="tec_title">Desarrollo rápido de productos innovadores para mercados emergentes - Tec de Mty</h4>
-    <img src="../imagenesP/CTec.png" alt="Certificado Tec" class="project-img">
+    <img src="../imagenesP/CTec.png" alt="Certificado Tec" class="project-img" onclick="openImageModal(this.src, this.alt)">
     <p class="project-description" data-lang="tec_description">
       Certificación en desarrollo ágil de productos innovadores, enfocada en metodologías de innovación y emprendimiento.
       Características principales:
@@ -509,7 +506,7 @@
     <button class="card-close" onclick="closeProjectCard('unamCard')">×</button>
     <span class="card-icon">📊</span>
     <h4 data-lang="unam_title">Introducción a Data Science: Programación Estadística con R - UNAM</h4>
-    <img src="../imagenesP/CUnam.png" alt="Certificado UNAM" class="project-img">
+    <img src="../imagenesP/CUnam.png" alt="Certificado UNAM" class="project-img" onclick="openImageModal(this.src, this.alt)">
     <p class="project-description" data-lang="unam_description">
       Certificación en ciencia de datos y programación estadística con R, enfocada en análisis de datos y visualización.
       Características principales:
@@ -525,20 +522,13 @@
   <!-- Overlay para el fondo oscuro -->
   <div class="card-overlay" onclick="closeAllCards()"></div>
 
-  <!-- Card Contacto Móvil -->
-  <div class="card-contact-mobile" id="contactoModalMobile" style="display:none;">
-    <button class="card-close" onclick="closeProjectCard('contactoModalMobile')">×</button>
-    <!-- ...contenido... -->
-  </div>
-  <!-- Card Habilidades Móvil -->
-  <div class="card-habilidades-mobile" id="softskillsModalMobile" style="display:none;">
-    <button class="card-close" onclick="closeProjectCard('softskillsModalMobile')">×</button>
-    <!-- ...contenido... -->
-  </div>
-  <!-- Card Acerca de mí Móvil -->
-  <div class="card-acerca-mobile" id="acercaModalMobile" style="display:none;">
-    <button class="card-close" onclick="closeProjectCard('acercaModalMobile')">×</button>
-    <!-- ...contenido... -->
+  <!-- Modal para imágenes -->
+  <div id="imageModal" class="image-modal">
+    <div class="image-modal-content">
+      <span class="image-modal-close" onclick="closeImageModal()">&times;</span>
+      <img id="modalImage" class="image-modal-img" alt="Imagen ampliada">
+      <div id="modalCaption" class="image-modal-caption"></div>
+    </div>
   </div>
 
   <script>
@@ -604,10 +594,15 @@
 
     // Llamar a las funciones al cargar la página
     document.addEventListener('DOMContentLoaded', function () {
-      // Ocultar todas las tarjetas al cargar en móvil
       if (window.innerWidth <= 991.98) {
+        // En móvil, ocultar las cards laterales
         document.querySelectorAll('.card-cell-c, .card-cell-h, .card-cell-a').forEach(card => {
           card.style.display = 'none';
+        });
+      } else {
+        // En pantalla completa, mostrar las cards laterales
+        document.querySelectorAll('.card-contact, .card-habilidades, .card-acerca').forEach(card => {
+          card.style.display = 'block';
         });
       }
       updateContactCardClass();
@@ -618,10 +613,16 @@
     // Llamar a las funciones cuando cambie el tamaño de la ventana
     window.addEventListener('resize', function () {
       if (window.innerWidth > 991.98) {
+        // En pantalla completa, mostrar las cards laterales
         document.querySelectorAll('.card-contact, .card-habilidades, .card-acerca').forEach(card => {
           card.style.display = 'block';
         });
         document.querySelector('.card-overlay').style.display = 'none';
+      } else {
+        // En móvil, ocultar las cards laterales
+        document.querySelectorAll('.card-contact, .card-habilidades, .card-acerca').forEach(card => {
+          card.style.display = 'none';
+        });
       }
     });
 
@@ -798,6 +799,46 @@
           card.style.display = 'block';
         });
         document.querySelector('.card-overlay').style.display = 'none';
+      } else {
+        // En móvil, ocultar las cards laterales
+        document.querySelectorAll('.card-contact, .card-habilidades, .card-acerca').forEach(card => {
+          card.style.display = 'none';
+        });
+      }
+    });
+
+    // Función para abrir el modal de imagen
+    function openImageModal(imageSrc, imageAlt) {
+      const modal = document.getElementById('imageModal');
+      const modalImage = document.getElementById('modalImage');
+      const modalCaption = document.getElementById('modalCaption');
+      
+      modalImage.src = imageSrc;
+      modalImage.alt = imageAlt;
+      modalCaption.textContent = imageAlt;
+      
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Función para cerrar el modal de imagen
+    function closeImageModal() {
+      const modal = document.getElementById('imageModal');
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    // Cerrar modal al hacer clic en el overlay
+    document.getElementById('imageModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeImageModal();
+      }
+    });
+
+    // Cerrar modal con ESC
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeImageModal();
       }
     });
   </script>

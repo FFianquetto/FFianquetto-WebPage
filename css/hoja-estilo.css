@@ -296,29 +296,35 @@ body {
     justify-content: center;
     min-width: 200px;
     max-width: 420px;
+    min-height: 240px;
+    max-height: 360px;
 }
 
 .card-image {
-    border-radius: 15px;
-    overflow: hidden;
+    border-radius: 10px;
+    overflow: visible;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    width: 100%;
-    height: 250px;
+    width: 105%;
+    height: 360px;
+    padding: 10px;
 }
 
 .card-image img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 80%;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .card:hover .card-image img {
-    transform: scale(1.05);
+    transform: scale(1.025);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
 
 /* Estilos específicos para cada tarjeta */
@@ -348,6 +354,14 @@ body {
     color: #a259ff;
 }
 
+.card-purple .card-image img {
+    border-color: rgba(162, 89, 255, 0.6);
+}
+
+.card-purple:hover .card-image img {
+    border-color: rgba(162, 89, 255, 1);
+}
+
 .card-blue {
     border: 2px solid #3772ff;
     box-shadow: 0 0 10px rgba(55, 114, 255, 0.1);
@@ -372,6 +386,14 @@ body {
 
 .card-blue .project-list li:before {
     color: #3772ff;
+}
+
+.card-blue .card-image img {
+    border-color: rgba(55, 114, 255, 0.6);
+}
+
+.card-blue:hover .card-image img {
+    border-color: rgba(55, 114, 255, 1);
 }
 
 .card-pink {
@@ -400,6 +422,14 @@ body {
     color: #ff4ecd;
 }
 
+.card-pink .card-image img {
+    border-color: rgba(255, 78, 205, 0.6);
+}
+
+.card-pink:hover .card-image img {
+    border-color: rgba(255, 78, 205, 1);
+}
+
 .card-green {
     border: 2px solid #00ffa3;
     box-shadow: 0 0 10px rgba(0, 255, 163, 0.1);
@@ -424,6 +454,14 @@ body {
 
 .card-green .project-list li:before {
     color: #00ffa3;
+}
+
+.card-green .card-image img {
+    border-color: rgba(0, 255, 163, 0.6);
+}
+
+.card-green:hover .card-image img {
+    border-color: rgba(0, 255, 163, 1);
 }
 
 /* Cards laterales */
@@ -451,7 +489,10 @@ body {
     min-height: 345px;
     max-width: 345px;
     position: relative;
+    border: 2px solid transparent;
 }
+
+
 
 .card-contact {
     border: 1.7px solid #a259ff;
@@ -536,20 +577,32 @@ body {
 
 /* Efectos hover para cards laterales */
 .card-contact:hover {
-    border: 2.2px solid #a259ff;
-    box-shadow: 0 0 15px rgba(162, 89, 255, 0.5);
+    border: 2px solid #a259ff;
+    box-shadow: 
+        0 0 5px #a259ff,
+        0 0 10px #a259ff,
+        0 0 15px #a259ff,
+        0 0 20px #a259ff;
     transform: translateY(-2px);
 }
 
 .card-habilidades:hover {
-    border: 2.2px solid #3772ff;
-    box-shadow: 0 0 15px rgba(55, 114, 255, 0.5);
+    border: 2px solid #3772ff;
+    box-shadow: 
+        0 0 5px #3772ff,
+        0 0 10px #3772ff,
+        0 0 15px #3772ff,
+        0 0 20px #3772ff;
     transform: translateY(-2px);
 }
 
 .card-acerca:hover {
-    border: 2.2px solid #ff4ecd;
-    box-shadow: 0 0 15px rgba(255, 78, 205, 0.5);
+    border: 2px solid #ff4ecd;
+    box-shadow: 
+        0 0 5px #ff4ecd,
+        0 0 10px #ff4ecd,
+        0 0 15px #ff4ecd,
+        0 0 20px #ff4ecd;
     transform: translateY(-2px);
 }
 
@@ -684,22 +737,38 @@ footer
 /* Botón de cierre */
 .card-close {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 12px;
+    right: 12px;
     background: none;
     border: none;
     color: #fff;
-    font-size: 2.5rem;
+    font-size: 3.3rem;
     cursor: pointer;
     padding: 0;
     line-height: 1;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1060;
     transition: all 0.3s ease;
+}
+
+/* Ocultar X de contacto en desktop */
+@media (min-width: 992px) {
+    .card-contact .card-close {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        position: absolute !important;
+        left: -9999px !important;
+    }
 }
 
 .card-close:hover {
@@ -719,6 +788,94 @@ footer
     z-index: 1040;
     backdrop-filter: blur(3px);
     transition: opacity 0.3s ease;
+}
+
+/* Modal para imágenes */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease;
+}
+
+.image-modal-content {
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    max-width: 80vw;
+    max-height: 80vh;
+}
+
+.image-modal-img {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.image-modal-img:hover {
+    transform: scale(1.02);
+}
+
+.image-modal-close {
+    position: absolute;
+    top: -20px;
+    right: 5px;
+    color: #fff;
+    font-size: 55px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2001;
+    transition: all 0.3s ease;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    line-height: 1;
+}
+
+.image-modal-close:hover {
+    color: #a259ff;
+    background: rgba(162, 89, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.image-modal-caption {
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    max-width: 80%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* Animación del logo */
@@ -793,7 +950,7 @@ footer
     }
     
     .card-image {
-        height: 150px;
+        height: 240px;
     }
     
     .project-list li {
@@ -835,7 +992,7 @@ footer
     }
     
     .card-image {
-        height: 180px;
+        height: 280px;
     }
     
     .side-cards {
@@ -927,7 +1084,7 @@ footer
     }
     
     .card-image {
-        height: 200px;
+        height: 300px;
     }
     
     .side-cards {
@@ -963,6 +1120,34 @@ footer
         gap: 2rem;
     }
     
+    /* Mostrar las cards laterales por defecto en pantalla completa */
+    .card-contact,
+    .card-habilidades,
+    .card-acerca {
+        display: block !important;
+        position: static !important;
+        transform: none !important;
+        width: auto !important;
+        max-width: 345px !important;
+        max-height: none !important;
+        background-color: #1a1a1a !important;
+        border-radius: 10px !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2) !important;
+        padding: 18px !important;
+        margin-left: 18px !important;
+        overflow: visible !important;
+    }
+    
+    /* Mostrar los iconos en pantalla completa */
+    .card-contact .card-icon,
+    .card-habilidades .card-icon,
+    .card-acerca .card-icon {
+        display: block !important;
+        font-size: 3.6rem !important;
+        text-align: center !important;
+        margin-bottom: 8px !important;
+    }
+    
     .navbar-toggler {
         display: none;
     }
@@ -979,7 +1164,7 @@ footer
     }
     
     .card-image {
-        height: 250px;
+        height: 360px;
     }
 }
 
@@ -1166,73 +1351,10 @@ footer
     }
 }
 
-/* Modo claro */
+/* Modo claro - Los estilos detallados están en light-mode.css */
 body.light-mode {
-    background: #f5f5f5;
-    color: #333;
-}
-
-body.light-mode .navbar {
-    background: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-body.light-mode .nav-links li a {
-    color: #333;
-}
-
-body.light-mode .nav-links li a:hover {
-    color: #007bff;
-    background: rgba(0, 123, 255, 0.1);
-}
-
-body.light-mode .card {
-    background: rgba(255, 255, 255, 0.95);
-    color: #333;
-}
-
-body.light-mode .card-contact,
-body.light-mode .card-habilidades,
-body.light-mode .card-acerca {
-    background: #fff;
-    color: #333;
-}
-
-body.light-mode .contact-list li {
-    color: #333;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-body.light-mode .project-list li {
-    color: #555;
-}
-
-body.light-mode .project-list li:hover {
-    color: #333;
-}
-
-body.light-mode .card-project {
-    background: #fff;
-    color: #333;
-}
-
-body.light-mode .project-description {
-    color: #555;
-}
-
-body.light-mode .project-features li {
-    color: #333;
-}
-
-body.light-mode footer {
-    padding: 25px 0;
-    background-color: black; 
-    text-align: center;
-    font-size: 1.33rem;
-    margin-top: auto;
-    border-top: 1px solid #333;
-    height: 80px;
-    text-shadow: 0 0 4px #8be8fdd4, 0 0 12px rgba(255, 255, 255, 0);
+    background: #f8f9fa;
+    color: #212529;
 }
 
 /* Estilos para el menú hamburguesa */
@@ -1378,4 +1500,46 @@ body.light-mode footer {
     display: none;
     box-shadow: 0 0 80px 30px #000a;
   }
+}
+
+/* Por defecto, oculta el botón X solo-móvil */
+.card-close.mobile-only {
+  display: none;
+}
+
+/* Solo muestra la X en móvil */
+@media (max-width: 991.98px) {
+  .card-close.mobile-only {
+    display: flex;
+  }
+}
+
+/* Hover de la X según el color de la card */
+.card-purple .card-close:hover {
+  color: #a259ff;
+  background: rgba(162, 89, 255, 0.15);
+}
+
+.card-blue .card-close:hover {
+  color: #3772ff;
+  background: rgba(55, 114, 255, 0.15);
+}
+
+.card-pink .card-close:hover {
+  color: #ff4ecd;
+  background: rgba(255, 78, 205, 0.15);
+}
+
+.card-green .card-close:hover {
+  color: #00ffa3;
+  background: rgba(0, 255, 163, 0.15);
+}
+
+.card-project .project-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* Opcional: para que no se pase del ancho del modal */
+  max-width: 90%;
+  max-height: 350px;
 }

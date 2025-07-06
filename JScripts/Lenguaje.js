@@ -593,8 +593,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('a[href="../pages/inicioFF.html"]').textContent = translations[lang]['inicio'];
         document.querySelector('a[href="#paginas-web"]').textContent = translations[lang]['proyectos'];
         document.querySelector('a[href="#certificaciones"]').textContent = translations[lang]['certificados'];
-        document.querySelector('a[onclick="toggleCard(\'softskillsModal\')"]').textContent = translations[lang]['habilidades'];
-        document.querySelector('a[onclick="toggleCard(\'acercaModal\')"]').textContent = translations[lang]['acerca_de'];
+        document.querySelector('a[href="#softskillsModal"]').textContent = translations[lang]['habilidades'];
+        document.querySelector('a[href="#acercaModal"]').textContent = translations[lang]['acerca_de'];
         
         // Actualizar placeholder del buscador
         const searchBar = document.querySelector('.search-bar');

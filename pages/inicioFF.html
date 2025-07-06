@@ -60,17 +60,14 @@
             <a class="nav-link" href="#certificaciones">Certificaciones</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" onclick="toggleCard('softskillsModal')" href="javascript:void(0)"
-              data-lang="softskills">Soft Skills</a>
+            <a class="nav-link" href="#softskillsModal" data-lang="softskills">Soft Skills</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" onclick="toggleCard('acercaModal')" href="javascript:void(0)" data-lang="acerca">Acerca
-              de
-              mí...</a>
+            <a class="nav-link" href="#acercaModal" data-lang="acerca">Acerca de mí...</a>
           </li>
         </ul>
         <div class="nav-actions d-flex align-items-center">
-
+  
           <div class="d-flex align-items-center">
             <button class="dark-mode-toggle me-2" onclick="toggleDarkMode()">☀️</button>
             <select class="lang-select">
@@ -562,6 +559,7 @@
   <div id="imageModal" class="image-modal">
     <div class="image-modal-content">
       <span class="image-modal-close" onclick="closeImageModal()">&times;</span>
+      <span class="image-modal-close-mobile" onclick="closeImageModal()">&times;</span>
       <img id="modalImage" class="image-modal-img" alt="Imagen ampliada">
       <div id="modalCaption" class="image-modal-caption"></div>
     </div>
@@ -755,18 +753,13 @@
       }
     }
 
-    // Agregar evento de clic al overlay para cerrar las tarjetas
+    // Agregar evento de clic al overlay para cerrar las tarjetas laterales en móvil
     document.querySelector('.card-overlay').addEventListener('click', function (event) {
-      if (window.innerWidth <= 991.98) {
-        // Cerrar la tarjeta que esté visible
-        if (document.getElementById('contactoModal').style.display === 'block') {
-          closeProjectCard('contactoModal');
-        } else if (document.getElementById('softskillsModal').style.display === 'block') {
-          closeProjectCard('softskillsModal');
-        } else if (document.getElementById('acercaModal').style.display === 'block') {
-          closeProjectCard('acercaModal');
-        }
-      }
+      // Cierra cualquier card lateral visible
+      document.querySelectorAll('.card-contact.show, .card-habilidades.show, .card-acerca.show').forEach(card => {
+        card.classList.remove('show');
+      });
+      this.style.display = 'none';
     });
 
     // Cerrar cards al presionar ESC

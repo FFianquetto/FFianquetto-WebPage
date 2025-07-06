@@ -1,19 +1,19 @@
 /* Light Mode Styles - Versión Mejorada */
 :root {
-  --primary-bg: #f8f9fa;
-  --secondary-bg: #e9ecef;
-  --text-color: #212529;
-  --text-secondary: #6c757d;
-  --border-color: #dee2e6;
-  --hover-color: #f8f9fa;
-  --shadow-color: rgba(0, 0, 0, 0.1);
+  --primary-bg: #f5f5f5;
+  --secondary-bg: #eeeeee;
+  --text-color: #0d0d0d;
+  --text-secondary: #333333;
+  --border-color: #b8b8b8;
+  --hover-color: #e6f3ff;
+  --shadow-color: rgba(0, 0, 0, 0.12);
   --card-bg: #ffffff;
   --footer-bg: #000000;
   --footer-text: #8be8fdd4;
-  --purple-primary: #6f42c1;
-  --blue-primary: #0d6efd;
-  --green-primary: #198754;
-  --pink-primary: #d63384;
+  --purple-primary: #7d3c98;
+  --blue-primary: #2980b9;
+  --green-primary: #2ecc71;
+  --pink-primary: #c2185b;
 }
 
 /* Estilos base que se aplican cuando el modo claro está activo */
@@ -273,8 +273,8 @@ body.light-mode .hero h1[lang="fr"] {
 }
 
 body.light-mode .hero h1[lang="de"] {
-  color: var(--green-primary);
-  text-shadow: 0 2px 8px rgba(25, 135, 84, 0.3);
+  color: #16a085;
+  text-shadow: 0 2px 8px rgba(22, 160, 133, 0.3);
   transform: scale(1.02);
 }
 
@@ -581,5 +581,14 @@ body.light-mode .mobile-icons .btn-link:hover {
   
   body.light-mode .card-acerca .contact-list li i {
     color: var(--pink-primary) !important;
+  }
+}
+
+/* Footer más pequeño en móvil */
+@media (max-width: 767.98px) {
+  body.light-mode footer {
+    padding: 15px 0;
+    height: 60px;
+    font-size: 1.1rem;
   }
 }

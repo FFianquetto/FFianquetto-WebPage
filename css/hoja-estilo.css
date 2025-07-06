@@ -619,6 +619,15 @@ footer
     text-shadow: 0 0 4px #8be8fdd4, 0 0 12px rgba(255, 255, 255, 0);
 }
 
+/* Footer más pequeño en móvil */
+@media (max-width: 767.98px) {
+    footer {
+        padding: 15px 0;
+        height: 60px;
+        font-size: 1.1rem;
+    }
+}
+
 /* Cards de proyecto modales */
 .card-project {
     display: none;

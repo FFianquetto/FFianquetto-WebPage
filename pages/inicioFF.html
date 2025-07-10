@@ -95,35 +95,153 @@
     </p>
   </section>
 
-  <!-- CARRUSEL DE PROYECTOS -->
+  <!-- CARRUSEL DE PROYECTOS MULTI-SLIDE -->
   <section class="project-carousel-section" id="carousel-section">
     <div class="carousel-container">
-      <h2 class="carousel-title" data-lang="carousel_title">🎲 Descubre un Proyecto al Azar</h2>
-      <p class="carousel-subtitle" data-lang="carousel_subtitle">¡Haz clic en la ruleta para descubrir un proyecto sorpresa!</p>
+      <h2 class="carousel-title" data-lang="carousel_title">🎲 Proyectos Destacados</h2>
+      <div class="winner-arrows-indicator">
+      <!-- <span class="arrow-indicator">&#8595;</span>
+        -->  
+      </div>
       
-      <div class="carousel-wheel">
-        <div class="wheel-container">
-          <div class="wheel" id="projectWheel">
-            <!-- Los proyectos se agregarán dinámicamente -->
-          </div>
-          <div class="wheel-pointer"></div>
+      <div id="multiProjectCarousel" class="carousel slide">
+        <div class="carousel-inner" id="multiCarouselInner">
+          <!-- Slides generados por JS -->
         </div>
-        <button class="spin-button" onclick="spinWheel()">
+      </div>
+      <div class="d-flex justify-content-center mt-3">
+        <button class="spin-button spin-small" id="spinMultiCarouselBtn">
           <span class="spin-text" data-lang="spin_button">🎯 ¡Girar!</span>
         </button>
       </div>
-      
-      <div class="carousel-result" id="carouselResult" style="display: none;">
-        <div class="result-content">
-          <h3 id="resultTitle"></h3>
-          <p id="resultDescription"></p>
-          <button class="view-project-btn" onclick="viewRandomProject()">
-            <span data-lang="view_project">👁️ Ver Proyecto</span>
-          </button>
-        </div>
+      <div class="d-flex justify-content-center mt-2 position-relative" style="z-index:3;">
+        <button class="view-project-btn spin-small" id="viewProjectBtn" style="display:none;">👁️ Ver Proyecto</button>
       </div>
     </div>
   </section>
+
+  <script>
+    // Lista de proyectos para el carrusel
+    const projectCards = [
+      { id: 'zomboyCard', name: 'ZomboyShop-ReDesign', img: '../imagenesP/ZomboyWeb.png' },
+      { id: 'artvlogCard', name: 'ArtVlog', img: '../imagenesP/ArtWeb.png' },
+      { id: 'ec2Card', name: 'EC2 Container - AWS', img: '../imagenesP/Amazon.png' },
+      { id: 'hotelCard', name: 'Gestión de Hoteles con SQL', img: '../imagenesP/HotelBd.png' },
+      { id: 'nominasCard', name: 'Manejo de Nóminas con BigData - CassandraDb', img: '../imagenesP/Cassandra.png' },
+      { id: 'cadoCard', name: 'CADO Mobile App Backend - MongoDB', img: '../imagenesP/Mongo.png' },
+      { id: 'bolosCard', name: 'Bolos en Unity con Háptico incluido', img: '../imagenesP/Pinball.png' },
+      { id: 'escapeCard', name: 'Escape Salvaje en Unity', img: '../imagenesP/EscapeGame.jpg' },
+      { id: 'candyCard', name: 'Candy Collector con OGL Engine y C++', img: '../imagenesP/CC.png' },
+      { id: 'snakeCard', name: 'Snake Slaughter con OGL Engine y Lenguaje Ensamblador', img: '../imagenesP/Snake.png' }
+    ];
+
+    // Determina cuántas tarjetas mostrar por slide según el ancho de pantalla
+    function getCardsPerSlide() {
+      if (window.innerWidth < 768) return 1;
+      if (window.innerWidth < 992) return 2;
+      return 3;
+    }
+
+    // Genera el HTML de los slides del carrusel
+    function renderMultiCarousel(centerIndex = 0) {
+      const cardsPerSlide = getCardsPerSlide();
+      const slides = [];
+      for (let i = 0; i < projectCards.length; i += cardsPerSlide) {
+        const group = projectCards.slice(i, i + cardsPerSlide);
+        let slide = `<div class="carousel-item${i === 0 ? ' active' : ''}"><div class='multi-carousel-row'>`;
+        group.forEach((card, idx) => {
+          // Centrar la tarjeta del medio
+          let centered = (idx === Math.floor(group.length / 2));
+          slide += `
+            <div class='project-card-carousel${centered ? ' centered' : ''}'
+              ${centered ? `onclick=\"toggleProjectCard('${card.id}')\" style=\"cursor:pointer;\"` : ''}>
+              <img src='${card.img}' alt='${card.name}'>
+              <div class='project-title'>${card.name}</div>
+            </div>
+          `;
+        });
+        slide += '</div></div>';
+        slides.push(slide);
+      }
+      document.getElementById('multiCarouselInner').innerHTML = slides.join('');
+    }
+
+    // Inicializa el carrusel y el botón de girar con animación de frenado mejorada (ease-out, solo derecha)
+    function setupMultiCarousel() {
+      renderMultiCarousel();
+      const spinBtn = document.getElementById('spinMultiCarouselBtn');
+      const viewBtn = document.getElementById('viewProjectBtn');
+      const carousel = document.getElementById('multiProjectCarousel');
+      // Desactiva cualquier auto-ciclo de Bootstrap Carousel
+      if (window.bootstrap && window.bootstrap.Carousel) {
+        const bsCarousel = window.bootstrap.Carousel.getOrCreateInstance(carousel);
+        bsCarousel.pause();
+      }
+      let spinning = false;
+      spinBtn.addEventListener('click', function () {
+        if (spinning) return; // Evita doble giro
+        spinning = true;
+        viewBtn.style.display = 'none'; // Oculta el botón al girar
+        const cardsPerSlide = getCardsPerSlide();
+        const totalSlides = Math.ceil(projectCards.length / cardsPerSlide);
+        let randomSlide = Math.floor(Math.random() * totalSlides);
+        let spins = Math.floor(Math.random() * 3) + 4; // 4-6 vueltas
+        let totalSteps = spins * totalSlides + randomSlide;
+        let minDelay = 40; // ms
+        let maxDelay = 600; // ms (más lento al final)
+        let step = 0;
+        const bsCarousel = bootstrap.Carousel.getOrCreateInstance(carousel);
+        bsCarousel.pause(); // Refuerza que no haya auto-ciclo
+        function easeOut(t) {
+          // t: 0 (inicio) a 1 (fin)
+          return 1 - Math.pow(1 - t, 3.2); // ease-out más notorio
+        }
+        function spinStep() {
+          bsCarousel.next(); // Siempre avanza a la derecha
+          step++;
+          if (step < totalSteps) {
+            // Ease-out: delay crece suavemente
+            let t = step / totalSteps;
+            let delay = minDelay + (maxDelay - minDelay) * easeOut(t);
+            setTimeout(spinStep, delay);
+          } else {
+            spinning = false;
+            // Mostrar el botón 'Ver Proyecto' al terminar
+            setTimeout(() => {
+              viewBtn.style.display = 'inline-block';
+            }, 350);
+          }
+        }
+        spinStep();
+      });
+      // Al hacer clic en 'Ver Proyecto', abre la card modal del proyecto central
+      viewBtn.addEventListener('click', function () {
+        const cardsPerSlide = getCardsPerSlide();
+        const totalSlides = Math.ceil(projectCards.length / cardsPerSlide);
+        // Buscar el slide activo
+        const carouselInner = document.getElementById('multiCarouselInner');
+        const activeSlide = carouselInner.querySelector('.carousel-item.active');
+        if (!activeSlide) return;
+        const cards = activeSlide.querySelectorAll('.project-card-carousel');
+        const centeredIdx = Math.floor(cards.length / 2);
+        const centeredCard = cards[centeredIdx];
+        if (centeredCard) {
+          // Extraer el id del proyecto del onclick
+          const onclick = centeredCard.getAttribute('onclick');
+          const match = onclick && onclick.match(/toggleProjectCard\('([^']+)'\)/);
+          if (match && match[1]) {
+            toggleProjectCard(match[1]);
+          }
+        }
+      });
+    }
+
+    // Renderizar al cargar y al cambiar tamaño
+    document.addEventListener('DOMContentLoaded', setupMultiCarousel);
+    window.addEventListener('resize', function () {
+      renderMultiCarousel();
+    });
+  </script>
 
   <!-- MAIN CONTENT -->
   <div class="main-container">

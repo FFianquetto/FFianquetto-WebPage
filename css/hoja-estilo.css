@@ -141,6 +141,8 @@ body {
     
 }
 
+
+
 /* Hero Section */
 .hero {
     display: flex;
@@ -189,7 +191,7 @@ body {
     font-size: clamp(1.3rem, 4vw, 1.8rem);
     color: #bdbdbd;
     text-align: center;
-    margin: 20px auto 30px auto;
+    margin: 20px auto 1px auto;
     max-width: 960px;
     width: 100%;
     padding: 0 20px;
@@ -1494,7 +1496,7 @@ footer
                     font-size: clamp(0.6rem, 5vw, 1.8rem);
                     color: #bdbdbd;
                     text-align: center;
-                    margin: 20px auto 30px auto;
+                    margin: 20px auto 1px auto;
                     max-width: 888px;
                     width: 100%;
                     padding: 0 20px;

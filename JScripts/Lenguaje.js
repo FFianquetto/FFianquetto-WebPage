@@ -18,10 +18,10 @@ document.addEventListener('DOMContentLoaded', function() {
             'sumergete': 'Sumérgete en los videojuegos que he desarrollado.',
             'certificados': 'Certificados',
             'observa': 'Observa algunos certificados que he obtenido.',
-            'habilidades': 'Habilidades',
+            'carousel_nav': '🎲 Ruleta',
             'acerca_de': 'Acerca de mí...',
             'copyright': 'All information copyright © Fernando A. Cancino',
-            'soft_skills': 'Habilidades',
+
             'idiomas': 'Español, Inglés, Alemán',
             'musica': 'Conocimientos musicales',
             'fotografia': 'Conocimientos en fotografía',
@@ -143,7 +143,11 @@ document.addEventListener('DOMContentLoaded', function() {
             'candy_feature2': "Optimización de rendimiento en C++",
             'candy_feature3': "Sistema de partículas personalizado",
             'candy_feature4': "Física de juego optimizada",
-            'organización': 'Buenas prácticas de desarrollo'
+            'organización': 'Buenas prácticas de desarrollo',
+            'carousel_title': '🎲 Descubre un Proyecto al Azar',
+            'carousel_subtitle': '¡Haz clic en la ruleta para descubrir un proyecto sorpresa!',
+            'spin_button': '🎯 ¡Girar!',
+            'view_project': '👁️ Ver Proyecto'
         },
         'EN': {
             'inicio': 'Home',
@@ -162,10 +166,9 @@ document.addEventListener('DOMContentLoaded', function() {
             'sumergete': 'Immerse yourself in the video games I have developed.',
             'certificados': 'Certificates',
             'observa': 'View some certificates I have obtained.',
-            'habilidades': 'Skills',
+            'carousel_nav': '🎲 Wheel',
             'acerca_de': 'About me...',
             'copyright': 'All information copyright © Fernando A. Cancino',
-            'soft_skills': 'Skills',
             'idiomas': 'Spanish, English, German',
             'musica': 'Musical knowledge',
             'fotografia': 'Photography knowledge',
@@ -288,7 +291,11 @@ document.addEventListener('DOMContentLoaded', function() {
             'candy_feature2': "Optimisation des performances en C++",
             'candy_feature3': "Système de particules personnalisé",
             'candy_feature4': "Physique de jeu optimisée",
-            'organización': 'Development best practices'
+            'organización': 'Development best practices',
+            'carousel_title': '🎲 Discover a Random Project',
+            'carousel_subtitle': 'Click on the wheel to discover a surprise project!',
+            'spin_button': '🎯 Spin!',
+            'view_project': '👁️ View Project'
         },
         'FR': {
             'inicio': 'Accueil',
@@ -307,10 +314,10 @@ document.addEventListener('DOMContentLoaded', function() {
             'sumergete': 'Plongez dans les jeux vidéo que j\'ai développés.',
             'certificados': 'Certificats',
             'observa': 'Consultez certains certificats que j\'ai obtenus.',
-            'habilidades': 'Compétences',
+            'carousel_nav': '🎲 Roue',
             'acerca_de': 'À propos de moi...',
             'copyright': 'All information copyright © Fernando A. Cancino',
-            'soft_skills': 'Compétences douces',
+
             'idiomas': 'Espagnol, Anglais, Allemand',
             'musica': 'Connaissances musicales',
             'fotografia': 'Connaissances en photographie',
@@ -433,7 +440,11 @@ document.addEventListener('DOMContentLoaded', function() {
             'candy_feature2': "Optimisation des performances en C++",
             'candy_feature3': "Système de particules personnalisé",
             'candy_feature4': "Physique de jeu optimisée",
-            'organización': 'Bonnes pratiques de développement'
+            'organización': 'Bonnes pratiques de développement',
+            'carousel_title': '🎲 Découvrez un Projet Aléatoire',
+            'carousel_subtitle': 'Cliquez sur la roue pour découvrir un projet surprise !',
+            'spin_button': '🎯 Tourner !',
+            'view_project': '👁️ Voir le Projet'
         },
         'DE': {
             'inicio': 'Startseite',
@@ -452,10 +463,10 @@ document.addEventListener('DOMContentLoaded', function() {
             'sumergete': 'Tauchen Sie ein in die Videospiele, die ich entwickelt habe.',
             'certificados': 'Zertifikate',
             'observa': 'Sehen Sie sich einige Zertifikate an, die ich erhalten habe.',
-            'habilidades': 'Fähigkeiten',
+            'carousel_nav': '🎲 Rad',
             'acerca_de': 'Über mich...',
             'copyright': 'All information copyright © Fernando A. Cancino',
-            'soft_skills': 'Skills',
+
             'idiomas': 'Spanisch, Englisch, Deutsch',
             'musica': 'Musikkenntnisse',
             'fotografia': 'Fotografiekenntnisse',
@@ -578,7 +589,11 @@ document.addEventListener('DOMContentLoaded', function() {
             'candy_feature2': "Optimisation des performances en C++",
             'candy_feature3': "Système de particules personnalisé",
             'candy_feature4': "Physique de jeu optimisée",
-            'organización': 'Entwicklungsbest Practices'
+            'organización': 'Entwicklungsbest Practices',
+            'carousel_title': '🎲 Entdecke ein zufälliges Projekt',
+            'carousel_subtitle': 'Klicke auf das Rad, um ein Überraschungsprojekt zu entdecken!',
+            'spin_button': '🎯 Drehen!',
+            'view_project': '👁️ Projekt anzeigen'
         }
     };
 
@@ -593,7 +608,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('a[href="../pages/inicioFF.html"]').textContent = translations[lang]['inicio'];
         document.querySelector('a[href="#paginas-web"]').textContent = translations[lang]['proyectos'];
         document.querySelector('a[href="#certificaciones"]').textContent = translations[lang]['certificados'];
-        document.querySelector('a[href="#softskillsModal"]').textContent = translations[lang]['habilidades'];
+        document.querySelector('a[href="#carousel-section"]').textContent = translations[lang]['carousel_nav'];
         document.querySelector('a[href="#acercaModal"]').textContent = translations[lang]['acerca_de'];
         
         // Actualizar placeholder del buscador
@@ -714,4 +729,234 @@ document.addEventListener('DOMContentLoaded', function() {
     langSelect.addEventListener('change', function() {
         updateLanguage(this.value);
     });
-}); 
+    
+    // Inicializar el carrusel de proyectos
+    initializeProjectCarousel();
+});
+
+// ===== CARRUSEL DE PROYECTOS =====
+
+// Array con todos los proyectos disponibles
+const projects = [
+    {
+        id: 'zomboyCard',
+        title: 'ZomboyShop-ReDesign',
+        description: 'Rediseño completo de la página web de ZomboyShop con diseño moderno y responsivo.',
+        category: 'web',
+        color: '#a259ff'
+    },
+    {
+        id: 'artvlogCard',
+        title: 'ArtVlog',
+        description: 'Plataforma de blog artístico para compartir y descubrir contenido creativo.',
+        category: 'web',
+        color: '#a259ff'
+    },
+    {
+        id: 'ec2Card',
+        title: 'EC2 Container - AWS',
+        description: 'Implementación y gestión de contenedores en Amazon EC2 para aplicaciones web.',
+        category: 'web',
+        color: '#a259ff'
+    },
+    {
+        id: 'hotelCard',
+        title: 'Gestión de Hoteles con SQL',
+        description: 'Sistema de gestión hotelera implementado con SQL para control eficiente de operaciones.',
+        category: 'database',
+        color: '#3772ff'
+    },
+    {
+        id: 'nominasCard',
+        title: 'Manejo de Nóminas con BigData',
+        description: 'Sistema de gestión de nóminas con CassandraDB para grandes volúmenes de datos.',
+        category: 'database',
+        color: '#3772ff'
+    },
+    {
+        id: 'cadoCard',
+        title: 'CADO Mobile App Backend',
+        description: 'Backend robusto para aplicación móvil CADO implementado con MongoDB.',
+        category: 'database',
+        color: '#3772ff'
+    },
+    {
+        id: 'bolosCard',
+        title: 'Bolos en Unity con Háptico',
+        description: 'Simulador de bolos desarrollado en Unity con retroalimentación háptica inmersiva.',
+        category: 'game',
+        color: '#ff4ecd'
+    },
+    {
+        id: 'escapeCard',
+        title: 'Escape Salvaje en Unity',
+        description: 'Juego de aventura y supervivencia con mecánicas de escape y puzzle.',
+        category: 'game',
+        color: '#ff4ecd'
+    },
+    {
+        id: 'candyCard',
+        title: 'Candy Collector con OGL Engine',
+        description: 'Juego desarrollado con motor gráfico personalizado OpenGL y C++.',
+        category: 'game',
+        color: '#ff4ecd'
+    },
+    {
+        id: 'snakeCard',
+        title: 'Snake Slaughter con OGL Engine',
+        description: 'Reimaginación del clásico Snake con OpenGL y optimizaciones en ensamblador.',
+        category: 'game',
+        color: '#ff4ecd'
+    },
+    {
+        id: 'sydneyCard',
+        title: 'Innovation Through Design',
+        description: 'Certificación en innovación y diseño de la Universidad de Sydney.',
+        category: 'certificate',
+        color: '#00ffa3'
+    },
+    {
+        id: 'googleCard',
+        title: 'GoogleCloud Fundamentals',
+        description: 'Certificación en fundamentos de Google Cloud Platform.',
+        category: 'certificate',
+        color: '#00ffa3'
+    },
+    {
+        id: 'georgiaCard',
+        title: 'Introduction to User Experience Design',
+        description: 'Certificación en diseño de experiencia de usuario del Georgia Institute.',
+        category: 'certificate',
+        color: '#00ffa3'
+    },
+    {
+        id: 'tecCard',
+        title: 'Desarrollo rápido de productos innovadores',
+        description: 'Certificación en desarrollo ágil de productos innovadores del Tec de Mty.',
+        category: 'certificate',
+        color: '#00ffa3'
+    },
+    {
+        id: 'unamCard',
+        title: 'Introducción a Data Science',
+        description: 'Certificación en ciencia de datos y programación estadística con R de la UNAM.',
+        category: 'certificate',
+        color: '#00ffa3'
+    }
+];
+
+let currentRandomProject = null;
+let isSpinning = false;
+
+function initializeProjectCarousel() {
+    // Crear los segmentos de la ruleta dinámicamente
+    const wheel = document.getElementById('projectWheel');
+    if (!wheel) return;
+    
+    const segmentAngle = 360 / projects.length;
+    
+    projects.forEach((project, index) => {
+        const segment = document.createElement('div');
+        segment.className = 'wheel-segment';
+        segment.style.cssText = `
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            background: ${project.color};
+            top: 50%;
+            left: 50%;
+            transform-origin: 0 0;
+            transform: rotate(${index * segmentAngle}deg) translateX(50%);
+            z-index: 2;
+            box-shadow: 0 0 10px ${project.color};
+        `;
+        wheel.appendChild(segment);
+    });
+}
+
+function spinWheel() {
+    if (isSpinning) return;
+    
+    isSpinning = true;
+    const wheel = document.getElementById('projectWheel');
+    const spinButton = document.querySelector('.spin-button');
+    const resultDiv = document.getElementById('carouselResult');
+    
+    // Deshabilitar el botón durante el giro
+    spinButton.disabled = true;
+    spinButton.style.opacity = '0.6';
+    
+    // Generar un ángulo aleatorio
+    const randomAngle = Math.random() * 360;
+    const extraSpins = 5; // Número de vueltas completas
+    const totalRotation = extraSpins * 360 + randomAngle;
+    
+    // Aplicar la animación
+    wheel.style.transform = `rotate(${totalRotation}deg)`;
+    
+    // Calcular qué proyecto fue seleccionado
+    const segmentAngle = 360 / projects.length;
+    const normalizedAngle = (360 - (randomAngle % 360)) % 360;
+    const selectedIndex = Math.floor(normalizedAngle / segmentAngle);
+    currentRandomProject = projects[selectedIndex];
+    
+    // Mostrar el resultado después de la animación
+    setTimeout(() => {
+        showCarouselResult();
+        isSpinning = false;
+        spinButton.disabled = false;
+        spinButton.style.opacity = '1';
+    }, 3000);
+}
+
+function showCarouselResult() {
+    if (!currentRandomProject) return;
+    
+    const resultDiv = document.getElementById('carouselResult');
+    const resultTitle = document.getElementById('resultTitle');
+    const resultDescription = document.getElementById('resultDescription');
+    
+    resultTitle.textContent = currentRandomProject.title;
+    resultDescription.textContent = currentRandomProject.description;
+    
+    resultDiv.style.display = 'block';
+    resultDiv.style.animation = 'fadeInUp 0.5s ease';
+}
+
+function viewRandomProject() {
+    if (!currentRandomProject) return;
+    
+    // Cerrar cualquier modal abierto
+    closeAllModals();
+    
+    // Abrir el modal del proyecto seleccionado
+    toggleProjectCard(currentRandomProject.id);
+    
+    // Ocultar el resultado del carrusel
+    document.getElementById('carouselResult').style.display = 'none';
+}
+
+function closeAllModals() {
+    // Cerrar todos los modales de proyecto
+    const projectModals = document.querySelectorAll('.card-project');
+    projectModals.forEach(modal => {
+        modal.style.display = 'none';
+    });
+    
+    // Cerrar el overlay
+    const overlay = document.querySelector('.card-overlay');
+    if (overlay) {
+        overlay.style.display = 'none';
+    }
+}
+
+// Función para hacer scroll al carrusel
+function scrollToCarousel() {
+    const carouselSection = document.getElementById('carousel-section');
+    if (carouselSection) {
+        carouselSection.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'center'
+        });
+    }
+}

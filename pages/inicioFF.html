@@ -11,6 +11,7 @@
   <link type="text/css" rel="stylesheet" href="../css/hoja-estilo.css" />
   <link type="text/css" rel="stylesheet" href="../css/light-mode.css" id="light-mode-css" disabled />
   <link type="text/css" rel="stylesheet" href="../css/aurora.css" />
+  <link type="text/css" rel="stylesheet" href="../css/carousel.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="../JScripts/Lenguaje.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
@@ -38,13 +39,13 @@
       </button>
       <!-- Iconos móviles -->
       <div class="mobile-icons d-flex d-lg-none">
-        <button type="button" class="btn btn-link" onclick="toggleCard('contactoModal')">
+        <button type="button" class="btn btn-link" onclick="toggleCard('contactoModal')" style="color: #a259ff;">
           <i class="fas fa-phone"></i>
         </button>
-        <button type="button" class="btn btn-link" onclick="toggleCard('softskillsModal')">
+        <button type="button" class="btn btn-link" onclick="toggleCard('softskillsModal')" style="color: #3772ff;">
           <i class="fas fa-bullseye"></i>
         </button>
-        <button type="button" class="btn btn-link" onclick="toggleCard('acercaModal')">
+        <button type="button" class="btn btn-link" onclick="toggleCard('acercaModal')" style="color: #ff4ecd;">
           <i class="fas fa-user"></i>
         </button>
       </div>
@@ -60,7 +61,7 @@
             <a class="nav-link" href="#certificaciones">Certificaciones</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#softskillsModal" data-lang="softskills">Soft Skills</a>
+            <a class="nav-link" href="#carousel-section" data-lang="carousel_nav">🎲 Ruleta</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#acercaModal" data-lang="acerca">Acerca de mí...</a>
@@ -92,6 +93,36 @@
       Aquí podrás explorar distintos proyectos de mi autoría y algunos en
       colaboración con otros artistas y desarrolladores.
     </p>
+  </section>
+
+  <!-- CARRUSEL DE PROYECTOS -->
+  <section class="project-carousel-section" id="carousel-section">
+    <div class="carousel-container">
+      <h2 class="carousel-title" data-lang="carousel_title">🎲 Descubre un Proyecto al Azar</h2>
+      <p class="carousel-subtitle" data-lang="carousel_subtitle">¡Haz clic en la ruleta para descubrir un proyecto sorpresa!</p>
+      
+      <div class="carousel-wheel">
+        <div class="wheel-container">
+          <div class="wheel" id="projectWheel">
+            <!-- Los proyectos se agregarán dinámicamente -->
+          </div>
+          <div class="wheel-pointer"></div>
+        </div>
+        <button class="spin-button" onclick="spinWheel()">
+          <span class="spin-text" data-lang="spin_button">🎯 ¡Girar!</span>
+        </button>
+      </div>
+      
+      <div class="carousel-result" id="carouselResult" style="display: none;">
+        <div class="result-content">
+          <h3 id="resultTitle"></h3>
+          <p id="resultDescription"></p>
+          <button class="view-project-btn" onclick="viewRandomProject()">
+            <span data-lang="view_project">👁️ Ver Proyecto</span>
+          </button>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- MAIN CONTENT -->

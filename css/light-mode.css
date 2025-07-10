@@ -240,18 +240,11 @@ body.light-mode .hero h1[lang="de"] {
 
 body.light-mode .hero-subtitle {
   color: var(--text-secondary);
-  font-size: clamp(1.3rem, 4vw, 1.8rem);
-  text-align: center;
-  margin: 20px auto 30px auto;
-  max-width: 888px;
-  width: 100%;
-  padding: 0 20px;
-  font-weight: 500;
 }
 
 /* Overlay y modales en modo claro */
 body.light-mode .card-overlay {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(3px);
 }
 

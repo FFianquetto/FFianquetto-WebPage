@@ -189,7 +189,7 @@ body {
     color: #bdbdbd;
     text-align: center;
     margin: 20px auto 30px auto;
-    max-width: 888px;
+    max-width: 960px;
     width: 100%;
     padding: 0 20px;
 }
@@ -1264,7 +1264,29 @@ footer
     opacity: 0.9;
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 991.98px) 
+{
+    .hero h1 {
+            font-size: clamp(2.7rem, 12vw, 4.4rem);
+            font-weight: bold;
+            text-align: center;
+            margin: 0;
+            color: #fff;
+            text-shadow: 0 2px 8px #a259ff55, 0 4px 32px #000a;
+            transition: all 0.5s ease;
+            opacity: 1;
+        }
+
+                .hero-subtitle {
+                    font-size: clamp(0.6rem, 5vw, 1.8rem);
+                    color: #bdbdbd;
+                    text-align: center;
+                    margin: 20px auto 30px auto;
+                    max-width: 888px;
+                    width: 100%;
+                    padding: 0 20px;
+                }
+        
     .navbar {
         display: flex;
         align-items: center;

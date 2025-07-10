@@ -263,7 +263,7 @@ body {
 
 .card p {
     font-size: clamp(1.5rem, 2.5vw, 1.5rem);
-    color: #e0e0e0bb;
+    color: #bdbdbd;
     margin: 0 0 15px 0;
     line-height: 1.5;
 }
@@ -665,22 +665,22 @@ body {
 /* Footer */
 footer 
 {
-    padding: 25px 0;
+    padding: 20px 0;
     background-color: #0a0a0a;
     text-align: center;
     font-size: 1.33rem;
     margin-top: auto;
     border-top: 1px solid #333;
-    height: 80px;
+    height: 70px;
     text-shadow: 0 0 4px #8be8fdd4, 0 0 12px rgba(255, 255, 255, 0);
 }
 
 /* Footer más pequeño en móvil */
 @media (max-width: 767.98px) {
     footer {
-        padding: 15px 0;
         height: 60px;
         font-size: 1.1rem;
+
     }
 }
 

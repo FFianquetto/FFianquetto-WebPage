@@ -24,13 +24,13 @@ body.light-mode {
 }
 
 body.light-mode footer {
-  padding: 25px 0;
+  padding: 20px 0;
   background-color: #0a0a0a;
   text-align: center;
   font-size: 1.33rem;
   margin-top: auto;
   border-top: 1px solid #333;
-  height: 80px;
+  height: 70px;
   color: #8be8fdd4;
   text-shadow: 0 0 4px #8be8fdd4, 0 0 12px rgba(255, 255, 255, 0);
 }
@@ -495,6 +495,6 @@ body.light-mode .mobile-icons .btn-link:hover {
   body.light-mode footer {
     padding: 15px 0;
     height: 60px;
-    font-size: 1.1rem;
+      font-size: 1.1rem;
   }
 }

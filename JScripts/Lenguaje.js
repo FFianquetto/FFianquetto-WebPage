@@ -147,7 +147,9 @@ document.addEventListener('DOMContentLoaded', function() {
             'carousel_title': '🎲 Descubre un Proyecto al Azar',
             'carousel_subtitle': '¡Haz clic en la ruleta para descubrir un proyecto sorpresa!',
             'spin_button': '🎯 ¡Girar!',
-            'view_project': '👁️ Ver Proyecto'
+            'view_project': '👁️ Ver Proyecto',
+            'profile_tooltip': 'Click para ampliar',
+            'profile_caption': 'Fernando A. Cancino Cuenca - Desarrollador y Animador Digital'
         },
         'EN': {
             'inicio': 'Home',
@@ -295,7 +297,9 @@ document.addEventListener('DOMContentLoaded', function() {
             'carousel_title': '🎲 Discover a Random Project',
             'carousel_subtitle': 'Click on the wheel to discover a surprise project!',
             'spin_button': '🎯 Spin!',
-            'view_project': '👁️ View Project'
+            'view_project': '👁️ View Project',
+            'profile_tooltip': 'Click to enlarge',
+            'profile_caption': 'Fernando A. Cancino Cuenca - Developer and Digital Animator'
         },
         'FR': {
             'inicio': 'Accueil',
@@ -375,7 +379,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'nominas_feature3': "Analyse prédictive des salaires",
             'nominas_feature4': "Rapports en temps réel",
             'cado_title': "Backend Application Mobile CADO - MongoDB",
-            'cado_description': "Backend robuste pour l'application mobile CADO implémenté avec MongoDB pour une flexibilité et des performances maximales. Caractéristiques principales :",
+            'cado_description': "Robustes Backend pour l'application mobile CADO implémenté avec MongoDB pour une flexibilité et des performances maximales. Caractéristiques principales :",
             'cado_feature1': "Architecture NoSQL évolutive",
             'cado_feature2': "API RESTful optimisée",
             'cado_feature3': "Système d'authentification sécurisé",
@@ -444,7 +448,9 @@ document.addEventListener('DOMContentLoaded', function() {
             'carousel_title': '🎲 Découvrez un Projet Aléatoire',
             'carousel_subtitle': 'Cliquez sur la roue pour découvrir un projet surprise !',
             'spin_button': '🎯 Tourner !',
-            'view_project': '👁️ Voir le Projet'
+            'view_project': '👁️ Voir le Projet',
+            'profile_tooltip': 'Cliquez pour agrandir',
+            'profile_caption': 'Fernando A. Cancino Cuenca - Développeur et Animateur Digital'
         },
         'DE': {
             'inicio': 'Startseite',
@@ -593,9 +599,12 @@ document.addEventListener('DOMContentLoaded', function() {
             'carousel_title': '🎲 Entdecke ein zufälliges Projekt',
             'carousel_subtitle': 'Klicke auf das Rad, um ein Überraschungsprojekt zu entdecken!',
             'spin_button': '🎯 Drehen!',
-            'view_project': '👁️ Projekt anzeigen'
+            'view_project': '👁️ Projekt anzeigen',
+            'profile_tooltip': 'Klicken zum Vergrößern',
+            'profile_caption': 'Fernando A. Cancino Cuenca - Entwickler und Digital Animator'
         }
     };
+    window.translations = translations;
 
     function updateLanguage(lang) {
         // Guardar el idioma seleccionado en localStorage

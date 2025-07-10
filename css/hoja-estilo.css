@@ -790,7 +790,9 @@ footer
         height: auto !important;
         object-fit: contain !important;
         border-radius: 15px !important;
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.8) !important;
+        border: 4px solid #ff4ecd !important;
+            box-shadow: 0 0 40px rgba(255, 78, 205, 0.6) !important;
+
     }
     
     .image-modal-content {
@@ -809,9 +811,9 @@ footer
     
     /* Ajuste específico para la imagen de perfil en móvil */
     .image-modal-img[src*="prop.jpg"] {
-        max-width: 80vw !important;
-        max-height: 50vh !important;
-        border-radius: 50% !important;
+        max-width: 96vw !important;
+        max-height: 56vh !important;
+        border-radius: 0 !important;
         border: 4px solid #ff4ecd !important;
         box-shadow: 0 0 40px rgba(255, 78, 205, 0.6) !important;
     }
@@ -821,6 +823,9 @@ footer
         .image-modal-img[src*="prop.jpg"] {
             max-width: 60vw !important;
             max-height: 70vh !important;
+            border-radius: 0 !important;
+            border: 4px solid #ff4ecd !important;
+                box-shadow: 0 0 40px rgba(255, 78, 205, 0.6) !important;
         }
         
         .image-modal-caption {
@@ -1068,7 +1073,8 @@ footer
     max-height: 70vh;
     object-fit: contain;
     border-radius: 10px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+border: 4px solid #ff4ecd !important;
+    box-shadow: 0 0 40px rgba(255, 78, 205, 0.6) !important;
     cursor: pointer;
     transition: transform 0.3s ease;
 }

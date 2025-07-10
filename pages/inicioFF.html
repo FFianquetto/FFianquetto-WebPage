@@ -276,7 +276,7 @@
             onclick="openImageModal(this.src, this.alt); this.style.animation='none';"
             onmouseover="this.style.transform='scale(1.05)'; this.nextElementSibling.style.opacity='1';"
             onmouseout="this.style.transform='scale(1)'; this.nextElementSibling.style.opacity='0';">
-          <div class="tooltip">
+          <div class="tooltip" data-lang="profile_tooltip">
             Click para ampliar
           </div>
         </div>
@@ -599,7 +599,7 @@
         <span class="image-modal-close-mobile" onclick="closeImageModal()">&times;</span>
         <img id="modalImage" class="image-modal-img" alt="Imagen ampliada">
         <div id="modalCaption" class="image-modal-caption"></div>
-        <div class="image-modal-hint">Clic fuera para cerrar</div>
+        
       </div>
     </div>
 
@@ -892,7 +892,17 @@
       
       // Si es la imagen de perfil, mostrar un mensaje más descriptivo
       if (imageSrc.includes('prop.jpg')) {
-        modalCaption.textContent = 'Fernando A. Cancino Cuenca - Desarrollador y Animador Digital';
+        // Obtener idioma actual
+        const lang = localStorage.getItem('selectedLanguage') || 'ES';
+        // Obtener traducciones (debe estar global)
+        let translations = window.translations || {};
+        // Fallback si no está global
+        if (!translations[lang]) {
+          if (typeof getTranslations === 'function') translations = getTranslations();
+          else translations = {};
+        }
+        // Asignar traducción
+        modalCaption.textContent = translations[lang]?.profile_caption || 'Fernando A. Cancino Cuenca - Desarrollador y Animador Digital';
         // Agregar clase específica para la imagen de perfil solo en móvil
         if (window.innerWidth <= 991.98) {
           modalImage.classList.add('profile-image-modal');

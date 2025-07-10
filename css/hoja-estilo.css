@@ -256,14 +256,14 @@ body {
 }
 
 .card h3 {
-    font-size: clamp(2rem, 4vw, 2.7rem);
-    font-weight: 700;
+    font-size: clamp(2.2rem, 4vw, 2.7rem);
+    font-weight: 800;
     margin: 0 0 12px 0;
 }
 
 .card p {
-    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-    color: #e0e0e0;
+    font-size: clamp(1.5rem, 2.5vw, 1.5rem);
+    color: #e0e0e0bb;
     margin: 0 0 15px 0;
     line-height: 1.5;
 }
@@ -276,8 +276,9 @@ body {
 
 .project-list li {
     color: #dedede;
-    font-size: clamp(0.9rem, 2.5vw, 1.3rem);
+    font-size: clamp(1.4rem, 2.5vw, 1.3rem);
     margin-bottom: 12px;
+
     padding-left: 20px;
     position: relative;
     cursor: pointer;
@@ -289,8 +290,8 @@ body {
     color: inherit;
     position: absolute;
     left: 0;
-    font-size: 1.5rem;
-    top: 50%;
+    font-size: 2rem;
+    top: 44%;
     transform: translateY(-50%);
 }
 
@@ -339,8 +340,15 @@ body {
 
 /* Estilos específicos para cada tarjeta */
 .card-purple {
-    border: 2px solid #a259ff;
-    box-shadow: 0 0 10px rgba(162, 89, 255, 0.1);
+    border: 2.2px solid #a259ff;
+    border-radius: 4px;
+    box-shadow: 
+        0 0 2px rgba(162, 89, 255, 0.6),
+        0 0 6px rgba(162, 89, 255, 0.3),
+        0 0 12px rgba(162, 89, 255, 0.2),
+        0 0 20px rgba(162, 89, 255, 0.1),
+        0 0 30px rgba(162, 89, 255, 0.05),
+        inset 0 0 8px rgba(162, 89, 255, 0.1);
 }
 
 .card-purple::before {
@@ -373,8 +381,15 @@ body {
 }
 
 .card-blue {
-    border: 2px solid #3772ff;
-    box-shadow: 0 0 10px rgba(55, 114, 255, 0.1);
+    border: 2.2px solid #3772ff;
+    border-radius: 4px;
+    box-shadow: 
+        0 0 2px rgba(55, 114, 255, 0.6),
+        0 0 6px rgba(55, 114, 255, 0.3),
+        0 0 12px rgba(55, 114, 255, 0.2),
+        0 0 20px rgba(55, 114, 255, 0.1),
+        0 0 30px rgba(55, 114, 255, 0.05),
+        inset 0 0 8px rgba(55, 114, 255, 0.1);
 }
 
 .card-blue::before {
@@ -407,8 +422,15 @@ body {
 }
 
 .card-pink {
-    border: 2px solid #ff4ecd;
-    box-shadow: 0 0 10px rgba(255, 78, 205, 0.1);
+    border: 2.2px solid #ff4ecd;
+    border-radius: 4px;
+    box-shadow: 
+        0 0 2px rgba(255, 78, 205, 0.6),
+        0 0 6px rgba(255, 78, 205, 0.3),
+        0 0 12px rgba(255, 78, 205, 0.2),
+        0 0 20px rgba(255, 78, 205, 0.1),
+        0 0 30px rgba(255, 78, 205, 0.05),
+        inset 0 0 8px rgba(255, 78, 205, 0.1);
 }
 
 .card-pink::before {
@@ -441,8 +463,15 @@ body {
 }
 
 .card-green {
-    border: 2px solid #00ffa3;
-    box-shadow: 0 0 10px rgba(0, 255, 163, 0.1);
+    border: 2.2px solid #00ffa3;
+    border-radius: 4px;
+    box-shadow: 
+        0 0 2px rgba(0, 255, 163, 0.6),
+        0 0 6px rgba(0, 255, 163, 0.3),
+        0 0 12px rgba(0, 255, 163, 0.2),
+        0 0 20px rgba(0, 255, 163, 0.1),
+        0 0 30px rgba(0, 255, 163, 0.05),
+        inset 0 0 8px rgba(0, 255, 163, 0.1);
 }
 
 .card-green::before {
@@ -505,15 +534,16 @@ body {
 
 
 .card-contact {
-    border: 1.7px solid #a259ff;
+    border: 2.3px solid #a259ff;
+    
 }
 
 .card-habilidades {
-    border: 1.7px solid #3772ff;
+    border: 2.3px solid #3772ff;
 }
 
 .card-acerca {
-    border: 1.7px solid #ff4ecd;
+    border: 2.3px solid #ff4ecd;
 }
 
 .card-contact h4,
@@ -579,7 +609,8 @@ body {
     font-size: 1rem;
 }
 
-.contact-list .contact-link:hover {
+.contact-list .contact-link:hover 
+{
     color: #a259ff;
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
     transform: scale(1.05);
@@ -588,32 +619,47 @@ body {
 /* Efectos hover para cards laterales */
 .card-contact:hover {
     border: 2px solid #a259ff;
-    box-shadow: 
-        0 0 5px #a259ff,
-        0 0 10px #a259ff,
-        0 0 15px #a259ff,
-        0 0 20px #a259ff;
     transform: translateY(-2px);
+    color: #a259ff;
+    box-shadow: 0 0 8px rgba(162, 89, 255, 0.8); 
 }
 
 .card-habilidades:hover {
     border: 2px solid #3772ff;
-    box-shadow: 
-        0 0 5px #3772ff,
-        0 0 10px #3772ff,
-        0 0 15px #3772ff,
-        0 0 20px #3772ff;
     transform: translateY(-2px);
+    color: #3772ff;
+    box-shadow: 0 0 8px rgba(55, 114, 255, 0.8);
 }
 
 .card-acerca:hover {
     border: 2px solid #ff4ecd;
-    box-shadow: 
-        0 0 5px #ff4ecd,
-        0 0 10px #ff4ecd,
-        0 0 15px #ff4ecd,
-        0 0 20px #ff4ecd;
     transform: translateY(-2px);
+    color: #ff4ecd;
+    box-shadow: 0 0 8px rgba(255, 78, 205, 0.8);
+}
+
+/* Asegurar que los efectos de hover funcionen en desktop */
+@media (min-width: 992px) {
+    .card-contact:hover {
+        border: 2px solid #a259ff !important;
+        transform: translateY(-2px) !important;
+        color: #a259ff !important;
+        box-shadow: 0 0 28px rgba(162, 89, 255, 0.8) !important; 
+    }
+
+    .card-habilidades:hover {
+        border: 2px solid #3772ff !important;
+        transform: translateY(-2px) !important;
+        color: #3772ff !important;
+        box-shadow: 0 0 28px rgba(55, 114, 255, 0.8) !important;
+    }
+
+    .card-acerca:hover {
+        border: 2px solid #ff4ecd !important;
+        transform: translateY(-2px) !important;
+        color: #ff4ecd !important;
+        box-shadow: 0 0 28px rgba(255, 78, 205, 0.8) !important;
+    }
 }
 
 /* Footer */
@@ -1365,7 +1411,7 @@ footer
     .project-list li {
         font-size: 1.3rem;
         text-align: left;
-        padding-left: 0.7rem;
+        padding-left: 1.2rem;
         margin-left: 0;
     }
 }

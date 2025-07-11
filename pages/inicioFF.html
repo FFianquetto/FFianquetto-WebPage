@@ -61,7 +61,7 @@
             <a class="nav-link" href="#certificaciones">Certificaciones</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#carousel-section" data-lang="carousel_nav">🎲 Ruleta</a>
+            <a class="nav-link" href="#roulette-section" data-lang="carousel_nav">🎲 Ruleta</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#acercaModal" data-lang="acerca">Acerca de mí...</a>
@@ -100,14 +100,13 @@
     <div class="carousel-container">
       <h2 class="carousel-title" data-lang="carousel_title">🎲 Proyectos Destacados</h2>
       <div class="winner-arrows-indicator">
-      <!-- <span class="arrow-indicator">&#8595;</span>
-        -->  
+        <!-- <span class="arrow-indicator">&#8595;</span> -->
       </div>
-      
-      <div id="multiProjectCarousel" class="carousel slide">
-        <div class="carousel-inner" id="multiCarouselInner">
-          <!-- Slides generados por JS -->
+      <div class="multi-carousel-viewport">
+        <div class="multi-carousel-strip" id="multiCarouselStrip">
+          <!-- Tarjetas generadas por JS -->
         </div>
+        <div class="multi-carousel-center-indicator"></div>
       </div>
       <div class="d-flex justify-content-center mt-3">
         <button class="spin-button spin-small" id="spinMultiCarouselBtn">
@@ -119,6 +118,90 @@
       </div>
     </div>
   </section>
+
+  <style>
+    .multi-carousel-viewport {
+      position: relative;
+      width: 1460px;
+      max-width: 200vw;
+      margin: 0 auto 10px auto;
+      overflow: hidden;
+      height: 260px;
+      display: flex;
+      justify-content: center;
+    }
+    .multi-carousel-strip {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      transition: transform 0.18s cubic-bezier(0.22, 0.61, 0.36, 1);
+      will-change: transform;
+    }
+    .project-card-carousel {
+      flex: 0 0 215px;
+      margin: 0 16px;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      text-align: center;
+      padding: 10px 5px 7px 5px;
+      transition: transform 0.2s, box-shadow 0.2s, border 0.2s, filter 0.18s;
+      cursor: pointer;
+      border: 3px solid transparent;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .project-card-carousel img {
+      width: 215px;
+      height: 180px;
+      object-fit: contain;
+      margin-bottom: 5px;
+      border-radius: 5px;
+      background: #222;
+    }
+    .project-card-carousel.centered {
+      transform: scale(1.15);
+      border: 3px solid #a259ff;
+      box-shadow: 0 4px 24px #a259ff33;
+      z-index: 2;
+    }
+    .project-card-carousel.animating {
+      animation: card-bounce 0.28s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+    @keyframes card-bounce {
+      0% { transform: scale(1) translateY(0); filter: brightness(1); }
+      30% { transform: scale(1.08) translateY(-8px); filter: brightness(1.08); }
+      60% { transform: scale(0.97) translateY(2px); filter: brightness(0.98); }
+      100% { transform: scale(1) translateY(0); filter: brightness(1); }
+    }
+    .multi-carousel-center-indicator {
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 100%;
+      border-left: 5px dashed  #8be9fd;
+      pointer-events: none;
+    }
+    @media (max-width: 900px) {
+      .multi-carousel-viewport {
+        width: 480px;
+        height: 170px;
+      }
+      .project-card-carousel { flex: 0 0 140px; padding: 12px 4px; }
+      .project-card-carousel img { width: 120px; height: 80px; }
+    }
+    @media (max-width: 600px) {
+      .multi-carousel-viewport {
+        width: 320px;
+        height: 120px;
+      }
+      .project-card-carousel { flex: 0 0 90px; padding: 6px 2px; }
+      .project-card-carousel img { width: 70px; height: 50px; }
+    }
+  </style>
 
   <script>
     // Lista de proyectos para el carrusel
@@ -135,111 +218,85 @@
       { id: 'snakeCard', name: 'Snake Slaughter con OGL Engine y Lenguaje Ensamblador', img: '../imagenesP/Snake.png' }
     ];
 
-    // Determina cuántas tarjetas mostrar por slide según el ancho de pantalla
-    function getCardsPerSlide() {
-      if (window.innerWidth < 768) return 1;
-      if (window.innerWidth < 992) return 2;
-      return 3;
-    }
-
-    // Genera el HTML de los slides del carrusel
+    // Renderiza solo 3 tarjetas visibles (la central y dos laterales)
     function renderMultiCarousel(centerIndex = 0) {
-      const cardsPerSlide = getCardsPerSlide();
-      const slides = [];
-      for (let i = 0; i < projectCards.length; i += cardsPerSlide) {
-        const group = projectCards.slice(i, i + cardsPerSlide);
-        let slide = `<div class="carousel-item${i === 0 ? ' active' : ''}"><div class='multi-carousel-row'>`;
-        group.forEach((card, idx) => {
-          // Centrar la tarjeta del medio
-          let centered = (idx === Math.floor(group.length / 2));
-          slide += `
-            <div class='project-card-carousel${centered ? ' centered' : ''}'
-              ${centered ? `onclick=\"toggleProjectCard('${card.id}')\" style=\"cursor:pointer;\"` : ''}>
-              <img src='${card.img}' alt='${card.name}'>
-              <div class='project-title'>${card.name}</div>
-            </div>
-          `;
-        });
-        slide += '</div></div>';
-        slides.push(slide);
-      }
-      document.getElementById('multiCarouselInner').innerHTML = slides.join('');
+      const strip = document.getElementById('multiCarouselStrip');
+      strip.innerHTML = '';
+      const total = projectCards.length;
+      // Indices de las 3 tarjetas a mostrar
+      const idxs = [
+        (centerIndex - 1 + total) % total,
+        centerIndex,
+        (centerIndex + 1) % total
+      ];
+      idxs.forEach((idx, i) => {
+        const card = projectCards[idx];
+        const div = document.createElement('div');
+        div.className = 'project-card-carousel' + (i === 1 ? ' centered' : '');
+        div.innerHTML = `<img src='${card.img}' alt='${card.name}'><div class='project-title'>${card.name}</div>`;
+        div.onclick = () => toggleProjectCard(card.id);
+        strip.appendChild(div);
+      });
     }
 
-    // Inicializa el carrusel y el botón de girar con animación de frenado mejorada (ease-out, solo derecha)
-    function setupMultiCarousel() {
-      renderMultiCarousel();
-      const spinBtn = document.getElementById('spinMultiCarouselBtn');
+    // Calcula el desplazamiento para centrar el proyecto
+    function getTranslateXForIndex(centerIdx) {
+      const cardWidth = document.querySelector('.project-card-carousel').offsetWidth + 24; // ancho + margen
+      // El viewport siempre muestra 3 tarjetas completas
+      const viewWidth = document.querySelector('.multi-carousel-viewport').offsetWidth;
+      const centerPos = (viewWidth / 2) - (cardWidth / 2);
+      return -(centerIdx * cardWidth) + centerPos;
+    }
+
+    // Animación de ruleta: recorre proyecto por proyecto mostrando solo 3
+    function spinMultiCarousel() {
       const viewBtn = document.getElementById('viewProjectBtn');
-      const carousel = document.getElementById('multiProjectCarousel');
-      // Desactiva cualquier auto-ciclo de Bootstrap Carousel
-      if (window.bootstrap && window.bootstrap.Carousel) {
-        const bsCarousel = window.bootstrap.Carousel.getOrCreateInstance(carousel);
-        bsCarousel.pause();
+      viewBtn.style.display = 'none';
+      let total = projectCards.length;
+      let spins = Math.floor(Math.random() * 2) + 3; // 3-4 vueltas (más corto)
+      let finalIdx = Math.floor(Math.random() * total);
+      let totalSteps = spins * total + finalIdx;
+      let step = 0;
+      let currentIdx = parseInt(document.getElementById('multiCarouselStrip').dataset.selected || '0');
+      function animateStep() {
+        currentIdx = (currentIdx + 1) % total;
+        renderMultiCarousel(currentIdx);
+        document.getElementById('multiCarouselStrip').dataset.selected = currentIdx;
+        // Animación de rebote a la card central
+        const cards = document.querySelectorAll('.project-card-carousel');
+        if (cards[1]) {
+          cards[1].classList.add('animating');
+          setTimeout(() => cards[1].classList.remove('animating'), 260);
+        }
+        step++;
+        if (step <= totalSteps) {
+          let t = step / totalSteps;
+          // Velocidad inicial más lenta, pero menos pasos
+          let delay = 90 + 260 * Math.pow(t, 2.5); // antes era 40 + 420*
+          setTimeout(animateStep, delay);
+        } else {
+          setTimeout(() => {
+            viewBtn.style.display = 'inline-block';
+          }, 200);
+        }
       }
-      let spinning = false;
-      spinBtn.addEventListener('click', function () {
-        if (spinning) return; // Evita doble giro
-        spinning = true;
-        viewBtn.style.display = 'none'; // Oculta el botón al girar
-        const cardsPerSlide = getCardsPerSlide();
-        const totalSlides = Math.ceil(projectCards.length / cardsPerSlide);
-        let randomSlide = Math.floor(Math.random() * totalSlides);
-        let spins = Math.floor(Math.random() * 3) + 4; // 4-6 vueltas
-        let totalSteps = spins * totalSlides + randomSlide;
-        let minDelay = 40; // ms
-        let maxDelay = 600; // ms (más lento al final)
-        let step = 0;
-        const bsCarousel = bootstrap.Carousel.getOrCreateInstance(carousel);
-        bsCarousel.pause(); // Refuerza que no haya auto-ciclo
-        function easeOut(t) {
-          // t: 0 (inicio) a 1 (fin)
-          return 1 - Math.pow(1 - t, 3.2); // ease-out más notorio
-        }
-        function spinStep() {
-          bsCarousel.next(); // Siempre avanza a la derecha
-          step++;
-          if (step < totalSteps) {
-            // Ease-out: delay crece suavemente
-            let t = step / totalSteps;
-            let delay = minDelay + (maxDelay - minDelay) * easeOut(t);
-            setTimeout(spinStep, delay);
-          } else {
-            spinning = false;
-            // Mostrar el botón 'Ver Proyecto' al terminar
-            setTimeout(() => {
-              viewBtn.style.display = 'inline-block';
-            }, 350);
-          }
-        }
-        spinStep();
-      });
-      // Al hacer clic en 'Ver Proyecto', abre la card modal del proyecto central
-      viewBtn.addEventListener('click', function () {
-        const cardsPerSlide = getCardsPerSlide();
-        const totalSlides = Math.ceil(projectCards.length / cardsPerSlide);
-        // Buscar el slide activo
-        const carouselInner = document.getElementById('multiCarouselInner');
-        const activeSlide = carouselInner.querySelector('.carousel-item.active');
-        if (!activeSlide) return;
-        const cards = activeSlide.querySelectorAll('.project-card-carousel');
-        const centeredIdx = Math.floor(cards.length / 2);
-        const centeredCard = cards[centeredIdx];
-        if (centeredCard) {
-          // Extraer el id del proyecto del onclick
-          const onclick = centeredCard.getAttribute('onclick');
-          const match = onclick && onclick.match(/toggleProjectCard\('([^']+)'\)/);
-          if (match && match[1]) {
-            toggleProjectCard(match[1]);
-          }
-        }
-      });
+      animateStep();
     }
 
-    // Renderizar al cargar y al cambiar tamaño
-    document.addEventListener('DOMContentLoaded', setupMultiCarousel);
-    window.addEventListener('resize', function () {
-      renderMultiCarousel();
+    // Inicializar carrusel
+    document.addEventListener('DOMContentLoaded', function () {
+      renderMultiCarousel(0);
+      document.getElementById('multiCarouselStrip').dataset.selected = 0;
+      document.getElementById('spinMultiCarouselBtn').onclick = spinMultiCarousel;
+      document.getElementById('viewProjectBtn').onclick = function () {
+        const idx = parseInt(document.getElementById('multiCarouselStrip').dataset.selected || '0');
+        toggleProjectCard(projectCards[idx].id);
+      };
+      window.addEventListener('resize', function () {
+        // Re-renderizar para mantener centrado
+        const idx = parseInt(document.getElementById('multiCarouselStrip').dataset.selected || '0');
+        renderMultiCarousel(idx);
+      });
     });
   </script>
 

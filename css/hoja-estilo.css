@@ -1804,14 +1804,20 @@ body.light-mode {
   }
   .card-contact.show,
   .card-habilidades.show,
-  .card-acerca.show {
+  .card-acerca.show,
+  .card-cell-c.show,
+  .card-cell-h.show,
+  .card-cell-a.show {
     display: block !important;
     overflow: auto;
     scrollbar-width: none; /* Firefox */
   }
   .card-contact.show::-webkit-scrollbar,
   .card-habilidades.show::-webkit-scrollbar,
-  .card-acerca.show::-webkit-scrollbar {
+  .card-acerca.show::-webkit-scrollbar,
+  .card-cell-c.show::-webkit-scrollbar,
+  .card-cell-h.show::-webkit-scrollbar,
+  .card-cell-a.show::-webkit-scrollbar {
     display: none; /* Chrome, Safari y Opera */
   }
   .card-contact-mobile,

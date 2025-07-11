@@ -769,13 +769,17 @@
     document.addEventListener('DOMContentLoaded', function () {
       if (window.innerWidth <= 991.98) {
         // En móvil, ocultar las cards laterales
-        document.querySelectorAll('.card-cell-c, .card-cell-h, .card-cell-a').forEach(card => {
+        document.querySelectorAll('.card-cell-c, .card-cell-h, .card-cell-a, .card-contact, .card-habilidades, .card-acerca').forEach(card => {
           card.style.display = 'none';
         });
       } else {
         // En pantalla completa, mostrar las cards laterales
         document.querySelectorAll('.card-contact, .card-habilidades, .card-acerca').forEach(card => {
           card.style.display = 'block';
+        });
+        // Ocultar las cards móviles en desktop
+        document.querySelectorAll('.card-cell-c, .card-cell-h, .card-cell-a').forEach(card => {
+          card.style.display = 'none';
         });
       }
       updateContactCardClass();
@@ -790,10 +794,18 @@
         document.querySelectorAll('.card-contact, .card-habilidades, .card-acerca').forEach(card => {
           card.style.display = 'block';
         });
+        // Ocultar las cards móviles
+        document.querySelectorAll('.card-cell-c, .card-cell-h, .card-cell-a').forEach(card => {
+          card.style.display = 'none';
+        });
         document.querySelector('.card-overlay').style.display = 'none';
       } else {
         // En móvil, ocultar las cards laterales
         document.querySelectorAll('.card-contact, .card-habilidades, .card-acerca').forEach(card => {
+          card.style.display = 'none';
+        });
+        // Ocultar las cards móviles también
+        document.querySelectorAll('.card-cell-c, .card-cell-h, .card-cell-a').forEach(card => {
           card.style.display = 'none';
         });
       }
@@ -822,13 +834,15 @@
     // Función para mostrar/ocultar cards en móvil
     function toggleCard(cardId) {
       // Oculta todas las cards primero
-      document.querySelectorAll('.card-contact, .card-habilidades, .card-acerca').forEach(card => {
+      document.querySelectorAll('.card-contact, .card-habilidades, .card-acerca, .card-cell-c, .card-cell-h, .card-cell-a').forEach(card => {
         card.classList.remove('show');
+        card.style.display = 'none';
       });
 
       // Muestra solo la card correspondiente
       const card = document.getElementById(cardId);
       if (card) {
+        card.style.display = 'block';
         card.classList.add('show');
       }
 
@@ -895,8 +909,9 @@
     // Agregar evento de clic al overlay para cerrar las tarjetas laterales en móvil
     document.querySelector('.card-overlay').addEventListener('click', function (event) {
       // Cierra cualquier card lateral visible
-      document.querySelectorAll('.card-contact.show, .card-habilidades.show, .card-acerca.show').forEach(card => {
+      document.querySelectorAll('.card-contact.show, .card-habilidades.show, .card-acerca.show, .card-cell-c.show, .card-cell-h.show, .card-cell-a.show').forEach(card => {
         card.classList.remove('show');
+        card.style.display = 'none';
       });
       this.style.display = 'none';
     });
@@ -1080,7 +1095,10 @@
     // Agregar función para cerrar cards laterales en móvil si no existe
     function closeSideCard(cardId) {
       const card = document.getElementById(cardId);
-      if (card) card.classList.remove('show');
+      if (card) {
+        card.classList.remove('show');
+        card.style.display = 'none';
+      }
       var overlay = document.querySelector('.card-overlay');
       if (overlay) overlay.style.display = 'none';
     }

@@ -187,12 +187,28 @@
     }
     @media (max-width: 900px) {
       .multi-carousel-viewport {
-        width: 480px;
-        height: 170px;
+        width: 88vw;
+        height: 175px;
       }
-      .project-card-carousel { flex: 0 0 140px; padding: 12px 4px; }
-      .project-card-carousel img { width: 120px; height: 80px; }
-      
+      .project-card-carousel {
+        flex: 0 0 140px;
+        padding: 12px 4px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .project-card-carousel img {
+        width: 120px;
+        height: 80px;
+        background: #111;
+        border-radius: 8px;
+        padding: 10px;
+        box-sizing: border-box;
+        display: block;
+        margin: 0 auto 8px auto;
+        object-fit: contain;
+      }
     }
     @media (max-width: 600px) {
       .multi-carousel-viewport {
@@ -227,6 +243,7 @@
         object-fit: contain;
         background: #222;
         border-radius: 5px;
+        padding: 0;
       }
     }
   </style>

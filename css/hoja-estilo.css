@@ -904,21 +904,6 @@ footer
     background: linear-gradient(45deg, #00332a, #101a2b) !important;
 }
 
-.card-project .card-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 4.1rem;
-    margin-top: 0.7rem;
-    margin-bottom: 0.5rem;
-}
-
-.card-project h4 {
-    text-align: center;
-    margin-bottom: 1.4rem;
-    margin-top: 0;
-}
-
 
 .card-project .card-image {
     display: flex;
@@ -964,23 +949,6 @@ footer
     position: absolute;
     left: 0;
     font-size: 1.5rem;
-}
-
-/* Colores base según la tarjeta activa */
-.card-project.card-purple .project-features li:before {
-    color: #a259ff;
-}
-
-.card-project.card-blue .project-features li:before {
-    color: #3772ff;
-}
-
-.card-project.card-pink .project-features li:before {
-    color: #ff4ecd;
-}
-
-.card-project.card-green .project-features li:before {
-    color: #00ffa3;
 }
 
 /* Botón de cierre */
@@ -1739,6 +1707,26 @@ body.light-mode {
     margin: 0 !important;
     padding: 0 !important;
   }
+  
+  /* Mostrar emojis móviles en las cards laterales */
+  .card-contact .card-icon-mobile,
+  .card-habilidades .card-icon-mobile,
+  .card-acerca .card-icon-mobile {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/* Ocultar emojis móviles en desktop */
+@media (min-width: 992px) {
+  .card-icon-mobile {
+    display: none !important;
+  }
 }
 
 /* Por defecto, oculta las cards móviles */
@@ -1746,6 +1734,65 @@ body.light-mode {
 .card-habilidades-mobile,
 .card-acerca-mobile {
   display: none;
+}
+
+/* Definiciones de las clases card-cell para móvil */
+.card-cell-c,
+.card-cell-h,
+.card-cell-a {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1050;
+  max-width: 95vw;
+  width: 95vw;
+  max-height: 80vh;
+  overflow: auto;
+  border-radius: 15px;
+  padding: 25px;
+  background: #1a1a1a !important;
+  display: none;
+  box-shadow: 0 0 80px 30px #000a;
+}
+
+.card-cell-c {
+  border: 2px solid #a259ff;
+}
+
+.card-cell-h {
+  border: 2px solid #3772ff;
+}
+
+.card-cell-a {
+  border: 2px solid #ff4ecd;
+}
+
+.card-cell-c h4,
+.card-cell-h h4,
+.card-cell-a h4 {
+  font-size: 2.1rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+.card-cell-c .contact-list li,
+.card-cell-h .contact-list li,
+.card-cell-a .contact-list li {
+  font-size: 1.25rem;
+  padding: 14px 0;
+}
+
+.card-cell-c .card-icon-mobile,
+.card-cell-h .card-icon-mobile,
+.card-cell-a .card-icon-mobile {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  width: 100%;
 }
 
 /* En móvil, oculta las de escritorio y muestra las móviles */
@@ -1846,9 +1893,23 @@ body.light-mode {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  /* Opcional: para que no se pase del ancho del modal */
   max-width: 90%;
   max-height: 350px;
+  padding-bottom: 12px;
+}
+
+.card-project .card-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4.1rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.4rem;
+}
+
+.card-project h4 {
+    text-align: center;
+    margin-bottom: 1.2rem;
 }
 
 @media (max-width: 991.98px) {

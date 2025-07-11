@@ -425,6 +425,19 @@ body.light-mode .card-cell-a .card-close:hover {
   color: var(--pink-primary);
 }
 
+/* Emojis móviles en modo claro */
+body.light-mode .card-cell-c .card-icon-mobile,
+body.light-mode .card-cell-h .card-icon-mobile,
+body.light-mode .card-cell-a .card-icon-mobile {
+  color: var(--text-color);
+}
+
+body.light-mode .card-contact .card-icon-mobile,
+body.light-mode .card-habilidades .card-icon-mobile,
+body.light-mode .card-acerca .card-icon-mobile {
+  color: var(--text-color);
+}
+
 /* Modal de imágenes en modo claro */
 body.light-mode .image-modal {
     background-color: rgba(0, 0, 0, 0.8);

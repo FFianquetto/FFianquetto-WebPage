@@ -192,14 +192,42 @@
       }
       .project-card-carousel { flex: 0 0 140px; padding: 12px 4px; }
       .project-card-carousel img { width: 120px; height: 80px; }
+      
     }
     @media (max-width: 600px) {
       .multi-carousel-viewport {
-        width: 320px;
-        height: 120px;
+        width: 80vw;
+        min-width: 0;
+        height: auto;
       }
-      .project-card-carousel { flex: 0 0 90px; padding: 6px 2px; }
-      .project-card-carousel img { width: 70px; height: 50px; }
+      .multi-carousel-strip {
+        justify-content: center;
+        width: 100%;
+      }
+      .project-card-carousel {
+        flex: 0 0 90vw;
+        max-width: 90vw;
+        margin: 0 auto;
+        padding: 12px 0 12px 0;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        min-height: 180px;
+        display: flex;
+        flex-direction: column;
+      }
+      .project-card-carousel img {
+        width: 86vw;
+        max-width: 86vw;
+        height: auto;
+        max-height: 38vw;
+        min-height: 80px;
+        margin: 0 auto 8px auto;
+        display: block;
+        object-fit: contain;
+        background: #222;
+        border-radius: 5px;
+      }
     }
   </style>
 
@@ -218,21 +246,28 @@
       { id: 'snakeCard', name: 'Snake Slaughter con OGL Engine y Lenguaje Ensamblador', img: '../imagenesP/Snake.png' }
     ];
 
-    // Renderiza solo 3 tarjetas visibles (la central y dos laterales)
+    // Renderiza 3 tarjetas en desktop, 1 en mobile
     function renderMultiCarousel(centerIndex = 0) {
       const strip = document.getElementById('multiCarouselStrip');
       strip.innerHTML = '';
       const total = projectCards.length;
-      // Indices de las 3 tarjetas a mostrar
-      const idxs = [
-        (centerIndex - 1 + total) % total,
-        centerIndex,
-        (centerIndex + 1) % total
-      ];
+      const isMobile = window.innerWidth <= 600;
+      let idxs;
+      if (isMobile) {
+        idxs = [centerIndex];
+      } else {
+        idxs = [
+          (centerIndex - 1 + total) % total,
+          centerIndex,
+          (centerIndex + 1) % total
+        ];
+      }
       idxs.forEach((idx, i) => {
         const card = projectCards[idx];
+        let classes = 'project-card-carousel';
+        if ((isMobile && i === 0) || (!isMobile && i === 1)) classes += ' centered';
         const div = document.createElement('div');
-        div.className = 'project-card-carousel' + (i === 1 ? ' centered' : '');
+        div.className = classes;
         div.innerHTML = `<img src='${card.img}' alt='${card.name}'><div class='project-title'>${card.name}</div>`;
         div.onclick = () => toggleProjectCard(card.id);
         strip.appendChild(div);
@@ -293,7 +328,7 @@
         toggleProjectCard(projectCards[idx].id);
       };
       window.addEventListener('resize', function () {
-        // Re-renderizar para mantener centrado
+        // Re-renderizar para mantener centrado y responsivo
         const idx = parseInt(document.getElementById('multiCarouselStrip').dataset.selected || '0');
         renderMultiCarousel(idx);
       });

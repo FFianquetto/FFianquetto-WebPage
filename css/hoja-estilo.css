@@ -872,13 +872,13 @@ footer
 .card-project {
     display: none;
     position: fixed;
-    top: 62%;
+    top: 56%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1050;
     width: 95%;
     max-width: 800px;
-    max-height: 111vh;
+    max-height: 90vh;
     padding: 25px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -886,6 +886,7 @@ footer
     -ms-overflow-style: none; /* Internet Explorer 10+ */
     scroll-behavior: smooth; /* Scroll suave */
     box-sizing: border-box;
+
 }
 
 .card-project::-webkit-scrollbar {

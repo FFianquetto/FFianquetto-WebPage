@@ -464,12 +464,10 @@ body.light-mode .card-image img {
     border: 2px solid rgba(0, 0, 0, 0.15);
 }
 
-/* Iconos en modo claro */
 body.light-mode .card-icon {
   color: var(--text-secondary);
 }
 
-/* Mobile icons en modo claro */
 body.light-mode .mobile-icons .btn-link {
   color: var(--text-color);
 }

@@ -645,6 +645,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Actualizar textos de todas las tarjetas de proyectos
         updateProjectCards(lang);
+        
+        // Actualizar el carrusel de proyectos si existe
+        if (typeof renderMultiCarousel === 'function') {
+            const currentIndex = parseInt(document.getElementById('multiCarouselStrip')?.dataset.selected || '0');
+            renderMultiCarousel(currentIndex);
+        }
     }
 
     // Función para actualizar las tarjetas de proyectos

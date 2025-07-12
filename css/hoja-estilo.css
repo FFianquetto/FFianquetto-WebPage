@@ -872,17 +872,22 @@ footer
 .card-project {
     display: none;
     position: fixed;
-    top: 50%;
+    top: 62%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1050;
     width: 95%;
     max-width: 800px;
-    max-height: 80vh;
+    max-height: 111vh;
     padding: 25px;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scroll-behavior: smooth; /* Scroll suave */
+    box-sizing: border-box;
 }
+
 .card-project::-webkit-scrollbar {
     display: none; /* Chrome, Safari y Opera */
 }
@@ -903,7 +908,6 @@ footer
 .card-project.card-green {
     background: linear-gradient(45deg, #00332a, #101a2b) !important;
 }
-
 
 .card-project .card-image {
     display: flex;

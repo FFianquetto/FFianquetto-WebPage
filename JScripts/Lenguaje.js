@@ -927,3 +927,26 @@ function scrollToCarousel() {
         });
     }
 }
+
+// --- INICIO: Restricción para abrir solo una card en móvil ---
+function toggleProjectCard(cardId) {
+    const isMobile = window.innerWidth <= 991.98;
+    const card = document.getElementById(cardId);
+    if (!card) return;
+    if (isMobile) {
+        // Si ya hay una card abierta, no abrir otra
+        const anyOpen = Array.from(document.querySelectorAll('.card-project')).some(c => c.style.display === 'block' && c.id !== cardId);
+        if (anyOpen) return;
+    }
+    if (card.style.display === 'block') {
+        card.style.display = 'none';
+        const overlay = document.querySelector('.card-overlay');
+        if (overlay) overlay.style.display = 'none';
+    } else {
+        closeAllModals();
+        card.style.display = 'block';
+        const overlay = document.querySelector('.card-overlay');
+        if (overlay) overlay.style.display = 'block';
+    }
+}
+// --- FIN restricción ---

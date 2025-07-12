@@ -1158,7 +1158,8 @@ border: 4px solid #ff4ecd !important;
 /* Móviles pequeños */
 @media (max-width: 575.98px) {
     .navbar {
-        padding: 0 10px;
+        padding: 0 2vw;
+        min-height: 54px;
     }
     
     .nav-links {
@@ -1166,7 +1167,7 @@ border: 4px solid #ff4ecd !important;
     }
     
     .nav-actions {
-        gap: 5px;
+        gap: 0.7rem;
     }
     
     .search-bar {
@@ -1226,6 +1227,45 @@ border: 4px solid #ff4ecd !important;
     .card-acerca {
         max-width: 100%;
     }
+    .logo img {
+        height: 38px !important;
+        width: 40px !important;
+        max-width: 40vw;
+        max-height: 10vh;
+        margin: 0;
+    }
+    .logo {
+        max-width: 44px;
+        min-width: 36px;
+        padding: 0;
+    }
+    .navbar-toggler {
+        padding: 6px;
+        margin-right: 4px;
+    }
+    .nav-actions > div, .nav-actions {
+        gap: 0.7rem;
+    }
+    .mobile-icons .btn-link {
+        font-size: 1.5rem;
+        padding: 0 4px;
+    }
+}
+
+@media (max-width: 400px) {
+  .logo img {
+    height: 30px !important;
+    width: 32px !important;
+    max-width: 32vw;
+    max-height: 8vh;
+  }
+  .logo {
+    max-width: 34px;
+    min-width: 28px;
+  }
+  .navbar {
+    min-height: 44px;
+  }
 }
 
 /* Móviles grandes */

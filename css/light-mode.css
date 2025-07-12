@@ -248,7 +248,16 @@ body.light-mode .card-overlay {
   backdrop-filter: blur(3px);
 }
 
-body.light-mode .card-close {
+body.light-mode .card-purple .card-close {
+  color: black;
+}
+body.light-mode .card-blue .card-close {
+  color: black;
+}
+body.light-mode .card-green .card-close {
+  color: black;
+}
+body.light-mode .card-pink .card-close {
   color: black;
 }
 
@@ -423,19 +432,6 @@ body.light-mode .card-cell-h .card-close:hover {
 
 body.light-mode .card-cell-a .card-close:hover {
   color: var(--pink-primary);
-}
-
-/* Emojis móviles en modo claro */
-body.light-mode .card-cell-c .card-icon-mobile,
-body.light-mode .card-cell-h .card-icon-mobile,
-body.light-mode .card-cell-a .card-icon-mobile {
-  color: var(--text-color);
-}
-
-body.light-mode .card-contact .card-icon-mobile,
-body.light-mode .card-habilidades .card-icon-mobile,
-body.light-mode .card-acerca .card-icon-mobile {
-  color: var(--text-color);
 }
 
 /* Modal de imágenes en modo claro */

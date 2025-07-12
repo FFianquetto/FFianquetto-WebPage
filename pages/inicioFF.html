@@ -52,19 +52,19 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="nav-links navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="../pages/inicioFF.html">Inicio</a>
+            <a class="nav-link" href="../pages/inicioFF.html" data-lang="inicio">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#paginas-web">Proyectos</a>
+            <a class="nav-link" href="#paginas-web" data-lang="proyectos">Proyectos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#certificaciones">Certificaciones</a>
+            <a class="nav-link" href="#certificaciones" data-lang="certificados">Certificaciones</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#roulette-section" data-lang="carousel_nav">🎲 Ruleta</a>
+            <a class="nav-link" href="#carousel-section" data-lang="carousel_nav">🎲 Ruleta</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#acercaModal" data-lang="acerca">Acerca de mí...</a>
+            <a class="nav-link" href="#acercaModal" data-lang="acerca_de" onclick="handleAcercaClick(event)">Acerca de mí...</a>
           </li>
         </ul>
         <div class="nav-actions d-flex align-items-center">
@@ -88,8 +88,8 @@
 
   <!-- HERO SECTION -->
   <section class="hero">
-    <h1 lang="es">¡Bienvenido a FFianquetto Projects!</h1>
-    <p class="hero-subtitle">
+    <h1 lang="es" data-lang="bienvenido">¡Bienvenido a FFianquetto Projects!</h1>
+    <p class="hero-subtitle" data-lang="subtitulo">
       Aquí podrás explorar distintos proyectos de mi autoría y algunos en
       colaboración con otros artistas y desarrolladores.
     </p>
@@ -338,7 +338,7 @@
         <button class="card-close mobile-only" onclick="closeSideCard('contactoModal')">×</button>
         <span class="card-icon">📱</span>
         <span class="card-icon-mobile">📱</span>
-        <h4 data-lang="contacto_title">Contacto</h4>
+        <h4 data-lang="contacto">Contacto</h4>
         <ul class="contact-list">
           <li><i class="fas fa-envelope"></i> <a href="mailto:fernandocancino2004@gmail.com"
               class="contact-link">fernandocancino2004@gmail.com</a></li>
@@ -368,8 +368,7 @@
       <!-- Card Acerca de mí -->
       <div class="card-acerca" id="acercaModal">
         <button class="card-close mobile-only" onclick="closeSideCard('acercaModal')">×</button>
-        <span class="card-icon">👨‍💻</span>
-        <span class="card-icon-mobile">👨‍💻</span>
+      
         <h4 data-lang="acerca_de">Acerca de mí</h4>
         <div style="text-align: center; margin: 20px 0; position: relative;">
           <img src="../imagenes/prop.jpg" alt="Foto de perfil"
@@ -399,7 +398,7 @@
   <p></p>
 
   <footer>
-    <p class="copyright">All information copyright © Fernando A. Cancino</p>
+    <p class="copyright" data-lang="copyright">All information copyright © Fernando A. Cancino</p>
   </footer>
 
   <!-- Cards de proyecto modales -->
@@ -1091,6 +1090,16 @@
         closeImageModal();
       }
     });
+
+    // Función para manejar el clic en "Acerca de mí"
+    function handleAcercaClick(event) {
+      // En móvil, mostrar la card como modal
+      if (window.innerWidth <= 991.98) {
+        event.preventDefault();
+        toggleCard('acercaModal');
+      }
+      // En desktop, permitir el comportamiento normal del enlace (no prevenir)
+    }
 
     // Agregar función para cerrar cards laterales en móvil si no existe
     function closeSideCard(cardId) {

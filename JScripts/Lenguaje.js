@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'ajedrez': 'Ajedrecista para Tigres UANL',
             'crypto': 'Crypto Enthusiastic',
             'contacto': 'Contacto',
+            'soft_skills': 'Habilidades',
             'email': 'fernandocancino2004@gmail.com',
             'telefono': '+52 921 133 7977',
             'linkedin': 'LinkedIn',
@@ -139,6 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'escape_feature3': "IA avanzada para enemigos",
             'escape_feature4': "Mecánicas de supervivencia",
             'candy_title': "Candy Collector con OGL Engine y C++",
+            'candy_description': "Juego de recolección desarrollado con OpenGL y C++ para demostrar habilidades de programación de bajo nivel. Características principales:",
             'candy_feature1': "Motor gráfico personalizado con OpenGL",
             'candy_feature2': "Optimización de rendimiento en C++",
             'candy_feature3': "Sistema de partículas personalizado",
@@ -182,6 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'ajedrez': 'Chess player for Tigres UANL',
             'crypto': 'Crypto Enthusiastic',
             'contacto': 'Contact',
+            'soft_skills': 'Skills',
             'email': 'fernandocancino2004@gmail.com',
             'telefono': '+52 921 133 7977',
             'linkedin': 'LinkedIn',
@@ -288,11 +291,11 @@ document.addEventListener('DOMContentLoaded', function() {
             'escape_feature3': "IA avancée pour les ennemis",
             'escape_feature4': "Mécaniques de survie",
             'candy_title': "Candy Collector with OGL Engine and C++",
-            'candy_description': "Jeu de collecte développé avec OpenGL et C++ pour démontrer des compétences de programmation de bas niveau. Caractéristiques principales :",
-            'candy_feature1': "Moteur graphique personnalisé avec OpenGL",
-            'candy_feature2': "Optimisation des performances en C++",
-            'candy_feature3': "Système de particules personnalisé",
-            'candy_feature4': "Physique de jeu optimisée",
+            'candy_description': "Collecting game developed with OpenGL and C++ to demonstrate low-level programming skills. Main features:",
+            'candy_feature1': "Custom graphics engine with OpenGL",
+            'candy_feature2': "Performance optimization in C++",
+            'candy_feature3': "Custom particle system",
+            'candy_feature4': "Optimized game physics",
             'organización': 'Development best practices',
             'carousel_title': '🎲 Discover a Random Project',
             'carousel_subtitle': 'Click on the wheel to discover a surprise project!',
@@ -333,6 +336,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'ajedrez': 'Joueur d\'échecs - Tigres UANL',
             'crypto': 'Crypto Enthusiastic',
             'contacto': 'Contact',
+            'soft_skills': 'Compétences',
             'email': 'fernandocancino2004@gmail.com',
             'telefono': '+52 921 133 7977',
             'linkedin': 'LinkedIn',
@@ -484,6 +488,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'ajedrez': 'Schachspieler für Tigres UANL',
             'crypto': 'Crypto Enthusiastic',
             'contacto': 'Kontakt',
+            'soft_skills': 'Fähigkeiten',
             'email': 'fernandocancino2004@gmail.com',
             'telefono': '+52 921 133 7977',
             'linkedin': 'LinkedIn',
@@ -613,42 +618,16 @@ document.addEventListener('DOMContentLoaded', function() {
         // Actualizar el atributo lang del HTML
         document.documentElement.lang = lang.toLowerCase();
         
-        // Actualizar textos de navegación
-        document.querySelector('a[href="../pages/inicioFF.html"]').textContent = translations[lang]['inicio'];
-        document.querySelector('a[href="#paginas-web"]').textContent = translations[lang]['proyectos'];
-        document.querySelector('a[href="#certificaciones"]').textContent = translations[lang]['certificados'];
-        document.querySelector('a[href="#carousel-section"]').textContent = translations[lang]['carousel_nav'];
-        document.querySelector('a[href="#acercaModal"]').textContent = translations[lang]['acerca_de'];
-        
-        // Actualizar placeholder del buscador
-        const searchBar = document.querySelector('.search-bar');
-        if (searchBar) {
-            searchBar.placeholder = translations[lang]['buscar'];
-        }
-        
         // Actualizar textos del hero con animación
         const heroTitle = document.querySelector('.hero h1');
-        heroTitle.style.opacity = '0';
-        setTimeout(() => {
-            heroTitle.textContent = translations[lang]['bienvenido'];
-            heroTitle.setAttribute('lang', lang.toLowerCase());
-            heroTitle.style.opacity = '1';
-        }, 300);
-        
-        document.querySelector('.hero-subtitle').textContent = translations[lang]['subtitulo'];
-        
-        // Actualizar textos de las tarjetas principales
-        document.querySelector('.card-purple h3').textContent = translations[lang]['paginas_web'];
-        document.querySelector('.card-purple p').textContent = translations[lang]['descubre_web'];
-        
-        document.querySelector('.card-blue h3').textContent = translations[lang]['bases_datos'];
-        document.querySelector('.card-blue p').textContent = translations[lang]['revisa_db'];
-        
-        document.querySelector('.card-pink h3').textContent = translations[lang]['videojuegos'];
-        document.querySelector('.card-pink p').textContent = translations[lang]['sumergete'];
-        
-        document.querySelector('.card-green h3').textContent = translations[lang]['certificados'];
-        document.querySelector('.card-green p').textContent = translations[lang]['observa'];
+        if (heroTitle) {
+            heroTitle.style.opacity = '0';
+            setTimeout(() => {
+                heroTitle.textContent = translations[lang]['bienvenido'];
+                heroTitle.setAttribute('lang', lang.toLowerCase());
+                heroTitle.style.opacity = '1';
+            }, 300);
+        }
         
         // Actualizar todos los elementos con atributo data-lang
         document.querySelectorAll('[data-lang]').forEach(element => {
@@ -658,32 +637,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Actualizar elementos de lista en las tarjetas principales
-        const projectLists = document.querySelectorAll('.project-list li');
-        projectLists.forEach(li => {
-            const key = li.getAttribute('data-lang');
-            if (translations[lang][key]) {
-                li.textContent = translations[lang][key];
-            }
-        });
-
-        // Actualizar elementos de lista en las tarjetas de contacto y habilidades
-        const contactLists = document.querySelectorAll('.contact-list li span[data-lang]');
-        contactLists.forEach(span => {
-            const key = span.getAttribute('data-lang');
-            if (translations[lang][key]) {
-                span.textContent = translations[lang][key];
-            }
-        });
-        
-        // Actualizar título de la tarjeta de contacto
-        const contactoTitle = document.querySelector('#contactoModal h4[data-lang="contacto_title"]');
-        if (contactoTitle) {
-            contactoTitle.textContent = translations[lang]['contacto'];
+        // Actualizar placeholder del buscador si existe
+        const searchBar = document.querySelector('.search-bar');
+        if (searchBar && translations[lang]['buscar']) {
+            searchBar.placeholder = translations[lang]['buscar'];
         }
-        
-        // Actualizar copyright
-        document.querySelector('.copyright').textContent = translations[lang]['copyright'];
 
         // Actualizar textos de todas las tarjetas de proyectos
         updateProjectCards(lang);
@@ -723,16 +681,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Forzar inglés la primera vez
-    if (!localStorage.getItem('firstLoad')) {
-        localStorage.setItem('firstLoad', 'true');
-        localStorage.setItem('selectedLanguage', 'EN');
-    }
-
-    // Cargar el idioma guardado
-    const savedLanguage = localStorage.getItem('selectedLanguage');
-        langSelect.value = savedLanguage;
-        updateLanguage(savedLanguage);
+    // Cargar el idioma guardado o usar español por defecto
+    const savedLanguage = localStorage.getItem('selectedLanguage') || 'ES';
+    langSelect.value = savedLanguage;
+    updateLanguage(savedLanguage);
 
     // Evento para cambiar el idioma
     langSelect.addEventListener('change', function() {

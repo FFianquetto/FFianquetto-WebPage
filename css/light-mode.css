@@ -248,7 +248,9 @@ body.light-mode .card-overlay {
   backdrop-filter: blur(3px);
 }
 
-
+body.light-mode .card-close {
+  color: black;
+}
 
 body.light-mode .card-close:hover {
   color: var(--purple-primary);

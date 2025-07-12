@@ -536,7 +536,6 @@ body {
 
 .card-contact {
     border: 2.3px solid #a259ff;
-    
 }
 
 .card-habilidades {
@@ -604,17 +603,19 @@ body {
 }
 
 .contact-list .contact-link {
-    color: inherit;
+    color: #a259ff;
     text-decoration: none;
     transition: all 0.3s ease;
-    font-size: 1rem;
+    font-size: 1.12rem;
+    text-shadow: 0 0 4px rgba(162, 89, 255, 0.3);
 }
 
 .contact-list .contact-link:hover 
 {
     color: #a259ff;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    text-shadow: 0 0 12px rgba(162, 89, 255, 0.8), 0 0 20px rgba(162, 89, 255, 0.6);
     transform: scale(1.05);
+    filter: brightness(1.2);
 }
 
 /* Efectos hover para cards laterales */

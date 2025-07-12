@@ -185,14 +185,16 @@ body.light-mode .project-list li:hover {
 
 /* Enlaces de contacto en modo claro */
 body.light-mode .contact-link {
-
+  color: #a259ff;
   transition: all 0.3s ease;
+  text-shadow: 0 0 4px rgba(111, 66, 193, 0.3);
 }
 
 body.light-mode .contact-link:hover {
   color: var(--purple-primary);
-  text-shadow: 0 0 8px rgba(111, 66, 193, 0.3);
+  text-shadow: 0 0 12px rgba(111, 66, 193, 0.8), 0 0 20px rgba(111, 66, 193, 0.6);
   transform: scale(1.05);
+  filter: brightness(1.2);
 }
 
 body.light-mode .contact-list li i {
@@ -394,21 +396,9 @@ body.light-mode .card-cell-a {
 body.light-mode .card-cell-c h4,
 body.light-mode .card-cell-h h4,
 body.light-mode .card-cell-a h4 {
-  color: var(--text-color);
+  color: white;
 }
 
-body.light-mode .card-cell-c p,
-body.light-mode .card-cell-h p,
-body.light-mode .card-cell-a p {
-  color: var(--text-secondary);
-}
-
-body.light-mode .card-cell-c .contact-list li,
-body.light-mode .card-cell-h .contact-list li,
-body.light-mode .card-cell-a .contact-list li {
-  color: var(--text-color);
-  border-bottom: 1px solid var(--border-color);
-}
 
 body.light-mode .card-cell-c .contact-list li i {
   color: var(--purple-primary);

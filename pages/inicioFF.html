@@ -39,13 +39,13 @@
       </button>
       <!-- Iconos móviles -->
       <div class="mobile-icons d-flex d-lg-none">
-        <button type="button" class="btn btn-link" onclick="toggleCard('contactoModal')" style="color: #a259ff;">
+        <button type="button" class="btn btn-link" onclick="handleMobileIconClick('contactoModal')" style="color: #a259ff;">
           <i class="fas fa-phone"></i>
         </button>
-        <button type="button" class="btn btn-link" onclick="toggleCard('softskillsModal')" style="color: #3772ff;">
+        <button type="button" class="btn btn-link" onclick="handleMobileIconClick('softskillsModal')" style="color: #3772ff;">
           <i class="fas fa-bullseye"></i>
         </button>
-        <button type="button" class="btn btn-link" onclick="toggleCard('acercaModal')" style="color: #ff4ecd;">
+        <button type="button" class="btn btn-link" onclick="handleMobileIconClick('acercaModal')" style="color: #ff4ecd;">
           <i class="fas fa-user"></i>
         </button>
       </div>
@@ -183,14 +183,22 @@
 
     // Animación de ruleta: recorre proyecto por proyecto mostrando solo 3
     function spinMultiCarousel() {
+      const spinBtn = document.getElementById('spinMultiCarouselBtn');
       const viewBtn = document.getElementById('viewProjectBtn');
+      
+      // Desactivar el botón de girar
+      spinBtn.disabled = true;
+      spinBtn.style.opacity = '0.6';
+      spinBtn.style.cursor = 'not-allowed';
+      
       viewBtn.style.display = 'none';
       let total = projectCards.length;
       let spins = Math.floor(Math.random() * 2) + 3; // 3-4 vueltas (más corto)
       let finalIdx = Math.floor(Math.random() * total);
       let totalSteps = spins * total + finalIdx;
-        let step = 0;
+      let step = 0;
       let currentIdx = parseInt(document.getElementById('multiCarouselStrip').dataset.selected || '0');
+      
       function animateStep() {
         currentIdx = (currentIdx + 1) % total;
         renderMultiCarousel(currentIdx);
@@ -201,15 +209,19 @@
           cards[1].classList.add('animating');
           setTimeout(() => cards[1].classList.remove('animating'), 260);
         }
-          step++;
+        step++;
         if (step <= totalSteps) {
-            let t = step / totalSteps;
+          let t = step / totalSteps;
           // Velocidad inicial más lenta, pero menos pasos
           let delay = 90 + 260 * Math.pow(t, 2.5); // antes era 40 + 420*
           setTimeout(animateStep, delay);
-          } else {
-            setTimeout(() => {
-              viewBtn.style.display = 'inline-block';
+        } else {
+          setTimeout(() => {
+            viewBtn.style.display = 'inline-block';
+            // Reactivar el botón de girar
+            spinBtn.disabled = false;
+            spinBtn.style.opacity = '1';
+            spinBtn.style.cursor = 'pointer';
           }, 200);
         }
       }
@@ -1109,6 +1121,30 @@
         toggleCard('acercaModal');
       }
       // En desktop, permitir el comportamiento normal del enlace (no prevenir)
+    }
+
+    // Función para manejar clic en iconos móviles
+    function handleMobileIconClick(cardId) {
+      // Cerrar el menú hamburguesa si está abierto
+      const navbarCollapse = document.querySelector('.navbar-collapse');
+      if (navbarCollapse.classList.contains('show')) {
+        navbarCollapse.classList.remove('show');
+      }
+      
+      // Cerrar todas las cards de proyecto si están abiertas
+      const projectCards = document.querySelectorAll('.card-project');
+      projectCards.forEach(card => {
+        if (card.style.display === 'block') {
+          card.classList.add('closing');
+          setTimeout(() => {
+            card.style.display = 'none';
+            card.classList.remove('closing');
+          }, 300);
+        }
+      });
+      
+      // Mostrar la card correspondiente
+      toggleCard(cardId);
     }
 
     // Agregar función para cerrar cards laterales en móvil si no existe

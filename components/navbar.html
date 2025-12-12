@@ -1,0 +1,57 @@
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <div class="logo">
+      <img src="../imagenes/export.png" alt="Logo" onclick="this.classList.toggle('pirouette')" loading="lazy" width="48" height="48"/>
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Iconos móviles -->
+    <div class="mobile-icons d-flex d-lg-none">
+      <button type="button" class="btn btn-link" onclick="handleMobileIconClick('contactoModal')" style="color: #a259ff;">
+        <i class="fas fa-phone"></i>
+      </button>
+      <button type="button" class="btn btn-link" onclick="handleMobileIconClick('softskillsModal')" style="color: #3772ff;">
+        <i class="fas fa-bullseye"></i>
+      </button>
+      <button type="button" class="btn btn-link" onclick="handleMobileIconClick('acercaModal')" style="color: #ff4ecd;">
+        <i class="fas fa-user"></i>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="nav-links navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="../pages/inicioFF.html" data-lang="inicio">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#paginas-web" data-lang="proyectos">Proyectos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#certificaciones" data-lang="certificados">Certificaciones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#carousel-section" data-lang="carousel_nav">🎲 Ruleta</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#acercaModal" data-lang="acerca_de" onclick="handleAcercaClick(event)">Acerca de mí...</a>
+        </li>
+      </ul>
+      <div class="nav-actions d-flex align-items-center">
+        <div class="d-flex align-items-center">
+          <button class="dark-mode-toggle me-2" onclick="toggleDarkMode()">☀️</button>
+          <select class="lang-select">
+            <option>ES</option>
+            <option>EN</option>
+            <option>FR</option>
+            <option>DE</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Línea divisoria bajo navbar -->
+<hr style="border: none; border-top: 1.5px solid #222; margin: 0" />

@@ -1,0 +1,66 @@
+/* ===== BASE - Reset y Configuración General ===== */
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Prevenir overflow horizontal en elementos principales */
+img, video, iframe, svg {
+    max-width: 100%;
+    height: auto;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    background: #0a0a0a;
+    color: #fff;
+    padding-top: 83px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+}
+
+/* Ajuste de padding-top en móvil */
+@media (max-width: 991.98px) {
+    body {
+        padding-top: 83px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    body {
+        padding-top: 70px;
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        padding-top: 65px;
+    }
+}
+
+/* Layout principal con Flexbox */
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Modo claro - Los estilos detallados están en light-mode.css */
+body.light-mode {
+    background: #f8f9fa;
+    color: #212529;
+}

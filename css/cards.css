@@ -1,0 +1,739 @@
+/* ===== CARDS - Main Cards, Side Cards y Project Cards ===== */
+
+/* Layout principal de cards */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 20px;
+    max-width: 1515px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.main-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex: 2;
+    min-width: 0;
+}
+
+/* Cards principales */
+.card {
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.7);
+    border: 1.5px solid transparent;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 1420px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card-icon-section {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+}
+
+.card-icon {
+    font-size: clamp(2.5rem, 6vw, 4.4rem);
+    display: block;
+}
+
+.card-text-section {
+    flex: 1;
+    min-width: 300px;
+}
+
+.card h3 {
+    font-size: clamp(2.2rem, 4vw, 2.7rem);
+    font-weight: 800;
+    margin: 0 0 12px 0;
+}
+
+.card p {
+    font-size: clamp(1.5rem, 2.5vw, 1.5rem);
+    color: #bdbdbd;
+    margin: 0 0 15px 0;
+    line-height: 1.5;
+}
+
+.project-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.project-list li {
+    color: #dedede;
+    font-size: clamp(1.4rem, 2.5vw, 1.3rem);
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.project-list li:before {
+    content: "•";
+    color: inherit;
+    position: absolute;
+    left: 0;
+    font-size: 2rem;
+    top: 44%;
+    transform: translateY(-50%);
+}
+
+.project-list li:hover {
+    transform: translateX(8px);
+    color: #fff;
+}
+
+.card-image-section {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
+    max-width: 420px;
+    min-height: 240px;
+    max-height: 360px;
+}
+
+.card-image {
+    border-radius: 10px;
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    width: 105%;
+    height: 360px;
+    padding: 10px;
+}
+
+.card-image img {
+    width: 100%;
+    height: 80%;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.025);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilos específicos para cada tarjeta */
+.card-purple {
+    border: 2.2px solid #a259ff;
+    border-radius: 4px;
+    box-shadow: 
+        0 0 2px rgba(162, 89, 255, 0.6),
+        0 0 6px rgba(162, 89, 255, 0.3),
+        0 0 12px rgba(162, 89, 255, 0.2),
+        0 0 20px rgba(162, 89, 255, 0.1),
+        0 0 30px rgba(162, 89, 255, 0.05),
+        inset 0 0 8px rgba(162, 89, 255, 0.1);
+}
+
+.card-purple::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #a259ff, #ff4ecd);
+    z-index: -1;
+    border-radius: inherit;
+    opacity: 0.17;
+}
+
+.card-purple h3 {
+    color: #a259ff;
+}
+
+.card-purple .project-list li:before {
+    color: #a259ff;
+}
+
+.card-purple .card-image img {
+    border-color: rgba(162, 89, 255, 0.6);
+}
+
+.card-purple:hover .card-image img {
+    border-color: rgba(162, 89, 255, 1);
+}
+
+.card-blue {
+    border: 2.2px solid #3772ff;
+    border-radius: 4px;
+    box-shadow: 
+        0 0 2px rgba(55, 114, 255, 0.6),
+        0 0 6px rgba(55, 114, 255, 0.3),
+        0 0 12px rgba(55, 114, 255, 0.2),
+        0 0 20px rgba(55, 114, 255, 0.1),
+        0 0 30px rgba(55, 114, 255, 0.05),
+        inset 0 0 8px rgba(55, 114, 255, 0.1);
+}
+
+.card-blue::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #3772ff, #00ffa3);
+    z-index: -1;
+    border-radius: inherit;
+    opacity: 0.17;
+}
+
+.card-blue h3 {
+    color: #3772ff;
+}
+
+.card-blue .project-list li:before {
+    color: #3772ff;
+}
+
+.card-blue .card-image img {
+    border-color: rgba(55, 114, 255, 0.6);
+}
+
+.card-blue:hover .card-image img {
+    border-color: rgba(55, 114, 255, 1);
+}
+
+.card-pink {
+    border: 2.2px solid #ff4ecd;
+    border-radius: 4px;
+    box-shadow: 
+        0 0 2px rgba(255, 78, 205, 0.6),
+        0 0 6px rgba(255, 78, 205, 0.3),
+        0 0 12px rgba(255, 78, 205, 0.2),
+        0 0 20px rgba(255, 78, 205, 0.1),
+        0 0 30px rgba(255, 78, 205, 0.05),
+        inset 0 0 8px rgba(255, 78, 205, 0.1);
+}
+
+.card-pink::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ff4ecd, #a259ff);
+    z-index: -1;
+    border-radius: inherit;
+    opacity: 0.17;
+}
+
+.card-pink h3 {
+    color: #ff4ecd;
+}
+
+.card-pink .project-list li:before {
+    color: #ff4ecd;
+}
+
+.card-pink .card-image img {
+    border-color: rgba(255, 78, 205, 0.6);
+}
+
+.card-pink:hover .card-image img {
+    border-color: rgba(255, 78, 205, 1);
+}
+
+.card-green {
+    border: 2.2px solid #00ffa3;
+    border-radius: 4px;
+    box-shadow: 
+        0 0 2px rgba(0, 255, 163, 0.6),
+        0 0 6px rgba(0, 255, 163, 0.3),
+        0 0 12px rgba(0, 255, 163, 0.2),
+        0 0 20px rgba(0, 255, 163, 0.1),
+        0 0 30px rgba(0, 255, 163, 0.05),
+        inset 0 0 8px rgba(0, 255, 163, 0.1);
+}
+
+.card-green::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #00ffa3, #3772ff);
+    z-index: -1;
+    border-radius: inherit;
+    opacity: 0.17;
+}
+
+.card-green h3 {
+    color: #00ffa3;
+}
+
+.card-green .project-list li:before {
+    color: #00ffa3;
+}
+
+.card-green .card-image img {
+    border-color: rgba(0, 255, 163, 0.6);
+}
+
+.card-green:hover .card-image img {
+    border-color: rgba(0, 255, 163, 1);
+}
+
+/* Cards laterales */
+.side-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+    flex: 1;
+    min-width: 320px;
+    max-width: 350px;
+}
+
+.card-contact,
+.card-habilidades,
+.card-acerca {
+    margin-left: 18px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    padding: 18px;
+    min-height: 345px;
+    max-width: 345px;
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.card-contact {
+    border: 2.3px solid #a259ff;
+}
+
+.card-habilidades {
+    border: 2.3px solid #3772ff;
+}
+
+.card-acerca {
+    border: 2.3px solid #ff4ecd;
+}
+
+.card-contact h4,
+.card-habilidades h4,
+.card-acerca h4 {
+    color: inherit;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.card-contact h4 {
+    color: #a259ff;
+}
+
+.card-habilidades h4 {
+    color: #3772ff;
+}
+
+.card-acerca h4 {
+    color: #ff4ecd;
+}
+
+.card-contact .card-icon,
+.card-habilidades .card-icon,
+.card-acerca .card-icon {
+    font-size: 3.6rem;
+    display: block;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.contact-list li:last-child {
+    border-bottom: none;
+}
+
+.contact-list i {
+    width: 18px;
+    color: #a259ff;
+    font-size: 1.2rem;
+}
+
+.contact-list .contact-link {
+    color: #a259ff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.12rem;
+    text-shadow: 0 0 4px rgba(162, 89, 255, 0.3);
+}
+
+.contact-list .contact-link:hover {
+    color: #a259ff;
+    text-shadow: 0 0 12px rgba(162, 89, 255, 0.8), 0 0 20px rgba(162, 89, 255, 0.6);
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+/* Efectos hover para cards laterales */
+.card-contact:hover {
+    border: 2px solid #a259ff;
+    transform: translateY(-2px);
+    color: #a259ff;
+    box-shadow: 0 0 8px rgba(162, 89, 255, 0.8); 
+}
+
+.card-habilidades:hover {
+    border: 2px solid #3772ff;
+    transform: translateY(-2px);
+    color: #3772ff;
+    box-shadow: 0 0 8px rgba(55, 114, 255, 0.8);
+}
+
+.card-acerca:hover {
+    border: 2px solid #ff4ecd;
+    transform: translateY(-2px);
+    color: #ff4ecd;
+    box-shadow: 0 0 8px rgba(255, 78, 205, 0.8);
+}
+
+/* Asegurar que los efectos de hover funcionen en desktop */
+@media (min-width: 992px) {
+    .card-contact:hover {
+        border: 2px solid #a259ff !important;
+        transform: translateY(-2px) !important;
+        color: #a259ff !important;
+        box-shadow: 0 0 28px rgba(162, 89, 255, 0.8) !important; 
+    }
+
+    .card-habilidades:hover {
+        border: 2px solid #3772ff !important;
+        transform: translateY(-2px) !important;
+        color: #3772ff !important;
+        box-shadow: 0 0 28px rgba(55, 114, 255, 0.8) !important;
+    }
+
+    .card-acerca:hover {
+        border: 2px solid #ff4ecd !important;
+        transform: translateY(-2px) !important;
+        color: #ff4ecd !important;
+        box-shadow: 0 0 28px rgba(255, 78, 205, 0.8) !important;
+    }
+}
+
+/* Cards de proyecto modales */
+.card-project {
+    display: none;
+    position: fixed;
+    top: 56%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1050;
+    width: 95%;
+    max-width: 800px;
+    max-height: 90vh;
+    padding: 25px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scroll-behavior: smooth; /* Scroll suave */
+    box-sizing: border-box;
+}
+
+.card-project::-webkit-scrollbar {
+    display: none; /* Chrome, Safari y Opera */
+}
+
+/* Estilos específicos para cada modal de proyecto */
+.card-project.card-purple {
+    background: linear-gradient(45deg, #221133, #2a1022) !important;
+}
+
+.card-project.card-blue {
+    background: linear-gradient(45deg, #101a2b, #00332a) !important;
+}
+
+.card-project.card-pink {
+    background: linear-gradient(45deg, #2a1022, #221133) !important;
+}
+
+.card-project.card-green {
+    background: linear-gradient(45deg, #00332a, #101a2b) !important;
+}
+
+.card-project .card-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+
+.project-img {
+    max-width: 100%;
+    max-height: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin: 5px 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90%;
+    max-height: 350px;
+    padding-bottom: 12px;
+}
+
+.project-description {
+    color: #e0e0e0;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.project-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.project-features li {
+    color: #fff;
+    font-size: 1.25rem;
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.project-features li:before {
+    content: "-";
+    color: #00e5ff;
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+}
+
+.card-project .card-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4.1rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.4rem;
+}
+
+.card-project h4 {
+    text-align: center;
+    margin-bottom: 1.2rem;
+}
+
+/* Botón de cierre */
+.card-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 3.3rem;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1060;
+    transition: all 0.3s ease;
+}
+
+.card-close:hover {
+    color: #a259ff;
+    transform: scale(1.2);
+}
+
+/* Hover de la X según el color de la card */
+.card-purple .card-close:hover {
+    color: #a259ff;
+    background: rgba(162, 89, 255, 0.15);
+}
+
+.card-blue .card-close:hover {
+    color: #3772ff;
+    background: rgba(55, 114, 255, 0.15);
+}
+
+.card-pink .card-close:hover {
+    color: #ff4ecd;
+    background: rgba(255, 78, 205, 0.15);
+}
+
+.card-green .card-close:hover {
+    color: #00ffa3;
+    background: rgba(0, 255, 163, 0.15);
+}
+
+/* Ocultar X de contacto en desktop */
+@media (min-width: 992px) {
+    .card-contact .card-close {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        position: absolute !important;
+        left: -9999px !important;
+    }
+}
+
+/* Por defecto, oculta el botón X solo-móvil */
+.card-close.mobile-only {
+    display: none;
+}
+
+/* Solo muestra la X en móvil */
+@media (max-width: 991.98px) {
+    .card-close.mobile-only {
+        display: flex;
+    }
+}
+
+/* Estilos para la imagen de perfil clickeable */
+.card-acerca img[onclick]:active {
+    transform: scale(1.2);
+}
+
+/* Ocultar emojis móviles en desktop */
+@media (min-width: 992px) {
+    .card-icon-mobile {
+        display: none !important;
+    }
+}
+
+/* Por defecto, oculta las cards móviles */
+.card-contact-mobile,
+.card-habilidades-mobile,
+.card-acerca-mobile {
+    display: none;
+}
+
+/* Definiciones de las clases card-cell para móvil */
+.card-cell-c,
+.card-cell-h,
+.card-cell-a {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1050;
+    max-width: 95vw;
+    width: 95vw;
+    max-height: 80vh;
+    overflow: auto;
+    border-radius: 15px;
+    padding: 25px;
+    background: #1a1a1a !important;
+    display: none;
+    box-shadow: 0 0 80px 30px #000a;
+}
+
+.card-cell-c {
+    border: 2px solid #a259ff;
+}
+
+.card-cell-h {
+    border: 2px solid #3772ff;
+}
+
+.card-cell-a {
+    border: 2px solid #ff4ecd;
+}
+
+.card-cell-c h4,
+.card-cell-h h4,
+.card-cell-a h4 {
+    font-size: 2.1rem;
+    margin-bottom: 1.2rem;
+    text-align: center;
+}
+
+.card-cell-c .contact-list li,
+.card-cell-h .contact-list li,
+.card-cell-a .contact-list li {
+    font-size: 1.25rem;
+    padding: 14px 0;
+}
+
+.card-cell-c .card-icon-mobile,
+.card-cell-h .card-icon-mobile,
+.card-cell-a .card-icon-mobile {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 100%;
+}
+
+.card-contact-mobile h4,
+.card-habilidades-mobile h4,
+.card-acerca-mobile h4 {
+    font-size: 2.1rem;
+    margin-bottom: 1.2rem;
+}
+
+.card-contact-mobile .contact-list li,
+.card-habilidades-mobile .contact-list li,
+.card-acerca-mobile .contact-list li {
+    font-size: 1.25rem;
+    padding: 14px 0;
+}

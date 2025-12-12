@@ -1,0 +1,54 @@
+/* ===== HERO - Sección Hero ===== */
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 7vw, 4.1rem);
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    text-shadow: 0 2px 8px #a259ff55, 0 4px 32px #000a;
+    transition: all 0.5s ease;
+    opacity: 1;
+}
+
+.hero h1[lang="en"] {
+    color: #ff79c6;
+    text-shadow: 0 2px 8px #ff79c655, 0 4px 32px #000a;
+    transform: scale(1.02);
+}
+
+.hero h1[lang="es"] {
+    color: #fff;
+    text-shadow: 0 2px 8px #ff79c655, 0 4px 32px #000a;
+    transform: scale(1.02);
+}
+
+.hero h1[lang="fr"] {
+    color: #8be9fd;
+    text-shadow: 0 2px 8px #8be9fd55, 0 4px 32px #000a;
+    transform: scale(1.02);
+}
+
+.hero h1[lang="de"] {
+    color: #50fa7b;
+    text-shadow: 0 2px 8px #50fa7b55, 0 4px 32px #000a;
+    transform: scale(1.02);
+}
+
+.hero-subtitle {
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    color: #bdbdbd;
+    text-align: center;
+    margin: 20px auto 1px auto;
+    max-width: 960px;
+    width: 100%;
+    padding: 0 20px;
+}

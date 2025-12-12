@@ -1,0 +1,12 @@
+/* ===== FOOTER - Pie de Página ===== */
+
+footer {
+    padding: 20px 0;
+    background-color: #0a0a0a;
+    text-align: center;
+    font-size: 1.33rem;
+    margin-top: auto;
+    border-top: 1px solid #333;
+    height: 70px;
+    text-shadow: 0 0 4px #8be8fdd4, 0 0 12px rgba(255, 255, 255, 0);
+}

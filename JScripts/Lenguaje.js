@@ -942,11 +942,20 @@ function toggleProjectCard(cardId) {
         card.style.display = 'none';
         const overlay = document.querySelector('.card-overlay');
         if (overlay) overlay.style.display = 'none';
+        // Verificar si hay más cards abiertas antes de habilitar el scroll
+        const visibleCards = document.querySelectorAll('.card-project[style*="display: block"]');
+        if (visibleCards.length === 0 && typeof enableBodyScroll === 'function') {
+            enableBodyScroll(); // Habilitar scroll del body cuando no hay cards abiertas
+        }
     } else {
         closeAllModals();
         card.style.display = 'block';
         const overlay = document.querySelector('.card-overlay');
         if (overlay) overlay.style.display = 'block';
+        // Deshabilitar scroll del body cuando se abre una card
+        if (typeof disableBodyScroll === 'function') {
+            disableBodyScroll();
+        }
     }
 }
 // --- FIN restricción ---

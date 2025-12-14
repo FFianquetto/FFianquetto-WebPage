@@ -77,6 +77,9 @@ function closeAllCards() {
   if (overlay) {
     overlay.style.display = 'none';
   }
+  
+  // Habilitar scroll del body cuando se cierran todas las cards
+  enableBodyScroll();
 }
 
 // Función para mostrar/ocultar cards en móvil
@@ -99,6 +102,44 @@ function toggleCard(cardId) {
   if (overlay) overlay.style.display = 'block';
 }
 
+// Variable para guardar la posición del scroll
+let savedScrollPosition = 0;
+
+// Función para deshabilitar el scroll del body
+function disableBodyScroll() {
+  // Guardar la posición actual del scroll ANTES de bloquearlo
+  savedScrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+  // Agregar clase al body y html para bloquear el scroll
+  document.body.classList.add('no-scroll');
+  document.documentElement.classList.add('no-scroll');
+  // Aplicar posición fija para mantener la posición visual
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${savedScrollPosition}px`;
+  document.body.style.width = '100%';
+}
+
+// Función para habilitar el scroll del body
+function enableBodyScroll() {
+  const scrollPos = savedScrollPosition; // Guardar la posición antes de remover estilos
+  // Remover las clases y estilos primero
+  document.body.classList.remove('no-scroll');
+  document.documentElement.classList.remove('no-scroll');
+  const bodyStyle = document.body.style;
+  bodyStyle.position = '';
+  bodyStyle.top = '';
+  bodyStyle.width = '';
+  // Restaurar la posición del scroll inmediatamente de forma síncrona
+  // Usar múltiples métodos para máxima compatibilidad
+  if (scrollPos !== undefined && scrollPos !== null && scrollPos >= 0) {
+    // Método 1: Restaurar directamente en documentElement y body
+    document.documentElement.scrollTop = scrollPos;
+    document.body.scrollTop = scrollPos;
+    // Método 2: Usar window.scrollTo sin opciones (más compatible, sin animación)
+    window.scrollTo(0, scrollPos);
+  }
+  savedScrollPosition = 0;
+}
+
 // Función para mostrar la card del proyecto
 function toggleProjectCard(cardId) {
   const card = document.getElementById(cardId);
@@ -113,6 +154,7 @@ function toggleProjectCard(cardId) {
       if (overlay) {
         overlay.style.display = 'block';
       }
+      disableBodyScroll(); // Deshabilitar scroll del body
       setTimeout(() => {
         card.style.display = 'block';
       }, 50);
@@ -125,6 +167,7 @@ function toggleProjectCard(cardId) {
       if (overlay) {
         overlay.style.display = 'block';
       }
+      disableBodyScroll(); // Deshabilitar scroll del body
       card.style.display = 'block';
     } else {
       closeProjectCard(cardId);
@@ -148,9 +191,15 @@ function closeProjectCard(cardId) {
         const visibleCards = document.querySelectorAll('.card-project[style*="display: block"]');
         if (visibleCards.length === 0) {
           overlay.style.display = 'none';
+          enableBodyScroll(); // Habilitar scroll del body cuando no hay cards abiertas
         }
       } else if (overlay) {
         overlay.style.display = 'none';
+        // Verificar si hay más cards abiertas antes de habilitar el scroll
+        const visibleCards = document.querySelectorAll('.card-project[style*="display: block"]');
+        if (visibleCards.length === 0) {
+          enableBodyScroll(); // Habilitar scroll del body cuando no hay cards abiertas
+        }
       }
     }, 300);
   }
@@ -195,12 +244,17 @@ function initCards() {
         card.style.display = 'none';
       });
       this.style.display = 'none';
+      // Verificar si hay cards de proyecto abiertas
+      const visibleProjectCards = document.querySelectorAll('.card-project[style*="display: block"]');
+      if (visibleProjectCards.length === 0) {
+        enableBodyScroll(); // Habilitar scroll si no hay cards abiertas
+      }
     });
   }
 
   // Cerrar cards al presionar ESC
   document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape' && window.innerWidth > 991.98) {
+    if (event.key === 'Escape') {
       const visibleCards = Array.from(document.querySelectorAll('.card-project[style*="display: block"]'));
       if (visibleCards.length > 0) {
         const lastCard = visibleCards[visibleCards.length - 1];
@@ -243,3 +297,5 @@ window.toggleProjectCard = toggleProjectCard;
 window.closeProjectCard = closeProjectCard;
 window.closeSideCard = closeSideCard;
 window.initCards = initCards;
+window.disableBodyScroll = disableBodyScroll;
+window.enableBodyScroll = enableBodyScroll;

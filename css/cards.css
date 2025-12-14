@@ -476,33 +476,76 @@
     max-width: 800px;
     max-height: 90vh;
     padding: 25px;
-    overflow-y: auto;
+    overflow-y: auto !important; /* Forzar scroll vertical dentro de la card */
     overflow-x: hidden;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: thin; /* Firefox - mostrar scrollbar delgada */
+    scrollbar-color: rgba(162, 89, 255, 0.5) transparent; /* Color de la scrollbar en Firefox */
+    -ms-overflow-style: auto; /* Internet Explorer 10+ - mostrar scrollbar */
     scroll-behavior: smooth; /* Scroll suave */
     box-sizing: border-box;
+    background-clip: padding-box; /* Asegurar que el background no se extienda más allá del padding */
+    /* Asegurar que el scroll funcione independientemente del body */
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain; /* Prevenir que el scroll dentro de la card afecte al body */
+    pointer-events: auto; /* Asegurar que la card pueda recibir eventos */
 }
 
+/* Estilos para la scrollbar en Chrome, Safari y Opera */
 .card-project::-webkit-scrollbar {
-    display: none; /* Chrome, Safari y Opera */
+    width: 8px; /* Ancho de la scrollbar */
+    display: block; /* Mostrar la scrollbar */
+}
+
+.card-project::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2); /* Fondo de la scrollbar */
+    border-radius: 10px;
+}
+
+.card-project::-webkit-scrollbar-thumb {
+    background: rgba(162, 89, 255, 0.5); /* Color del thumb de la scrollbar */
+    border-radius: 10px;
+}
+
+.card-project::-webkit-scrollbar-thumb:hover {
+    background: rgba(162, 89, 255, 0.7); /* Color del thumb al hacer hover */
 }
 
 /* Estilos específicos para cada modal de proyecto */
 .card-project.card-purple {
-    background: linear-gradient(45deg, #221133, #2a1022) !important;
+    background: #221133 !important; /* Color uniforme sin gradiente */
+}
+
+.card-project.card-purple::before,
+.card-project.card-purple::after {
+    display: none !important; /* Eliminar cualquier pseudo-elemento superpuesto */
 }
 
 .card-project.card-blue {
-    background: linear-gradient(45deg, #101a2b, #00332a) !important;
+    background: #00332a !important; /* Color uniforme más oscuro (el que aparece en la parte inferior) */
+}
+
+.card-project.card-blue::before,
+.card-project.card-blue::after {
+    display: none !important; /* Eliminar cualquier pseudo-elemento superpuesto */
 }
 
 .card-project.card-pink {
-    background: linear-gradient(45deg, #2a1022, #221133) !important;
+    background: #2a1022 !important; /* Color uniforme sin gradiente */
+}
+
+.card-project.card-pink::before,
+.card-project.card-pink::after {
+    display: none !important; /* Eliminar cualquier pseudo-elemento superpuesto */
 }
 
 .card-project.card-green {
-    background: linear-gradient(45deg, #00332a, #101a2b) !important;
+    background: #00332a !important; /* Color uniforme sin gradiente */
+}
+
+.card-project.card-green::before,
+.card-project.card-green::after {
+    display: none !important; /* Eliminar cualquier pseudo-elemento superpuesto */
 }
 
 .card-project .card-image {
@@ -531,12 +574,14 @@
     font-size: 1.4rem;
     line-height: 1.4;
     margin-bottom: 12px;
+    background: transparent !important; /* Asegurar que no tenga background propio */
 }
 
 .project-features {
     list-style: none;
     padding: 0;
     margin: 0;
+    background: transparent !important; /* Asegurar que no tenga background propio */
 }
 
 .project-features li {
@@ -547,6 +592,7 @@
     position: relative;
     display: flex;
     align-items: center;
+    background: transparent !important; /* Asegurar que no tenga background propio */
 }
 
 .project-features li:before {

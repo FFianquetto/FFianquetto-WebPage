@@ -52,11 +52,45 @@ body.light-mode .card-project {
   max-width: 800px;
   max-height: 80vh;
   padding: 25px;
-  overflow: auto;
-  scrollbar-width: none;
+  overflow-y: auto !important;
+  overflow-x: hidden;
+  scrollbar-width: thin; /* Firefox - mostrar scrollbar delgada en desktop */
+  scrollbar-color: rgba(0, 0, 0, 0.5) transparent; /* Color negro para la scrollbar en Firefox */
+  -ms-overflow-style: auto; /* Internet Explorer 10+ - mostrar scrollbar */
+  overscroll-behavior: contain;
+  pointer-events: auto;
 }
+
+/* Estilos para la scrollbar en modo claro - Chrome, Safari y Opera - Solo desktop */
 body.light-mode .card-project::-webkit-scrollbar {
-  display: none;
+  width: 8px; /* Ancho de la scrollbar */
+  display: block; /* Mostrar la scrollbar */
+}
+
+body.light-mode .card-project::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1); /* Fondo claro de la scrollbar */
+  border-radius: 10px;
+}
+
+body.light-mode .card-project::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.5); /* Color negro del thumb de la scrollbar */
+  border-radius: 10px;
+}
+
+body.light-mode .card-project::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.7); /* Color negro más oscuro al hacer hover */
+}
+
+/* Ocultar scrollbar en móviles pero mantener funcionalidad de scroll táctil */
+@media (max-width: 991.98px) {
+  body.light-mode .card-project {
+    scrollbar-width: none; /* Firefox - ocultar scrollbar en móvil */
+    -ms-overflow-style: none; /* Internet Explorer 10+ - ocultar scrollbar en móvil */
+  }
+  
+  body.light-mode .card-project::-webkit-scrollbar {
+    display: none; /* Chrome, Safari y Opera - ocultar scrollbar en móvil */
+  }
 }
 
 /* Estilos específicos para cada tipo de card en modo claro */

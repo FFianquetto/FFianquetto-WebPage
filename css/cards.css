@@ -491,7 +491,7 @@
     pointer-events: auto; /* Asegurar que la card pueda recibir eventos */
 }
 
-/* Estilos para la scrollbar en Chrome, Safari y Opera */
+/* Estilos para la scrollbar en Chrome, Safari y Opera - Solo desktop */
 .card-project::-webkit-scrollbar {
     width: 8px; /* Ancho de la scrollbar */
     display: block; /* Mostrar la scrollbar */
@@ -509,6 +509,18 @@
 
 .card-project::-webkit-scrollbar-thumb:hover {
     background: rgba(162, 89, 255, 0.7); /* Color del thumb al hacer hover */
+}
+
+/* Ocultar scrollbar en móviles pero mantener funcionalidad de scroll táctil */
+@media (max-width: 991.98px) {
+    .card-project {
+        scrollbar-width: none; /* Firefox - ocultar scrollbar en móvil */
+        -ms-overflow-style: none; /* Internet Explorer 10+ - ocultar scrollbar en móvil */
+    }
+    
+    .card-project::-webkit-scrollbar {
+        display: none; /* Chrome, Safari y Opera - ocultar scrollbar en móvil */
+    }
 }
 
 /* Estilos específicos para cada modal de proyecto */

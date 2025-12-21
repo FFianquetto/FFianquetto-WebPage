@@ -14,6 +14,7 @@
   --blue-primary: #2980b9;
   --green-primary: #2ecc71;
   --pink-primary: #c2185b;
+  --orange-primary: #e67e22;
 }
 
 /* Estilos base que se aplican cuando el modo claro está activo */
@@ -200,6 +201,60 @@ body.light-mode .card-pink h3 {
 
 body.light-mode .card-pink .project-list li:before {
   color: var(--pink-primary);
+}
+
+body.light-mode .card-orange {
+  border: 2px solid var(--orange-primary);
+  box-shadow: 0 0 10px rgba(230, 126, 34, 0.2);
+  background: var(--card-bg);
+}
+
+body.light-mode .card-orange::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--orange-primary), #f39c12);
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0.1;
+}
+
+body.light-mode .card-orange h3 {
+  color: var(--orange-primary);
+}
+
+body.light-mode .card-orange .project-list li:before {
+  color: var(--orange-primary);
+}
+
+body.light-mode .card-cyan {
+  border: 2px solid #00b8d4;
+  box-shadow: 0 0 10px rgba(0, 184, 212, 0.2);
+  background: var(--card-bg);
+}
+
+body.light-mode .card-cyan::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #00b8d4, #0097a7);
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0.1;
+}
+
+body.light-mode .card-cyan h3 {
+  color: #00b8d4;
+}
+
+body.light-mode .card-cyan .project-list li:before {
+  color: #00b8d4;
 }
 
 /* Texto en las cards */

@@ -7,24 +7,67 @@ function renderMainCards() {
       <div class="main-container">
         <!-- Cards principales -->
         <div class="main-cards">
-          <div class="card card-purple" id="paginas-web">
+          <div class="card card-purple" id="desarrollo-frontend">
             <div class="card-content">
               <div class="card-icon-section">
                 <span class="card-icon">🌐</span>
               </div>
               <div class="card-text-section">
-                <h3 data-lang="web_title">Páginas Web</h3>
-                <p data-lang="web_desc">Descubre algunas páginas web que he creado.</p>
+                <h3 data-lang="frontend_title">Desarrollo Frontend</h3>
+                <p data-lang="frontend_desc">Descubre algunas páginas web y proyectos frontend que he creado.</p>
                 <ul class="project-list">
                   <li onclick="toggleProjectCard('zomboyCard')" data-lang="zomboy_list">ZomboyShop-ReDesign</li>
                   <li onclick="toggleProjectCard('artvlogCard')" data-lang="artvlog_list">ArtVlog</li>
+                  <li onclick="toggleProjectCard('cadoWebCard')" data-lang="cadoWeb_list">CADO Web</li>
+                </ul>
+              </div>
+              <div class="card-image-section">
+                <div class="card-image">
+                  <img src="../imagenesP/ZomboyWeb.png" alt="Desarrollo Frontend" loading="lazy" width="300" height="200" srcset="../imagenesP/ZomboyWeb.png 600w, ../imagenesP/ZomboyWeb.png 300w" sizes="(max-width: 600px) 100vw, 300px"
+                    onclick="openImageModal(this.src, this.alt)">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-cyan" id="desarrollo-backend">
+            <div class="card-content">
+              <div class="card-icon-section">
+                <span class="card-icon">⚙️</span>
+              </div>
+              <div class="card-text-section">
+                <h3 data-lang="backend_title">Desarrollo Backend</h3>
+                <p data-lang="backend_desc">Explora los proyectos backend con servidores y APIs que he desarrollado.</p>
+                <ul class="project-list">
+                  <li onclick="toggleProjectCard('flegCard')" data-lang="fleg_list">Fleg</li>
+                  <li onclick="toggleProjectCard('inffutCard')" data-lang="inffut_list">Inffut</li>
                   <li onclick="toggleProjectCard('ec2Card')" data-lang="ec2_list">Contenedor en EC2 - AWS</li>
                 </ul>
               </div>
               <div class="card-image-section">
                 <div class="card-image">
-                  <img src="../imagenesP/ZomboyWeb.png" alt="ZomboyShop Web Design" loading="lazy" width="300" height="200" srcset="../imagenesP/ZomboyWeb.png 600w, ../imagenesP/ZomboyWeb.png 300w" sizes="(max-width: 600px) 100vw, 300px"
-                    onclick="openImageModal(this.src, this.alt)">
+                  <img src="../imagenesP/Amazon.png" alt="Desarrollo Backend" loading="lazy" width="300" height="200" srcset="../imagenesP/Amazon.png 600w, ../imagenesP/Amazon.png 300w" sizes="(max-width: 600px) 100vw, 300px" onclick="openImageModal(this.src, this.alt)">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-orange" id="desarrollo-movil">
+            <div class="card-content">
+              <div class="card-icon-section">
+                <span class="card-icon">📱</span>
+              </div>
+              <div class="card-text-section">
+                <h3 data-lang="mobile_title">Desarrollo Móvil</h3>
+                <p data-lang="mobile_desc">Explora las aplicaciones móviles que he desarrollado.</p>
+                <ul class="project-list">
+                  <li onclick="toggleProjectCard('cocinaCard')" data-lang="cocina_list">Cocina en Corto</li>
+                  <li onclick="toggleProjectCard('cadoCard')" data-lang="cado_list">CADO Mobile App Backend - MongoDB</li>
+                </ul>
+              </div>
+              <div class="card-image-section">
+                <div class="card-image">
+                  <img src="../imagenesP/CocinaEnCorto.png" alt="Desarrollo Móvil" loading="lazy" width="300" height="200" srcset="../imagenesP/CocinaEnCorto.png 600w, ../imagenesP/CocinaEnCorto.png 300w" sizes="(max-width: 600px) 100vw, 300px" onclick="openImageModal(this.src, this.alt)">
                 </div>
               </div>
             </div>
@@ -41,7 +84,6 @@ function renderMainCards() {
                 <ul class="project-list">
                   <li onclick="toggleProjectCard('hotelCard')" data-lang="hotel_list">Gestión de Hoteles con SQL</li>
                   <li onclick="toggleProjectCard('nominasCard')" data-lang="nominas_list">Manejo de Nóminas con BigData - CassandraDb</li>
-                  <li onclick="toggleProjectCard('cadoCard')" data-lang="cado_list">CADO Mobile App Backend - MongoDB</li>
                 </ul>
               </div>
               <div class="card-image-section">
@@ -66,6 +108,7 @@ function renderMainCards() {
                   <li onclick="toggleProjectCard('escapeCard')" data-lang="escape_list">Escape Salvaje en Unity</li>
                   <li onclick="toggleProjectCard('candyCard')" data-lang="candy_list">Candy Collector con OGL Engine y C++</li>
                   <li onclick="toggleProjectCard('snakeCard')" data-lang="snake_list">Snake Slaughter con OGL Engine y Lenguaje Ensamblador</li>
+                  <li onclick="toggleProjectCard('stealCard')" data-lang="steal_list">Steal the vibe</li>
                 </ul>
               </div>
               <div class="card-image-section">

@@ -3,14 +3,19 @@
 const projectCards = [
   { id: 'zomboyCard', nameKey: 'zomboy_title', img: '../imagenesP/ZomboyWeb.png' },
   { id: 'artvlogCard', nameKey: 'artvlog_title', img: '../imagenesP/ArtWeb.png' },
+  { id: 'cadoWebCard', nameKey: 'cadoWeb_title', img: '../imagenesP/CadoWeb.png' },
+  { id: 'flegCard', nameKey: 'fleg_title', img: '../imagenesP/Fleg.png' },
+  { id: 'inffutCard', nameKey: 'inffut_title', img: '../imagenesP/Inffut.png' },
   { id: 'ec2Card', nameKey: 'ec2_title', img: '../imagenesP/Amazon.png' },
+  { id: 'cocinaCard', nameKey: 'cocina_title', img: '../imagenesP/CocinaEnCorto.png' },
+  { id: 'cadoCard', nameKey: 'cado_title', img: '../imagenesP/Mongo.png' },
   { id: 'hotelCard', nameKey: 'hotel_title', img: '../imagenesP/HotelBd.png' },
   { id: 'nominasCard', nameKey: 'nominas_title', img: '../imagenesP/Cassandra.png' },
-  { id: 'cadoCard', nameKey: 'cado_title', img: '../imagenesP/Mongo.png' },
   { id: 'bolosCard', nameKey: 'bolos_title', img: '../imagenesP/Pinball.png' },
   { id: 'escapeCard', nameKey: 'escape_title', img: '../imagenesP/EscapeGame.jpg' },
   { id: 'candyCard', nameKey: 'candy_title', img: '../imagenesP/CC.png' },
-  { id: 'snakeCard', nameKey: 'snake_title', img: '../imagenesP/Snake.png' }
+  { id: 'snakeCard', nameKey: 'snake_title', img: '../imagenesP/Snake.png' },
+  { id: 'stealCard', nameKey: 'steal_title', img: '../imagenesP/Steal.png' }
 ];
 
 // Renderiza 3 tarjetas en desktop, 1 en mobile

@@ -45,8 +45,27 @@ function renderProjectCards() {
       </ul>
     </div>
 
+    <!-- Card del Proyecto CADO Web -->
+    <div class="card-project card-purple" id="cadoWebCard">
+      <button class="card-close" onclick="closeProjectCard('cadoWebCard')">×</button>
+      <span class="card-icon">🌐</span>
+      <h4 data-lang="cadoWeb_title">CADO Web</h4>
+      <img src="../imagenesP/CadoWeb.png" alt="CADO Web" class="project-img" loading="lazy" width="300" height="200" srcset="../imagenesP/CadoWeb.png 600w, ../imagenesP/CadoWeb.png 300w" sizes="(max-width: 600px) 100vw, 300px"
+        onclick="openImageModal(this.src, this.alt)">
+      <p class="project-description" data-lang="cadoWeb_description">
+        Proyecto web frontend desarrollado para CADO.
+        Características principales:
+      </p>
+      <ul class="project-features">
+        <li data-lang="cadoWeb_feature1">Diseño moderno y responsivo</li>
+        <li data-lang="cadoWeb_feature2">Interfaz de usuario intuitiva</li>
+        <li data-lang="cadoWeb_feature3">Optimización de rendimiento</li>
+        <li data-lang="cadoWeb_feature4">Experiencia de usuario mejorada</li>
+      </ul>
+    </div>
+
     <!-- Card del Proyecto EC2 Container -->
-    <div class="card-project card-purple" id="ec2Card">
+    <div class="card-project card-cyan" id="ec2Card">
       <button class="card-close" onclick="closeProjectCard('ec2Card')">×</button>
       <span class="card-icon">☁️</span>
       <h4 data-lang="ec2_title">EC2 Container - AWS</h4>
@@ -103,7 +122,7 @@ function renderProjectCards() {
     </div>
 
     <!-- Card del Proyecto CADO Mobile -->
-    <div class="card-project card-blue" id="cadoCard">
+    <div class="card-project card-orange" id="cadoCard">
       <button class="card-close" onclick="closeProjectCard('cadoCard')">×</button>
       <span class="card-icon">📱</span>
       <h4 data-lang="cado_title">CADO Mobile App Backend - MongoDB</h4>
@@ -291,6 +310,82 @@ function renderProjectCards() {
         <li data-lang="unam_feature2">Análisis exploratorio de datos</li>
         <li data-lang="unam_feature3">Visualización de datos</li>
         <li data-lang="unam_feature4">Modelos estadísticos básicos</li>
+      </ul>
+    </div>
+
+    <!-- Card del Proyecto Cocina en Corto -->
+    <div class="card-project card-orange" id="cocinaCard">
+      <button class="card-close" onclick="closeProjectCard('cocinaCard')">×</button>
+      <span class="card-icon">🍳</span>
+      <h4 data-lang="cocina_title">Cocina en Corto</h4>
+      <img src="../imagenesP/CocinaEnCorto.png" alt="Cocina en Corto" class="project-img" loading="lazy" width="300" height="200" srcset="../imagenesP/CocinaEnCorto.png 600w, ../imagenesP/CocinaEnCorto.png 300w" sizes="(max-width: 600px) 100vw, 300px"
+        onclick="openImageModal(this.src, this.alt)">
+      <p class="project-description" data-lang="cocina_description">
+        Aplicación móvil desarrollada para compartir recetas rápidas y fáciles de cocinar.
+        Características principales:
+      </p>
+      <ul class="project-features">
+        <li data-lang="cocina_feature1">Catálogo de recetas rápidas</li>
+        <li data-lang="cocina_feature2">Búsqueda y filtrado de recetas</li>
+        <li data-lang="cocina_feature3">Interfaz intuitiva y moderna</li>
+        <li data-lang="cocina_feature4">Compatibilidad con diferentes dispositivos móviles</li>
+      </ul>
+    </div>
+
+    <!-- Card del Proyecto Fleg -->
+    <div class="card-project card-cyan" id="flegCard">
+      <button class="card-close" onclick="closeProjectCard('flegCard')">×</button>
+      <span class="card-icon">🚩</span>
+      <h4 data-lang="fleg_title">Fleg</h4>
+      <img src="../imagenesP/Fleg.png" alt="Fleg" class="project-img" loading="lazy" width="300" height="200" srcset="../imagenesP/Fleg.png 600w, ../imagenesP/Fleg.png 300w" sizes="(max-width: 600px) 100vw, 300px"
+        onclick="openImageModal(this.src, this.alt)">
+      <p class="project-description" data-lang="fleg_description">
+        Proyecto web completo con backend desarrollado con funcionalidades innovadoras.
+        Características principales:
+      </p>
+      <ul class="project-features">
+        <li data-lang="fleg_feature1">Arquitectura backend robusta</li>
+        <li data-lang="fleg_feature2">API RESTful bien estructurada</li>
+        <li data-lang="fleg_feature3">Gestión de base de datos optimizada</li>
+        <li data-lang="fleg_feature4">Integración frontend-backend eficiente</li>
+      </ul>
+    </div>
+
+    <!-- Card del Proyecto Inffut -->
+    <div class="card-project card-cyan" id="inffutCard">
+      <button class="card-close" onclick="closeProjectCard('inffutCard')">×</button>
+      <span class="card-icon">⚽</span>
+      <h4 data-lang="inffut_title">Inffut</h4>
+      <img src="../imagenesP/Inffut.png" alt="Inffut" class="project-img" loading="lazy" width="300" height="200" srcset="../imagenesP/Inffut.png 600w, ../imagenesP/Inffut.png 300w" sizes="(max-width: 600px) 100vw, 300px"
+        onclick="openImageModal(this.src, this.alt)">
+      <p class="project-description" data-lang="inffut_description">
+        Proyecto web completo con backend para información y estadísticas de fútbol.
+        Características principales:
+      </p>
+      <ul class="project-features">
+        <li data-lang="inffut_feature1">Backend para información en tiempo real de partidos</li>
+        <li data-lang="inffut_feature2">API para estadísticas detalladas de equipos y jugadores</li>
+        <li data-lang="inffut_feature3">Sistema de notificaciones de eventos importantes</li>
+        <li data-lang="inffut_feature4">Arquitectura escalable para seguimiento de resultados</li>
+      </ul>
+    </div>
+
+    <!-- Card del Proyecto Steal the vibe -->
+    <div class="card-project card-pink" id="stealCard">
+      <button class="card-close" onclick="closeProjectCard('stealCard')">×</button>
+      <span class="card-icon">🎯</span>
+      <h4 data-lang="steal_title">Steal the vibe</h4>
+      <img src="../imagenesP/Steal.png" alt="Steal the vibe" class="project-img" loading="lazy" width="300" height="200" srcset="../imagenesP/Steal.png 600w, ../imagenesP/Steal.png 300w" sizes="(max-width: 600px) 100vw, 300px"
+        onclick="openImageModal(this.src, this.alt)">
+      <p class="project-description" data-lang="steal_description">
+        Videojuego desarrollado en Unreal Engine con mecánicas innovadoras y diseño atractivo.
+        Características principales:
+      </p>
+      <ul class="project-features">
+        <li data-lang="steal_feature1">Desarrollado con Unreal Engine</li>
+        <li data-lang="steal_feature2">Gráficos de alta calidad</li>
+        <li data-lang="steal_feature3">Mecánicas de juego innovadoras</li>
+        <li data-lang="steal_feature4">Rendimiento optimizado</li>
       </ul>
     </div>
 

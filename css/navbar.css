@@ -21,14 +21,19 @@
     margin-left: -15px;
     display: flex;
     align-items: center;
+    background: none !important;
+    padding: 0 !important;
+    border: none !important;
 }
 
 .logo img {
-    height: 55px;
-    width: 60px;
-    filter: drop-shadow(0 0 12px #a259ff) drop-shadow(0 0 9px #a259ff);
+    height: 62px;
+    width: 68px;
+    filter: drop-shadow(0 0 3px #a259ff) drop-shadow(0 0 6px #a259ff);
     transition: filter 0.3s ease;
     cursor: pointer;
+    background: none !important;
+    border: none !important;
 }
 
 .logo img:hover {

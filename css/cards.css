@@ -511,15 +511,42 @@
     background: rgba(162, 89, 255, 0.7); /* Color del thumb al hacer hover */
 }
 
-/* Ocultar scrollbar en móviles pero mantener funcionalidad de scroll táctil */
+/* Móvil: mismo ancho que .card del listado y altura de apertura que info cards */
 @media (max-width: 991.98px) {
     .card-project {
-        scrollbar-width: none; /* Firefox - ocultar scrollbar en móvil */
-        -ms-overflow-style: none; /* Internet Explorer 10+ - ocultar scrollbar en móvil */
+        top: var(--mobile-side-card-top, calc(83px + 2rem));
+        transform: translateX(-50%);
+        width: var(--mobile-main-card-width, calc(100vw - 40px));
+        max-width: var(--mobile-main-card-width, calc(100vw - 40px));
+        max-height: calc(100vh - var(--mobile-side-card-top, calc(83px + 2rem)) - 1.5rem);
+        scrollbar-width: auto;
+        scrollbar-color: #a259ff rgba(0, 0, 0, 0.3);
+        -ms-overflow-style: auto;
     }
-    
+
     .card-project::-webkit-scrollbar {
-        display: none; /* Chrome, Safari y Opera - ocultar scrollbar en móvil */
+        width: 11px;
+        display: block;
+    }
+
+    .card-project::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+    }
+
+    .card-project::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, #a259ff 0%, #7d3c98 100%);
+        border-radius: 10px;
+        border: 2px solid rgba(0, 0, 0, 0.25);
+    }
+
+    .card-project .project-img {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        object-fit: contain;
+        box-sizing: border-box;
     }
 }
 
@@ -823,18 +850,18 @@
     display: none;
 }
 
-/* Definiciones de las clases card-cell para móvil */
+/* Definiciones de las clases card-cell para móvil (misma altura que Contacto) */
 .card-cell-c,
 .card-cell-h,
 .card-cell-a {
     position: fixed;
-    top: 50%;
+    top: var(--mobile-side-card-top, calc(83px + 2rem));
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     z-index: 1050;
-    max-width: 95vw;
-    width: 95vw;
-    max-height: 80vh;
+    max-width: 88vw;
+    width: 88vw;
+    max-height: calc(100vh - var(--mobile-side-card-top, calc(83px + 2rem)) - 1.5rem);
     overflow: auto;
     border-radius: 15px;
     padding: 25px;

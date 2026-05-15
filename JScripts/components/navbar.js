@@ -1,8 +1,33 @@
 // ===== GESTIÓN DE NAVBAR =====
 
+const SCROLL_OFFSET_EXTRA = {
+  '#carousel-section': 48,
+  '#acercaModal': 56,
+};
+
+function getNavScrollOffset(hash) {
+  const navbar = document.querySelector('.navbar');
+  const base = navbar ? navbar.offsetHeight : 83;
+  const extra = SCROLL_OFFSET_EXTRA[hash] || 20;
+  return base + extra;
+}
+
+function scrollToSection(hash) {
+  const section = document.querySelector(hash);
+  if (!section) return false;
+
+  const offset = getNavScrollOffset(hash);
+  const top = section.getBoundingClientRect().top + window.pageYOffset - offset;
+  window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+  history.replaceState(null, '', hash);
+  return true;
+}
+
+window.scrollToSection = scrollToSection;
+window.getNavScrollOffset = getNavScrollOffset;
+
 // Cerrar el menú hamburguesa al hacer clic en cualquier enlace o elemento
 function initNavbar() {
-  // Cerrar menú al hacer clic en enlaces
   document.querySelectorAll('.nav-link, .dark-mode-toggle, .search-bar').forEach(element => {
     element.addEventListener('click', function () {
       const navbarCollapse = document.querySelector('.navbar-collapse');
@@ -12,7 +37,6 @@ function initNavbar() {
     });
   });
 
-  // Para el selector de idioma, cerrar solo cuando se selecciona una opción
   const langSelect = document.querySelector('.lang-select');
   if (langSelect) {
     langSelect.addEventListener('change', function () {
@@ -23,34 +47,28 @@ function initNavbar() {
     });
   }
 
-  // Comportamiento especial para el enlace de "Proyectos"
-  const proyectosLink = document.querySelector('.nav-link[data-lang="proyectos"]');
-  if (proyectosLink) {
-    proyectosLink.addEventListener('click', function (event) {
-      const targetHash = '#paginas-web';
-      const path = window.location.pathname.replace(/\\/g, '/');
-      const isOnHome =
-        !path.includes('/pages/') &&
-        (path.endsWith('/') ||
-          path.endsWith('/index.html') ||
-          !/\.html$/i.test(path.split('/').pop() || ''));
-
-      if (!isOnHome) {
-        event.preventDefault();
-        const home = path.includes('/pages/') ? '../index.html' : 'index.html';
-        window.location.href = `${home}${targetHash}`;
-      } else {
-        // En la página de inicio, scroll suave a la sección
-        const section = document.querySelector(targetHash);
-        if (section) {
-          event.preventDefault();
-          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          history.replaceState(null, '', targetHash);
-        }
-      }
+  const inicioLink = document.querySelector('.nav-link[data-lang="inicio"]');
+  if (inicioLink) {
+    inicioLink.addEventListener('click', function (event) {
+      event.preventDefault();
+      const base = window.location.pathname + window.location.search;
+      window.location.href = base;
     });
   }
+
+  document.querySelectorAll('.nav-link[href^="#"]').forEach(link => {
+    if (link.getAttribute('data-lang') === 'acerca_de') return;
+
+    link.addEventListener('click', function (event) {
+      const hash = link.getAttribute('href');
+      if (!hash || hash === '#') return;
+
+      if (scrollToSection(hash)) {
+        event.preventDefault();
+        link.blur();
+      }
+    });
+  });
 }
 
-// Exportar función
 window.initNavbar = initNavbar;

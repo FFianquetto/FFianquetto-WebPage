@@ -29,7 +29,7 @@ body.light-mode footer {
   background-color: #0a0a0a;
   text-align: center;
   font-size: 1.33rem;
-  margin-top: auto;
+  margin-top: 27px;
   border-top: 1px solid #333;
   height: 70px;
   color: #8be8fdd4;
@@ -82,15 +82,35 @@ body.light-mode .card-project::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.7); /* Color negro más oscuro al hacer hover */
 }
 
-/* Ocultar scrollbar en móviles pero mantener funcionalidad de scroll táctil */
+/* Móvil: mismo ancho que .card del listado y altura de apertura que info cards */
 @media (max-width: 991.98px) {
   body.light-mode .card-project {
-    scrollbar-width: none; /* Firefox - ocultar scrollbar en móvil */
-    -ms-overflow-style: none; /* Internet Explorer 10+ - ocultar scrollbar en móvil */
+    top: var(--mobile-side-card-top, calc(83px + 2rem));
+    transform: translateX(-50%);
+    width: var(--mobile-main-card-width, calc(100vw - 40px));
+    max-width: var(--mobile-main-card-width, calc(100vw - 40px));
+    max-height: calc(100vh - var(--mobile-side-card-top, calc(83px + 2rem)) - 1.5rem);
+    scrollbar-width: auto;
+    scrollbar-color: #a259ff rgba(0, 0, 0, 0.12);
+    -ms-overflow-style: auto;
   }
-  
+
   body.light-mode .card-project::-webkit-scrollbar {
-    display: none; /* Chrome, Safari y Opera - ocultar scrollbar en móvil */
+    width: 11px;
+    display: block;
+  }
+
+  body.light-mode .card-project::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #a259ff 0%, #7d3c98 100%);
+  }
+
+  body.light-mode .card-project .project-img {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    object-fit: contain;
+    box-sizing: border-box;
   }
 }
 
@@ -569,11 +589,12 @@ body.light-mode .mobile-icons .btn-link:hover {
 }
 
 
-/* Footer más pequeño en móvil */
-@media (max-width: 767.98px) {
+/* Footer móvil: mismo espaciado que modo oscuro (footer.css) */
+@media (max-width: 991.98px) {
   body.light-mode footer {
-    padding: 15px 0;
+    margin-top: -10px;
+    padding-top: 12px;
     height: 60px;
-      font-size: 1.1rem;
+    font-size: 1.1rem;
   }
 }

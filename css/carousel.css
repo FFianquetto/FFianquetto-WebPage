@@ -535,7 +535,7 @@ body.light-mode .wheel-pointer {
 /* ===== RESPONSIVE ===== */
 @media (max-width: 767.98px) {
     .project-carousel-section {
-        padding: 20px 10px;
+        padding: 0;
         min-height: 350px;
     }
     
@@ -546,7 +546,7 @@ body.light-mode .wheel-pointer {
     
     .carousel-container {
         padding: 25px 20px;
-        margin: 10px;
+        margin: 0 auto;
         border-radius: 20px;
     }
     
@@ -678,10 +678,15 @@ body.light-mode .wheel-pointer {
   box-shadow: 0 4px 24px 0 rgba(162,89,255,0.12);
   padding: 2rem 1rem 1.5rem 1rem;
   margin-bottom: 0.5rem;
-  max-width: 93vw;
-  width: 93vw;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (min-width: 992px) {
+  .project-carousel-section .carousel-container {
+    max-width: 93vw;
+    width: 93vw;
+  }
 }
 .project-carousel-section .carousel-title {
   color: #a259ff;
@@ -771,6 +776,22 @@ body.light-mode .wheel-pointer {
   transform: scale(1.13);
   box-shadow: 0 4px 24px 0 rgba(255,255,255,0.18);
 }
+
+@media (max-width: 991.98px) {
+  .project-carousel-section .spin-button.spin-small {
+    padding: 1rem 2.85rem;
+    font-size: 1.22rem;
+    letter-spacing: 0.4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-carousel-section .spin-button.spin-small {
+    padding: 0.9rem 2.5rem;
+    font-size: 1.12rem;
+  }
+}
+
 /* Flechas de navegación negras con brillo blanco */
 .project-carousel-section .carousel-control-prev-icon, 
 .project-carousel-section .carousel-control-next-icon {
@@ -903,64 +924,33 @@ body.light-mode .wheel-pointer {
   border-left: 5px dashed  #8be9fd;
   pointer-events: none;
 }
-@media (max-width: 900px) {
+@media (max-width: 991.98px) {
   .multi-carousel-viewport {
-    width: 88vw;
-    height: 175px;
-  }
-  .project-card-carousel {
-    flex: 0 0 140px;
-    padding: 12px 4px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .project-card-carousel img {
-    width: 120px;
-    height: 80px;
-    background: #111;
-    border-radius: 8px;
-    padding: 10px;
-    box-sizing: border-box;
-    display: block;
-    margin: 0 auto 8px auto;
-    object-fit: contain;
-  }
-}
-@media (max-width: 600px) {
-  .multi-carousel-viewport {
-    width: 80vw;
-    min-width: 0;
-    height: auto;
-  }
-  .multi-carousel-strip {
-    justify-content: center;
     width: 100%;
-  }
-  .project-card-carousel {
-    flex: 0 0 90vw;
-    max-width: 90vw;
-    margin: 0 auto;
-    padding: 12px 0 12px 0;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    min-height: 180px;
-    display: flex;
-    flex-direction: column;
-  }
-  .project-card-carousel img {
-    width: 86vw;
-    max-width: 86vw;
     height: auto;
-    max-height: 38vw;
+    min-height: 175px;
+  }
+
+  .project-card-carousel {
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+    padding: 12px 0;
+    box-sizing: border-box;
+  }
+
+  .project-card-carousel img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 42vw;
     min-height: 80px;
     margin: 0 auto 8px auto;
-    display: block;
-    object-fit: contain;
-    background: #222;
-    border-radius: 5px;
     padding: 0;
+    display: block;
+    object-fit: cover;
+    background: #18181b;
+    border-radius: 8px;
+    box-sizing: border-box;
   }
 } 

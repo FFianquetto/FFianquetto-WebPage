@@ -5,8 +5,15 @@ footer {
     background-color: #0a0a0a;
     text-align: center;
     font-size: 1.33rem;
-    margin-top: auto;
+    margin-top: 27px;
     border-top: 1px solid #333;
     height: 70px;
     text-shadow: 0 0 4px #8be8fdd4, 0 0 12px rgba(255, 255, 255, 0);
+}
+
+@media (max-width: 991.98px) {
+    footer {
+        margin-top: -10px;
+        padding-top: 12px;
+    }
 }

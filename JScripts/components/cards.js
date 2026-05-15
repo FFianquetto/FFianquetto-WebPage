@@ -82,8 +82,17 @@ function closeAllCards() {
   enableBodyScroll();
 }
 
+function ensureMobileSideCardClasses() {
+  if (window.innerWidth > 991.98) return;
+  updateContactCardClass();
+  updateHabilidadesCardClass();
+  updateAcercaCardClass();
+}
+
 // Función para mostrar/ocultar cards en móvil
 function toggleCard(cardId) {
+  ensureMobileSideCardClasses();
+
   // Oculta todas las cards primero
   document.querySelectorAll('.card-contact, .card-habilidades, .card-acerca, .card-cell-c, .card-cell-h, .card-cell-a').forEach(card => {
     card.classList.remove('show');

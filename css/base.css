@@ -14,10 +14,47 @@ img, video, iframe, svg {
     height: auto;
 }
 
+:root {
+    --brand-purple: #a259ff;
+}
+
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 83px;
     overflow-x: hidden;
     width: 100%;
+    scrollbar-width: auto;
+    scrollbar-color: var(--brand-purple) rgba(10, 10, 10, 0.4);
+}
+
+/* Scrollbar morado insignia */
+*::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+}
+
+*::-webkit-scrollbar-track {
+    background: rgba(10, 10, 10, 0.4);
+}
+
+*::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #a259ff 0%, #7d3c98 100%);
+    border-radius: 10px;
+    border: 2px solid rgba(10, 10, 10, 0.35);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #c47aff;
+}
+
+#paginas-web,
+#certificaciones {
+    scroll-margin-top: calc(83px + 1.25rem);
+}
+
+#carousel-section,
+#acercaModal {
+    scroll-margin-top: calc(83px + 3.5rem);
 }
 
 body {
@@ -80,4 +117,14 @@ html.no-scroll .card-project {
 body.light-mode {
     background: #f8f9fa;
     color: #212529;
+    scrollbar-color: var(--brand-purple) rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode *::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode *::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #a259ff 0%, #7d3c98 100%);
+    border-color: rgba(0, 0, 0, 0.08);
 }

@@ -1,7 +1,31 @@
 // ===== GESTIÓN DE MODALES =====
 
+const IMAGE_MODAL_ACCENT_KEYS = ['card-purple', 'card-cyan', 'card-orange', 'card-blue', 'card-pink', 'card-green'];
+
+function getImageModalAccentClass(sourceEl) {
+  const card = sourceEl?.closest?.('.card, .card-project, .card-acerca');
+  if (!card) return 'image-modal-accent-purple';
+
+  if (card.classList.contains('card-acerca')) return 'image-modal-accent-pink';
+
+  const match = IMAGE_MODAL_ACCENT_KEYS.find((key) => card.classList.contains(key));
+  return match ? `image-modal-accent-${match.replace('card-', '')}` : 'image-modal-accent-purple';
+}
+
+function clearImageModalAccentClasses(modalImage) {
+  IMAGE_MODAL_ACCENT_KEYS.forEach((key) => {
+    modalImage.classList.remove(`image-modal-accent-${key.replace('card-', '')}`);
+  });
+  modalImage.classList.remove('image-modal-accent-pink');
+}
+
+function applyImageModalAccent(modalImage, sourceEl) {
+  clearImageModalAccentClasses(modalImage);
+  modalImage.classList.add(getImageModalAccentClass(sourceEl));
+}
+
 // Función para abrir el modal de imagen
-function openImageModal(imageSrc, imageAlt) {
+function openImageModal(imageSrc, imageAlt, sourceEl) {
   const modal = document.getElementById('imageModal');
   const modalImage = document.getElementById('modalImage');
   const modalCaption = document.getElementById('modalCaption');
@@ -10,21 +34,16 @@ function openImageModal(imageSrc, imageAlt) {
 
   modalImage.src = imageSrc;
   modalImage.alt = imageAlt;
-  
-  // Si es la imagen de perfil, mostrar un mensaje más descriptivo
+  applyImageModalAccent(modalImage, sourceEl);
+
   if (imageSrc.includes('prop.jpg')) {
-    // Obtener idioma actual
     const lang = localStorage.getItem('selectedLanguage') || 'ES';
-    // Obtener traducciones (debe estar global)
     let translations = window.translations || {};
-    // Fallback si no está global
     if (!translations[lang]) {
       if (typeof getTranslations === 'function') translations = getTranslations();
       else translations = {};
     }
-    // Asignar traducción
     modalCaption.textContent = translations[lang]?.profile_caption || 'Fernando A. Cancino Cuenca - Desarrollador y Animador Digital';
-    // Agregar clase específica para la imagen de perfil solo en móvil
     if (window.innerWidth <= 991.98) {
       modalImage.classList.add('profile-image-modal');
     }
@@ -35,10 +54,9 @@ function openImageModal(imageSrc, imageAlt) {
 
   modal.style.display = 'flex';
   document.body.style.overflow = 'hidden';
-  
-  // Agregar animación de entrada solo para móvil
-  if (window.innerWidth <= 767.98) {
-    modalImage.style.transform = 'scale(0.8)';
+
+  if (window.innerWidth <= 991.98) {
+    modalImage.style.transform = 'scale(0.92)';
     modalImage.style.opacity = '0';
     setTimeout(() => {
       modalImage.style.transition = 'all 0.3s ease';
@@ -52,49 +70,50 @@ function openImageModal(imageSrc, imageAlt) {
 function closeImageModal() {
   const modal = document.getElementById('imageModal');
   const modalImage = document.getElementById('modalImage');
-  
+
   if (!modal || !modalImage) return;
-  
-  // Animación de salida solo para móvil
-  if (window.innerWidth <= 767.98) {
+
+  if (window.innerWidth <= 991.98) {
     modalImage.style.transition = 'all 0.2s ease';
-    modalImage.style.transform = 'scale(0.8)';
+    modalImage.style.transform = 'scale(0.92)';
     modalImage.style.opacity = '0';
     setTimeout(() => {
       modal.style.display = 'none';
       document.body.style.overflow = 'auto';
-      // Resetear estilos
       modalImage.style.transform = '';
       modalImage.style.opacity = '';
       modalImage.style.transition = '';
       modalImage.classList.remove('profile-image-modal');
+      clearImageModalAccentClasses(modalImage);
     }, 200);
   } else {
     modal.style.display = 'none';
     document.body.style.overflow = 'auto';
     modalImage.classList.remove('profile-image-modal');
+    clearImageModalAccentClasses(modalImage);
   }
 }
 
 // Función para manejar el clic en "Acerca de mí"
 function handleAcercaClick(event) {
-  // En móvil, mostrar la card como modal
   if (window.innerWidth <= 991.98) {
     event.preventDefault();
     toggleCard('acercaModal');
+    return;
   }
-  // En desktop, permitir el comportamiento normal del enlace (no prevenir)
+  event.preventDefault();
+  if (typeof window.scrollToSection === 'function') {
+    window.scrollToSection('#acercaModal');
+  }
 }
 
 // Función para manejar clic en iconos móviles
 function handleMobileIconClick(cardId) {
-  // Cerrar el menú hamburguesa si está abierto
   const navbarCollapse = document.querySelector('.navbar-collapse');
   if (navbarCollapse && navbarCollapse.classList.contains('show')) {
     navbarCollapse.classList.remove('show');
   }
-  
-  // Cerrar todas las cards de proyecto si están abiertas
+
   const projectCards = document.querySelectorAll('.card-project');
   projectCards.forEach(card => {
     if (card.style.display === 'block') {
@@ -105,8 +124,7 @@ function handleMobileIconClick(cardId) {
       }, 300);
     }
   });
-  
-  // Mostrar la card correspondiente
+
   toggleCard(cardId);
 }
 
@@ -114,28 +132,23 @@ function handleMobileIconClick(cardId) {
 function initModals() {
   const imageModal = document.getElementById('imageModal');
   const modalCaption = document.getElementById('modalCaption');
-  
-  // Cerrar modal al hacer clic en el overlay
+
   if (imageModal) {
     imageModal.addEventListener('click', function (e) {
-      // Solo cerrar si se hace clic en el fondo del modal, no en la imagen o caption
       if (e.target === this || e.target.classList.contains('image-modal-content')) {
         closeImageModal();
       }
     });
   }
 
-  // Cerrar modal al hacer clic en el caption (solo el fondo, no el texto)
   if (modalCaption) {
     modalCaption.addEventListener('click', function (e) {
-      // Solo cerrar si se hace clic en el fondo del caption, no en el texto
       if (e.target === this) {
         closeImageModal();
       }
     });
   }
 
-  // Cerrar modal con ESC
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
       closeImageModal();
@@ -143,7 +156,6 @@ function initModals() {
   });
 }
 
-// Exportar funciones globales
 window.openImageModal = openImageModal;
 window.closeImageModal = closeImageModal;
 window.handleAcercaClick = handleAcercaClick;

@@ -104,7 +104,7 @@
         min-width: 50px;
         padding: 0;
         height: 55px;
-        margin-right: 1rem !important;
+        margin-right: 0.15rem !important;
         background: none !important;
         border: none !important;
     }
@@ -141,6 +141,11 @@
 }
 
 @media (max-width: 400px) {
+    :root {
+        --mobile-side-card-top: calc(65px + 1.5rem);
+        --mobile-main-card-width: calc(100vw - 40px);
+    }
+
     .logo img {
         height: 42px !important;
         width: 47px !important;
@@ -154,7 +159,7 @@
         max-width: 52px;
         min-width: 42px;
         height: 52px;
-        margin-right: 1rem !important;
+        margin-right: 0.1rem !important;
         background: none !important;
         border: none !important;
     }
@@ -427,6 +432,11 @@
 
 /* Media queries para móvil (max-width: 991.98px) */
 @media (max-width: 991.98px) {
+    :root {
+        --mobile-side-card-top: calc(83px + 2rem);
+        --mobile-main-card-width: calc(100vw - 40px);
+    }
+
     .container-fluid {
         max-width: 100vw;
         overflow-x: hidden;
@@ -514,7 +524,7 @@
     .logo {
         order: 3;
         margin-left: auto;
-        margin-right: 1rem;
+        margin-right: 0.15rem;
         display: flex;
         align-items: center;
         justify-content: flex-end;
@@ -660,13 +670,13 @@
     .card-habilidades,
     .card-acerca {
         position: fixed !important;
-        top: 50% !important;
+        top: var(--mobile-side-card-top, calc(83px + 2rem)) !important;
         left: 50% !important;
-        transform: translate(-50%, -50%) !important;
+        transform: translateX(-50%) !important;
         z-index: 1050 !important;
-        width: 95vw !important;
-        max-width: 380px !important;
-        max-height: 80vh !important;
+        width: 88vw !important;
+        max-width: 330px !important;
+        max-height: calc(100vh - var(--mobile-side-card-top, calc(83px + 2rem)) - 1.5rem) !important;
         background-color: #1a1a1a !important;
         border-radius: 15px;
         box-shadow: 0 0 20px rgba(0,0,0,0.5);
@@ -719,5 +729,100 @@
         text-align: left;
         padding-left: 1.2rem;
         margin-left: 0;
+    }
+
+    /* Menos separación entre lista e imagen en cards principales (móvil) */
+    #main-cards-container .card-content {
+        gap: 0.65rem;
+    }
+
+    #main-cards-container .project-list li {
+        margin-bottom: 8px;
+    }
+
+    #main-cards-container .project-list li:last-child {
+        margin-bottom: 0.2rem;
+    }
+
+    #main-cards-container .card-image-section {
+        min-height: 0;
+        max-height: none;
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    #main-cards-container .card-image {
+        height: auto;
+        min-height: 0;
+        padding: 0 8px 4px;
+    }
+
+    #main-cards-container .card-image img {
+        height: auto;
+        max-height: min(40vh, 260px);
+    }
+
+    /* Ruleta: mismo contenedor que .main-container / .card en móvil */
+    #carousel-container {
+        width: 100%;
+        max-width: 1515px;
+        margin: 0 auto;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .project-carousel-section {
+        width: 100%;
+        padding: 0 !important;
+        margin: 10px 0 !important;
+        box-sizing: border-box;
+    }
+
+    .project-carousel-section .carousel-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        box-sizing: border-box;
+    }
+
+    .project-carousel-section .multi-carousel-viewport {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .project-carousel-section .project-card-carousel {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+    .project-carousel-section .project-card-carousel img {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Menos espacio entre última card y copyright en móvil */
+    #main-cards-container .main-container {
+        gap: 1.15rem;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    #main-cards-container .main-cards {
+        gap: 1.5rem;
+    }
+
+    #main-cards-container .main-container > p:empty {
+        display: none;
+        margin: 0;
+    }
+
+    #main-cards-container {
+        margin-bottom: 0.25rem;
+    }
+
+    #project-cards-container {
+        margin: 0;
+        padding: 0;
+        min-height: 0;
     }
 }

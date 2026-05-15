@@ -49,17 +49,28 @@
     padding: 0;
 }
 
-.nav-links li a {
+.nav-links li a,
+.nav-links .nav-link,
+.nav-links .nav-link:link,
+.nav-links .nav-link:visited,
+.nav-links .nav-link:hover,
+.nav-links .nav-link:focus,
+.nav-links .nav-link:focus-visible,
+.nav-links .nav-link:active,
+.nav-links .nav-link.active {
     text-decoration: none;
     color: #fff;
     font-size: 26.6px;
     font-weight: 600;
-    transition: color 0.2s;
+    transition: color 0.2s, background 0.2s;
     padding: 8px 12px;
     border-radius: 6px;
+    background: transparent;
 }
 
-.nav-links li a:hover {
+.nav-links li a:hover,
+.nav-links .nav-link:hover,
+.nav-links .nav-link:focus-visible {
     color: #8be9fd;
     background: rgba(139, 232, 253, 0.045);
 }

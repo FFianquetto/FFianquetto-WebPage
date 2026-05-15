@@ -4,7 +4,7 @@ function renderMainCards() {
   const container = document.getElementById('main-cards-container');
   if (container) {
     container.innerHTML = `
-      <div class="main-container">
+      <div class="main-container" id="paginas-web">
         <!-- Cards principales -->
         <div class="main-cards">
           <div class="card card-purple" id="desarrollo-frontend">
@@ -24,7 +24,7 @@ function renderMainCards() {
               <div class="card-image-section">
                 <div class="card-image">
                   <img src="imagenesP/ZomboyWeb.png" alt="Desarrollo Frontend" loading="lazy" width="300" height="200" srcset="imagenesP/ZomboyWeb.png 600w, imagenesP/ZomboyWeb.png 300w" sizes="(max-width: 600px) 100vw, 300px"
-                    onclick="openImageModal(this.src, this.alt)">
+                    onclick="openImageModal(this.src, this.alt, this)">
                 </div>
               </div>
             </div>
@@ -46,7 +46,7 @@ function renderMainCards() {
               </div>
               <div class="card-image-section">
                 <div class="card-image">
-                  <img src="imagenesP/Amazon.png" alt="Desarrollo Backend" loading="lazy" width="300" height="200" srcset="imagenesP/Amazon.png 600w, imagenesP/Amazon.png 300w" sizes="(max-width: 600px) 100vw, 300px" onclick="openImageModal(this.src, this.alt)">
+                  <img src="imagenesP/Amazon.png" alt="Desarrollo Backend" loading="lazy" width="300" height="200" srcset="imagenesP/Amazon.png 600w, imagenesP/Amazon.png 300w" sizes="(max-width: 600px) 100vw, 300px" onclick="openImageModal(this.src, this.alt, this)">
                 </div>
               </div>
             </div>
@@ -67,7 +67,7 @@ function renderMainCards() {
               </div>
               <div class="card-image-section">
                 <div class="card-image">
-                  <img src="imagenesP/CocinaEnCorto.png" alt="Desarrollo Móvil" loading="lazy" width="300" height="200" srcset="imagenesP/CocinaEnCorto.png 600w, imagenesP/CocinaEnCorto.png 300w" sizes="(max-width: 600px) 100vw, 300px" onclick="openImageModal(this.src, this.alt)">
+                  <img src="imagenesP/CocinaEnCorto.png" alt="Desarrollo Móvil" loading="lazy" width="300" height="200" srcset="imagenesP/CocinaEnCorto.png 600w, imagenesP/CocinaEnCorto.png 300w" sizes="(max-width: 600px) 100vw, 300px" onclick="openImageModal(this.src, this.alt, this)">
                 </div>
               </div>
             </div>
@@ -89,7 +89,7 @@ function renderMainCards() {
               <div class="card-image-section">
                 <div class="card-image">
                   <img src="imagenesP/HotelBd.png" alt="Sistema de Gestión Hotelera" loading="lazy" width="300" height="200" srcset="imagenesP/HotelBd.png 600w, imagenesP/HotelBd.png 300w" sizes="(max-width: 600px) 100vw, 300px"
-                    onclick="openImageModal(this.src, this.alt)">
+                    onclick="openImageModal(this.src, this.alt, this)">
                 </div>
               </div>
             </div>
@@ -113,7 +113,7 @@ function renderMainCards() {
               </div>
               <div class="card-image-section">
                 <div class="card-image">
-                  <img src="imagenesP/EscapeGame.jpg" alt="Escape Salvaje" loading="lazy" width="300" height="200" srcset="imagenesP/EscapeGame.jpg 600w, imagenesP/EscapeGame.jpg 300w" sizes="(max-width: 600px) 100vw, 300px" onclick="openImageModal(this.src, this.alt)">
+                  <img src="imagenesP/EscapeGame.jpg" alt="Escape Salvaje" loading="lazy" width="300" height="200" srcset="imagenesP/EscapeGame.jpg 600w, imagenesP/EscapeGame.jpg 300w" sizes="(max-width: 600px) 100vw, 300px" onclick="openImageModal(this.src, this.alt, this)">
                 </div>
               </div>
             </div>
@@ -137,7 +137,7 @@ function renderMainCards() {
               </div>
               <div class="card-image-section">
                 <div class="card-image">
-                  <img src="imagenesP/Certificate.png" alt="Certificados" loading="lazy" width="300" height="200" srcset="imagenesP/Certificate.png 600w, imagenesP/Certificate.png 300w" sizes="(max-width: 600px) 100vw, 300px" onclick="openImageModal(this.src, this.alt)">
+                  <img src="imagenesP/Certificate.png" alt="Certificados" loading="lazy" width="300" height="200" srcset="imagenesP/Certificate.png 600w, imagenesP/Certificate.png 300w" sizes="(max-width: 600px) 100vw, 300px" onclick="openImageModal(this.src, this.alt, this)">
                 </div>
               </div>
             </div>
@@ -183,7 +183,7 @@ function renderMainCards() {
               <img src="imagenes/prop.jpg" alt="Foto de perfil"
                 style="width: 175px; height: 175px; object-fit: cover; border-radius: 50%; border: 3px solid #ff4ecd;"
                 loading="lazy" width="175" height="175"
-                onclick="openImageModal(this.src, this.alt); this.style.animation='none';"
+                onclick="openImageModal(this.src, this.alt, this); this.style.animation='none';"
                 onmouseover="this.style.transform='scale(1.05)'; this.nextElementSibling.style.opacity='1';"
                 onmouseout="this.style.transform='scale(1)'; this.nextElementSibling.style.opacity='0';">
               <div class="tooltip" data-lang="profile_tooltip">

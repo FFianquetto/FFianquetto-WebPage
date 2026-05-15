@@ -47,7 +47,7 @@ function renderNavbar() {
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="nav-links navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="./" data-lang="inicio">Inicio</a>
+                <a class="nav-link" href="#" data-lang="inicio">Inicio</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#paginas-web" data-lang="proyectos">Proyectos</a>
@@ -122,9 +122,11 @@ function renderImageModal() {
     container.innerHTML = `
       <div id="imageModal" class="image-modal">
         <div class="image-modal-content">
-          <span class="image-modal-close" onclick="closeImageModal()">&times;</span>
-          <span class="image-modal-close-mobile" onclick="closeImageModal()">&times;</span>
-          <img id="modalImage" class="image-modal-img" alt="Imagen ampliada">
+          <div class="image-modal-frame">
+            <span class="image-modal-close" onclick="closeImageModal()" aria-label="Cerrar">&times;</span>
+            <span class="image-modal-close-mobile" onclick="closeImageModal()" aria-label="Cerrar">&times;</span>
+            <img id="modalImage" class="image-modal-img" alt="Imagen ampliada">
+          </div>
           <div id="modalCaption" class="image-modal-caption"></div>
         </div>
       </div>

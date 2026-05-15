@@ -12,7 +12,7 @@ function renderProjectCards() {
       <button class="card-close" onclick="closeProjectCard('zomboyCard')">×</button>
       <span class="card-icon">🌐</span>
       <h4 data-lang="zomboy_title">ZomboyShop-ReDesign</h4>
-      <img src="../imagenesP/ZomboyWeb.png" alt="ZomboyShop Web Design" class="project-img" loading="lazy" width="300" height="200" srcset="../imagenesP/ZomboyWeb.png 600w, ../imagenesP/ZomboyWeb.png 300w" sizes="(max-width: 600px) 100vw, 300px"
+      <img src="imagenesP/ZomboyWeb.png" alt="ZomboyShop Web Design" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/ZomboyWeb.png 600w, imagenesP/ZomboyWeb.png 300w" sizes="(max-width: 600px) 100vw, 300px"
         onclick="openImageModal(this.src, this.alt)">
       <p class="project-description" data-lang="zomboy_description">
         Rediseño completo de la página web de ZomboyShop, implementando un diseño moderno y responsivo.
@@ -31,7 +31,7 @@ function renderProjectCards() {
       <button class="card-close" onclick="closeProjectCard('artvlogCard')">×</button>
       <span class="card-icon">🎨</span>
       <h4 data-lang="artvlog_title">ArtVlog</h4>
-      <img src="../imagenesP/ArtWeb.png" alt="ArtVlog Platform" class="project-img" loading="lazy" width="300" height="200" srcset="../imagenesP/ArtWeb.png 600w, ../imagenesP/ArtWeb.png 300w" sizes="(max-width: 600px) 100vw, 300px"
+      <img src="imagenesP/ArtWeb.png" alt="ArtVlog Platform" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/ArtWeb.png 600w, imagenesP/ArtWeb.png 300w" sizes="(max-width: 600px) 100vw, 300px"
         onclick="openImageModal(this.src, this.alt)">
       <p class="project-description" data-lang="artvlog_description">
         Plataforma de blog artístico que permite a los usuarios compartir y descubrir contenido creativo.
@@ -50,7 +50,7 @@ function renderProjectCards() {
       <button class="card-close" onclick="closeProjectCard('cadoWebCard')">×</button>
       <span class="card-icon">🌐</span>
       <h4 data-lang="cadoWeb_title">CADO Web</h4>
-      <img src="../imagenesP/CadoWeb.png" alt="CADO Web" class="project-img" loading="lazy" width="300" height="200" srcset="../imagenesP/CadoWeb.png 600w, ../imagenesP/CadoWeb.png 300w" sizes="(max-width: 600px) 100vw, 300px"
+      <img src="imagenesP/CadoWeb.png" alt="CADO Web" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/CadoWeb.png 600w, imagenesP/CadoWeb.png 300w" sizes="(max-width: 600px) 100vw, 300px"
         onclick="openImageModal(this.src, this.alt)">
       <p class="project-description" data-lang="cadoWeb_description">
         Proyecto web frontend desarrollado para CADO.
@@ -69,7 +69,7 @@ function renderProjectCards() {
       <button class="card-close" onclick="closeProjectCard('ec2Card')">×</button>
       <span class="card-icon">☁️</span>
       <h4 data-lang="ec2_title">EC2 Container - AWS</h4>
-      <img src="../imagenesP/Amazon.png" alt="EC2 Container" class="project-img" loading="lazy" width="300" height="200" srcset="../imagenesP/Amazon.png 600w, ../imagenesP/Amazon.png 300w" sizes="(max-width: 600px) 100vw, 300px"
+      <img src="imagenesP/Amazon.png" alt="EC2 Container" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/Amazon.png 600w, imagenesP/Amazon.png 300w" sizes="(max-width: 600px) 100vw, 300px"
         onclick="openImageModal(this.src, this.alt)">
       <p class="project-description" data-lang="ec2_description">
         Implementación y gestión de contenedores en Amazon EC2 para aplicaciones web.
@@ -88,7 +88,7 @@ function renderProjectCards() {
       <button class="card-close" onclick="closeProjectCard('hotelCard')">×</button>
       <span class="card-icon">🏨</span>
       <h4 data-lang="hotel_title">Gestión de Hoteles con SQL</h4>
-      <img src="../imagenesP/HotelBd.png" alt="Sistema de Gestión Hotelera" class="project-img" loading="lazy" width="300" height="200" srcset="../imagenesP/HotelBd.png 600w, ../imagenesP/HotelBd.png 300w" sizes="(max-width: 600px) 100vw, 300px"
+      <img src="imagenesP/HotelBd.png" alt="Sistema de Gestión Hotelera" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/HotelBd.png 600w, imagenesP/HotelBd.png 300w" sizes="(max-width: 600px) 100vw, 300px"
         onclick="openImageModal(this.src, this.alt)">
       <p class="project-description" data-lang="hotel_description">
         Sistema de gestión hotelera implementado con SQL para el control eficiente de operaciones.
@@ -107,7 +107,7 @@ function renderProjectCards() {
       <button class="card-close" onclick="closeProjectCard('nominasCard')">×</button>
       <span class="card-icon">💰</span>
       <h4 data-lang="nominas_title">Manejo de Nóminas con BigData - CassandraDb</h4>
-      <img src="../imagenesP/Cassandra.png" alt="Sistema de Nóminas BigData" class="project-img" loading="lazy" width="300" height="200" srcset="../imagenesP/Cassandra.png 600w, ../imagenesP/Cassandra.png 300w" sizes="(max-width: 600px) 100vw, 300px"
+      <img src="imagenesP/Cassandra.png" alt="Sistema de Nóminas BigData" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/Cassandra.png 600w, imagenesP/Cassandra.png 300w" sizes="(max-width: 600px) 100vw, 300px"
         onclick="openImageModal(this.src, this.alt)">
       <p class="project-description" data-lang="nominas_description">
         Sistema de gestión de nóminas implementado con CassandraDB para el manejo eficiente de grandes volúmenes de datos.
@@ -126,7 +126,7 @@ function renderProjectCards() {
       <button class="card-close" onclick="closeProjectCard('cadoCard')">×</button>
       <span class="card-icon">📱</span>
       <h4 data-lang="cado_title">CADO Mobile App Backend - MongoDB</h4>
-      <img src="../imagenesP/Mongo.png" alt="CADO Mobile Backend" class="project-img" loading="lazy" width="300" height="200" srcset="../imagenesP/Mongo.png 600w, ../imagenesP/Mongo.png 300w" sizes="(max-width: 600px) 100vw, 300px"
+      <img src="imagenesP/Mongo.png" alt="CADO Mobile Backend" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/Mongo.png 600w, imagenesP/Mongo.png 300w" sizes="(max-width: 600px) 100vw, 300px"
         onclick="openImageModal(this.src, this.alt)">
       <p class="project-description" data-lang="cado_description">
         Backend robusto para aplicación móvil CADO implementado con MongoDB para máxima flexibilidad y rendimiento.
@@ -145,7 +145,7 @@ function renderProjectCards() {
       <button class="card-close" onclick="closeProjectCard('bolosCard')">×</button>
       <span class="card-icon">🎳</span>
       <h4 data-lang="bolos_title">Bolos en Unity con Háptico incluido</h4>
-      <img src="../imagenesP/Pinball.png" alt="Juego de Bolos" class="project-img" loading="lazy" width="300" height="200" srcset="../imagenesP/Pinball.png 600w, ../imagenesP/Pinball.png 300w" sizes="(max-width: 600px) 100vw, 300px"
+      <img src="imagenesP/Pinball.png" alt="Juego de Bolos" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/Pinball.png 600w, imagenesP/Pinball.png 300w" sizes="(max-width: 600px) 100vw, 300px"
         onclick="openImageModal(this.src, this.alt)">
       <p class="project-description" data-lang="bolos_description">
         Simulador de bolos desarrollado en Unity con retroalimentación háptica para una experiencia inmersiva.
@@ -164,7 +164,7 @@ function renderProjectCards() {
       <button class="card-close" onclick="closeProjectCard('escapeCard')">×</button>
       <span class="card-icon">🏃</span>
       <h4 data-lang="escape_title">Escape Salvaje en Unity</h4>
-      <img src="../imagenesP/EscapeGame.jpg" alt="Escape Salvaje" class="project-img" loading="lazy" width="300" height="200" srcset="../imagenesP/EscapeGame.jpg 600w, ../imagenesP/EscapeGame.jpg 300w" sizes="(max-width: 600px) 100vw, 300px"
+      <img src="imagenesP/EscapeGame.jpg" alt="Escape Salvaje" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/EscapeGame.jpg 600w, imagenesP/EscapeGame.jpg 300w" sizes="(max-width: 600px) 100vw, 300px"
         onclick="openImageModal(this.src, this.alt)">
       <p class="project-description" data-lang="escape_description">
         Juego de aventura y supervivencia desarrollado en Unity con mecánicas de escape y puzzle.
@@ -183,7 +183,7 @@ function renderProjectCards() {
       <button class="card-close" onclick="closeProjectCard('candyCard')">×</button>
       <span class="card-icon">🍬</span>
       <h4 data-lang="candy_title">Candy Collector con OGL Engine y C++</h4>
-      <img src="../imagenesP/CC.png" alt="Candy Collector" class="project-img" loading="lazy" width="300" height="200" srcset="../imagenesP/CC.png 600w, ../imagenesP/CC.png 300w" sizes="(max-width: 600px) 100vw, 300px"
+      <img src="imagenesP/CC.png" alt="Candy Collector" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/CC.png 600w, imagenesP/CC.png 300w" sizes="(max-width: 600px) 100vw, 300px"
         onclick="openImageModal(this.src, this.alt)">
       <p class="project-description" data-lang="candy_description">
         Juego de recolección desarrollado con OpenGL y C++ para demostrar habilidades de programación de bajo nivel.
@@ -202,7 +202,7 @@ function renderProjectCards() {
       <button class="card-close" onclick="closeProjectCard('snakeCard')">×</button>
       <span class="card-icon">🐍</span>
       <h4 data-lang="snake_title">Snake Slaughter con OGL Engine y Lenguaje Ensamblador</h4>
-      <img src="../imagenesP/Snake.png" alt="Snake Slaughter" class="project-img" loading="lazy" width="300" height="200" srcset="../imagenesP/Snake.png 600w, ../imagenesP/Snake.png 300w" sizes="(max-width: 600px) 100vw, 300px"
+      <img src="imagenesP/Snake.png" alt="Snake Slaughter" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/Snake.png 600w, imagenesP/Snake.png 300w" sizes="(max-width: 600px) 100vw, 300px"
         onclick="openImageModal(this.src, this.alt)">
       <p class="project-description" data-lang="snake_description">
         Reimaginación del clásico juego Snake implementada con OpenGL y optimizaciones en lenguaje ensamblador.
@@ -221,7 +221,7 @@ function renderProjectCards() {
       <button class="card-close" onclick="closeProjectCard('sydneyCard')">×</button>
       <span class="card-icon">🎓</span>
       <h4 data-lang="sydney_title">Innovation Through Design - Sydney University</h4>
-      <img src="../imagenesP/CSydney.png" alt="Certificado Sydney" class="project-img" loading="lazy" width="300" height="200" srcset="../imagenesP/CSydney.png 600w, ../imagenesP/CSydney.png 300w" sizes="(max-width: 600px) 100vw, 300px"
+      <img src="imagenesP/CSydney.png" alt="Certificado Sydney" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/CSydney.png 600w, imagenesP/CSydney.png 300w" sizes="(max-width: 600px) 100vw, 300px"
         onclick="openImageModal(this.src, this.alt)">
       <p class="project-description" data-lang="sydney_description">
         Certificación en innovación y diseño de la Universidad de Sydney, enfocada en metodologías de diseño centrado en
@@ -241,7 +241,7 @@ function renderProjectCards() {
       <button class="card-close" onclick="closeProjectCard('googleCard')">×</button>
       <span class="card-icon">☁️</span>
       <h4 data-lang="google_title">GoogleCloud Fundamentals - Google</h4>
-      <img src="../imagenesP/CGoogle.png" alt="Certificado Google" class="project-img" loading="lazy" width="300" height="200" srcset="../imagenesP/CGoogle.png 600w, ../imagenesP/CGoogle.png 300w" sizes="(max-width: 600px) 100vw, 300px"
+      <img src="imagenesP/CGoogle.png" alt="Certificado Google" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/CGoogle.png 600w, imagenesP/CGoogle.png 300w" sizes="(max-width: 600px) 100vw, 300px"
         onclick="openImageModal(this.src, this.alt)">
       <p class="project-description" data-lang="google_description">
         Certificación en fundamentos de Google Cloud Platform, cubriendo los conceptos básicos de la nube y sus servicios.
@@ -260,7 +260,7 @@ function renderProjectCards() {
       <button class="card-close" onclick="closeProjectCard('georgiaCard')">×</button>
       <span class="card-icon">👥</span>
       <h4 data-lang="georgia_title">Introduction to User Experience Design - Georgia Institute of Technology</h4>
-      <img src="../imagenesP/Certificate.png" alt="Certificado Georgia Tech" class="project-img" loading="lazy" width="300" height="200" srcset="../imagenesP/Certificate.png 600w, ../imagenesP/Certificate.png 300w" sizes="(max-width: 600px) 100vw, 300px"
+      <img src="imagenesP/Certificate.png" alt="Certificado Georgia Tech" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/Certificate.png 600w, imagenesP/Certificate.png 300w" sizes="(max-width: 600px) 100vw, 300px"
         onclick="openImageModal(this.src, this.alt)">
       <p class="project-description" data-lang="georgia_description">
         Certificación en diseño de experiencia de usuario, enfocada en metodologías y prácticas de UX/UI.
@@ -279,7 +279,7 @@ function renderProjectCards() {
       <button class="card-close" onclick="closeProjectCard('tecCard')">×</button>
       <span class="card-icon">💡</span>
       <h4 data-lang="tec_title">Desarrollo rápido de productos innovadores para mercados emergentes - Tec de Mty</h4>
-      <img src="../imagenesP/CTec.png" alt="Certificado Tec" class="project-img" loading="lazy" width="300" height="200" srcset="../imagenesP/CTec.png 600w, ../imagenesP/CTec.png 300w" sizes="(max-width: 600px) 100vw, 300px"
+      <img src="imagenesP/CTec.png" alt="Certificado Tec" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/CTec.png 600w, imagenesP/CTec.png 300w" sizes="(max-width: 600px) 100vw, 300px"
         onclick="openImageModal(this.src, this.alt)">
       <p class="project-description" data-lang="tec_description">
         Certificación en desarrollo ágil de productos innovadores, enfocada en metodologías de innovación y
@@ -299,7 +299,7 @@ function renderProjectCards() {
       <button class="card-close" onclick="closeProjectCard('unamCard')">×</button>
       <span class="card-icon">📊</span>
       <h4 data-lang="unam_title">Introducción a Data Science: Programación Estadística con R - UNAM</h4>
-      <img src="../imagenesP/CUnam.png" alt="Certificado UNAM" class="project-img" loading="lazy" width="300" height="200" srcset="../imagenesP/CUnam.png 600w, ../imagenesP/CUnam.png 300w" sizes="(max-width: 600px) 100vw, 300px"
+      <img src="imagenesP/CUnam.png" alt="Certificado UNAM" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/CUnam.png 600w, imagenesP/CUnam.png 300w" sizes="(max-width: 600px) 100vw, 300px"
         onclick="openImageModal(this.src, this.alt)">
       <p class="project-description" data-lang="unam_description">
         Certificación en ciencia de datos y programación estadística con R, enfocada en análisis de datos y visualización.
@@ -318,7 +318,7 @@ function renderProjectCards() {
       <button class="card-close" onclick="closeProjectCard('cocinaCard')">×</button>
       <span class="card-icon">🍳</span>
       <h4 data-lang="cocina_title">Cocina en Corto</h4>
-      <img src="../imagenesP/CocinaEnCorto.png" alt="Cocina en Corto" class="project-img" loading="lazy" width="300" height="200" srcset="../imagenesP/CocinaEnCorto.png 600w, ../imagenesP/CocinaEnCorto.png 300w" sizes="(max-width: 600px) 100vw, 300px"
+      <img src="imagenesP/CocinaEnCorto.png" alt="Cocina en Corto" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/CocinaEnCorto.png 600w, imagenesP/CocinaEnCorto.png 300w" sizes="(max-width: 600px) 100vw, 300px"
         onclick="openImageModal(this.src, this.alt)">
       <p class="project-description" data-lang="cocina_description">
         Aplicación móvil desarrollada para compartir recetas rápidas y fáciles de cocinar.
@@ -337,7 +337,7 @@ function renderProjectCards() {
       <button class="card-close" onclick="closeProjectCard('flegCard')">×</button>
       <span class="card-icon">🚩</span>
       <h4 data-lang="fleg_title">Fleg</h4>
-      <img src="../imagenesP/Fleg.png" alt="Fleg" class="project-img" loading="lazy" width="300" height="200" srcset="../imagenesP/Fleg.png 600w, ../imagenesP/Fleg.png 300w" sizes="(max-width: 600px) 100vw, 300px"
+      <img src="imagenesP/Fleg.png" alt="Fleg" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/Fleg.png 600w, imagenesP/Fleg.png 300w" sizes="(max-width: 600px) 100vw, 300px"
         onclick="openImageModal(this.src, this.alt)">
       <p class="project-description" data-lang="fleg_description">
         Proyecto web completo con backend desarrollado con funcionalidades innovadoras.
@@ -356,7 +356,7 @@ function renderProjectCards() {
       <button class="card-close" onclick="closeProjectCard('inffutCard')">×</button>
       <span class="card-icon">⚽</span>
       <h4 data-lang="inffut_title">Inffut</h4>
-      <img src="../imagenesP/Inffut.png" alt="Inffut" class="project-img" loading="lazy" width="300" height="200" srcset="../imagenesP/Inffut.png 600w, ../imagenesP/Inffut.png 300w" sizes="(max-width: 600px) 100vw, 300px"
+      <img src="imagenesP/Inffut.png" alt="Inffut" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/Inffut.png 600w, imagenesP/Inffut.png 300w" sizes="(max-width: 600px) 100vw, 300px"
         onclick="openImageModal(this.src, this.alt)">
       <p class="project-description" data-lang="inffut_description">
         Proyecto web completo con backend para información y estadísticas de fútbol.
@@ -375,7 +375,7 @@ function renderProjectCards() {
       <button class="card-close" onclick="closeProjectCard('stealCard')">×</button>
       <span class="card-icon">🎯</span>
       <h4 data-lang="steal_title">Steal the vibe</h4>
-      <img src="../imagenesP/Steal.png" alt="Steal the vibe" class="project-img" loading="lazy" width="300" height="200" srcset="../imagenesP/Steal.png 600w, ../imagenesP/Steal.png 300w" sizes="(max-width: 600px) 100vw, 300px"
+      <img src="imagenesP/Steal.png" alt="Steal the vibe" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/Steal.png 600w, imagenesP/Steal.png 300w" sizes="(max-width: 600px) 100vw, 300px"
         onclick="openImageModal(this.src, this.alt)">
       <p class="project-description" data-lang="steal_description">
         Videojuego desarrollado en Unreal Engine con mecánicas innovadoras y diseño atractivo.

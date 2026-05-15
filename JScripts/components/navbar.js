@@ -22,6 +22,34 @@ function initNavbar() {
       }
     });
   }
+
+  // Comportamiento especial para el enlace de "Proyectos"
+  const proyectosLink = document.querySelector('.nav-link[data-lang="proyectos"]');
+  if (proyectosLink) {
+    proyectosLink.addEventListener('click', function (event) {
+      const targetHash = '#paginas-web';
+      const path = window.location.pathname.replace(/\\/g, '/');
+      const isOnHome =
+        !path.includes('/pages/') &&
+        (path.endsWith('/') ||
+          path.endsWith('/index.html') ||
+          !/\.html$/i.test(path.split('/').pop() || ''));
+
+      if (!isOnHome) {
+        event.preventDefault();
+        const home = path.includes('/pages/') ? '../index.html' : 'index.html';
+        window.location.href = `${home}${targetHash}`;
+      } else {
+        // En la página de inicio, scroll suave a la sección
+        const section = document.querySelector(targetHash);
+        if (section) {
+          event.preventDefault();
+          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.replaceState(null, '', targetHash);
+        }
+      }
+    });
+  }
 }
 
 // Exportar función

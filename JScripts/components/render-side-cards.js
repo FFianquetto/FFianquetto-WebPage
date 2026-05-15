@@ -39,7 +39,7 @@ function renderSideCards() {
           <button class="card-close mobile-only" onclick="closeSideCard('acercaModal')">×</button>
           <h4 data-lang="acerca_de">Acerca de mí</h4>
           <div style="text-align: center; margin: 20px 0; position: relative;">
-            <img src="../imagenes/prop.jpg" alt="Foto de perfil"
+            <img src="imagenes/prop.jpg" alt="Foto de perfil"
               style="width: 175px; height: 175px; object-fit: cover; border-radius: 50%; border: 3px solid #ff4ecd;"
               loading="lazy" width="175" height="175"
               onclick="openImageModal(this.src, this.alt); this.style.animation='none';"

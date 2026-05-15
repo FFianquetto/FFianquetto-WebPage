@@ -109,9 +109,8 @@ function handleAcercaClick(event) {
 
 // Función para manejar clic en iconos móviles
 function handleMobileIconClick(cardId) {
-  const navbarCollapse = document.querySelector('.navbar-collapse');
-  if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-    navbarCollapse.classList.remove('show');
+  if (typeof window.closeNavbarMenu === 'function') {
+    window.closeNavbarMenu();
   }
 
   const projectCards = document.querySelectorAll('.card-project');

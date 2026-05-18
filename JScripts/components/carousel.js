@@ -2,12 +2,14 @@
 // Lista de proyectos para el carrusel
 const projectCards = [
   { id: 'zomboyCard', nameKey: 'zomboy_title', img: 'imagenesP/ZomboyWeb.png' },
-  { id: 'artvlogCard', nameKey: 'artvlog_title', img: 'imagenesP/ArtWeb.png' },
-  { id: 'cadoWebCard', nameKey: 'cadoWeb_title', img: 'imagenesP/CadoWeb.png' },
+  { id: 'festivalDestacadoCard', nameKey: 'festivalDestacado_title', img: 'imagenesP/CadoWeb.png' },
+  { id: 'appSumappCard', nameKey: 'appSumapp_title', img: 'imagenesP/sumApp.png' },
   { id: 'flegCard', nameKey: 'fleg_title', img: 'imagenesP/Fleg.png' },
   { id: 'inffutCard', nameKey: 'inffut_title', img: 'imagenesP/Inffut.png' },
   { id: 'ec2Card', nameKey: 'ec2_title', img: 'imagenesP/Amazon.png' },
   { id: 'cocinaCard', nameKey: 'cocina_title', img: 'imagenesP/CocinaEnCorto.png' },
+  { id: 'happySkinAICard', nameKey: 'happySkinAI_title', img: 'imagenesP/happySkinAI.png' },
+  { id: 'bimboSISCard', nameKey: 'bimboSIS_title', img: 'imagenesP/bimboSIS.png' },
   { id: 'cadoCard', nameKey: 'cado_title', img: 'imagenesP/Mongo.png' },
   { id: 'hotelCard', nameKey: 'hotel_title', img: 'imagenesP/HotelBd.png' },
   { id: 'nominasCard', nameKey: 'nominas_title', img: 'imagenesP/Cassandra.png' },

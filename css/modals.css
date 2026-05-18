@@ -27,36 +27,62 @@
     backdrop-filter: blur(5px);
     animation: fadeIn 0.3s ease;
     cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
 .image-modal-content {
     position: relative;
-    margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100%;
     max-width: 100%;
     max-height: 100%;
-    padding: 1rem;
+    padding: 4.5rem 1.5rem 1.5rem;
     box-sizing: border-box;
     cursor: default;
+    margin: 0 auto;
+}
+
+.image-modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: min(97vw, 1680px);
+    margin: 0 auto;
 }
 
 .image-modal-frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    line-height: 0;
+    margin: 0 auto;
+    overflow: visible;
+}
+
+.image-modal-media {
     position: relative;
     display: inline-block;
+    width: fit-content;
+    max-width: 100%;
     line-height: 0;
-    max-width: min(80vw, 100%);
 }
 
 .image-modal-img {
     display: block;
     width: auto;
-    max-width: min(80vw, 100%);
-    max-height: 70vh;
+    max-width: 100%;
+    max-height: calc(100vh - 11rem);
+    max-height: calc(100dvh - 11rem);
+    height: auto;
+    margin: 0;
     object-fit: contain;
     border-radius: 10px;
     border: 4px solid #a259ff;
@@ -99,47 +125,19 @@
     transform: scale(1.02);
 }
 
-.image-modal-close,
-.image-modal-close-mobile {
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 5;
-    padding: 0;
-    background: rgba(0, 0, 0, 0.92);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: translate(42%, -42%);
-    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
-}
-
-.image-modal-close {
-    font-size: clamp(2rem, 2.8vw, 3.2rem);
-    width: clamp(40px, 3.2vw, 48px);
-    height: clamp(40px, 3.2vw, 48px);
-}
-
-.image-modal-close:hover {
-    color: #a259ff;
-    background: rgba(162, 89, 255, 0.3);
-    transform: translate(42%, -42%) scale(1.08);
-}
-
 .image-modal-caption {
     color: #fff;
     text-align: center;
-    padding: 20px;
+    padding: 14px 20px;
     font-size: 1.2rem;
     font-weight: 500;
-    margin-top: 20px;
+    margin-top: 1rem;
     background: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
-    max-width: 80%;
+    width: 100%;
+    max-width: 100%;
+    flex-shrink: 0;
+    box-sizing: border-box;
     backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     cursor: pointer;
@@ -178,115 +176,36 @@
     }
 }
 
-/* Estilos para la imagen de perfil clickeable - Solo móvil */
-@media (max-width: 991.98px) {
-    .card-acerca img[onclick] {
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(255, 78, 205, 0.3);
-    }
-
-    .card-acerca img[onclick]:hover {
-        transform: scale(1.05);
-        box-shadow: 0 6px 20px rgba(255, 78, 205, 0.5);
-        border-color: #ff4ecd;
-        animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-        0% {
-            box-shadow: 0 6px 20px rgba(255, 78, 205, 0.5);
-        }
-        50% {
-            box-shadow: 0 6px 25px rgba(255, 78, 205, 0.7);
-        }
-        100% {
-            box-shadow: 0 6px 20px rgba(255, 78, 205, 0.5);
-        }
-    }
-}
-
-/* Estilos para el tooltip de la imagen de perfil - Solo móvil */
-@media (max-width: 991.98px) {
-    .card-acerca .tooltip {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: rgba(0, 0, 0, 0.9);
-        color: white;
-        padding: 8px 12px;
-        border-radius: 6px;
-        font-size: 0.63rem;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        pointer-events: none;
-        white-space: nowrap;
-        z-index: 10;
-        backdrop-filter: blur(5px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    /* Responsive para el tooltip */
-    @media (max-width: 767.98px) {
-        .card-acerca .tooltip {
-            font-size: 0.78rem;
-            padding: 6px 10px;
-        }
-    }
-}
-
-/* Estilos para PC - Tooltip y hover sutil */
-@media (min-width: 992px) {
-    .card-acerca img[onclick] {
-        cursor: pointer;
-        transition: transform 0.3s ease;
-    }
-    
-    .card-acerca img[onclick]:hover {
-        transform: scale(1.05);
-    }
-    
-    .card-acerca .tooltip {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: rgba(0, 0, 0, 0.85);
-        color: white;
-        padding: 8px 12px;
-        border-radius: 6px;
-        font-size: 0.8rem;
-        font-weight: 500;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        pointer-events: none;
-        white-space: nowrap;
-        z-index: 10;
-        backdrop-filter: blur(5px);
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    }
-}
+/* Tooltip de imágenes ampliables: ver css/expandable-image.css */
 
 /* Ajustes específicos para móvil en el modal de imagen (despliegue al click) */
 @media (max-width: 991.98px) {
+    .image-modal-body {
+        max-width: var(--mobile-main-card-width, calc(100vw - 40px));
+    }
+
     .image-modal-frame {
-        width: var(--mobile-main-card-width, calc(100vw - 40px));
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .image-modal-media {
+        width: 100%;
         max-width: 100%;
     }
 
     .image-modal-img {
         width: 100% !important;
         max-width: 100% !important;
-        max-height: 62vh !important;
+        max-height: calc(100vh - 10rem) !important;
+        max-height: calc(100dvh - 10rem) !important;
         height: auto !important;
         object-fit: contain !important;
         border-radius: 15px !important;
     }
     
     .image-modal-content {
-        padding: 20px 10px !important;
+        padding: 3.75rem 10px 1rem !important;
         max-width: 100vw !important;
         max-height: 100vh !important;
     }
@@ -304,7 +223,8 @@
     .image-modal-img.profile-image-modal {
         width: 100% !important;
         max-width: 100% !important;
-        max-height: 56vh !important;
+        max-height: calc(100vh - 11rem) !important;
+        max-height: calc(100dvh - 11rem) !important;
         border-radius: 50% !important;
     }
 
@@ -370,55 +290,28 @@
     }
 }
 
-@media (max-width: 991.98px) {
-    .image-modal-close-mobile {
-        font-size: clamp(2rem, 6vw, 2.6rem);
-        width: clamp(32px, 8.5vw, 38px);
-        height: clamp(32px, 8.5vw, 38px);
-        line-height: 0.85;
-        transform: translate(38%, -38%);
-    }
-
-    .image-modal-close-mobile {
-        display: flex !important;
-    }
-
-    .image-modal-close {
-        display: none !important;
-    }
-}
-
 @media (min-width: 992px) {
+    .image-modal-content {
+        padding: 4.5rem 2rem 2rem;
+    }
+
+    .image-modal-body {
+        max-width: min(97vw, 1680px);
+    }
+
     .image-modal-frame {
-        max-width: min(80vw, 1100px);
+        width: 100%;
     }
 
     .image-modal-img {
-        max-width: min(80vw, 1100px);
-        max-height: 72vh;
+        width: auto;
+        max-width: 100%;
+        max-height: calc(100vh - 12rem);
+        max-height: calc(100dvh - 12rem);
     }
 
-    .image-modal-close {
-        top: 0.15rem;
-        right: 0.15rem;
-        transform: translate(50%, -50%);
+    .image-modal-caption {
+        font-size: 1.2rem;
+        margin-top: 1rem;
     }
-
-    .image-modal-close:hover {
-        transform: translate(50%, -50%) scale(1.08);
-    }
-
-    .image-modal-close-mobile {
-        display: none !important;
-    }
-
-    .image-modal-close {
-        display: flex !important;
-    }
-}
-
-.image-modal-close-mobile:hover {
-    color: #a259ff;
-    background: rgba(162, 89, 255, 0.18);
-    transform: translate(38%, -38%) scale(1.05);
 }

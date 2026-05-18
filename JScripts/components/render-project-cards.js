@@ -3,17 +3,20 @@
 function renderProjectCards() {
   const container = document.getElementById('project-cards-container');
   if (!container) return;
+  if (typeof getProjectExpandableImageHTML !== 'function' || typeof getProjectCloseButton !== 'function') {
+    console.error('Cargar expandable-image.js y close-button.js antes de render-project-cards.js');
+    return;
+  }
 
   // HTML de todas las project cards
   container.innerHTML = `
     <!-- Cards de proyecto modales -->
     <!-- Card del Proyecto ZomboyShop -->
     <div class="card-project card-purple" id="zomboyCard">
-      <button class="card-close" onclick="closeProjectCard('zomboyCard')">×</button>
+      ${getProjectCloseButton('zomboyCard')}
       <span class="card-icon">🌐</span>
       <h4 data-lang="zomboy_title">ZomboyShop-ReDesign</h4>
-      <img src="imagenesP/ZomboyWeb.png" alt="ZomboyShop Web Design" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/ZomboyWeb.png 600w, imagenesP/ZomboyWeb.png 300w" sizes="(max-width: 600px) 100vw, 300px"
-        onclick="openImageModal(this.src, this.alt, this)">
+      ${getProjectExpandableImageHTML('imagenesP/ZomboyWeb.png', 'ZomboyShop Web Design')}
       <p class="project-description" data-lang="zomboy_description">
         Rediseño completo de la página web de ZomboyShop, implementando un diseño moderno y responsivo.
         Características principales:
@@ -26,51 +29,30 @@ function renderProjectCards() {
       </ul>
     </div>
 
-    <!-- Card del Proyecto ArtVlog -->
-    <div class="card-project card-purple" id="artvlogCard">
-      <button class="card-close" onclick="closeProjectCard('artvlogCard')">×</button>
-      <span class="card-icon">🎨</span>
-      <h4 data-lang="artvlog_title">ArtVlog</h4>
-      <img src="imagenesP/ArtWeb.png" alt="ArtVlog Platform" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/ArtWeb.png 600w, imagenesP/ArtWeb.png 300w" sizes="(max-width: 600px) 100vw, 300px"
-        onclick="openImageModal(this.src, this.alt, this)">
-      <p class="project-description" data-lang="artvlog_description">
-        Plataforma de blog artístico que permite a los usuarios compartir y descubrir contenido creativo.
+    <!-- Card del Proyecto Festival DestaCado -->
+    <div class="card-project card-purple" id="festivalDestacadoCard">
+      ${getProjectCloseButton('festivalDestacadoCard')}
+      <span class="card-icon">🎪</span>
+      <h4 data-lang="festivalDestacado_title">Festival DestaCado</h4>
+      ${getProjectExpandableImageHTML('imagenesP/CadoWeb.png', 'Festival DestaCado')}
+      <p class="project-description" data-lang="festivalDestacado_description">
+        Proyecto web frontend para Festival DestaCado. Diseñé el módulo de monitoreo de invitados y el diseño web del festival.
         Características principales:
       </p>
       <ul class="project-features">
-        <li data-lang="artvlog_feature1">Sistema de gestión de contenido artístico</li>
-        <li data-lang="artvlog_feature2">Galería de imágenes interactiva</li>
-        <li data-lang="artvlog_feature3">Sistema de comentarios y buscador para obras y artistas</li>
-        <li data-lang="artvlog_feature4">Backend para registro de usuarios y creación de publicaciones</li>
-      </ul>
-    </div>
-
-    <!-- Card del Proyecto CADO Web -->
-    <div class="card-project card-purple" id="cadoWebCard">
-      <button class="card-close" onclick="closeProjectCard('cadoWebCard')">×</button>
-      <span class="card-icon">🌐</span>
-      <h4 data-lang="cadoWeb_title">CADO Web</h4>
-      <img src="imagenesP/CadoWeb.png" alt="CADO Web" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/CadoWeb.png 600w, imagenesP/CadoWeb.png 300w" sizes="(max-width: 600px) 100vw, 300px"
-        onclick="openImageModal(this.src, this.alt, this)">
-      <p class="project-description" data-lang="cadoWeb_description">
-        Proyecto web frontend desarrollado para CADO.
-        Características principales:
-      </p>
-      <ul class="project-features">
-        <li data-lang="cadoWeb_feature1">Diseño moderno y responsivo</li>
-        <li data-lang="cadoWeb_feature2">Interfaz de usuario intuitiva</li>
-        <li data-lang="cadoWeb_feature3">Optimización de rendimiento</li>
-        <li data-lang="cadoWeb_feature4">Experiencia de usuario mejorada</li>
+        <li data-lang="festivalDestacado_feature1">Diseño web moderno y responsivo del festival</li>
+        <li data-lang="festivalDestacado_feature2">Sistema de monitoreo y control de invitados</li>
+        <li data-lang="festivalDestacado_feature3">Panel de gestión del evento en tiempo real</li>
+        <li data-lang="festivalDestacado_feature4">Experiencia de usuario optimizada para asistentes y organizadores</li>
       </ul>
     </div>
 
     <!-- Card del Proyecto EC2 Container -->
     <div class="card-project card-cyan" id="ec2Card">
-      <button class="card-close" onclick="closeProjectCard('ec2Card')">×</button>
+      ${getProjectCloseButton('ec2Card')}
       <span class="card-icon">☁️</span>
       <h4 data-lang="ec2_title">EC2 Container - AWS</h4>
-      <img src="imagenesP/Amazon.png" alt="EC2 Container" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/Amazon.png 600w, imagenesP/Amazon.png 300w" sizes="(max-width: 600px) 100vw, 300px"
-        onclick="openImageModal(this.src, this.alt, this)">
+      ${getProjectExpandableImageHTML('imagenesP/Amazon.png', 'EC2 Container')}
       <p class="project-description" data-lang="ec2_description">
         Implementación y gestión de contenedores en Amazon EC2 para aplicaciones web.
         Características principales:
@@ -85,11 +67,10 @@ function renderProjectCards() {
 
     <!-- Card del Proyecto Gestión de Hotel SQL -->
     <div class="card-project card-blue" id="hotelCard">
-      <button class="card-close" onclick="closeProjectCard('hotelCard')">×</button>
+      ${getProjectCloseButton('hotelCard')}
       <span class="card-icon">🏨</span>
       <h4 data-lang="hotel_title">Gestión de Hoteles con SQL</h4>
-      <img src="imagenesP/HotelBd.png" alt="Sistema de Gestión Hotelera" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/HotelBd.png 600w, imagenesP/HotelBd.png 300w" sizes="(max-width: 600px) 100vw, 300px"
-        onclick="openImageModal(this.src, this.alt, this)">
+      ${getProjectExpandableImageHTML('imagenesP/HotelBd.png', 'Sistema de Gestión Hotelera')}
       <p class="project-description" data-lang="hotel_description">
         Sistema de gestión hotelera implementado con SQL para el control eficiente de operaciones.
         Características principales:
@@ -104,11 +85,10 @@ function renderProjectCards() {
 
     <!-- Card del Proyecto Nóminas BigData -->
     <div class="card-project card-blue" id="nominasCard">
-      <button class="card-close" onclick="closeProjectCard('nominasCard')">×</button>
+      ${getProjectCloseButton('nominasCard')}
       <span class="card-icon">💰</span>
       <h4 data-lang="nominas_title">Manejo de Nóminas con BigData - CassandraDb</h4>
-      <img src="imagenesP/Cassandra.png" alt="Sistema de Nóminas BigData" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/Cassandra.png 600w, imagenesP/Cassandra.png 300w" sizes="(max-width: 600px) 100vw, 300px"
-        onclick="openImageModal(this.src, this.alt, this)">
+      ${getProjectExpandableImageHTML('imagenesP/Cassandra.png', 'Sistema de Nóminas BigData')}
       <p class="project-description" data-lang="nominas_description">
         Sistema de gestión de nóminas implementado con CassandraDB para el manejo eficiente de grandes volúmenes de datos.
         Características principales:
@@ -123,11 +103,10 @@ function renderProjectCards() {
 
     <!-- Card del Proyecto CADO Mobile -->
     <div class="card-project card-orange" id="cadoCard">
-      <button class="card-close" onclick="closeProjectCard('cadoCard')">×</button>
+      ${getProjectCloseButton('cadoCard')}
       <span class="card-icon">📱</span>
       <h4 data-lang="cado_title">CADO Mobile App Backend - MongoDB</h4>
-      <img src="imagenesP/Mongo.png" alt="CADO Mobile Backend" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/Mongo.png 600w, imagenesP/Mongo.png 300w" sizes="(max-width: 600px) 100vw, 300px"
-        onclick="openImageModal(this.src, this.alt, this)">
+      ${getProjectExpandableImageHTML('imagenesP/Mongo.png', 'CADO Mobile Backend')}
       <p class="project-description" data-lang="cado_description">
         Backend robusto para aplicación móvil CADO implementado con MongoDB para máxima flexibilidad y rendimiento.
         Características principales:
@@ -142,11 +121,10 @@ function renderProjectCards() {
 
     <!-- Card del Proyecto Bolos Unity -->
     <div class="card-project card-pink" id="bolosCard">
-      <button class="card-close" onclick="closeProjectCard('bolosCard')">×</button>
+      ${getProjectCloseButton('bolosCard')}
       <span class="card-icon">🎳</span>
       <h4 data-lang="bolos_title">Bolos en Unity con Háptico incluido</h4>
-      <img src="imagenesP/Pinball.png" alt="Juego de Bolos" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/Pinball.png 600w, imagenesP/Pinball.png 300w" sizes="(max-width: 600px) 100vw, 300px"
-        onclick="openImageModal(this.src, this.alt, this)">
+      ${getProjectExpandableImageHTML('imagenesP/Pinball.png', 'Juego de Bolos')}
       <p class="project-description" data-lang="bolos_description">
         Simulador de bolos desarrollado en Unity con retroalimentación háptica para una experiencia inmersiva.
         Características principales:
@@ -161,11 +139,10 @@ function renderProjectCards() {
 
     <!-- Card del Proyecto Escape Salvaje -->
     <div class="card-project card-pink" id="escapeCard">
-      <button class="card-close" onclick="closeProjectCard('escapeCard')">×</button>
+      ${getProjectCloseButton('escapeCard')}
       <span class="card-icon">🏃</span>
       <h4 data-lang="escape_title">Escape Salvaje en Unity</h4>
-      <img src="imagenesP/EscapeGame.jpg" alt="Escape Salvaje" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/EscapeGame.jpg 600w, imagenesP/EscapeGame.jpg 300w" sizes="(max-width: 600px) 100vw, 300px"
-        onclick="openImageModal(this.src, this.alt, this)">
+      ${getProjectExpandableImageHTML('imagenesP/EscapeGame.jpg', 'Escape Salvaje')}
       <p class="project-description" data-lang="escape_description">
         Juego de aventura y supervivencia desarrollado en Unity con mecánicas de escape y puzzle.
         Características principales:
@@ -180,11 +157,10 @@ function renderProjectCards() {
 
     <!-- Card del Proyecto Candy Collector -->
     <div class="card-project card-pink" id="candyCard">
-      <button class="card-close" onclick="closeProjectCard('candyCard')">×</button>
+      ${getProjectCloseButton('candyCard')}
       <span class="card-icon">🍬</span>
       <h4 data-lang="candy_title">Candy Collector con OGL Engine y C++</h4>
-      <img src="imagenesP/CC.png" alt="Candy Collector" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/CC.png 600w, imagenesP/CC.png 300w" sizes="(max-width: 600px) 100vw, 300px"
-        onclick="openImageModal(this.src, this.alt, this)">
+      ${getProjectExpandableImageHTML('imagenesP/CC.png', 'Candy Collector')}
       <p class="project-description" data-lang="candy_description">
         Juego de recolección desarrollado con OpenGL y C++ para demostrar habilidades de programación de bajo nivel.
         Características principales:
@@ -199,11 +175,10 @@ function renderProjectCards() {
 
     <!-- Card del Proyecto Snake Slaughter -->
     <div class="card-project card-pink" id="snakeCard">
-      <button class="card-close" onclick="closeProjectCard('snakeCard')">×</button>
+      ${getProjectCloseButton('snakeCard')}
       <span class="card-icon">🐍</span>
       <h4 data-lang="snake_title">Snake Slaughter con OGL Engine y Lenguaje Ensamblador</h4>
-      <img src="imagenesP/Snake.png" alt="Snake Slaughter" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/Snake.png 600w, imagenesP/Snake.png 300w" sizes="(max-width: 600px) 100vw, 300px"
-        onclick="openImageModal(this.src, this.alt, this)">
+      ${getProjectExpandableImageHTML('imagenesP/Snake.png', 'Snake Slaughter')}
       <p class="project-description" data-lang="snake_description">
         Reimaginación del clásico juego Snake implementada con OpenGL y optimizaciones en lenguaje ensamblador.
         Características principales:
@@ -218,11 +193,10 @@ function renderProjectCards() {
 
     <!-- Card del Certificado Sydney -->
     <div class="card-project card-green" id="sydneyCard">
-      <button class="card-close" onclick="closeProjectCard('sydneyCard')">×</button>
+      ${getProjectCloseButton('sydneyCard')}
       <span class="card-icon">🎓</span>
       <h4 data-lang="sydney_title">Innovation Through Design - Sydney University</h4>
-      <img src="imagenesP/CSydney.png" alt="Certificado Sydney" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/CSydney.png 600w, imagenesP/CSydney.png 300w" sizes="(max-width: 600px) 100vw, 300px"
-        onclick="openImageModal(this.src, this.alt, this)">
+      ${getProjectExpandableImageHTML('imagenesP/CSydney.png', 'Certificado Sydney')}
       <p class="project-description" data-lang="sydney_description">
         Certificación en innovación y diseño de la Universidad de Sydney, enfocada en metodologías de diseño centrado en
         el usuario.
@@ -238,11 +212,10 @@ function renderProjectCards() {
 
     <!-- Card del Certificado Google -->
     <div class="card-project card-green" id="googleCard">
-      <button class="card-close" onclick="closeProjectCard('googleCard')">×</button>
+      ${getProjectCloseButton('googleCard')}
       <span class="card-icon">☁️</span>
       <h4 data-lang="google_title">GoogleCloud Fundamentals - Google</h4>
-      <img src="imagenesP/CGoogle.png" alt="Certificado Google" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/CGoogle.png 600w, imagenesP/CGoogle.png 300w" sizes="(max-width: 600px) 100vw, 300px"
-        onclick="openImageModal(this.src, this.alt, this)">
+      ${getProjectExpandableImageHTML('imagenesP/CGoogle.png', 'Certificado Google')}
       <p class="project-description" data-lang="google_description">
         Certificación en fundamentos de Google Cloud Platform, cubriendo los conceptos básicos de la nube y sus servicios.
         Características principales:
@@ -257,11 +230,10 @@ function renderProjectCards() {
 
     <!-- Card del Certificado Georgia Tech -->
     <div class="card-project card-green" id="georgiaCard">
-      <button class="card-close" onclick="closeProjectCard('georgiaCard')">×</button>
+      ${getProjectCloseButton('georgiaCard')}
       <span class="card-icon">👥</span>
       <h4 data-lang="georgia_title">Introduction to User Experience Design - Georgia Institute of Technology</h4>
-      <img src="imagenesP/Certificate.png" alt="Certificado Georgia Tech" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/Certificate.png 600w, imagenesP/Certificate.png 300w" sizes="(max-width: 600px) 100vw, 300px"
-        onclick="openImageModal(this.src, this.alt, this)">
+      ${getProjectExpandableImageHTML('imagenesP/Certificate.png', 'Certificado Georgia Tech')}
       <p class="project-description" data-lang="georgia_description">
         Certificación en diseño de experiencia de usuario, enfocada en metodologías y prácticas de UX/UI.
         Características principales:
@@ -276,11 +248,10 @@ function renderProjectCards() {
 
     <!-- Card del Certificado Tec -->
     <div class="card-project card-green" id="tecCard">
-      <button class="card-close" onclick="closeProjectCard('tecCard')">×</button>
+      ${getProjectCloseButton('tecCard')}
       <span class="card-icon">💡</span>
       <h4 data-lang="tec_title">Desarrollo rápido de productos innovadores para mercados emergentes - Tec de Mty</h4>
-      <img src="imagenesP/CTec.png" alt="Certificado Tec" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/CTec.png 600w, imagenesP/CTec.png 300w" sizes="(max-width: 600px) 100vw, 300px"
-        onclick="openImageModal(this.src, this.alt, this)">
+      ${getProjectExpandableImageHTML('imagenesP/CTec.png', 'Certificado Tec')}
       <p class="project-description" data-lang="tec_description">
         Certificación en desarrollo ágil de productos innovadores, enfocada en metodologías de innovación y
         emprendimiento.
@@ -294,32 +265,30 @@ function renderProjectCards() {
       </ul>
     </div>
 
-    <!-- Card del Certificado UNAM -->
-    <div class="card-project card-green" id="unamCard">
-      <button class="card-close" onclick="closeProjectCard('unamCard')">×</button>
-      <span class="card-icon">📊</span>
-      <h4 data-lang="unam_title">Introducción a Data Science: Programación Estadística con R - UNAM</h4>
-      <img src="imagenesP/CUnam.png" alt="Certificado UNAM" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/CUnam.png 600w, imagenesP/CUnam.png 300w" sizes="(max-width: 600px) 100vw, 300px"
-        onclick="openImageModal(this.src, this.alt, this)">
-      <p class="project-description" data-lang="unam_description">
-        Certificación en ciencia de datos y programación estadística con R, enfocada en análisis de datos y visualización.
+    <!-- Card Reconocimiento iOSLab -->
+    <div class="card-project card-green" id="ioslabCard">
+      ${getProjectCloseButton('ioslabCard')}
+      <span class="card-icon">🏅</span>
+      <h4 data-lang="ioslab_title">Reconocimiento iOSLab</h4>
+      ${getProjectExpandableImageHTML('imagenesP/ioslab.jpg', 'Reconocimiento iOSLab')}
+      <p class="project-description" data-lang="ioslab_description">
+        Reconocimiento obtenido en iOSLab por el desempeño y la contribución en el laboratorio de innovación.
         Características principales:
       </p>
       <ul class="project-features">
-        <li data-lang="unam_feature1">Programación estadística con R</li>
-        <li data-lang="unam_feature2">Análisis exploratorio de datos</li>
-        <li data-lang="unam_feature3">Visualización de datos</li>
-        <li data-lang="unam_feature4">Modelos estadísticos básicos</li>
+        <li data-lang="ioslab_feature1">Participación activa en proyectos de iOSLab</li>
+        <li data-lang="ioslab_feature2">Desarrollo con enfoque en innovación y tecnología</li>
+        <li data-lang="ioslab_feature3">Trabajo colaborativo en el laboratorio</li>
+        <li data-lang="ioslab_feature4">Destacado por compromiso y calidad técnica</li>
       </ul>
     </div>
 
     <!-- Card del Proyecto Cocina en Corto -->
     <div class="card-project card-orange" id="cocinaCard">
-      <button class="card-close" onclick="closeProjectCard('cocinaCard')">×</button>
+      ${getProjectCloseButton('cocinaCard')}
       <span class="card-icon">🍳</span>
       <h4 data-lang="cocina_title">Cocina en Corto</h4>
-      <img src="imagenesP/CocinaEnCorto.png" alt="Cocina en Corto" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/CocinaEnCorto.png 600w, imagenesP/CocinaEnCorto.png 300w" sizes="(max-width: 600px) 100vw, 300px"
-        onclick="openImageModal(this.src, this.alt, this)">
+      ${getProjectExpandableImageHTML('imagenesP/CocinaEnCorto.png', 'Cocina en Corto')}
       <p class="project-description" data-lang="cocina_description">
         Aplicación móvil desarrollada para compartir recetas rápidas y fáciles de cocinar.
         Características principales:
@@ -332,13 +301,66 @@ function renderProjectCards() {
       </ul>
     </div>
 
+    <!-- Card del Proyecto HappySkinAI -->
+    <div class="card-project card-orange" id="happySkinAICard">
+      ${getProjectCloseButton('happySkinAICard')}
+      <span class="card-icon">✨</span>
+      <h4 data-lang="happySkinAI_title">HappySkinAI</h4>
+      ${getProjectExpandableImageHTML('imagenesP/happySkinAI.png', 'HappySkinAI')}
+      <p class="project-description" data-lang="happySkinAI_description">
+        Aplicación móvil desarrollada en Swift con los componentes que integran el proyecto: servicios API, listas dinámicas, interfaz nativa iOS y simulación en Xcode.
+        Características principales:
+      </p>
+      <ul class="project-features">
+        <li data-lang="happySkinAI_feature1">Desarrollo en Swift con arquitectura nativa iOS</li>
+        <li data-lang="happySkinAI_feature2">Integración de API REST para datos dinámicos</li>
+        <li data-lang="happySkinAI_feature3">Listas y componentes de interfaz nativos en iOS</li>
+        <li data-lang="happySkinAI_feature4">Experiencia móvil optimizada en simulador y dispositivo</li>
+      </ul>
+    </div>
+
+    <!-- Card del Proyecto BimboSIS -->
+    <div class="card-project card-orange" id="bimboSISCard">
+      ${getProjectCloseButton('bimboSISCard')}
+      <span class="card-icon">🏭</span>
+      <h4 data-lang="bimboSIS_title">BimboSIS</h4>
+      ${getProjectExpandableImageHTML('imagenesP/bimboSIS.png', 'BimboSIS')}
+      <p class="project-description" data-lang="bimboSIS_description">
+        Aplicación desarrollada en Swift para Grupo Bimbo, enfocada en ahorrar costos y eficientizar procesos operativos.
+        Características principales:
+      </p>
+      <ul class="project-features">
+        <li data-lang="bimboSIS_feature1">Desarrollo nativo en Swift para iOS</li>
+        <li data-lang="bimboSIS_feature2">Reducción de costos operativos para la organización</li>
+        <li data-lang="bimboSIS_feature3">Automatización y eficiencia en flujos de trabajo</li>
+        <li data-lang="bimboSIS_feature4">Impacto medible en la productividad del negocio</li>
+      </ul>
+    </div>
+
+    <!-- Card del Proyecto AppSumapp -->
+    <div class="card-project card-cyan" id="appSumappCard">
+      ${getProjectCloseButton('appSumappCard')}
+      <span class="card-icon">🍲</span>
+      <h4 data-lang="appSumapp_title">AppSumapp</h4>
+      ${getProjectExpandableImageHTML('imagenesP/sumApp.png', 'AppSumapp')}
+      <p class="project-description" data-lang="appSumapp_description">
+        Backend en Kotlin para la app móvil de recetas: ApiService con HttpURLConnection, verificación de salud del servidor PHP (health.php) e integración con el feed de recetas.
+        Características principales:
+      </p>
+      <ul class="project-features">
+        <li data-lang="appSumapp_feature1">ApiService en Kotlin para comunicación con el servidor</li>
+        <li data-lang="appSumapp_feature2">Prueba de conexión y monitoreo vía health.php (GET, timeouts)</li>
+        <li data-lang="appSumapp_feature3">Integración con login, registro y feed de recetas en Android</li>
+        <li data-lang="appSumapp_feature4">Arquitectura por capas: data.api, layouts XML y flujo móvil</li>
+      </ul>
+    </div>
+
     <!-- Card del Proyecto Fleg -->
     <div class="card-project card-cyan" id="flegCard">
-      <button class="card-close" onclick="closeProjectCard('flegCard')">×</button>
+      ${getProjectCloseButton('flegCard')}
       <span class="card-icon">🚩</span>
       <h4 data-lang="fleg_title">Fleg</h4>
-      <img src="imagenesP/Fleg.png" alt="Fleg" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/Fleg.png 600w, imagenesP/Fleg.png 300w" sizes="(max-width: 600px) 100vw, 300px"
-        onclick="openImageModal(this.src, this.alt, this)">
+      ${getProjectExpandableImageHTML('imagenesP/Fleg.png', 'Fleg')}
       <p class="project-description" data-lang="fleg_description">
         Proyecto web completo con backend desarrollado con funcionalidades innovadoras.
         Características principales:
@@ -353,11 +375,10 @@ function renderProjectCards() {
 
     <!-- Card del Proyecto Inffut -->
     <div class="card-project card-cyan" id="inffutCard">
-      <button class="card-close" onclick="closeProjectCard('inffutCard')">×</button>
+      ${getProjectCloseButton('inffutCard')}
       <span class="card-icon">⚽</span>
       <h4 data-lang="inffut_title">Inffut</h4>
-      <img src="imagenesP/Inffut.png" alt="Inffut" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/Inffut.png 600w, imagenesP/Inffut.png 300w" sizes="(max-width: 600px) 100vw, 300px"
-        onclick="openImageModal(this.src, this.alt, this)">
+      ${getProjectExpandableImageHTML('imagenesP/Inffut.png', 'Inffut')}
       <p class="project-description" data-lang="inffut_description">
         Proyecto web completo con backend para información y estadísticas de fútbol.
         Características principales:
@@ -372,11 +393,10 @@ function renderProjectCards() {
 
     <!-- Card del Proyecto Steal the vibe -->
     <div class="card-project card-pink" id="stealCard">
-      <button class="card-close" onclick="closeProjectCard('stealCard')">×</button>
+      ${getProjectCloseButton('stealCard')}
       <span class="card-icon">🎯</span>
       <h4 data-lang="steal_title">Steal the vibe</h4>
-      <img src="imagenesP/Steal.png" alt="Steal the vibe" class="project-img" loading="lazy" width="300" height="200" srcset="imagenesP/Steal.png 600w, imagenesP/Steal.png 300w" sizes="(max-width: 600px) 100vw, 300px"
-        onclick="openImageModal(this.src, this.alt, this)">
+      ${getProjectExpandableImageHTML('imagenesP/Steal.png', 'Steal the vibe')}
       <p class="project-description" data-lang="steal_description">
         Videojuego desarrollado en Unreal Engine con mecánicas innovadoras y diseño atractivo.
         Características principales:

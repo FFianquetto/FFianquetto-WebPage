@@ -122,12 +122,15 @@ function renderImageModal() {
     container.innerHTML = `
       <div id="imageModal" class="image-modal">
         <div class="image-modal-content">
-          <div class="image-modal-frame">
-            <span class="image-modal-close" onclick="closeImageModal()" aria-label="Cerrar">&times;</span>
-            <span class="image-modal-close-mobile" onclick="closeImageModal()" aria-label="Cerrar">&times;</span>
-            <img id="modalImage" class="image-modal-img" alt="Imagen ampliada">
+          <div class="image-modal-body">
+            <div class="image-modal-frame">
+              <div class="image-modal-media">
+                ${getImageModalCloseButton()}
+                <img id="modalImage" class="image-modal-img" alt="Imagen ampliada">
+              </div>
+            </div>
+            <div id="modalCaption" class="image-modal-caption"></div>
           </div>
-          <div id="modalCaption" class="image-modal-caption"></div>
         </div>
       </div>
     `;

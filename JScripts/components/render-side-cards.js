@@ -6,7 +6,7 @@ function renderSideCards() {
     container.innerHTML = `
       <div class="side-cards">
         <div class="card-contact" id="contactoModal" style="display:none;">
-          <button class="card-close mobile-only" onclick="closeSideCard('contactoModal')">×</button>
+          ${getSideCardCloseButton('contactoModal')}
           <span class="card-icon">📱</span>
           <span class="card-icon-mobile">📱</span>
           <h4 data-lang="contacto">Contacto</h4>
@@ -14,7 +14,7 @@ function renderSideCards() {
             <li><i class="fas fa-envelope"></i> <a href="mailto:fernandocancino2004@gmail.com"
                 class="contact-link">fernandocancino2004@gmail.com</a></li>
             <li><i class="fas fa-phone"></i> <span>+52 92 1133 7977</span></li>
-            <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/fernando-a-cancino-cuenca-19bb9a313/"
+            <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/ffianquettodev/"
                 class="contact-link" target="_blank">LinkedIn</a></li>
             <li><i class="fab fa-github"></i> <a href="https://github.com/FFianquetto" class="contact-link"
                 target="_blank">GitHub</a></li>
@@ -22,7 +22,7 @@ function renderSideCards() {
         </div>
 
         <div class="card-habilidades" id="softskillsModal">
-          <button class="card-close mobile-only" onclick="closeSideCard('softskillsModal')">×</button>
+          ${getSideCardCloseButton('softskillsModal')}
           <span class="card-icon">🎯</span>
           <span class="card-icon-mobile">🎯</span>
           <h4 data-lang="soft_skills">Habilidades</h4>
@@ -36,18 +36,18 @@ function renderSideCards() {
         </div>
 
         <div class="card-acerca" id="acercaModal">
-          <button class="card-close mobile-only" onclick="closeSideCard('acercaModal')">×</button>
+          ${getSideCardCloseButton('acercaModal')}
           <h4 data-lang="acerca_de">Acerca de mí</h4>
-          <div style="text-align: center; margin: 20px 0; position: relative;">
-            <img src="imagenes/prop.jpg" alt="Foto de perfil"
-              style="width: 175px; height: 175px; object-fit: cover; border-radius: 50%; border: 3px solid #ff4ecd;"
-              loading="lazy" width="175" height="175"
-              onclick="openImageModal(this.src, this.alt, this); this.style.animation='none';"
-              onmouseover="this.style.transform='scale(1.05)'; this.nextElementSibling.style.opacity='1';"
-              onmouseout="this.style.transform='scale(1)'; this.nextElementSibling.style.opacity='0';">
-            <div class="tooltip" data-lang="profile_tooltip">
-              Click para ampliar
-            </div>
+          <div style="text-align: center; margin: 20px 0;">
+            ${getExpandableImageHTML({
+              src: 'imagenes/prop.jpg',
+              alt: 'Foto de perfil',
+              variant: 'profile',
+              width: 175,
+              height: 175,
+              imgStyle: 'width: 175px; height: 175px; object-fit: cover;',
+              onClickExtra: "this.style.animation='none'",
+            })}
           </div>
           <ul class="contact-list">
             <li><i class="fas fa-graduation-cap"></i> <span data-lang="estudiante">Estudiante de 7mo semestre en

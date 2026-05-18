@@ -55,8 +55,12 @@ body.light-mode .card-project {
   padding: 25px;
   overflow-y: auto !important;
   overflow-x: hidden;
+  --card-scrollbar-thumb: rgba(125, 60, 152, 0.55);
+  --card-scrollbar-thumb-hover: rgba(125, 60, 152, 0.75);
+  --card-scrollbar-thumb-solid: var(--purple-primary);
+  --card-scrollbar-thumb-gradient-end: #8b5cf6;
   scrollbar-width: thin; /* Firefox - mostrar scrollbar delgada en desktop */
-  scrollbar-color: rgba(0, 0, 0, 0.5) transparent; /* Color negro para la scrollbar en Firefox */
+  scrollbar-color: var(--card-scrollbar-thumb) transparent;
   -ms-overflow-style: auto; /* Internet Explorer 10+ - mostrar scrollbar */
   overscroll-behavior: contain;
   pointer-events: auto;
@@ -74,12 +78,12 @@ body.light-mode .card-project::-webkit-scrollbar-track {
 }
 
 body.light-mode .card-project::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.5); /* Color negro del thumb de la scrollbar */
+  background: var(--card-scrollbar-thumb);
   border-radius: 10px;
 }
 
 body.light-mode .card-project::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.7); /* Color negro más oscuro al hacer hover */
+  background: var(--card-scrollbar-thumb-hover);
 }
 
 /* Móvil: mismo ancho que .card del listado y altura de apertura que info cards */
@@ -91,7 +95,7 @@ body.light-mode .card-project::-webkit-scrollbar-thumb:hover {
     max-width: var(--mobile-main-card-width, calc(100vw - 40px));
     max-height: calc(100vh - var(--mobile-side-card-top, calc(83px + 2rem)) - 1.5rem);
     scrollbar-width: auto;
-    scrollbar-color: #a259ff rgba(0, 0, 0, 0.12);
+    scrollbar-color: var(--card-scrollbar-thumb-solid) rgba(0, 0, 0, 0.12);
     -ms-overflow-style: auto;
   }
 
@@ -101,7 +105,7 @@ body.light-mode .card-project::-webkit-scrollbar-thumb:hover {
   }
 
   body.light-mode .card-project::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #a259ff 0%, #7d3c98 100%);
+    background: linear-gradient(180deg, var(--card-scrollbar-thumb-solid) 0%, var(--card-scrollbar-thumb-gradient-end) 100%);
   }
 
   body.light-mode .card-project .project-img {
@@ -359,22 +363,17 @@ body.light-mode .card-overlay {
   backdrop-filter: blur(3px);
 }
 
-body.light-mode .card-purple .card-close {
-  color: black;
-}
-body.light-mode .card-blue .card-close {
-  color: black;
-}
-body.light-mode .card-green .card-close {
-  color: black;
-}
-body.light-mode .card-pink .card-close {
-  color: black;
+body.light-mode .card-purple .btn-close-circle--card,
+body.light-mode .card-blue .btn-close-circle--card,
+body.light-mode .card-green .btn-close-circle--card,
+body.light-mode .card-pink .btn-close-circle--card,
+body.light-mode .card-cyan .btn-close-circle--card,
+body.light-mode .card-orange .btn-close-circle--card {
+  color: #fff;
 }
 
-body.light-mode .card-close:hover {
+body.light-mode .btn-close-circle--card:hover {
   color: var(--purple-primary);
-  transform: scale(1.2);
 }
 
 /* Proyectos modales en modo claro */
@@ -382,7 +381,10 @@ body.light-mode .card-project.card-purple {
   background: linear-gradient(45deg, #f8f5ff, #f3f0ff) !important;
   border: 2px solid var(--purple-primary) !important;
   box-shadow: 0 0 10px rgba(111, 66, 193, 0.2) !important;
-
+  --card-scrollbar-thumb: rgba(125, 60, 152, 0.55);
+  --card-scrollbar-thumb-hover: rgba(125, 60, 152, 0.75);
+  --card-scrollbar-thumb-solid: var(--purple-primary);
+  --card-scrollbar-thumb-gradient-end: #8b5cf6;
 }
 body.light-mode .card-project.card-purple::before {
   content: '';
@@ -401,6 +403,10 @@ body.light-mode .card-project.card-blue {
   background: linear-gradient(45deg, #f5f8ff, #f0f4ff) !important;
   border: 2px solid var(--blue-primary) !important;
   box-shadow: 0 0 10px rgba(13, 110, 253, 0.2) !important;
+  --card-scrollbar-thumb: rgba(41, 128, 185, 0.55);
+  --card-scrollbar-thumb-hover: rgba(41, 128, 185, 0.75);
+  --card-scrollbar-thumb-solid: var(--blue-primary);
+  --card-scrollbar-thumb-gradient-end: #3b82f6;
 }
 body.light-mode .card-project.card-blue::before {
   content: '';
@@ -419,6 +425,10 @@ body.light-mode .card-project.card-pink {
   background: linear-gradient(45deg, #fff5f9, #fff0f5) !important;
   border: 2px solid var(--pink-primary) !important;
   box-shadow: 0 0 10px rgba(214, 51, 132, 0.2) !important;
+  --card-scrollbar-thumb: rgba(194, 24, 91, 0.5);
+  --card-scrollbar-thumb-hover: rgba(194, 24, 91, 0.7);
+  --card-scrollbar-thumb-solid: var(--pink-primary);
+  --card-scrollbar-thumb-gradient-end: #ec4899;
 }
 body.light-mode .card-project.card-pink::before {
   content: '';
@@ -437,6 +447,10 @@ body.light-mode .card-project.card-green {
   background: linear-gradient(45deg, #f0fff4, #f0fff0) !important;
   border: 2px solid var(--green-primary) !important;
   box-shadow: 0 0 10px rgba(25, 135, 84, 0.2) !important;
+  --card-scrollbar-thumb: rgba(46, 204, 113, 0.55);
+  --card-scrollbar-thumb-hover: rgba(46, 204, 113, 0.75);
+  --card-scrollbar-thumb-solid: var(--green-primary);
+  --card-scrollbar-thumb-gradient-end: #22c55e;
 }
 body.light-mode .card-project.card-green::before {
   content: '';
@@ -449,6 +463,22 @@ body.light-mode .card-project.card-green::before {
   z-index: -1;
   border-radius: inherit;
   opacity: 0.13;
+}
+
+body.light-mode .card-project.card-orange {
+  background: linear-gradient(45deg, #f8f5ff, #f3f0ff) !important;
+  --card-scrollbar-thumb: rgba(230, 126, 34, 0.55);
+  --card-scrollbar-thumb-hover: rgba(230, 126, 34, 0.75);
+  --card-scrollbar-thumb-solid: var(--orange-primary);
+  --card-scrollbar-thumb-gradient-end: #f39c12;
+}
+
+body.light-mode .card-project.card-cyan {
+  background: linear-gradient(45deg, #f8f5ff, #f3f0ff) !important;
+  --card-scrollbar-thumb: rgba(0, 184, 212, 0.55);
+  --card-scrollbar-thumb-hover: rgba(0, 184, 212, 0.75);
+  --card-scrollbar-thumb-solid: #00b8d4;
+  --card-scrollbar-thumb-gradient-end: #0097a7;
 }
 
 body.light-mode .project-description {
@@ -521,15 +551,15 @@ body.light-mode .card-cell-a .contact-list li i {
   color: var(--pink-primary);
 }
 
-body.light-mode .card-cell-c .card-close:hover {
+body.light-mode .card-cell-c .btn-close-circle--card:hover {
   color: var(--purple-primary);
 }
 
-body.light-mode .card-cell-h .card-close:hover {
+body.light-mode .card-cell-h .btn-close-circle--card:hover {
   color: var(--blue-primary);
 }
 
-body.light-mode .card-cell-a .card-close:hover {
+body.light-mode .card-cell-a .btn-close-circle--card:hover {
   color: var(--pink-primary);
 }
 
@@ -538,12 +568,12 @@ body.light-mode .image-modal {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-body.light-mode .image-modal-close {
+body.light-mode .btn-close-circle--viewport {
     color: #fff;
     background: rgba(0, 0, 0, 0.8);
 }
 
-body.light-mode .image-modal-close:hover {
+body.light-mode .btn-close-circle--viewport:hover {
     color: var(--purple-primary);
     background: rgba(111, 66, 193, 0.4);
 }

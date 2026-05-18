@@ -1,0 +1,105 @@
+/* ===== BOTÓN CERRAR CIRCULAR (componente reutilizable) ===== */
+
+.btn-close-circle {
+    color: #fff;
+    font-weight: 400;
+    font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.92);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    user-select: none;
+    box-sizing: border-box;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-close-circle:hover {
+    color: #a259ff;
+    background: rgba(162, 89, 255, 0.3);
+    border-color: rgba(162, 89, 255, 0.5);
+    transform: scale(1.08);
+}
+
+/* Modal de imagen: anclado al ancho real de la imagen (.image-modal-media) */
+.btn-close-circle--viewport {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2005;
+    width: clamp(46px, 4vw, 54px);
+    height: clamp(46px, 4vw, 54px);
+    font-size: clamp(1.85rem, 2.3vw, 2.1rem);
+    font-weight: 500;
+    padding-bottom: 0.08em;
+    transform: translate(38%, -46%);
+}
+
+.btn-close-circle--viewport:hover {
+    transform: translate(38%, -46%) scale(1.08);
+}
+
+/* Cards de proyecto y laterales */
+.btn-close-circle--card {
+    position: absolute;
+    top: clamp(12px, 2vw, 20px);
+    right: clamp(8px, 1.5vw, 12px);
+    z-index: 1060;
+    width: clamp(44px, 4.5vw, 52px);
+    height: clamp(44px, 4.5vw, 52px);
+    font-size: clamp(1.75rem, 2.4vw, 2rem);
+    padding-bottom: 0.08em;
+}
+
+.btn-close-circle--mobile-only {
+    display: none;
+}
+
+@media (max-width: 991.98px) {
+    .btn-close-circle--mobile-only {
+        display: flex;
+    }
+}
+
+/* Hover según color de la card */
+.card-purple .btn-close-circle--card:hover {
+    color: #a259ff;
+    background: rgba(162, 89, 255, 0.35);
+}
+
+.card-blue .btn-close-circle--card:hover,
+.card-cyan .btn-close-circle--card:hover {
+    color: #3772ff;
+    background: rgba(55, 114, 255, 0.35);
+}
+
+.card-orange .btn-close-circle--card:hover {
+    color: #ff6b35;
+    background: rgba(255, 107, 53, 0.35);
+}
+
+.card-pink .btn-close-circle--card:hover {
+    color: #ff4ecd;
+    background: rgba(255, 78, 205, 0.35);
+}
+
+.card-green .btn-close-circle--card:hover {
+    color: #00ffa3;
+    background: rgba(0, 255, 163, 0.35);
+}
+
+@media (min-width: 992px) {
+    .card-contact .btn-close-circle--card {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        width: 0 !important;
+        height: 0 !important;
+    }
+}

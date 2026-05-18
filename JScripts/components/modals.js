@@ -3,7 +3,7 @@
 const IMAGE_MODAL_ACCENT_KEYS = ['card-purple', 'card-cyan', 'card-orange', 'card-blue', 'card-pink', 'card-green'];
 
 function getImageModalAccentClass(sourceEl) {
-  const card = sourceEl?.closest?.('.card, .card-project, .card-acerca');
+  const card = sourceEl?.closest?.('.card-project, .card, .card-acerca');
   if (!card) return 'image-modal-accent-purple';
 
   if (card.classList.contains('card-acerca')) return 'image-modal-accent-pink';

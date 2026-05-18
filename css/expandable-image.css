@@ -1,0 +1,126 @@
+/* ===== IMAGEN AMPLIABLE + TOOLTIP (componente reutilizable) ===== */
+
+.expandable-image {
+    position: relative;
+    display: inline-block;
+    line-height: 0;
+    max-width: 100%;
+}
+
+.expandable-image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.expandable-image:hover img {
+    transform: scale(1.03);
+}
+
+.expandable-image:hover .expandable-image-tooltip {
+    opacity: 1;
+}
+
+.expandable-image-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.88);
+    color: #fff;
+    padding: clamp(8px, 1.4vw, 12px) clamp(14px, 2.2vw, 18px);
+    border-radius: 8px;
+    font-size: clamp(0.78rem, 1.85vw, 0.95rem);
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 10;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.card-image .expandable-image {
+    width: 100%;
+}
+
+.card-image .expandable-image img {
+    width: 100%;
+}
+
+.card-project .expandable-image,
+.card-project .expandable-image--project {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0.5rem auto 1.2rem;
+    line-height: 0;
+}
+
+.card-project .expandable-image img,
+.card-project .expandable-image--project img,
+.card-project .expandable-image img.project-img {
+    width: 100%;
+    max-width: 100%;
+    max-height: 350px;
+    height: auto;
+    margin: 0;
+    padding-bottom: 0;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.card-project .expandable-image:hover img,
+.card-project .expandable-image--project:hover img {
+    transform: scale(1.02);
+}
+
+.card-project .expandable-image-tooltip {
+    z-index: 25;
+}
+
+/* Variante foto de perfil (Acerca de mí) */
+.expandable-image--profile {
+    display: inline-block;
+}
+
+.expandable-image--profile img {
+    border-radius: 50%;
+    border: 3px solid #ff4ecd;
+    box-shadow: 0 4px 15px rgba(255, 78, 205, 0.3);
+}
+
+.expandable-image--profile:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 78, 205, 0.5);
+    border-color: #ff4ecd;
+}
+
+@media (max-width: 991.98px) {
+    .expandable-image--profile:hover img {
+        animation: expandable-image-pulse 2s infinite;
+    }
+
+    @keyframes expandable-image-pulse {
+        0% {
+            box-shadow: 0 6px 20px rgba(255, 78, 205, 0.5);
+        }
+        50% {
+            box-shadow: 0 6px 25px rgba(255, 78, 205, 0.7);
+        }
+        100% {
+            box-shadow: 0 6px 20px rgba(255, 78, 205, 0.5);
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .expandable-image--profile:hover img {
+        transform: scale(1.05);
+    }
+}

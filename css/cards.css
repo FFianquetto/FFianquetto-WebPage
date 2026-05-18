@@ -478,8 +478,13 @@
     padding: 25px;
     overflow-y: auto !important; /* Forzar scroll vertical dentro de la card */
     overflow-x: hidden;
+    /* Scrollbar: morado por defecto; cada .card-{color} redefine las variables */
+    --card-scrollbar-thumb: rgba(162, 89, 255, 0.5);
+    --card-scrollbar-thumb-hover: rgba(162, 89, 255, 0.7);
+    --card-scrollbar-thumb-solid: #a259ff;
+    --card-scrollbar-thumb-gradient-end: #7d3c98;
     scrollbar-width: thin; /* Firefox - mostrar scrollbar delgada */
-    scrollbar-color: rgba(162, 89, 255, 0.5) transparent; /* Color de la scrollbar en Firefox */
+    scrollbar-color: var(--card-scrollbar-thumb) transparent;
     -ms-overflow-style: auto; /* Internet Explorer 10+ - mostrar scrollbar */
     scroll-behavior: smooth; /* Scroll suave */
     box-sizing: border-box;
@@ -503,12 +508,12 @@
 }
 
 .card-project::-webkit-scrollbar-thumb {
-    background: rgba(162, 89, 255, 0.5); /* Color del thumb de la scrollbar */
+    background: var(--card-scrollbar-thumb);
     border-radius: 10px;
 }
 
 .card-project::-webkit-scrollbar-thumb:hover {
-    background: rgba(162, 89, 255, 0.7); /* Color del thumb al hacer hover */
+    background: var(--card-scrollbar-thumb-hover);
 }
 
 /* Móvil: mismo ancho que .card del listado y altura de apertura que info cards */
@@ -520,7 +525,7 @@
         max-width: var(--mobile-main-card-width, calc(100vw - 40px));
         max-height: calc(100vh - var(--mobile-side-card-top, calc(83px + 2rem)) - 1.5rem);
         scrollbar-width: auto;
-        scrollbar-color: #a259ff rgba(0, 0, 0, 0.3);
+        scrollbar-color: var(--card-scrollbar-thumb-solid) rgba(0, 0, 0, 0.3);
         -ms-overflow-style: auto;
     }
 
@@ -535,7 +540,7 @@
     }
 
     .card-project::-webkit-scrollbar-thumb {
-        background: linear-gradient(180deg, #a259ff 0%, #7d3c98 100%);
+        background: linear-gradient(180deg, var(--card-scrollbar-thumb-solid) 0%, var(--card-scrollbar-thumb-gradient-end) 100%);
         border-radius: 10px;
         border: 2px solid rgba(0, 0, 0, 0.25);
     }
@@ -553,6 +558,10 @@
 /* Estilos específicos para cada modal de proyecto */
 .card-project.card-purple {
     background: #221133 !important; /* Color uniforme sin gradiente */
+    --card-scrollbar-thumb: rgba(162, 89, 255, 0.5);
+    --card-scrollbar-thumb-hover: rgba(162, 89, 255, 0.7);
+    --card-scrollbar-thumb-solid: #a259ff;
+    --card-scrollbar-thumb-gradient-end: #7d3c98;
 }
 
 .card-project.card-purple::before,
@@ -562,6 +571,10 @@
 
 .card-project.card-blue {
     background: #00332a !important; /* Color uniforme más oscuro (el que aparece en la parte inferior) */
+    --card-scrollbar-thumb: rgba(55, 114, 255, 0.5);
+    --card-scrollbar-thumb-hover: rgba(55, 114, 255, 0.7);
+    --card-scrollbar-thumb-solid: #3772ff;
+    --card-scrollbar-thumb-gradient-end: #00ffa3;
 }
 
 .card-project.card-blue::before,
@@ -571,6 +584,10 @@
 
 .card-project.card-pink {
     background: #2a1022 !important; /* Color uniforme sin gradiente */
+    --card-scrollbar-thumb: rgba(255, 78, 205, 0.5);
+    --card-scrollbar-thumb-hover: rgba(255, 78, 205, 0.7);
+    --card-scrollbar-thumb-solid: #ff4ecd;
+    --card-scrollbar-thumb-gradient-end: #a259ff;
 }
 
 .card-project.card-pink::before,
@@ -580,6 +597,10 @@
 
 .card-project.card-green {
     background: #00332a !important; /* Color uniforme sin gradiente */
+    --card-scrollbar-thumb: rgba(0, 255, 163, 0.5);
+    --card-scrollbar-thumb-hover: rgba(0, 255, 163, 0.7);
+    --card-scrollbar-thumb-solid: #00ffa3;
+    --card-scrollbar-thumb-gradient-end: #3772ff;
 }
 
 .card-project.card-green::before,
@@ -630,6 +651,10 @@
 
 .card-project.card-orange {
     background: #2a1a10 !important; /* Color uniforme sin gradiente */
+    --card-scrollbar-thumb: rgba(255, 107, 53, 0.5);
+    --card-scrollbar-thumb-hover: rgba(255, 107, 53, 0.7);
+    --card-scrollbar-thumb-solid: #ff6b35;
+    --card-scrollbar-thumb-gradient-end: #f7931e;
 }
 
 .card-project.card-orange::before,
@@ -680,6 +705,10 @@
 
 .card-project.card-cyan {
     background: #002a2a !important; /* Color uniforme sin gradiente */
+    --card-scrollbar-thumb: rgba(0, 212, 255, 0.5);
+    --card-scrollbar-thumb-hover: rgba(0, 212, 255, 0.7);
+    --card-scrollbar-thumb-solid: #00d4ff;
+    --card-scrollbar-thumb-gradient-end: #0099cc;
 }
 
 .card-project.card-cyan::before,
@@ -756,80 +785,7 @@
     margin-bottom: 1.2rem;
 }
 
-/* Botón de cierre */
-.card-close {
-    position: absolute;
-    top: 20px;
-    right: 12px;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 3.3rem;
-    cursor: pointer;
-    padding: 0;
-    line-height: 1;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1060;
-    transition: all 0.3s ease;
-}
-
-.card-close:hover {
-    color: #a259ff;
-    transform: scale(1.2);
-}
-
-/* Hover de la X según el color de la card */
-.card-purple .card-close:hover {
-    color: #a259ff;
-    background: rgba(162, 89, 255, 0.15);
-}
-
-.card-blue .card-close:hover {
-    color: #3772ff;
-    background: rgba(55, 114, 255, 0.15);
-}
-
-.card-pink .card-close:hover {
-    color: #ff4ecd;
-    background: rgba(255, 78, 205, 0.15);
-}
-
-.card-green .card-close:hover {
-    color: #00ffa3;
-    background: rgba(0, 255, 163, 0.15);
-}
-
-/* Ocultar X de contacto en desktop */
-@media (min-width: 992px) {
-    .card-contact .card-close {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-        pointer-events: none !important;
-        width: 0 !important;
-        height: 0 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        position: absolute !important;
-        left: -9999px !important;
-    }
-}
-
-/* Por defecto, oculta el botón X solo-móvil */
-.card-close.mobile-only {
-    display: none;
-}
-
-/* Solo muestra la X en móvil */
-@media (max-width: 991.98px) {
-    .card-close.mobile-only {
-        display: flex;
-    }
-}
+/* Botón de cierre: ver css/close-button.css (componente btn-close-circle) */
 
 /* Estilos para la imagen de perfil clickeable */
 .card-acerca img[onclick]:active {

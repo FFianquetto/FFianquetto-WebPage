@@ -141,10 +141,10 @@ function renderProjectCards() {
     <div class="card-project card-pink" id="escapeCard">
       ${getProjectCloseButton('escapeCard')}
       <span class="card-icon">🏃</span>
-      <h4 data-lang="escape_title">Escape Salvaje en Unity</h4>
+      <h4 data-lang="escape_title">Escape Salvaje en Unreal Engine</h4>
       ${getProjectExpandableImageHTML('imagenesP/EscapeGame.jpg', 'Escape Salvaje')}
       <p class="project-description" data-lang="escape_description">
-        Juego de aventura y supervivencia desarrollado en Unity con mecánicas de escape y puzzle.
+        Juego de aventura y supervivencia desarrollado en Unreal Engine con mecánicas de escape y puzzle.
         Características principales:
       </p>
       <ul class="project-features">
@@ -338,20 +338,20 @@ function renderProjectCards() {
     </div>
 
     <!-- Card del Proyecto AppSumapp -->
-    <div class="card-project card-cyan" id="appSumappCard">
+    <div class="card-project card-orange" id="appSumappCard">
       ${getProjectCloseButton('appSumappCard')}
-      <span class="card-icon">🍲</span>
+      <span class="card-icon">📊</span>
       <h4 data-lang="appSumapp_title">AppSumapp</h4>
       ${getProjectExpandableImageHTML('imagenesP/sumApp.png', 'AppSumapp')}
       <p class="project-description" data-lang="appSumapp_description">
-        Backend en Kotlin para la app móvil de recetas: ApiService con HttpURLConnection, verificación de salud del servidor PHP (health.php) e integración con el feed de recetas.
+        Aplicación móvil de monitoreo empresarial desarrollada en Flutter, con sincronización vía API REST hacia un backend PHP y base de datos MySQL.
         Características principales:
       </p>
       <ul class="project-features">
-        <li data-lang="appSumapp_feature1">ApiService en Kotlin para comunicación con el servidor</li>
-        <li data-lang="appSumapp_feature2">Prueba de conexión y monitoreo vía health.php (GET, timeouts)</li>
-        <li data-lang="appSumapp_feature3">Integración con login, registro y feed de recetas en Android</li>
-        <li data-lang="appSumapp_feature4">Arquitectura por capas: data.api, layouts XML y flujo móvil</li>
+        <li data-lang="appSumapp_feature1">Interfaz y lógica en Flutter multiplataforma</li>
+        <li data-lang="appSumapp_feature2">Base de datos local SQLite para operación offline</li>
+        <li data-lang="appSumapp_feature3">Comunicación JSON con servidor backend PHP</li>
+        <li data-lang="appSumapp_feature4">Sincronización con base de datos remota MySQL</li>
       </ul>
     </div>
 

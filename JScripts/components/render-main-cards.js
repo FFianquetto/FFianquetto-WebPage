@@ -38,7 +38,6 @@ function renderMainCards() {
                 <h3 data-lang="backend_title">Desarrollo Backend</h3>
                 <p data-lang="backend_desc">Explora los proyectos backend con servidores y APIs que he desarrollado.</p>
                 <ul class="project-list">
-                  <li onclick="toggleProjectCard('appSumappCard')" data-lang="appSumapp_list">AppSumapp</li>
                   <li onclick="toggleProjectCard('flegCard')" data-lang="fleg_list">Fleg</li>
                   <li onclick="toggleProjectCard('ec2Card')" data-lang="ec2_list">Contenedor en EC2 - AWS</li>
                   <li onclick="toggleProjectCard('hotelCard')" data-lang="hotel_list">Gestión de Hoteles con SQL</li>
@@ -62,6 +61,7 @@ function renderMainCards() {
                 <h3 data-lang="mobile_title">Desarrollo Móvil</h3>
                 <p data-lang="mobile_desc">Explora las aplicaciones móviles que he desarrollado.</p>
                 <ul class="project-list">
+                  <li onclick="toggleProjectCard('appSumappCard')" data-lang="appSumapp_list">AppSumapp</li>
                   <li onclick="toggleProjectCard('cocinaCard')" data-lang="cocina_list">Cocina en Corto</li>
                   <li onclick="toggleProjectCard('happySkinAICard')" data-lang="happySkinAI_list">HappySkinAI</li>
                   <li onclick="toggleProjectCard('bimboSISCard')" data-lang="bimboSIS_list">BimboSIS</li>
@@ -86,7 +86,7 @@ function renderMainCards() {
                 <p data-lang="games_desc">Sumérgete en los videojuegos que he desarrollado.</p>
                 <ul class="project-list">
                   <li onclick="toggleProjectCard('bolosCard')" data-lang="bolos_list">Bolos en Unity con Háptico incluido</li>
-                  <li onclick="toggleProjectCard('escapeCard')" data-lang="escape_list">Escape Salvaje en Unity</li>
+                  <li onclick="toggleProjectCard('escapeCard')" data-lang="escape_list">Escape Salvaje en Unreal Engine</li>
                   <li onclick="toggleProjectCard('candyCard')" data-lang="candy_list">Candy Collector con OGL Engine y C++</li>
                   <li onclick="toggleProjectCard('snakeCard')" data-lang="snake_list">Snake Slaughter con OGL Engine y Lenguaje Ensamblador</li>
                   <li onclick="toggleProjectCard('stealCard')" data-lang="steal_list">Steal the vibe</li>

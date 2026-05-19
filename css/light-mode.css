@@ -15,6 +15,7 @@
   --green-primary: #2ecc71;
   --pink-primary: #c2185b;
   --orange-primary: #e67e22;
+  --cyan-primary: #00b8d4;
 }
 
 /* Estilos base que se aplican cuando el modo claro está activo */
@@ -385,6 +386,7 @@ body.light-mode .card-project.card-purple {
   --card-scrollbar-thumb-hover: rgba(125, 60, 152, 0.75);
   --card-scrollbar-thumb-solid: var(--purple-primary);
   --card-scrollbar-thumb-gradient-end: #8b5cf6;
+  --card-feature-bullet: var(--purple-primary);
 }
 body.light-mode .card-project.card-purple::before {
   content: '';
@@ -407,6 +409,7 @@ body.light-mode .card-project.card-blue {
   --card-scrollbar-thumb-hover: rgba(41, 128, 185, 0.75);
   --card-scrollbar-thumb-solid: var(--blue-primary);
   --card-scrollbar-thumb-gradient-end: #3b82f6;
+  --card-feature-bullet: var(--blue-primary);
 }
 body.light-mode .card-project.card-blue::before {
   content: '';
@@ -429,6 +432,7 @@ body.light-mode .card-project.card-pink {
   --card-scrollbar-thumb-hover: rgba(194, 24, 91, 0.7);
   --card-scrollbar-thumb-solid: var(--pink-primary);
   --card-scrollbar-thumb-gradient-end: #ec4899;
+  --card-feature-bullet: var(--pink-primary);
 }
 body.light-mode .card-project.card-pink::before {
   content: '';
@@ -451,6 +455,7 @@ body.light-mode .card-project.card-green {
   --card-scrollbar-thumb-hover: rgba(46, 204, 113, 0.75);
   --card-scrollbar-thumb-solid: var(--green-primary);
   --card-scrollbar-thumb-gradient-end: #22c55e;
+  --card-feature-bullet: var(--green-primary);
 }
 body.light-mode .card-project.card-green::before {
   content: '';
@@ -466,19 +471,21 @@ body.light-mode .card-project.card-green::before {
 }
 
 body.light-mode .card-project.card-orange {
-  background: linear-gradient(45deg, #f8f5ff, #f3f0ff) !important;
+  background: linear-gradient(45deg, #fff8f0, #fff3e6) !important;
   --card-scrollbar-thumb: rgba(230, 126, 34, 0.55);
   --card-scrollbar-thumb-hover: rgba(230, 126, 34, 0.75);
   --card-scrollbar-thumb-solid: var(--orange-primary);
   --card-scrollbar-thumb-gradient-end: #f39c12;
+  --card-feature-bullet: var(--orange-primary);
 }
 
 body.light-mode .card-project.card-cyan {
-  background: linear-gradient(45deg, #f8f5ff, #f3f0ff) !important;
+  background: linear-gradient(45deg, #f0fcff, #e6f9ff) !important;
   --card-scrollbar-thumb: rgba(0, 184, 212, 0.55);
   --card-scrollbar-thumb-hover: rgba(0, 184, 212, 0.75);
-  --card-scrollbar-thumb-solid: #00b8d4;
+  --card-scrollbar-thumb-solid: var(--cyan-primary);
   --card-scrollbar-thumb-gradient-end: #0097a7;
+  --card-feature-bullet: var(--cyan-primary);
 }
 
 body.light-mode .project-description {
@@ -490,24 +497,7 @@ body.light-mode .project-features li {
 }
 
 body.light-mode .project-features li:before {
-  color: var(--blue-primary);
-}
-
-/* Colores específicos para features según la card */
-body.light-mode .card-project.card-purple .project-features li:before {
-  color: var(--purple-primary);
-}
-
-body.light-mode .card-project.card-blue .project-features li:before {
-  color: var(--blue-primary);
-}
-
-body.light-mode .card-project.card-pink .project-features li:before {
-  color: var(--pink-primary);
-}
-
-body.light-mode .card-project.card-green .project-features li:before {
-  color: var(--green-primary);
+  color: var(--card-feature-bullet, var(--blue-primary));
 }
 
 /* Cards móviles en modo claro */

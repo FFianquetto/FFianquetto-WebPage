@@ -47,6 +47,20 @@ html {
     background: #c47aff;
 }
 
+/* La navbar no debe tener scrollbar propia (solo la del documento) */
+.navbar,
+.navbar * {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.navbar::-webkit-scrollbar,
+.navbar *::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
 #paginas-web,
 #certificaciones {
     scroll-margin-top: calc(83px + 1.25rem);

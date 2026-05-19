@@ -1,0 +1,32 @@
+/* ===== FLECHA DE RULETA (componente) ===== */
+
+.multi-carousel-center-indicator {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.roulette-arrow {
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: clamp(7px, 2vw, 11px) solid transparent;
+  border-right: clamp(7px, 2vw, 11px) solid transparent;
+  border-top: clamp(8px, 2.5vw, 13px) solid #00ffb2;
+  filter: drop-shadow(0 0 8px #00ffb2) drop-shadow(0 0 4px #fff);
+  box-sizing: border-box;
+}
+
+@media (max-width: 767.98px) {
+  .roulette-arrow {
+    border-left-width: clamp(6px, 2.4vw, 10px);
+    border-right-width: clamp(6px, 2.4vw, 10px);
+    border-top-width: clamp(8px, 2.8vw, 12px);
+  }
+}

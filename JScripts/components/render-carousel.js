@@ -7,14 +7,13 @@ function renderCarousel() {
       <section class="project-carousel-section" id="carousel-section">
         <div class="carousel-container">
           <h2 class="carousel-title" data-lang="carousel_title">🎲 Proyectos Destacados</h2>
-          <div class="winner-arrows-indicator">
-            <!-- <span class="arrow-indicator">&#8595;</span> -->
-          </div>
           <div class="multi-carousel-viewport">
             <div class="multi-carousel-strip" id="multiCarouselStrip">
               <!-- Tarjetas generadas por JS -->
             </div>
-            <div class="multi-carousel-center-indicator"></div>
+            <div class="multi-carousel-center-indicator">
+              ${getRouletteArrowHTML()}
+            </div>
           </div>
           <div class="d-flex justify-content-center mt-3">
             <button class="spin-button spin-small" id="spinMultiCarouselBtn">

@@ -18,6 +18,7 @@ function renderMainCards() {
                 <ul class="project-list">
                   <li onclick="toggleProjectCard('zomboyCard')" data-lang="zomboy_list">ZomboyShop-ReDesign</li>
                   <li onclick="toggleProjectCard('festivalDestacadoCard')" data-lang="festivalDestacado_list">Festival DestaCado</li>
+                  <li onclick="toggleProjectCard('inffutCard')" data-lang="inffut_list">Inffut</li>
                 </ul>
               </div>
               <div class="card-image-section">
@@ -39,8 +40,9 @@ function renderMainCards() {
                 <ul class="project-list">
                   <li onclick="toggleProjectCard('appSumappCard')" data-lang="appSumapp_list">AppSumapp</li>
                   <li onclick="toggleProjectCard('flegCard')" data-lang="fleg_list">Fleg</li>
-                  <li onclick="toggleProjectCard('inffutCard')" data-lang="inffut_list">Inffut</li>
                   <li onclick="toggleProjectCard('ec2Card')" data-lang="ec2_list">Contenedor en EC2 - AWS</li>
+                  <li onclick="toggleProjectCard('hotelCard')" data-lang="hotel_list">Gestión de Hoteles con SQL</li>
+                  <li onclick="toggleProjectCard('nominasCard')" data-lang="nominas_list">Manejo de Nóminas con BigData - CassandraDb</li>
                 </ul>
               </div>
               <div class="card-image-section">
@@ -69,27 +71,6 @@ function renderMainCards() {
               <div class="card-image-section">
                 <div class="card-image">
                   ${getExpandableImageHTML({ src: 'imagenesP/CocinaEnCorto.png', alt: 'Desarrollo Móvil', width: 300, height: 200, srcset: 'imagenesP/CocinaEnCorto.png 600w, imagenesP/CocinaEnCorto.png 300w', sizes: '(max-width: 600px) 100vw, 300px' })}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card card-blue">
-            <div class="card-content">
-              <div class="card-icon-section">
-                <span class="card-icon">🗄️</span>
-              </div>
-              <div class="card-text-section">
-                <h3 data-lang="db_title">Bases de datos</h3>
-                <p data-lang="db_desc">Revisa algunas bases de datos que he trabajado.</p>
-                <ul class="project-list">
-                  <li onclick="toggleProjectCard('hotelCard')" data-lang="hotel_list">Gestión de Hoteles con SQL</li>
-                  <li onclick="toggleProjectCard('nominasCard')" data-lang="nominas_list">Manejo de Nóminas con BigData - CassandraDb</li>
-                </ul>
-              </div>
-              <div class="card-image-section">
-                <div class="card-image">
-                  ${getExpandableImageHTML({ src: 'imagenesP/HotelBd.png', alt: 'Sistema de Gestión Hotelera', width: 300, height: 200, srcset: 'imagenesP/HotelBd.png 600w, imagenesP/HotelBd.png 300w', sizes: '(max-width: 600px) 100vw, 300px' })}
                 </div>
               </div>
             </div>

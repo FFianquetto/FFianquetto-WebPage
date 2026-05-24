@@ -39,11 +39,25 @@ function updateAcercaCardClass() {
   }
 }
 
+// Función para actualizar la clase de la tarjeta de experiencia
+function updateExperienciaCardClass() {
+  const experienciaCard = document.getElementById('experienciaModal');
+  if (!experienciaCard) return;
+
+  if (window.innerWidth <= 991.98) {
+    experienciaCard.className = 'card-cell-e';
+    experienciaCard.style.display = 'none';
+  } else {
+    experienciaCard.className = 'card-experiencia';
+  }
+}
+
 // Función para restaurar las cards laterales en escritorio
 function restoreSideCardsForDesktop() {
   const contactCard = document.getElementById('contactoModal');
   const habilidadesCard = document.getElementById('softskillsModal');
   const acercaCard = document.getElementById('acercaModal');
+  const experienciaCard = document.getElementById('experienciaModal');
 
   if (contactCard) {
     contactCard.className = 'card-contact';
@@ -56,6 +70,10 @@ function restoreSideCardsForDesktop() {
   if (acercaCard) {
     acercaCard.className = 'card-acerca';
     acercaCard.style.display = 'block';
+  }
+  if (experienciaCard) {
+    experienciaCard.className = 'card-experiencia';
+    experienciaCard.style.display = 'block';
   }
 }
 
@@ -87,6 +105,8 @@ function ensureMobileSideCardClasses() {
   updateContactCardClass();
   updateHabilidadesCardClass();
   updateAcercaCardClass();
+  updateExperienciaCardClass();
+  updateExperienciaCardClass();
 }
 
 // Función para mostrar/ocultar cards en móvil
@@ -94,7 +114,7 @@ function toggleCard(cardId) {
   ensureMobileSideCardClasses();
 
   // Oculta todas las cards primero
-  document.querySelectorAll('.card-contact, .card-habilidades, .card-acerca, .card-cell-c, .card-cell-h, .card-cell-a').forEach(card => {
+  document.querySelectorAll('.card-contact, .card-habilidades, .card-acerca, .card-experiencia, .card-cell-c, .card-cell-h, .card-cell-a, .card-cell-e').forEach(card => {
     card.classList.remove('show');
     card.style.display = 'none';
   });
@@ -229,26 +249,27 @@ function closeSideCard(cardId) {
 function initCards() {
   if (window.innerWidth <= 991.98) {
     // En móvil, ocultar las cards laterales
-    document.querySelectorAll('.card-cell-c, .card-cell-h, .card-cell-a, .card-contact, .card-habilidades, .card-acerca').forEach(card => {
+    document.querySelectorAll('.card-cell-c, .card-cell-h, .card-cell-a, .card-cell-e, .card-contact, .card-habilidades, .card-acerca, .card-experiencia').forEach(card => {
       card.style.display = 'none';
     });
   } else {
     restoreSideCardsForDesktop();
     // Ocultar las cards móviles en desktop
-    document.querySelectorAll('.card-cell-c, .card-cell-h, .card-cell-a').forEach(card => {
+    document.querySelectorAll('.card-cell-c, .card-cell-h, .card-cell-a, .card-cell-e').forEach(card => {
       card.style.display = 'none';
     });
   }
   updateContactCardClass();
   updateHabilidadesCardClass();
   updateAcercaCardClass();
+  updateExperienciaCardClass();
 
   // Overlay click handler
   const overlay = document.querySelector('.card-overlay');
   if (overlay) {
     overlay.addEventListener('click', function (event) {
       // Cierra cualquier card lateral visible
-      document.querySelectorAll('.card-contact.show, .card-habilidades.show, .card-acerca.show, .card-cell-c.show, .card-cell-h.show, .card-cell-a.show').forEach(card => {
+      document.querySelectorAll('.card-contact.show, .card-habilidades.show, .card-acerca.show, .card-experiencia.show, .card-cell-c.show, .card-cell-h.show, .card-cell-a.show, .card-cell-e.show').forEach(card => {
         card.classList.remove('show');
         card.style.display = 'none';
       });
@@ -278,11 +299,11 @@ function initCards() {
       restoreSideCardsForDesktop();
       if (overlay) overlay.style.display = 'none';
     } else {
-      document.querySelectorAll('.card-contact, .card-habilidades, .card-acerca').forEach(card => {
+      document.querySelectorAll('.card-contact, .card-habilidades, .card-acerca, .card-experiencia').forEach(card => {
         card.style.display = 'none';
       });
       // También oculta las cards móviles
-      document.querySelectorAll('.card-cell-c, .card-cell-h, .card-cell-a').forEach(card => {
+      document.querySelectorAll('.card-cell-c, .card-cell-h, .card-cell-a, .card-cell-e').forEach(card => {
         card.style.display = 'none';
       });
     }

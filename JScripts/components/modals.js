@@ -107,6 +107,19 @@ function handleAcercaClick(event) {
   }
 }
 
+// Función para manejar el clic en "Experiencia"
+function handleExperienciaClick(event) {
+  if (window.innerWidth <= 991.98) {
+    event.preventDefault();
+    toggleCard('experienciaModal');
+    return;
+  }
+  event.preventDefault();
+  if (typeof window.scrollToSection === 'function') {
+    window.scrollToSection('#experienciaModal');
+  }
+}
+
 // Función para manejar clic en iconos móviles
 function handleMobileIconClick(cardId) {
   if (typeof window.closeNavbarMenu === 'function') {
@@ -158,5 +171,6 @@ function initModals() {
 window.openImageModal = openImageModal;
 window.closeImageModal = closeImageModal;
 window.handleAcercaClick = handleAcercaClick;
+window.handleExperienciaClick = handleExperienciaClick;
 window.handleMobileIconClick = handleMobileIconClick;
 window.initModals = initModals;

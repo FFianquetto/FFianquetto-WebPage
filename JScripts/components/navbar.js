@@ -3,6 +3,7 @@
 const SCROLL_OFFSET_EXTRA = {
   '#carousel-section': 48,
   '#acercaModal': 56,
+  '#experienciaModal': 56,
 };
 
 function getNavScrollOffset(hash) {
@@ -64,17 +65,9 @@ function initNavbar() {
     langSelect.addEventListener('change', closeNavbarMenu);
   }
 
-  const inicioLink = document.querySelector('.nav-link[data-lang="inicio"]');
-  if (inicioLink) {
-    inicioLink.addEventListener('click', function (event) {
-      event.preventDefault();
-      const base = window.location.pathname + window.location.search;
-      window.location.href = base;
-    });
-  }
-
   document.querySelectorAll('.nav-link[href^="#"]').forEach(link => {
-    if (link.getAttribute('data-lang') === 'acerca_de') return;
+    const langKey = link.getAttribute('data-lang');
+    if (langKey === 'acerca_de' || langKey === 'experiencia_nav') return;
 
     link.addEventListener('click', function (event) {
       const hash = link.getAttribute('href');

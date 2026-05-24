@@ -22,7 +22,7 @@ function toggleDarkMode() {
 
   // Asegurar que las cards estén ocultas en móvil después de cambiar el modo
   if (window.innerWidth <= 991.98) {
-    document.querySelectorAll('.card-project, .card-contact, .card-habilidades, .card-acerca').forEach(card => {
+    document.querySelectorAll('.card-project, .card-contact, .card-habilidades, .card-acerca, .card-experiencia').forEach(card => {
       card.style.display = 'none';
     });
     const overlay = document.querySelector('.card-overlay');

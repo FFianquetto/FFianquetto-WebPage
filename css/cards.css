@@ -322,7 +322,8 @@
 
 .card-contact,
 .card-habilidades,
-.card-acerca {
+.card-acerca,
+.card-experiencia {
     margin-left: 18px;
     background-color: #1a1a1a;
     border-radius: 10px;
@@ -347,9 +348,14 @@
     border: 2.3px solid #ff4ecd;
 }
 
+.card-experiencia {
+    border: 2.3px solid #00ffa3;
+}
+
 .card-contact h4,
 .card-habilidades h4,
-.card-acerca h4 {
+.card-acerca h4,
+.card-experiencia h4 {
     color: inherit;
     font-size: 1.8rem;
     margin-bottom: 15px;
@@ -368,9 +374,14 @@
     color: #ff4ecd;
 }
 
+.card-experiencia h4 {
+    color: #00ffa3;
+}
+
 .card-contact .card-icon,
 .card-habilidades .card-icon,
-.card-acerca .card-icon {
+.card-acerca .card-icon,
+.card-experiencia .card-icon {
     font-size: 3.6rem;
     display: block;
     text-align: center;
@@ -440,6 +451,13 @@
     box-shadow: 0 0 8px rgba(255, 78, 205, 0.8);
 }
 
+.card-experiencia:hover {
+    border: 2px solid #00ffa3;
+    transform: translateY(-2px);
+    color: #00ffa3;
+    box-shadow: 0 0 8px rgba(0, 255, 163, 0.8);
+}
+
 /* Asegurar que los efectos de hover funcionen en desktop */
 @media (min-width: 992px) {
     .card-contact:hover {
@@ -461,6 +479,13 @@
         transform: translateY(-2px) !important;
         color: #ff4ecd !important;
         box-shadow: 0 0 28px rgba(255, 78, 205, 0.8) !important;
+    }
+
+    .card-experiencia:hover {
+        border: 2px solid #00ffa3 !important;
+        transform: translateY(-2px) !important;
+        color: #00ffa3 !important;
+        box-shadow: 0 0 28px rgba(0, 255, 163, 0.8) !important;
     }
 }
 
@@ -811,14 +836,16 @@
 /* Por defecto, oculta las cards móviles */
 .card-contact-mobile,
 .card-habilidades-mobile,
-.card-acerca-mobile {
+.card-acerca-mobile,
+.card-experiencia-mobile {
     display: none;
 }
 
 /* Definiciones de las clases card-cell para móvil (misma altura que Contacto) */
 .card-cell-c,
 .card-cell-h,
-.card-cell-a {
+.card-cell-a,
+.card-cell-e {
     position: fixed;
     top: var(--mobile-side-card-top, calc(83px + 2rem));
     left: 50%;
@@ -847,9 +874,14 @@
     border: 2px solid #ff4ecd;
 }
 
+.card-cell-e {
+    border: 2px solid #00ffa3;
+}
+
 .card-cell-c h4,
 .card-cell-h h4,
-.card-cell-a h4 {
+.card-cell-a h4,
+.card-cell-e h4 {
     font-size: 2.1rem;
     margin-bottom: 1.2rem;
     text-align: center;
@@ -857,14 +889,16 @@
 
 .card-cell-c .contact-list li,
 .card-cell-h .contact-list li,
-.card-cell-a .contact-list li {
+.card-cell-a .contact-list li,
+.card-cell-e .contact-list li {
     font-size: 1.25rem;
     padding: 14px 0;
 }
 
 .card-cell-c .card-icon-mobile,
 .card-cell-h .card-icon-mobile,
-.card-cell-a .card-icon-mobile {
+.card-cell-a .card-icon-mobile,
+.card-cell-e .card-icon-mobile {
     display: flex !important;
     justify-content: center;
     align-items: center;
@@ -876,14 +910,16 @@
 
 .card-contact-mobile h4,
 .card-habilidades-mobile h4,
-.card-acerca-mobile h4 {
+.card-acerca-mobile h4,
+.card-experiencia-mobile h4 {
     font-size: 2.1rem;
     margin-bottom: 1.2rem;
 }
 
 .card-contact-mobile .contact-list li,
 .card-habilidades-mobile .contact-list li,
-.card-acerca-mobile .contact-list li {
+.card-acerca-mobile .contact-list li,
+.card-experiencia-mobile .contact-list li {
     font-size: 1.25rem;
     padding: 14px 0;
 }

@@ -503,7 +503,8 @@ body.light-mode .project-features li:before {
 /* Cards móviles en modo claro */
 body.light-mode .card-cell-c,
 body.light-mode .card-cell-h,
-body.light-mode .card-cell-a {
+body.light-mode .card-cell-a,
+body.light-mode .card-cell-e {
   background-color: var(--card-bg);
   color: var(--text-color);
   border: 2px solid var(--border-color);
@@ -522,9 +523,14 @@ body.light-mode .card-cell-a {
   border-color: var(--pink-primary);
 }
 
+body.light-mode .card-cell-e {
+  border-color: var(--green-primary);
+}
+
 body.light-mode .card-cell-c h4,
 body.light-mode .card-cell-h h4,
-body.light-mode .card-cell-a h4 {
+body.light-mode .card-cell-a h4,
+body.light-mode .card-cell-e h4 {
   color: white;
 }
 
@@ -541,6 +547,10 @@ body.light-mode .card-cell-a .contact-list li i {
   color: var(--pink-primary);
 }
 
+body.light-mode .card-cell-e .contact-list li i {
+  color: var(--green-primary);
+}
+
 body.light-mode .card-cell-c .btn-close-circle--card:hover {
   color: var(--purple-primary);
 }
@@ -551,6 +561,10 @@ body.light-mode .card-cell-h .btn-close-circle--card:hover {
 
 body.light-mode .card-cell-a .btn-close-circle--card:hover {
   color: var(--pink-primary);
+}
+
+body.light-mode .card-cell-e .btn-close-circle--card:hover {
+  color: var(--green-primary);
 }
 
 /* Modal de imágenes en modo claro */
@@ -601,6 +615,10 @@ body.light-mode .mobile-icons .btn-link:nth-child(2) {
 
 body.light-mode .mobile-icons .btn-link:nth-child(3) {
   color: var(--pink-primary);
+}
+
+body.light-mode .mobile-icons .btn-link:nth-child(4) {
+  color: var(--green-primary);
 }
 
 body.light-mode .mobile-icons .btn-link:hover {

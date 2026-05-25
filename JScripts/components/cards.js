@@ -320,7 +320,19 @@ function initCards() {
   }
 }
 
+function toggleExperienciaHackathons(event) {
+  if (event) event.stopPropagation();
+  const sublist = document.getElementById('expHackathonsSublist');
+  const trigger = event?.currentTarget || document.querySelector('.exp-list-item--expandable');
+  if (!sublist || !trigger) return;
+  const isOpen = !sublist.classList.contains('is-open');
+  sublist.classList.toggle('is-open', isOpen);
+  trigger.classList.toggle('is-expanded', isOpen);
+  trigger.setAttribute('aria-expanded', String(isOpen));
+}
+
 // Exportar funciones globales
+window.toggleExperienciaHackathons = toggleExperienciaHackathons;
 window.closeAllCards = closeAllCards;
 window.toggleCard = toggleCard;
 window.toggleProjectCard = toggleProjectCard;

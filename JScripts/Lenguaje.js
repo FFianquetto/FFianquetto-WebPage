@@ -36,10 +36,17 @@ document.addEventListener('DOMContentLoaded', function() {
             'soft_skills': 'Habilidades',
             'experiencia': 'Experiencia',
             'experiencia_nav': 'Experiencia',
-            'exp_dummy_1': 'Desarrollador Frontend — Empresa XYZ (2024 - Presente)',
-            'exp_dummy_2': 'Practicante de Diseño — Startup ABC (2023 - 2024)',
-            'exp_dummy_3': 'Freelance Web — Proyectos independientes (2022 - 2023)',
-            'exp_dummy_4': 'Voluntario IT — ONG Local (2021 - 2022)',
+            'exp_1': 'iOS Lab UANL',
+            'exp_1_period': '6 meses — Actualidad',
+            'exp_2': 'Programador Jr. — Empresa Virtual (SumApp)',
+            'exp_2_period': '7 meses',
+            'exp_3': 'Programador Jr. — Cado (Festival Destacado)',
+            'exp_3_period': '7 meses (6 prácticas + 1 web)',
+            'exp_4': 'Hackathons',
+            'exp_hack_1': '1er lugar — Hackathon iOS/UANL 2026',
+            'exp_hack_2': 'ArcaContinental 2024',
+            'exp_hack_3': 'NASA Space Apps 2025',
+            'exp_cv_download': 'Descargar CV',
             'email': 'fernandocancino2004@gmail.com',
             'telefono': '+52 921 133 7977',
             'linkedin': 'LinkedIn',
@@ -247,10 +254,17 @@ document.addEventListener('DOMContentLoaded', function() {
             'soft_skills': 'Skills',
             'experiencia': 'Experience',
             'experiencia_nav': 'Experience',
-            'exp_dummy_1': 'Frontend Developer — Company XYZ (2024 - Present)',
-            'exp_dummy_2': 'Design Intern — Startup ABC (2023 - 2024)',
-            'exp_dummy_3': 'Web Freelance — Independent projects (2022 - 2023)',
-            'exp_dummy_4': 'IT Volunteer — Local NGO (2021 - 2022)',
+            'exp_1': 'iOS Lab UANL',
+            'exp_1_period': '6 months — Present',
+            'exp_2': 'Jr. Developer — Virtual Company (SumApp)',
+            'exp_2_period': '7 months',
+            'exp_3': 'Jr. Developer — Cado (Festival Destacado)',
+            'exp_3_period': '7 months (6 internship + 1 web)',
+            'exp_4': 'Hackathons',
+            'exp_hack_1': '1st place — iOS/UANL Hackathon 2026',
+            'exp_hack_2': 'ArcaContinental 2024',
+            'exp_hack_3': 'NASA Space Apps 2025',
+            'exp_cv_download': 'Download CV',
             'email': 'fernandocancino2004@gmail.com',
             'telefono': '+52 921 133 7977',
             'linkedin': 'LinkedIn',
@@ -459,10 +473,17 @@ document.addEventListener('DOMContentLoaded', function() {
             'soft_skills': 'Compétences',
             'experiencia': 'Expérience',
             'experiencia_nav': 'Expérience',
-            'exp_dummy_1': 'Développeur Frontend — Entreprise XYZ (2024 - Présent)',
-            'exp_dummy_2': 'Stagiaire en Design — Startup ABC (2023 - 2024)',
-            'exp_dummy_3': 'Freelance Web — Projets indépendants (2022 - 2023)',
-            'exp_dummy_4': 'Bénévole IT — ONG locale (2021 - 2022)',
+            'exp_1': 'iOS Lab UANL',
+            'exp_1_period': '6 mois — Actuellement',
+            'exp_2': 'Programmeur Jr. — Entreprise Virtuelle (SumApp)',
+            'exp_2_period': '7 mois',
+            'exp_3': 'Programmeur Jr. — Cado (Festival Destacado)',
+            'exp_3_period': '7 mois (6 stage + 1 web)',
+            'exp_4': 'Hackathons',
+            'exp_hack_1': '1er place — Hackathon iOS/UANL 2026',
+            'exp_hack_2': 'ArcaContinental 2024',
+            'exp_hack_3': 'NASA Space Apps 2025',
+            'exp_cv_download': 'Télécharger le CV',
             'email': 'fernandocancino2004@gmail.com',
             'telefono': '+52 921 133 7977',
             'linkedin': 'LinkedIn',
@@ -671,10 +692,17 @@ document.addEventListener('DOMContentLoaded', function() {
             'soft_skills': 'Fähigkeiten',
             'experiencia': 'Erfahrung',
             'experiencia_nav': 'Erfahrung',
-            'exp_dummy_1': 'Frontend-Entwickler — Unternehmen XYZ (2024 - Gegenwart)',
-            'exp_dummy_2': 'Design-Praktikant — Startup ABC (2023 - 2024)',
-            'exp_dummy_3': 'Web-Freelancer — Unabhängige Projekte (2022 - 2023)',
-            'exp_dummy_4': 'IT-Freiwilliger — Lokale NGO (2021 - 2022)',
+            'exp_1': 'iOS Lab UANL',
+            'exp_1_period': '6 Monate — Aktuell',
+            'exp_2': 'Jr. Entwickler — Virtuelles Unternehmen (SumApp)',
+            'exp_2_period': '7 Monate',
+            'exp_3': 'Jr. Entwickler — Cado (Festival Destacado)',
+            'exp_3_period': '7 Monate (6 Praktikum + 1 Web)',
+            'exp_4': 'Hackathons',
+            'exp_hack_1': '1. Platz — iOS/UANL Hackathon 2026',
+            'exp_hack_2': 'ArcaContinental 2024',
+            'exp_hack_3': 'NASA Space Apps 2025',
+            'exp_cv_download': 'Lebenslauf herunterladen',
             'email': 'fernandocancino2004@gmail.com',
             'telefono': '+52 921 133 7977',
             'linkedin': 'LinkedIn',
@@ -851,6 +879,24 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     window.translations = translations;
 
+    const CV_FILES_BY_LANG = {
+        ES: 'assets/cv/CV_Fernando_Cancino.pdf',
+        EN: 'assets/cv/CV_Fernando_Cancino_International.pdf',
+        FR: 'assets/cv/CV_Fernando_Cancino_International.pdf',
+        DE: 'assets/cv/CV_Fernando_Cancino_Deutsch.pdf'
+    };
+
+    function updateExperienciaCvDownload(lang) {
+        const href = CV_FILES_BY_LANG[lang] || CV_FILES_BY_LANG.ES;
+        document.querySelectorAll('.exp-cv-download').forEach((link) => {
+            link.href = href;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.removeAttribute('download');
+        });
+    }
+    window.updateExperienciaCvDownload = updateExperienciaCvDownload;
+
     function updateLanguage(lang) {
         // Guardar el idioma seleccionado en localStorage
         localStorage.setItem('selectedLanguage', lang);
@@ -891,6 +937,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const currentIndex = parseInt(document.getElementById('multiCarouselStrip')?.dataset.selected || '0');
             renderMultiCarousel(currentIndex);
         }
+
+        updateExperienciaCvDownload(lang);
     }
 
     // Función para actualizar las tarjetas de proyectos

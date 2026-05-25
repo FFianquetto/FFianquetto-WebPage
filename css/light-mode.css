@@ -322,6 +322,34 @@ body.light-mode .contact-list li:hover i {
   transform: scale(1.1);
 }
 
+body.light-mode .card-experiencia .contact-list > .exp-list-item > i {
+  color: #00a870;
+}
+
+body.light-mode .card-experiencia .exp-link {
+  color: #fff;
+  text-shadow: none;
+}
+
+body.light-mode .card-experiencia .exp-link:hover {
+  color: #00ffa3;
+  text-shadow: 0 0 12px rgba(0, 255, 163, 0.8), 0 0 20px rgba(0, 255, 163, 0.5);
+  transform: scale(1.02);
+  filter: brightness(1.15);
+}
+
+body.light-mode .card-experiencia .exp-cv-download {
+  border-color: #00c987;
+  background: rgba(0, 201, 135, 0.12);
+  color: #007a52;
+}
+
+body.light-mode .card-experiencia .exp-cv-download:hover {
+  background: rgba(0, 201, 135, 0.22);
+  color: #004d33;
+  box-shadow: 0 0 12px rgba(0, 201, 135, 0.3);
+}
+
 /* Hero section en modo claro */
 body.light-mode .hero h1 {
   color: var(--text-color);

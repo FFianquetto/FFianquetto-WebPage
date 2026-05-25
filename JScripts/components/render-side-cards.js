@@ -68,11 +68,52 @@ function renderSideCards() {
           <span class="card-icon-mobile">💼</span>
           <h4 data-lang="experiencia">Experiencia</h4>
           <ul class="contact-list">
-            <li><i class="fas fa-briefcase"></i> <span data-lang="exp_dummy_1">Desarrollador Frontend — Empresa XYZ (2024 - Presente)</span></li>
-            <li><i class="fas fa-palette"></i> <span data-lang="exp_dummy_2">Practicante de Diseño — Startup ABC (2023 - 2024)</span></li>
-            <li><i class="fas fa-laptop-code"></i> <span data-lang="exp_dummy_3">Freelance Web — Proyectos independientes (2022 - 2023)</span></li>
-            <li><i class="fas fa-hands-helping"></i> <span data-lang="exp_dummy_4">Voluntario IT — ONG Local (2021 - 2022)</span></li>
+            <li class="exp-list-item">
+              <i class="fab fa-apple"></i>
+              <div class="exp-item-body">
+                <a href="https://www.instagram.com/ios.uanl/" class="exp-link" target="_blank" rel="noopener noreferrer">
+                  <span class="exp-item-title" data-lang="exp_1">iOS Lab UANL</span>
+                </a>
+                <span class="exp-item-period" data-lang="exp_1_period">6 meses — Actualidad</span>
+              </div>
+            </li>
+            <li class="exp-list-item">
+              <i class="fas fa-briefcase"></i>
+              <div class="exp-item-body">
+                <a href="https://sumapp.com/" class="exp-link" target="_blank" rel="noopener noreferrer">
+                  <span class="exp-item-title" data-lang="exp_2">Programador Jr. — Empresa Virtual (SumApp)</span>
+                </a>
+                <span class="exp-item-period" data-lang="exp_2_period">7 meses</span>
+              </div>
+            </li>
+            <li class="exp-list-item">
+              <i class="fas fa-mobile-alt"></i>
+              <div class="exp-item-body">
+                <a href="https://somoscado.com/" class="exp-link" target="_blank" rel="noopener noreferrer">
+                  <span class="exp-item-title" data-lang="exp_3">Programador Jr. — Cado (Festival Destacado)</span>
+                </a>
+                <span class="exp-item-period" data-lang="exp_3_period">7 meses (6 prácticas + 1 web)</span>
+              </div>
+            </li>
+            <li class="exp-list-item exp-list-item--expandable" role="button" tabindex="0" onclick="toggleExperienciaHackathons(event)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleExperienciaHackathons(event);}">
+              <i class="fas fa-trophy"></i>
+              <div class="exp-item-body">
+                <div class="exp-item-header">
+                  <span class="exp-item-title" data-lang="exp_4">Hackathons</span>
+                  <i class="fas fa-chevron-down exp-item-chevron" aria-hidden="true"></i>
+                </div>
+                <ul class="exp-sublist" id="expHackathonsSublist">
+                  <li><span data-lang="exp_hack_1">1er lugar — Hackathon iOS/UANL 2026</span></li>
+                  <li><span data-lang="exp_hack_2">ArcaContinental 2024</span></li>
+                  <li><span data-lang="exp_hack_3">NASA Space Apps 2025</span></li>
+                </ul>
+              </div>
+            </li>
           </ul>
+          <a href="assets/cv/CV_Fernando_Cancino.pdf" class="exp-cv-download" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-file-pdf" aria-hidden="true"></i>
+            <span data-lang="exp_cv_download">Descargar CV</span>
+          </a>
         </div>
       </div>
       </div>

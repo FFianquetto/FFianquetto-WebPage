@@ -408,6 +408,148 @@
     border-bottom: none;
 }
 
+.card-experiencia .exp-list-item {
+    align-items: flex-start;
+}
+
+.card-experiencia .exp-item-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.card-experiencia .contact-list > .exp-list-item > i {
+    color: #00ffa3;
+}
+
+.card-experiencia .exp-link {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-shadow: none;
+    display: inline-block;
+    width: fit-content;
+    max-width: 100%;
+}
+
+.card-experiencia .exp-link:hover {
+    color: #00ffa3;
+    text-shadow: 0 0 12px rgba(0, 255, 163, 0.8), 0 0 20px rgba(0, 255, 163, 0.5);
+    transform: scale(1.02);
+    filter: brightness(1.15);
+}
+
+.card-experiencia .exp-item-title {
+    font-size: 1rem;
+    line-height: 1.35;
+    color: inherit;
+}
+
+.card-experiencia .exp-item-period {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.3;
+}
+
+.card-experiencia .exp-list-item--expandable {
+    cursor: pointer;
+}
+
+.card-experiencia .exp-list-item--expandable:hover {
+    background-color: rgba(0, 255, 163, 0.08);
+}
+
+.card-experiencia .exp-item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+}
+
+.card-experiencia .exp-item-chevron {
+    font-size: 0.75rem;
+    color: #00ffa3;
+    transition: transform 0.25s ease;
+    flex-shrink: 0;
+}
+
+.card-experiencia .exp-list-item--expandable.is-expanded .exp-item-chevron {
+    transform: rotate(180deg);
+}
+
+.card-experiencia .exp-sublist {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.25s ease, margin 0.25s ease;
+}
+
+.card-experiencia .exp-sublist.is-open {
+    max-height: 160px;
+    opacity: 1;
+    margin-top: 10px;
+}
+
+.card-experiencia .exp-sublist li {
+    display: block;
+    padding: 6px 0 6px 12px;
+    border-bottom: none;
+    font-size: 0.98rem;
+    color: rgba(255, 255, 255, 0.78);
+    border-left: 2px solid rgba(0, 255, 163, 0.45);
+    line-height: 1.35;
+}
+
+.card-experiencia .exp-sublist li + li {
+    margin-top: 4px;
+}
+
+.card-experiencia .contact-list {
+    margin-bottom: 4px;
+}
+
+.card-experiencia .exp-cv-download {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 8px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1.5px solid #00ffa3;
+    background: rgba(0, 255, 163, 0.1);
+    color: #00ffa3;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.card-experiencia .exp-cv-download i {
+    font-size: 1.15rem;
+    color: inherit;
+    width: auto;
+}
+
+.card-experiencia .exp-cv-download:hover {
+    background: rgba(0, 255, 163, 0.22);
+    color: #fff;
+    box-shadow: 0 0 14px rgba(0, 255, 163, 0.35);
+    transform: translateY(-1px);
+}
+
+.card-experiencia .exp-cv-download:focus-visible {
+    outline: 2px solid #00ffa3;
+    outline-offset: 2px;
+}
+
 .contact-list i {
     width: 18px;
     color: #a259ff;

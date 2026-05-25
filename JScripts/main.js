@@ -20,6 +20,10 @@ document.addEventListener('DOMContentLoaded', function () {
   if (typeof renderMainCards === 'function') {
     renderMainCards();
     console.log('Main cards y side cards renderizadas');
+    const lang = localStorage.getItem('selectedLanguage') || 'ES';
+    if (typeof window.updateExperienciaCvDownload === 'function') {
+      window.updateExperienciaCvDownload(lang);
+    }
   }
 
   if (typeof renderProjectCards === 'function') {

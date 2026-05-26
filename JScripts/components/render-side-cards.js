@@ -74,7 +74,7 @@ function renderSideCards() {
                 <a href="https://www.instagram.com/ios.uanl/" class="exp-link" target="_blank" rel="noopener noreferrer">
                   <span class="exp-item-title" data-lang="exp_1">iOS Lab UANL</span>
                 </a>
-                <span class="exp-item-period" data-lang="exp_1_period">6 meses — Actualidad</span>
+                <span class="exp-item-period" data-lang="exp_1_period">Dic 2025 — Actualidad · 6 meses</span>
               </div>
             </li>
             <li class="exp-list-item">
@@ -83,7 +83,7 @@ function renderSideCards() {
                 <a href="https://sumapp.com/" class="exp-link" target="_blank" rel="noopener noreferrer">
                   <span class="exp-item-title" data-lang="exp_2">Programador Jr. — Empresa Virtual (SumApp)</span>
                 </a>
-                <span class="exp-item-period" data-lang="exp_2_period">7 meses</span>
+                <span class="exp-item-period" data-lang="exp_2_period">Ago 2025 – Feb 2026 · 7 meses</span>
               </div>
             </li>
             <li class="exp-list-item">
@@ -92,7 +92,7 @@ function renderSideCards() {
                 <a href="https://somoscado.com/" class="exp-link" target="_blank" rel="noopener noreferrer">
                   <span class="exp-item-title" data-lang="exp_3">Programador Jr. — Cado (Festival Destacado)</span>
                 </a>
-                <span class="exp-item-period" data-lang="exp_3_period">7 meses (6 prácticas + 1 web)</span>
+                <span class="exp-item-period" data-lang="exp_3_period">Ago 2024 – Feb 2025 · 7 meses (6 prácticas + 1 web)</span>
               </div>
             </li>
             <li class="exp-list-item exp-list-item--expandable" role="button" tabindex="0" onclick="toggleExperienciaHackathons(event)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleExperienciaHackathons(event);}">

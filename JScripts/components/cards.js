@@ -106,7 +106,6 @@ function ensureMobileSideCardClasses() {
   updateHabilidadesCardClass();
   updateAcercaCardClass();
   updateExperienciaCardClass();
-  updateExperienciaCardClass();
 }
 
 // Función para mostrar/ocultar cards en móvil

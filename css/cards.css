@@ -453,15 +453,18 @@
     line-height: 1.3;
 }
 
-.card-experiencia .exp-list-item--expandable {
+.card-experiencia .exp-list-item--expandable,
+.card-cell-e .exp-list-item--expandable {
     cursor: pointer;
 }
 
-.card-experiencia .exp-list-item--expandable:hover {
+.card-experiencia .exp-list-item--expandable:hover,
+.card-cell-e .exp-list-item--expandable:hover {
     background-color: rgba(0, 255, 163, 0.08);
 }
 
-.card-experiencia .exp-item-header {
+.card-experiencia .exp-item-header,
+.card-cell-e .exp-item-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -469,18 +472,21 @@
     width: 100%;
 }
 
-.card-experiencia .exp-item-chevron {
+.card-experiencia .exp-item-chevron,
+.card-cell-e .exp-item-chevron {
     font-size: 0.75rem;
     color: #00ffa3;
     transition: transform 0.25s ease;
     flex-shrink: 0;
 }
 
-.card-experiencia .exp-list-item--expandable.is-expanded .exp-item-chevron {
+.card-experiencia .exp-list-item--expandable.is-expanded .exp-item-chevron,
+.card-cell-e .exp-list-item--expandable.is-expanded .exp-item-chevron {
     transform: rotate(180deg);
 }
 
-.card-experiencia .exp-sublist {
+.card-experiencia .exp-sublist,
+.card-cell-e .exp-sublist {
     list-style: none;
     padding: 0;
     margin: 8px 0 0 0;
@@ -490,15 +496,17 @@
     transition: max-height 0.3s ease, opacity 0.25s ease, margin 0.25s ease;
 }
 
-.card-experiencia .exp-sublist.is-open {
+.card-experiencia .exp-sublist.is-open,
+.card-cell-e .exp-sublist.is-open {
     max-height: 160px;
     opacity: 1;
     margin-top: 10px;
 }
 
-.card-experiencia .exp-sublist li {
+.card-experiencia .exp-sublist li,
+.card-cell-e .exp-sublist li {
     display: block;
-    padding: 6px 0 6px 12px;
+    padding: 6px 0 6px 18px;
     border-bottom: none;
     font-size: 0.98rem;
     color: rgba(255, 255, 255, 0.78);
@@ -506,7 +514,8 @@
     line-height: 1.35;
 }
 
-.card-experiencia .exp-sublist li + li {
+.card-experiencia .exp-sublist li + li,
+.card-cell-e .exp-sublist li + li {
     margin-top: 4px;
 }
 
@@ -1035,6 +1044,17 @@
 .card-cell-e .contact-list li {
     font-size: 1.25rem;
     padding: 14px 0;
+}
+
+@media (max-width: 991.98px) {
+    .card-cell-e .exp-sublist {
+        margin-left: 2px;
+        padding-left: 3px;
+    }
+
+    .card-cell-e .exp-sublist li {
+        padding: 8px 0 8px 12px;
+    }
 }
 
 .card-cell-c .card-icon-mobile,

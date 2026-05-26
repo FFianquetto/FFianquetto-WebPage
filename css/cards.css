@@ -699,7 +699,9 @@
         transform: translateX(-50%);
         width: var(--mobile-main-card-width, calc(100vw - 40px));
         max-width: var(--mobile-main-card-width, calc(100vw - 40px));
-        max-height: calc(100vh - var(--mobile-side-card-top, calc(83px + 2rem)) - 1.5rem);
+        max-height: calc(100dvh - var(--mobile-side-card-top, calc(83px + 2rem)) - 1.5rem - env(safe-area-inset-bottom, 0px));
+        padding-bottom: calc(40px + env(safe-area-inset-bottom, 0px));
+        scroll-padding-bottom: calc(28px + env(safe-area-inset-bottom, 0px));
         scrollbar-width: auto;
         scrollbar-color: var(--card-scrollbar-thumb-solid) rgba(0, 0, 0, 0.3);
         -ms-overflow-style: auto;
@@ -1004,10 +1006,11 @@
     z-index: 1050;
     max-width: 88vw;
     width: 88vw;
-    max-height: calc(100vh - var(--mobile-side-card-top, calc(83px + 2rem)) - 1.5rem);
+    max-height: calc(100dvh - var(--mobile-side-card-top, calc(83px + 2rem)) - 1.5rem - env(safe-area-inset-bottom, 0px));
     overflow: auto;
     border-radius: 15px;
-    padding: 25px;
+    padding: 25px 25px calc(40px + env(safe-area-inset-bottom, 0px)) 25px;
+    scroll-padding-bottom: calc(28px + env(safe-area-inset-bottom, 0px));
     background: #1a1a1a !important;
     display: none;
     box-shadow: 0 0 80px 30px #000a;

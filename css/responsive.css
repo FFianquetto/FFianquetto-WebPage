@@ -795,12 +795,13 @@
         z-index: 1050 !important;
         width: 88vw !important;
         max-width: 330px !important;
-        max-height: calc(100vh - var(--mobile-side-card-top, calc(83px + 2rem)) - 1.5rem) !important;
+        max-height: calc(100dvh - var(--mobile-side-card-top, calc(83px + 2rem)) - 1.5rem - env(safe-area-inset-bottom, 0px)) !important;
         background-color: #1a1a1a !important;
         border-radius: 15px;
         box-shadow: 0 0 20px rgba(0,0,0,0.5);
-        padding: 25px;
+        padding: 25px 25px calc(40px + env(safe-area-inset-bottom, 0px)) 25px;
         overflow-y: auto;
+        scroll-padding-bottom: calc(28px + env(safe-area-inset-bottom, 0px));
         display: none;
     }
     

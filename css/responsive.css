@@ -414,7 +414,7 @@
         max-width: 345px !important;
         max-height: none !important;
         background-color: #1a1a1a !important;
-        border-radius: 10px !important;
+        border-radius: var(--card-radius) !important;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2) !important;
         padding: 18px !important;
         margin-left: 18px !important;
@@ -797,7 +797,7 @@
         max-width: 330px !important;
         max-height: calc(100dvh - var(--mobile-side-card-top, calc(83px + 2rem)) - 1.5rem - env(safe-area-inset-bottom, 0px)) !important;
         background-color: #1a1a1a !important;
-        border-radius: 15px;
+        border-radius: var(--card-radius);
         box-shadow: 0 0 20px rgba(0,0,0,0.5);
         padding: 25px 25px calc(40px + env(safe-area-inset-bottom, 0px)) 25px;
         overflow-y: auto;

@@ -24,7 +24,7 @@
 .card {
     background: rgba(26, 26, 26, 0.95);
     backdrop-filter: blur(5px);
-    border-radius: 15px;
+    border-radius: var(--card-radius);
     padding: 20px;
     box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.7);
     border: 1.5px solid transparent;
@@ -116,7 +116,7 @@
 }
 
 .card-image {
-    border-radius: 10px;
+    border-radius: var(--card-radius-inner);
     overflow: visible;
     display: flex;
     align-items: center;
@@ -133,7 +133,7 @@
     border: 3px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
-    border-radius: 10px;
+    border-radius: var(--card-radius-inner);
     cursor: pointer;
 }
 
@@ -145,7 +145,6 @@
 /* Estilos específicos para cada tarjeta */
 .card-purple {
     border: 2.2px solid #a259ff;
-    border-radius: 4px;
     box-shadow: 
         0 0 2px rgba(162, 89, 255, 0.6),
         0 0 6px rgba(162, 89, 255, 0.3),
@@ -186,7 +185,6 @@
 
 .card-blue {
     border: 2.2px solid #3772ff;
-    border-radius: 4px;
     box-shadow: 
         0 0 2px rgba(55, 114, 255, 0.6),
         0 0 6px rgba(55, 114, 255, 0.3),
@@ -227,7 +225,6 @@
 
 .card-pink {
     border: 2.2px solid #ff4ecd;
-    border-radius: 4px;
     box-shadow: 
         0 0 2px rgba(255, 78, 205, 0.6),
         0 0 6px rgba(255, 78, 205, 0.3),
@@ -268,7 +265,6 @@
 
 .card-green {
     border: 2.2px solid #00ffa3;
-    border-radius: 4px;
     box-shadow: 
         0 0 2px rgba(0, 255, 163, 0.6),
         0 0 6px rgba(0, 255, 163, 0.3),
@@ -326,7 +322,7 @@
 .card-experiencia {
     margin-left: 18px;
     background-color: #1a1a1a;
-    border-radius: 10px;
+    border-radius: var(--card-radius);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
     padding: 18px;
@@ -652,6 +648,7 @@
     max-width: 800px;
     max-height: 90vh;
     padding: 25px;
+    border-radius: var(--card-radius);
     overflow-y: auto !important; /* Forzar scroll vertical dentro de la card */
     overflow-x: hidden;
     /* Scrollbar: morado por defecto; cada .card-{color} redefine las variables */
@@ -792,7 +789,6 @@
 
 .card-orange {
     border: 2.2px solid #ff6b35;
-    border-radius: 4px;
     box-shadow: 
         0 0 2px rgba(255, 107, 53, 0.6),
         0 0 6px rgba(255, 107, 53, 0.3),
@@ -847,7 +843,6 @@
 
 .card-cyan {
     border: 2.2px solid #00d4ff;
-    border-radius: 4px;
     box-shadow: 
         0 0 2px rgba(0, 212, 255, 0.6),
         0 0 6px rgba(0, 212, 255, 0.3),
@@ -911,7 +906,7 @@
     max-width: 100%;
     max-height: 300px;
     height: auto;
-    border-radius: 10px;
+    border-radius: var(--card-radius-inner);
     margin: 5px 0;
     display: block;
     margin-left: auto;
@@ -1008,7 +1003,7 @@
     width: 88vw;
     max-height: calc(100dvh - var(--mobile-side-card-top, calc(83px + 2rem)) - 1.5rem - env(safe-area-inset-bottom, 0px));
     overflow: auto;
-    border-radius: 15px;
+    border-radius: var(--card-radius);
     padding: 25px 25px calc(40px + env(safe-area-inset-bottom, 0px)) 25px;
     scroll-padding-bottom: calc(28px + env(safe-area-inset-bottom, 0px));
     background: #1a1a1a !important;

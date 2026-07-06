@@ -28,8 +28,8 @@ body.light-mode .carousel-container {
 body.light-mode .carousel-container::before {
     background: linear-gradient(45deg, 
         rgba(108, 92, 231, 0.05) 0%, 
-        rgba(74, 144, 226, 0.05) 25%, 
-        rgba(225, 112, 85, 0.05) 50%, 
+        rgba(162, 89, 255, 0.05) 25%, 
+        rgba(74, 144, 226, 0.05) 50%, 
         rgba(0, 184, 148, 0.05) 75%, 
         rgba(108, 92, 231, 0.05) 100%);
 }
@@ -39,7 +39,7 @@ body.light-mode .carousel-container:hover {
         0 0 35px rgba(108, 92, 231, 0.4),
         0 0 70px rgba(108, 92, 231, 0.2),
         inset 0 0 25px rgba(108, 92, 231, 0.1);
-    border-color: #e17055;
+    border-color: #a259ff;
 }
 
 body.light-mode .carousel-title {
@@ -90,7 +90,7 @@ body.light-mode .wheel-pointer {
 }
 
 body.light-mode .spin-button {
-    background: linear-gradient(45deg, #6c5ce7, #e17055, #4a90e2);
+    background: linear-gradient(45deg, #6c5ce7, #a259ff, #4a90e2);
     box-shadow: 
         0 4px 20px rgba(108, 92, 231, 0.5),
         0 8px 30px rgba(108, 92, 231, 0.3);
@@ -101,13 +101,13 @@ body.light-mode .spin-button:hover {
     box-shadow: 
         0 6px 25px rgba(108, 92, 231, 0.7),
         0 12px 40px rgba(108, 92, 231, 0.4);
-    background: linear-gradient(45deg, #e17055, #4a90e2, #6c5ce7);
+    background: linear-gradient(45deg, #a259ff, #4a90e2, #6c5ce7);
 }
 
 body.light-mode .carousel-result {
     background: linear-gradient(135deg, 
         rgba(108, 92, 231, 0.1) 0%, 
-        rgba(225, 112, 85, 0.1) 50%, 
+        rgba(162, 89, 255, 0.1) 50%, 
         rgba(74, 144, 226, 0.1) 100%);
     border: 2px solid rgba(108, 92, 231, 0.4);
 }
@@ -115,7 +115,7 @@ body.light-mode .carousel-result {
 body.light-mode .carousel-result::before {
     background: linear-gradient(45deg, 
         rgba(108, 92, 231, 0.05) 0%, 
-        rgba(225, 112, 85, 0.05) 100%);
+        rgba(162, 89, 255, 0.05) 100%);
 }
 
 body.light-mode .result-content h3 {
@@ -151,9 +151,15 @@ body.light-mode .wheel:hover {
 body.light-mode .carousel-container::after {
     background-image: 
         radial-gradient(2px 2px at 20px 30px, rgba(108, 92, 231, 0.3), transparent),
-        radial-gradient(2px 2px at 40px 70px, rgba(225, 112, 85, 0.3), transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(162, 89, 255, 0.3), transparent),
         radial-gradient(1px 1px at 90px 40px, rgba(74, 144, 226, 0.3), transparent),
         radial-gradient(1px 1px at 130px 80px, rgba(0, 184, 148, 0.3), transparent);
+}
+
+body.light-mode .project-carousel-section .project-card-carousel.centered,
+body.light-mode .project-card-carousel.centered {
+    border-color: #a259ff;
+    box-shadow: 0 4px 24px rgba(162, 89, 255, 0.35);
 }
 
 .carousel-container {

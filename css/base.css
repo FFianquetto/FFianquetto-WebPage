@@ -16,6 +16,8 @@ img, video, iframe, svg {
 
 :root {
     --brand-purple: #a259ff;
+    --card-radius: 18px;
+    --card-radius-inner: 12px;
 }
 
 html {
@@ -127,18 +129,8 @@ html.no-scroll .card-project {
     flex-direction: column;
 }
 
-/* Modo claro - Los estilos detallados están en light-mode.css */
+/* Modo claro — fondo y texto (scrollbar detallada en light-mode.css) */
 body.light-mode {
     background: #f8f9fa;
     color: #212529;
-    scrollbar-color: var(--brand-purple) rgba(0, 0, 0, 0.1);
-}
-
-body.light-mode *::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.08);
-}
-
-body.light-mode *::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #a259ff 0%, #7d3c98 100%);
-    border-color: rgba(0, 0, 0, 0.08);
 }
